@@ -44,13 +44,3 @@ investigadores:
 portada:
     resource: "@PortadaBundle/Resources/config/routing.yml"
     prefix:   /
-
-sonata:
-    resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
-    prefix: /admin
-
-_sonata_admin:
-    resource: .
-    type: sonata_admin
-    prefix: /admin
-
