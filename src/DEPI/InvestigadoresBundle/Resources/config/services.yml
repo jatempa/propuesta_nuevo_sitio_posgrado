@@ -2,12 +2,3 @@ parameters:
 #    investigadores.example.class: DEPI\InvestigadoresBundle\Example
 
 services:
-    sonata.depi.admin.investigador:
-        class:  DEPI\InvestigadoresBundle\Admin\InvestigadoresAdmin
-        tags:
-          - { name: sonata.admin, manager_type: orm, group: 'Investigadores', label: Investigadores }
-
-        arguments:
-           - null
-           - DEPI\InvestigadoresBundle\Entity\Investigadores
-           - InvestigadoresBundle:Admin
