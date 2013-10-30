@@ -1,0 +1,7 @@
+parameters:
+#    alumnos_proyectos.example.class: DEPI\AlumnosProyectosBundle\Example
+
+services:
+#    alumnos_proyectos.example:
+#        class: %alumnos_proyectos.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

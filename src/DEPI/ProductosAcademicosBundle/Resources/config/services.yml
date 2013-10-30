@@ -1,0 +1,7 @@
+parameters:
+#    productos_academicos.example.class: DEPI\ProductosAcademicosBundle\Example
+
+services:
+#    productos_academicos.example:
+#        class: %productos_academicos.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

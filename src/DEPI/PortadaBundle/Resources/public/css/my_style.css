@@ -1,0 +1,51 @@
+  .container_12{
+    background: #dddddd;
+  }
+
+  header{
+    height: 150px;
+    background-color: gray;
+  }
+
+  nav{
+    height: 75px;
+    background-color: blue;
+  }
+
+  header,footer{
+    margin: 25px 0;
+  }
+
+  nav, article, section{
+    margin: 10px 0; 
+  }
+
+  footer{
+    background-color: yellow;
+    height: 50px;
+  }
+
+  #contenido_general{
+    background: red;
+    height: 270px;
+  }
+
+  #panel_aux{
+    background: #094536;
+    height: 270px;
+  }
+
+  #enlace_1{
+    background: green;
+    height: 180px;
+  }
+
+  #enlace_2{
+    background: green;
+    height: 180px;
+  }
+
+  #enlace_3{
+    background: green;
+    height: 180px;
+  }

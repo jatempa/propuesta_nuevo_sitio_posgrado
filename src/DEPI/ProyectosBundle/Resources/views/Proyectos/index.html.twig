@@ -1,0 +1,55 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Proyectos list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Clave_itm</th>
+                <th>Clave_conacyt</th>
+                <th>Clave_dgest</th>
+                <th>Nombre_corto</th>
+                <th>Nombre_completo</th>
+                <th>Descripcion</th>
+                <th>Fecha_apertura</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('proyectos_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.claveitm }}</td>
+                <td>{{ entity.claveconacyt }}</td>
+                <td>{{ entity.clavedgest }}</td>
+                <td>{{ entity.nombrecorto }}</td>
+                <td>{{ entity.nombrecompleto }}</td>
+                <td>{{ entity.descripcion }}</td>
+                <td>{% if entity.fechaapertura %}{{ entity.fechaapertura|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.status }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('proyectos_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('proyectos_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('proyectos_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

@@ -1,0 +1,7 @@
+parameters:
+#    investigadores_lineas.example.class: DEPI\InvestigadoresLineasBundle\Example
+
+services:
+#    investigadores_lineas.example:
+#        class: %investigadores_lineas.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,10 @@
+investigadores:
+    pattern:  /
+    defaults: { _controller: "InvestigadoresBundle:Investigadores:index" }
+
+investigadores_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "InvestigadoresBundle:Investigadores:show" }
+
+
+

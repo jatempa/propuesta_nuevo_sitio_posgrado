@@ -1,0 +1,34 @@
+areas_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: AreasBundle:Default:index }
+areas:
+    pattern:  /areas
+    defaults: { _controller: AreasBundle:Areas:index }
+
+_areas:
+    pattern: /areas/
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: areas}
+
+areas_new:
+    pattern:  /areas/new
+    defaults: { _controller: AreasBundle:Areas:new }
+
+areas_edit:
+    pattern:  /areas/edit/{id}
+    defaults: { _controller: AreasBundle:Areas:edit }
+
+areas_show:
+    pattern:  /areas/show/{id}
+    defaults: { _controller: AreasBundle:Areas:show }
+
+areas_create:
+    pattern:  /areas/create
+    defaults: { _controller: AreasBundle:Areas:create }
+
+areas_update:
+    pattern:  /areas/update/{id}
+    defaults: { _controller: AreasBundle:Areas:update }
+
+areas_delete:
+    pattern:  /areas/delete/{id}
+    defaults: { _controller: AreasBundle:Areas:delete }

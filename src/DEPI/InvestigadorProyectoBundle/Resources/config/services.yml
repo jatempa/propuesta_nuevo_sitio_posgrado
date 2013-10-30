@@ -1,0 +1,7 @@
+parameters:
+#    investigador_proyecto.example.class: DEPI\InvestigadorProyectoBundle\Example
+
+services:
+#    investigador_proyecto.example:
+#        class: %investigador_proyecto.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

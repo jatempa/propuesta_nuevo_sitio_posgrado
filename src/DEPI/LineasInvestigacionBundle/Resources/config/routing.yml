@@ -1,0 +1,31 @@
+lineas:
+    pattern:  /lineas
+    defaults: { _controller: LineasInvestigacionBundle:LineasInvestigacion:index }
+
+_lineas:
+    pattern: /lineas/
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: lineas}
+
+lineas_new:
+    pattern:  /lineas/new
+    defaults: { _controller: LineasInvestigacionBundle:LineasInvestigacion:new }
+
+lineas_edit:
+    pattern:  /lineas/edit/{id}
+    defaults: { _controller: LineasInvestigacionBundle:LineasInvestigacion:edit }
+
+lineas_show:
+    pattern:  /lineas/show/{id}
+    defaults: { _controller: LineasInvestigacionBundle:LineasInvestigacion:show }
+
+lineas_create:
+    pattern:  /lineas/create
+    defaults: { _controller: LineasInvestigacionBundle:LineasInvestigacion:create }
+
+lineas_update:
+    pattern:  /lineas/update/{id}
+    defaults: { _controller: LineasInvestigacionBundle:LineasInvestigacion:update }
+
+lineas_delete:
+    pattern:  /lineas/delete/{id}
+    defaults: { _controller: LineasInvestigacionBundle:LineasInvestigacion:delete }
