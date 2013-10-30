@@ -79,7 +79,7 @@ class AlumnosFixtures extends AbstractFixture implements OrderedFixtureInterface
             $entidad->setTelefono($alumno['telefono']);
             $manager->persist($entidad);
         }
-        
+
         $manager->flush();
     }
 

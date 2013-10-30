@@ -88,7 +88,7 @@ class InvestigadoresFixtures extends AbstractFixture implements OrderedFixtureIn
             $entidad->setSni($investigador['sni']);
             $manager->persist($entidad);
         }
-        
+
         $manager->flush();
     }
 
