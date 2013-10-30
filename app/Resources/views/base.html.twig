@@ -5,63 +5,102 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
         <link rel="stylesheet" href="{{ asset('bundles/portada/css/foundation.css') }}">
+        <link rel="stylesheet" href="{{ asset('bundles/portada/css/master.css') }}">
         <script src="{{ asset('bundles/portada/js/vendor/custom.modernizr.js') }}"></script>
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>        
-        <!-- Grid Example -->
-        <div class="row">
+          <!-- Header -->
+          <div class="row">
             <div class="large-12 columns">
-                <div class="panel">
-                    <p>12</p>
-                </div>
+              <div id="cabecera"></div>
             </div>
-        </div>
-        <div class="row">
-            <div class="large-8 push-4 columns">
-                <div class="panel">
-                    <nav class="top-bar">
-                      <section class="top-bar-section">
-                        <!-- Left Nav Section -->
-                        <ul class="left">
-                          <li class="divider"></li>
-                          <li class="has-dropdown"><a href="#">Catálogos</a>
-                            <ul class="dropdown">
-                              <li><a href="{{ path('alumnos') }}">Alumnos</a></li>
-                              <li><a href="{{ path('areas') }}">Áreas</a></li>
-                              <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
-                              <li><a href="{{ path('lineas') }}">Líneas de investigación</a></li>
-                              <li><a href="{{ path('proyectos') }}">Proyectos</a></li>
-                            </ul>
-                          </li>
-                          <li class="divider"></li>
-                        </ul>
-                      </section>
-                    </nav>
-                </div>
-            </div>
-        </div>
-        <div class="row">
+          </div>
+
+          <!-- First Band (Slider) -->
+          <div class="row">
             <div class="large-12 columns">
-                <div class="panel">
-                  {% block body %}
-                  {% endblock %}
-                </div>
+              {% block slider %}
+              {% endblock %}
             </div>
-        </div>
+          </div>
+
+          <div class="row">
+            <div class="large-10 push-2 columns">
+              {% block menu %}
+              {% endblock %}
+            </div>
+          </div>
+          
+        <!-- End Header and Nav -->
+
+
+
+        <!-- Body -->
+
         <div class="row">
-            <div class="large-12 columns">
-                <div class="panel">
-                    <p>12</p>
-                </div>
+          <div class="large-12 columns">
+            <div class="panel">
+              {% block body %}
+              {% endblock %}
             </div>
+          </div>
         </div>
+
+        <!-- Three-up Content Blocks -->
+
+          <div class="row">
+              <div class="large-4 columns">
+                  <img src="{{ asset('bundles/portada/img/conacyt.png') }}" />
+                  <h4>SECCION 1</h4>
+                  <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
+              </div>
+              
+              <div class="large-4 columns">
+                <img src="{{ asset('bundles/portada/img/ieee.png') }}" />
+                <h4>SECCION 2</h4>
+                <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
+              </div>
+              
+              <div class="large-4 columns">
+                <img src="{{ asset('bundles/portada/img/Dgest.png') }}" />
+                <h4>SECCION 3</h4>
+                <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
+              </div>
+          </div>
+            
+
+          <!-- Footer -->
+          
+          <footer class="row">
+            <div class="large-12 columns">
+              <hr />
+              <div class="row">
+                <div class="large-6 columns">
+                  <p>Instituto Tecnologico de Mexicali.</p>
+                </div>
+                <div class="large-6 columns">
+                  <ul class="inline-list right">
+                    <li><a href="#">Link 1</a></li>
+                    <li><a href="#">Link 2</a></li>
+                    <li><a href="#">Link 3</a></li>
+                    <li><a href="#">Link 4</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div> 
+          </footer>
         <script src="{{ asset('bundles/portada/js/vendor/zepto.js') }}"></script>
         <script src="{{ asset('bundles/portada/js/vendor/jquery.js') }}"></script>
+        <script src="{{ asset('bundles/portada/js/unslider.min.js') }}"></script>
         <script src="{{ asset('bundles/portada/js/foundation.min.js') }}"></script>
         <script src="{{ asset('bundles/portada/js/foundation/foundation.topbar.js') }}"></script>
         <script>
             $(document).foundation();
+
+            $(function() {
+                $('.banner').unslider();
+            });
         </script>
     </body>
 </html>

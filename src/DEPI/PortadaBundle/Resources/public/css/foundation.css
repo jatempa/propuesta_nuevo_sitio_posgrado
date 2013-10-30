@@ -1335,9 +1335,9 @@ button, .button {
   padding-bottom: 0.8125em;
   padding-left: 1.5em;
   font-size: 1em;
-  background-color: #2ba6cb;
-  border-color: #2284a1;
-  color: white; }
+  background-color: white;
+  border-color: white;
+  color: black; }
   button:hover, button:focus, .button:hover, .button:focus {
     background-color: #2284a1; }
   button:hover, button:focus, .button:hover, .button:focus {
