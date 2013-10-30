@@ -1,7 +1,7 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Proyectos list</h1>
+    <h3>Proyectos</h3>
 
     <table class="records_list">
         <thead>
@@ -15,7 +15,6 @@
                 <th>Descripcion</th>
                 <th>Fecha_apertura</th>
                 <th>Status</th>
-                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -30,26 +29,8 @@
                 <td>{{ entity.descripcion }}</td>
                 <td>{% if entity.fechaapertura %}{{ entity.fechaapertura|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{{ entity.status }}</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('proyectos_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('proyectos_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
-                </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-        <ul>
-        <li>
-            <a href="{{ path('proyectos_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
-    {% endblock %}
+{% endblock %}

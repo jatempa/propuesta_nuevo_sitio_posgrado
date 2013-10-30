@@ -1,19 +1,18 @@
 {% extends '::base.html.twig' %}
 
-{% block body -%}
-    <h1>Alumnos list</h1>
+{% block body %}
+    <h3>Alumnos</h3>
 
     <table class="records_list">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Nocontrol</th>
+                <th>ID</th>
+                <th>No. de control</th>
                 <th>Nombre</th>
-                <th>Apellidopaterno</th>
-                <th>Apellidomaterno</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
                 <th>Email</th>
-                <th>Telefono</th>
-                <th>Actions</th>
+                <th>Teléfono</th>
             </tr>
         </thead>
         <tbody>
@@ -26,26 +25,10 @@
                 <td>{{ entity.apellidoMaterno }}</td>
                 <td>{{ entity.email }}</td>
                 <td>{{ entity.telefono }}</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('alumnos_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('alumnos_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
-                </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-        <ul>
-        <li>
-            <a href="{{ path('alumnos_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
-    {% endblock %}
+    <a href="{{ path('alumnos_new') }}" class="small button">Nuevo</a>
+{% endblock %}
