@@ -13,59 +13,59 @@ class AlumnosFixtures extends AbstractFixture implements OrderedFixtureInterface
     {
         $alumnos = array(
             array('no_control' => '06490415', 
-                  'nombre' => 'Alfonso'
-                  'apellido_paterno' => 'Gomez'
-                  'apellido_materno' => 'Espinoza'
-                  'email' => 'agomez@itmexicali.edu.mx'
+                  'nombre' => 'Alfonso',
+                  'apellido_paterno' => 'Gomez',
+                  'apellido_materno' => 'Espinoza',
+                  'email' => 'agomez@itmexicali.edu.mx',
                   'telefono' => '6861236545'),
 
             array('no_control' => '08490465', 
-                  'nombre' => 'Alonso'
-                  'apellido_paterno' => 'Perez'
-                  'apellido_materno' => 'Espinoza'
-                  'email' => 'aperez@itmexicali.edu.mx'
+                  'nombre' => 'Alonso',
+                  'apellido_paterno' => 'Perez',
+                  'apellido_materno' => 'Espinoza',
+                  'email' => 'aperez@itmexicali.edu.mx',
                   'telefono' => '6861298575'),
 
             array('no_control' => '07490628', 
-                  'nombre' => 'Guadalupe'
-                  'apellido_paterno' => 'Jimenez'
-                  'apellido_materno' => 'Rojas'
-                  'email' => 'gjimenez@itmexicali.edu.mx'
+                  'nombre' => 'Guadalupe',
+                  'apellido_paterno' => 'Jimenez',
+                  'apellido_materno' => 'Rojas',
+                  'email' => 'gjimenez@itmexicali.edu.mx',
                   'telefono' => '6869546545'),
 
             array('no_control' => '09490184', 
-                  'nombre' => 'Leoncia'
-                  'apellido_paterno' => 'Bedoya'
-                  'apellido_materno' => 'Castillo'
-                  'email' => 'lbeyoda@itmexicali.edu.mx'
+                  'nombre' => 'Leoncia',
+                  'apellido_paterno' => 'Bedoya',
+                  'apellido_materno' => 'Castillo',
+                  'email' => 'lbeyoda@itmexicali.edu.mx',
                   'telefono' => '6862545546'),
 
             array('no_control' => '03490654', 
-                  'nombre' => 'Luz Marina'
-                  'apellido_paterno' => 'Bedregal'
-                  'apellido_materno' => 'Benavides'
-                  'email' => 'lbedregal@itmexicali.edu.mx'
+                  'nombre' => 'Luz Marina',
+                  'apellido_paterno' => 'Bedregal',
+                  'apellido_materno' => 'Benavides',
+                  'email' => 'lbedregal@itmexicali.edu.mx',
                   'telefono' => '6861346546'),
 
             array('no_control' => '09490954', 
-                  'nombre' => 'Cielito Mercedes'
-                  'apellido_paterno' => 'Calle'
-                  'apellido_materno' => 'Betancourt'
-                  'email' => 'ccalle@itmexicali.edu.mx'
+                  'nombre' => 'Cielito Mercedes',
+                  'apellido_paterno' => 'Calle',
+                  'apellido_materno' => 'Betancourt',
+                  'email' => 'ccalle@itmexicali.edu.mx',
                   'telefono' => '6861346546'),
 
             array('no_control' => '09490412', 
-                  'nombre' => 'Santiago'
-                  'apellido_paterno' => 'Mamani'
-                  'apellido_materno' => 'Uchasara'
-                  'email' => 'smamani@itmexicali.edu.mx'
+                  'nombre' => 'Santiago',
+                  'apellido_paterno' => 'Mamani',
+                  'apellido_materno' => 'Uchasara',
+                  'email' => 'smamani@itmexicali.edu.mx',
                   'telefono' => '6861156540'),
 
             array('no_control' => '09490412', 
-                  'nombre' => 'Monica'
-                  'apellido_paterno' => 'Zapata'
-                  'apellido_materno' => 'Chang'
-                  'email' => 'mzapata@itmexicali.edu.mx'
+                  'nombre' => 'Monica',
+                  'apellido_paterno' => 'Zapata',
+                  'apellido_materno' => 'Chang',
+                  'email' => 'mzapata@itmexicali.edu.mx',
                   'telefono' => '6861546030')
         );
 
