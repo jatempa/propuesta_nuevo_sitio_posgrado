@@ -1,3 +1,31 @@
-productos_academicos_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: ProductosAcademicosBundle:Default:index }
+productosacademicos:
+    pattern:  /productosacademicos
+    defaults: { _controller: ProductosAcademicosBundle:ProductosAcademicos:index }
+
+_productosacademicos:
+    pattern: /productosacademicos/
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: productosacademicos}
+
+productosacademicos_new:
+    pattern:  /productosacademicos/new
+    defaults: { _controller: ProductosAcademicosBundle:ProductosAcademicos:new }
+
+productosacademicos_edit:
+    pattern:  /productosacademicos/edit/{id}
+    defaults: { _controller: ProductosAcademicosBundle:ProductosAcademicos:edit }
+
+productosacademicos_show:
+    pattern:  /productosacademicos/show/{id}
+    defaults: { _controller: ProductosAcademicosBundle:ProductosAcademicos:show }
+
+productosacademicos_create:
+    pattern:  /productosacademicos/create
+    defaults: { _controller: ProductosAcademicosBundle:ProductosAcademicos:create }
+
+productosacademicos_update:
+    pattern:  /productosacademicos/update/{id}
+    defaults: { _controller: ProductosAcademicosBundle:ProductosAcademicos:update }
+
+productosacademicos_delete:
+    pattern:  /productosacademicos/delete/{id}
+    defaults: { _controller: ProductosAcademicosBundle:ProductosAcademicos:delete }
