@@ -1,3 +1,31 @@
 investigadores:
     pattern:  /investigadores
-    defaults: { _controller: InvestigadoresBundle:Default:index }
+    defaults: { _controller: InvestigadoresBundle:Investigadores:index }
+
+_investigadores:
+    pattern: /investigadores/
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: investigadores}
+
+investigadores_new:
+    pattern:  /investigadores/new
+    defaults: { _controller: InvestigadoresBundle:Investigadores:new }
+
+investigadores_edit:
+    pattern:  /investigadores/edit/{id}
+    defaults: { _controller: InvestigadoresBundle:Investigadores:edit }
+
+investigadores_show:
+    pattern:  /investigadores/show/{id}
+    defaults: { _controller: InvestigadoresBundle:Investigadores:show }
+
+investigadores_create:
+    pattern:  /investigadores/create
+    defaults: { _controller: InvestigadoresBundle:Investigadores:create }
+
+investigadores_update:
+    pattern:  /investigadores/update/{id}
+    defaults: { _controller: InvestigadoresBundle:Investigadores:update }
+
+investigadores_delete:
+    pattern:  /investigadores/delete/{id}
+    defaults: { _controller: InvestigadoresBundle:Investigadores:delete }

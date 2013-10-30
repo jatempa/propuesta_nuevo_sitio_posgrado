@@ -1,7 +1,7 @@
 {% extends '::base.html.twig' %}
 
-{% block body -%}
-    <h1>LineasInvestigacion list</h1>
+{% block body %}
+    <h3>Líneas de investigación</h3>
 
     <table class="records_list">
         <thead>
@@ -10,7 +10,6 @@
                 <th>Clave</th>
                 <th>Nombre</th>
                 <th>Descripcion</th>
-                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -20,26 +19,8 @@
                 <td>{{ entity.clave }}</td>
                 <td>{{ entity.nombre }}</td>
                 <td>{{ entity.descripcion }}</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('lineas_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('lineas_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
-                </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-        <ul>
-        <li>
-            <a href="{{ path('lineas_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
-    {% endblock %}
+{% endblock %}
