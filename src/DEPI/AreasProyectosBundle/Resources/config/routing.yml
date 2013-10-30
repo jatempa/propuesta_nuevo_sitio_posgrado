@@ -1,3 +1,0 @@
-areas_proyectos_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: AreasProyectosBundle:Default:index }

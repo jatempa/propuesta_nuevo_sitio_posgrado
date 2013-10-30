@@ -1,3 +1,0 @@
-alumnos_proyectos_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: AlumnosProyectosBundle:Default:index }

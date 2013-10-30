@@ -1,3 +1,0 @@
-alumnos_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: AlumnosBundle:Default:index }

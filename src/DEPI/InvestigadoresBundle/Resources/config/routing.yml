@@ -1,3 +1,0 @@
-investigadores:
-    pattern:  /investigadores
-    defaults: { _controller: InvestigadoresBundle:Default:index }

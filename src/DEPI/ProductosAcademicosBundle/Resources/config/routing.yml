@@ -1,3 +1,0 @@
-productos_academicos_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: ProductosAcademicosBundle:Default:index }

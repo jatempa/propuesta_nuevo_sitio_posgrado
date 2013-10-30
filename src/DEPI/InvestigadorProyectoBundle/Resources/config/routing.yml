@@ -1,3 +1,0 @@
-investigador_proyecto_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: InvestigadorProyectoBundle:Default:index }
