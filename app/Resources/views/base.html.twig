@@ -21,21 +21,32 @@
       <div class="row">
         <div class="large-12 columns">
           {% block slider %}
+            <ul data-orbit>
+                <li><img src="{{ asset('bundles/portada/img/a.jpg') }}"/></li>
+                <li><img src="{{ asset('bundles/portada/img/b.jpg') }}"/></li>
+                <li><img src="{{ asset('bundles/portada/img/c.jpg') }}"/></li>
+                <li><img src="{{ asset('bundles/portada/img/d.jpg') }}"/></li>
+                <li><img src="{{ asset('bundles/portada/img/e.jpg') }}"/></li>
+            </ul>
           {% endblock %}
         </div>
       </div>
 
+
+
       <div class="row">
         <div class="large-12 columns">
-            <ul class="breadcrumbs right">
-              <li><a href="#">Inicio</a></li>
-              <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
-              <li><a href="#">Convocatorias</a></li>
-              <li><a href="#">Programas</a></li>
-              <li><a href="#">Investigacion</a></li>
-              <li><a href="{{ path('alumnos') }}">Alumnos</a></li>
-              <li><a href="#">Directorio</a></li>
-            </ul>
+          {% block menu %}
+              <ul class="breadcrumbs right">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
+                <li><a href="#">Convocatorias</a></li>
+                <li><a href="#">Programas</a></li>
+                <li><a href="#">Investigacion</a></li>
+                <li><a href="{{ path('alumnos') }}">Alumnos</a></li>
+                <li><a href="#">Directorio</a></li>
+              </ul>
+          {% endblock %}
         </div>
       </div>
       <!-- End Header and Nav -->
