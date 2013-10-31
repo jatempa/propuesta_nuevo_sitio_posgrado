@@ -12,7 +12,7 @@ class InvestigadoresFixtures extends AbstractFixture implements OrderedFixtureIn
     public function load(ObjectManager $manager)
     {
         $investigadores = array(
-            array('grado' => '0', 
+            array('grado' => '0',
                   'nombre' => 'Juan Elvis',
                   'apellido_paterno' => 'Cocho',
                   'apellido_materno' => 'Farias',
