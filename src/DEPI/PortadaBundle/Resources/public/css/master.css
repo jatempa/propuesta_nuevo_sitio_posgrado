@@ -9,18 +9,21 @@
 }
 
 #s1{
-	width: 180px;
-	height: 180px;
+	vertical-align: center;
+	width: 150px;
+	height: 120px;
 }
 
 #s2{
-	width: 180px;
-	height: 180px;
+	vertical-align: center;
+	width: 150px;
+	height: 120px;
 }
 
 #s3{
-	width: 180px;
-	height: 180px;
+	vertical-align: center;
+	width: 150px;
+	height: 120px;
 }
 
 .banner {
