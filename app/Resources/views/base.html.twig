@@ -10,103 +10,92 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>        
-          <!-- Header -->
-          <div class="row">
-            <div class="large-12 columns">
-              <div id="cabecera"></div>
-            </div>
-          </div>
+      <!-- Header -->
+      <div class="row">
+        <div class="large-12 columns">
+          <div id="cabecera"></div>
+        </div>
+      </div>
 
-          <!-- First Band (Slider) -->
-          <div class="row">
-            <div class="large-12 columns">
-              {% block slider %}
-              {% endblock %}
-            </div>
-          </div>
+      <!-- First Band (Slider) -->
+      <div class="row">
+        <div class="large-12 columns">
+          {% block slider %}
+          {% endblock %}
+        </div>
+      </div>
 
-          <div class="row">
-            <div class="large-12 columns">
-              {% block menu %}
-              {% endblock %}
-            </div>
-          </div>
-          
-        <!-- End Header and Nav -->
-
+      <div class="row">
+        <div class="large-12 columns">
+          {% block menu %}
+          {% endblock %}
+        </div>
+      </div>
+      <!-- End Header and Nav -->
 
 
-        <!-- Body -->
 
-        <div class="row">
-          <div class="large-12 columns">
-            <div class="panel">
-              {% block body %}
-              {% endblock %}
-            </div>
+      <!-- Body -->
+      <div class="row">
+        <div class="large-12 columns">
+          <div class="panel">
+            {% block body %}
+            {% endblock %}
           </div>
         </div>
+      </div>
 
-        <!-- Three-up Content Blocks -->
-
-          <div class="row">
-              <div class="large-4 columns">
-                  <center>
-                    <a href="http://www.snit.mx/">
-                      <img id="dgest" src="{{ asset('bundles/portada/img/dgest.png') }}" />
-                    </a>
-                  </center>
-              </div>
-              
-              <div class="large-4 columns">
-                <center>
-                    <a href="http://www.conacyt.gob.mx/Paginas/InicioNueva.aspx">
-                      <img id="conacyt" src="{{ asset('bundles/portada/img/conacyt.png') }}" />
-                    </a>
-                </center>
-              </div>
-              
-              <div class="large-4 columns">
-                <center>
-                  <a href="http://ieeexplore.ieee.org/Xplore/home.jsp">
-                    <img id="ieee" src="{{ asset('bundles/portada/img/ieee.png') }}" />
-                  </a>
-                </center>
-              </div>
+      <!-- Three-up Content Blocks -->
+      <div class="row">
+          <div class="large-4 columns">
+              <center>
+                <a href="http://www.snit.mx/">
+                  <img id="dgest" src="{{ asset('bundles/portada/img/dgest.png') }}" />
+                </a>
+              </center>
           </div>
+              
+          <div class="large-4 columns">
+            <center>
+                <a href="http://www.conacyt.gob.mx/Paginas/InicioNueva.aspx">
+                  <img id="conacyt" src="{{ asset('bundles/portada/img/conacyt.png') }}" />
+                </a>
+            </center>
+          </div>
+              
+          <div class="large-4 columns">
+            <center>
+              <a href="http://ieeexplore.ieee.org/Xplore/home.jsp">
+                <img id="ieee" src="{{ asset('bundles/portada/img/ieee.png') }}" />
+              </a>
+            </center>
+          </div>
+      </div>
             
 
-          <!-- Footer -->
-          
-          <footer class="row">
-            <div class="large-12 columns">
-              <hr />
-              <div class="row">
-                <div class="large-6 columns">
-                  <p>Instituto Tecnologico de Mexicali.</p>
-                </div>
-                <div class="large-6 columns">
-                  <ul class="inline-list right">
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
-                    <li><a href="#">Link 3</a></li>
-                    <li><a href="#">Link 4</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div> 
-          </footer>
-        <script src="{{ asset('bundles/portada/js/vendor/zepto.js') }}"></script>
-        <script src="{{ asset('bundles/portada/js/vendor/jquery.js') }}"></script>
-        <script src="{{ asset('bundles/portada/js/unslider.min.js') }}"></script>
-        <script src="{{ asset('bundles/portada/js/foundation.min.js') }}"></script>
-        <script src="{{ asset('bundles/portada/js/foundation/foundation.topbar.js') }}"></script>
-        <script>
-            $(document).foundation();
-
-            $(function() {
-                $('.banner').unslider();
-            });
-        </script>
+      <!-- Footer -->
+      <footer class="row">
+        <div class="large-12 columns">
+          <hr />
+          <div class="row">
+            <div class="large-6 columns">
+              <p>Instituto Tecnologico de Mexicali.</p>
+            </div>
+            <div class="large-6 columns">
+              <ul class="inline-list right">
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+                <li><a href="#">Link 4</a></li>
+              </ul>
+            </div>
+          </div>
+        </div> 
+      </footer>
+      <script src="{{ asset('bundles/portada/js/vendor/zepto.js') }}"></script>
+      <script src="{{ asset('bundles/portada/js/vendor/jquery.js') }}"></script>
+      <script src="{{ asset('bundles/portada/js/foundation.min.js') }}"></script>
+      <script src="{{ asset('bundles/portada/js/foundation/foundation.orbit.js') }}"></script>
+      <script src="{{ asset('bundles/portada/js/master.js') }}"></script>
     </body>
 </html>
