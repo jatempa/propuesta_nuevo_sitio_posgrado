@@ -3826,7 +3826,7 @@ label.error {
   .breadcrumbs > * {
     margin: 0;
     float: left;
-    font-size: 0.98em;
+    font-size: 0.85em;
     text-transform: uppercase; }
     .breadcrumbs > *:hover a, .breadcrumbs > *:focus a {
       text-decoration: underline; }
