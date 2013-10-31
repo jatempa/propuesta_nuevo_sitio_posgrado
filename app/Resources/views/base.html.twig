@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>{% block title %}Portada!{% endblock %}</title>
+        <title>{% block title %}Posgrado e Investigación{% endblock %}</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
         <link rel="stylesheet" href="{{ asset('bundles/portada/css/foundation.css') }}">
@@ -13,7 +13,7 @@
       <!-- Header -->
       <div class="row">
         <div class="large-12 columns">
-          <div id="cabecera"></div>
+          <img src="{{ asset('bundles/portada/img/banner_web.jpg') }}"/>
         </div>
       </div>
 
@@ -21,13 +21,31 @@
       <div class="row">
         <div class="large-12 columns">
           {% block slider %}
+            <ul data-orbit>
+                <li><img src="{{ asset('bundles/portada/img/a.jpg') }}"/></li>
+                <li><img src="{{ asset('bundles/portada/img/b.jpg') }}"/></li>
+                <li><img src="{{ asset('bundles/portada/img/c.jpg') }}"/></li>
+                <li><img src="{{ asset('bundles/portada/img/d.jpg') }}"/></li>
+                <li><img src="{{ asset('bundles/portada/img/e.jpg') }}"/></li>
+            </ul>
           {% endblock %}
         </div>
       </div>
 
+
+
       <div class="row">
         <div class="large-12 columns">
           {% block menu %}
+              <ul class="breadcrumbs right">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
+                <li><a href="#">Convocatorias</a></li>
+                <li><a href="#">Programas</a></li>
+                <li><a href="#">Investigacion</a></li>
+                <li><a href="{{ path('alumnos') }}">Alumnos</a></li>
+                <li><a href="#">Directorio</a></li>
+              </ul>
           {% endblock %}
         </div>
       </div>
