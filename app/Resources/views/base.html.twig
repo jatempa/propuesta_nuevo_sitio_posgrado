@@ -8,8 +8,11 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-      <div class="row">        
+      <div class="row">
+        <!-- Header -->        
         {% block header %}{% endblock %}
+        <!-- Menu -->
+        {% block menu %}{% endblock %}
         <!-- Body -->
         {% block body %}{% endblock %}
         <!-- Pie de pagina -->
