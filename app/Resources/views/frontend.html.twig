@@ -1,1 +1,15 @@
 {% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('bundles/portada/css/foundation.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/portada/css/master.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+	<script src="{{ asset('bundles/portada/js/vendor/custom.modernizr.js') }}"></script>
+	<script src="{{ asset('bundles/portada/js/vendor/zepto.js') }}"></script>
+    <script src="{{ asset('bundles/portada/js/vendor/jquery.js') }}"></script>
+    <script src="{{ asset('bundles/portada/js/foundation.min.js') }}"></script>
+    <script src="{{ asset('bundles/portada/js/foundation/foundation.orbit.js') }}"></script>
+    <script src="{{ asset('bundles/portada/js/master.js') }}"></script>
+{% endblock %}
