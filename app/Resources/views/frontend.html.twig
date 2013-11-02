@@ -13,3 +13,96 @@
     <script src="{{ asset('bundles/portada/js/foundation/foundation.orbit.js') }}"></script>
     <script src="{{ asset('bundles/portada/js/master.js') }}"></script>
 {% endblock %}
+
+{% block header %}
+    <!-- Header -->
+    <div class="row">
+      <div class="large-12 columns">
+        <img src="{{ asset('bundles/portada/img/banner_web.jpg') }}"/>
+      </div>
+    </div> 
+
+    <!-- Banner -->
+    <div class="row">
+      <div class="large-12 columns">
+	    <ul data-orbit>
+	        <li><img src="{{ asset('bundles/portada/img/a.jpg') }}"/></li>
+	        <li><img src="{{ asset('bundles/portada/img/b.jpg') }}"/></li>
+	        <li><img src="{{ asset('bundles/portada/img/c.jpg') }}"/></li>
+	        <li><img src="{{ asset('bundles/portada/img/d.jpg') }}"/></li>
+	        <li><img src="{{ asset('bundles/portada/img/e.jpg') }}"/></li>
+	    </ul>
+      </div>
+    </div>
+
+    <div class="large-12 columns">
+              <ul class="breadcrumbs right">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
+                <li><a href="#">Convocatorias</a></li>
+                <li><a href="#">Programas</a></li>
+                <li><a href="#">Investigacion</a></li>
+                <li><a href="{{ path('alumnos') }}">Alumnos</a></li>
+                <li><a href="#">Directorio</a></li>
+              </ul>
+        </div>
+      </div>
+{% endblock %}
+
+
+{% block body %}
+    <div class="row">
+      <div class="large-12 columns">
+          {% block informacion %}
+          {% endblock %}
+      </div>
+    </div>
+
+	<div class="row">
+        <div class="large-4 columns">
+            <center>
+              <a href="http://www.snit.mx/">
+                <img id="dgest" src="{{ asset('bundles/portada/img/dgest.png') }}" />
+              </a>
+            </center>
+        </div>
+            
+        <div class="large-4 columns">
+          <center>
+              <a href="http://www.conacyt.gob.mx/Paginas/InicioNueva.aspx">
+                <img id="conacyt" src="{{ asset('bundles/portada/img/conacyt.png') }}" />
+              </a>
+          </center>
+        </div>
+            
+        <div class="large-4 columns">
+          <center>
+            <a href="http://ieeexplore.ieee.org/Xplore/home.jsp">
+              <img id="ieee" src="{{ asset('bundles/portada/img/ieee.png') }}" />
+            </a>
+          </center>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+<!-- Footer -->
+	<footer class="row">
+    	<div class="large-12 columns">
+    		<hr />
+        	<div class="row">
+     			<div class="large-6 columns">
+     			    <p>Instituto Tecnologico de Mexicali.</p>
+     			</div>
+     			<div class="large-6 columns">
+     			  <ul class="inline-list right">
+     			    <li><a href="#">Link 1</a></li>
+     			    <li><a href="#">Link 2</a></li>
+     			    <li><a href="#">Link 3</a></li>
+     			    <li><a href="#">Link 4</a></li>
+     			  </ul>
+     			</div>
+        	</div>
+        </div> 
+    </footer>
+{% endblock %}
