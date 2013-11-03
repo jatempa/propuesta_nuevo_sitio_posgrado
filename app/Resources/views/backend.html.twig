@@ -13,6 +13,12 @@
     </head>
     <body>
         <div class="container">
+            <header class="twelve columns">
+                <div class="six columns">
+                    <img src="{{ asset('bundles/portada/img/header.png') }}"/>
+                </div>
+            </header>
+            <div class="clear"></div>
             <div class="three columns sidebar">
                 <!-- Menu -->
                 {% block menu %}
@@ -34,6 +40,7 @@
                 <!-- JavaScripts -->
                 {% block javascripts %}{% endblock %}   
             </div>     
+                        <div class="clear"></div>
         </div>
     </body>
 </html>
