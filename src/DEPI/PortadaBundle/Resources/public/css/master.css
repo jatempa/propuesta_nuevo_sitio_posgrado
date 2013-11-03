@@ -6,16 +6,23 @@
 		margin-top: 35px;
 	}
 
+    #itm{
+		background-color: black;
+    	
+    }
+
     #pie{
 		background-color: black;
     	height: 75px;
+    	
     }
 
 	#redes{
 		font-family: 'Droid Sans', sans-serif;
 		font-size: 20px;
 		background-color: black;
-    	height: 75px;
+		height: 75px;
+    	vertical-align: center;
 	}
 }
 
@@ -30,14 +37,15 @@
 
     #pie{
 		background-color: black;
-    	height: 65px;
+    	height: 75px;
     }
 
 	#redes{
 		font-family: 'Droid Sans', sans-serif;
-		font-size: 20px;
+		font-size: 18px;
 		background-color: black;
-    	height: 75px;
+		height: 75px;
+    	vertical-align: center;
 	}
 
 }
@@ -51,6 +59,11 @@
 		margin-bottom: 20px;
 	}
 
+    #itm{
+		background-color: black;
+    	
+    }
+
     #pie{
 		background-color: black;
     	height: 75px;
@@ -58,9 +71,10 @@
 
 	#redes{
 		font-family: 'Droid Sans', sans-serif;
-		font-size: 20px;
+		font-size: 12px;
 		background-color: black;
     	height: 75px;
+    	vertical-align: center;
 	}
 }
 

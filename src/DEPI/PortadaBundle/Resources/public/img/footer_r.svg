@@ -15,7 +15,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="footer.svg">
+   sodipodi:docname="footer_r.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -26,7 +26,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.8284271"
-     inkscape:cx="217.31593"
+     inkscape:cx="162.73436"
      inkscape:cy="27.105154"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -63,24 +63,24 @@
     <text
        xml:space="preserve"
        style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="55.507885"
+       x="200.62556"
        y="1006.0466"
        id="text3027"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3029"
-         x="55.507885"
+         x="200.62556"
          y="1006.0466"
-         style="font-size:18px;fill:#ffffff">Instituto Tecnológico de Mexicali</tspan><tspan
+         style="font-size:18px;text-align:center;text-anchor:middle;fill:#ffffff">Instituto Tecnológico de Mexicali</tspan><tspan
          sodipodi:role="line"
-         x="55.507885"
+         x="200.62556"
          y="1022.5661"
-         style="font-size:12px;fill:#ffffff"
+         style="font-size:12px;text-align:center;text-anchor:middle;fill:#ffffff"
          id="tspan3073">Av. Tecnológico S/N Col. Elias Calles, C.P 21376</tspan><tspan
          sodipodi:role="line"
-         x="55.507885"
+         x="200.62556"
          y="1037.566"
-         style="font-size:12px;fill:#ffffff"
+         style="font-size:12px;text-align:center;text-anchor:middle;fill:#ffffff"
          id="tspan3075">Mexicali, Baja California, México</tspan></text>
   </g>
 </svg>
