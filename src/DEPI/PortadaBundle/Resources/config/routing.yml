@@ -2,6 +2,6 @@ portada:
     pattern:  /
     defaults: { _controller: PortadaBundle:Sitio:index }
 
-portada:
-    pattern:  /
-    defaults: { _controller: PortadaBundle:Sitio:index }
+backend:
+    pattern:  /admin
+    defaults: { _controller: PortadaBundle:BackEnd:index }
