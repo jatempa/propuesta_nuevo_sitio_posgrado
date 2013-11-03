@@ -2936,16 +2936,17 @@ label.error {
     width: 100%;
     height: auto;
     display: block;
-    background: #222222;
+    background: white; /* Fondo del bloque de la barra predefinido background: #222222; */
     font-size: 16px;
     margin: 0; }
   .top-bar-section .divider,
+  /* SEPARADOR DE SUBMENU
   .top-bar-section [role="separator"] {
-    border-bottom: solid 1px #2b2b2b;
+    border-bottom: solid 1px #2b2b2b; 
     border-top: solid 1px black;
     clear: both;
     height: 1px;
-    width: 100%; }
+    width: 100%; }*/
   .top-bar-section ul li > a {
     display: block;
     width: 100%;
@@ -2954,9 +2955,9 @@ label.error {
     padding-left: 15px;
     font-size: 0.8125em;
     font-weight: bold;
-    background: #222222; }
+    background: #222222;  /* Separador entre menus de la barra superior predefinido background: #222222; */}
     .top-bar-section ul li > a.button {
-      background: #2ba6cb;
+      background: #2ba6cb; /* predefinido #2ba6cb; */
       font-size: 0.8125em;
       padding-right: 15px;
       padding-left: 15px; }
