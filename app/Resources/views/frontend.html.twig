@@ -92,36 +92,34 @@
       </div>
     </div>
 
-	<div class="row">
-        <div class="large-4 columns">
-            <center>
-              <a href="http://www.snit.mx/">
-                <img id="dgest" src="{{ asset('bundles/portada/img/dgest.png') }}" />
-              </a>
-            </center>
-        </div>
-            
-        <div class="large-4 columns">
-          <center>
-              <a href="http://www.conacyt.gob.mx/Paginas/InicioNueva.aspx">
-                <img id="conacyt" src="{{ asset('bundles/portada/img/conacyt.png') }}" />
-              </a>
-          </center>
-        </div>
-            
-        <div class="large-4 columns">
-          <center>
-            <a href="http://ieeexplore.ieee.org/Xplore/home.jsp">
-              <img id="ieee" src="{{ asset('bundles/portada/img/ieee.png') }}" />
-            </a>
-          </center>
-        </div>
-    </div>
+
 {% endblock %}
 
 {% block footer %}
 <!-- Footer -->
-	<footer class="row">
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="large-4 columns">
+            <a href="http://www.snit.mx/">
+              <img id="dgest" src="{{ asset('bundles/portada/img/dgest.png') }}" />
+            </a>
+      </div>
+              
+      <div class="large-4 columns">
+            <a href="http://www.conacyt.gob.mx/Paginas/InicioNueva.aspx">
+              <img id="conacyt" src="{{ asset('bundles/portada/img/conacyt.png') }}" />
+            </a>
+      </div>
+              
+      <div class="large-4 columns">
+          <a href="http://ieeexplore.ieee.org/Xplore/home.jsp">
+            <img id="ieee" src="{{ asset('bundles/portada/img/ieee.png') }}" />
+          </a>
+      </div>
+    </div>
+  </div>
+	
+  <footer class="row">
     	<div class="large-12 columns">
     		<hr />
         	<div class="row">
