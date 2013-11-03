@@ -9,20 +9,24 @@
 	<script src="{{ asset('bundles/portada/js/vendor/custom.modernizr.js') }}"></script>
 	<script src="{{ asset('bundles/portada/js/vendor/zepto.js') }}"></script>
   <script src="{{ asset('bundles/portada/js/vendor/jquery.js') }}"></script>
-  <script src="{{ asset('bundles/portada/js/foundation.min.js') }}"></script> 
+  <script src="{{ asset('bundles/portada/js/foundation.min.js') }}"></script>
   <script src="{{ asset('bundles/portada/js/foundation/foundation.topbar.js') }}"></script>
   <script src="{{ asset('bundles/portada/js/foundation/foundation.orbit.js') }}"></script>
   <script src="{{ asset('bundles/portada/js/master.js') }}"></script>
   <script>
     $(document).foundation();
   </script>
+  <link href='http://fonts.googleapis.com/css?family=Droid+Sans|Convergence|Amaranth' rel='stylesheet' type='text/css'>
 {% endblock %}
 
 {% block header %}
     <!-- Header -->
     <div class="row">
-      <div class="large-12 columns">
-        <img src="{{ asset('bundles/portada/img/banner_web.jpg') }}"/>
+      <div class="large-7 columns">
+        <img src="{{ asset('bundles/portada/img/header.png') }}"/>
+      </div>
+      <div class="large-5 columns">
+        <div class="titulo">División de estudios de Posgrado e Investigación</div>
       </div>
     </div> 
 
@@ -41,102 +45,55 @@
 {% endblock %}
 
 {% block menu %}
-  <div class="large-12 columns">
-    <nav class="top-bar">
+  <!-- Nav Wrap -->
+  <nav class="top-bar">
       <ul class="title-area">
-        <!-- Title Area -->
-        <li class="name">
-          <h1><a href="#">Top Bar Title </a></h1>
-        </li>
-        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      <!-- Title Area -->
+          <li class="name"></li>
+          <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
       </ul>
-
+      <!-- The Section wrap -->
       <section class="top-bar-section">
-        <!-- Left Nav Section -->
-        <ul class="left">
-          <li class="divider"></li>
-          <li class="active"><a href="#">Main Item 1</a></li>
-          <li class="divider"></li>
-          <li><a href="#">Main Item 2</a></li>
-          <li class="divider"></li>
-          <li class="has-dropdown"><a href="#">Main Item 3</a>
-
-            <ul class="dropdown">
-              <li class="has-dropdown"><a href="#">Dropdown Level 1a</a>
-
-                <ul class="dropdown">
-                  <li><label>Dropdown Level 2 Label</label></li>
-                  <li><a href="#">Dropdown Level 2a</a></li>
-                  <li><a href="#">Dropdown Level 2b</a></li>
-                  <li class="has-dropdown"><a href="#">Dropdown Level 2c</a>
-
-                    <ul class="dropdown">
-                      <li><label>Dropdown Level 3 Label</label></li>
-                      <li><a href="#">Dropdown Level 3a</a></li>
-                      <li><a href="#">Dropdown Level 3b</a></li>
-                      <li class="divider"></li>
-                      <li><a href="#">Dropdown Level 3c</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">Dropdown Level 2d</a></li>
-                  <li><a href="#">Dropdown Level 2e</a></li>
-                  <li><a href="#">Dropdown Level 2f</a></li>
-                </ul>
+          <!-- Left Nav Section -->
+          <ul class="right">
+              <li class="active"><a href="#">Inicio</a></li>
+              <li class="has-dropdown">
+                  <a href="#">Alumnos</a>
+                  <ul class="dropdown">
+                      <li><a href="#">Item 1</a></li>
+                      <li><a href="#">Item 2</a></li>
+                      <li><a href="#">Item 3</a></li>
+                  </ul>
               </li>
-              <li><a href="#">Dropdown Level 1b</a></li>
-              <li><a href="#">Dropdown Level 1c</a></li>
-              <li class="divider"></li>
-              <li><a href="#">Dropdown Level 1d</a></li>
-              <li><a href="#">Dropdown Level 1e</a></li>
-              <li><a href="#">Dropdown Level 1f</a></li>
-              <li class="divider"></li>
-              <li><a href="#">See all &rarr;</a></li>
-            </ul>
-          </li>
-          <li class="divider"></li>
-        </ul>
-
-        <!-- Right Nav Section -->
-        <ul class="right">
-          <li class="divider hide-for-small"></li>
-          <li class="has-dropdown"><a href="#">Main Item 4</a>
-
-            <ul class="dropdown">
-              <li><label>Dropdown Level 1 Label</label></li>
-              <li class="has-dropdown"><a href="#" class="">Dropdown Level 1a</a>
-
-                <ul class="dropdown">
-                  <li><a href="#">Dropdown Level 2a</a></li>
-                  <li><a href="#">Dropdown Level 2b</a></li>
-                  <li class="has-dropdown"><a href="#">Dropdown Level 2c</a>
-
-                    <ul class="dropdown">
-                      <li><a href="#">Dropdown Level 3a</a></li>
-                      <li><a href="#">Dropdown Level 3b</a></li>
-                      <li><a href="#">Dropdown Level 3c</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">Dropdown Level 2d</a></li>
-                  <li><a href="#">Dropdown Level 2e</a></li>
-                  <li><a href="#">Dropdown Level 2f</a></li>
-                </ul>
+              <li class="has-dropdown">
+                  <a href="#">Investigación</a>
+                  <ul class="dropdown">
+                      <li><a href="#">Investigadores</a></li>
+                      <li><a href="#">Proyectos</a></li>
+                      <li><a href="#">Productos Academicos</a></li>
+                  </ul>
               </li>
-              <li><a href="#">Dropdown Level 1b</a></li>
-              <li><a href="#">Dropdown Level 1c</a></li>
-              <li class="divider"></li>
-              <li><label>Dropdown Level 1 Label</label></li>
-              <li><a href="#">Dropdown Level 1d</a></li>
-              <li><a href="#">Dropdown Level 1e</a></li>
-              <li><a href="#">Dropdown Level 1f</a></li>
-              <li class="divider"></li>
-              <li><a href="#">See all &rarr;</a></li>
-            </ul>
-          </li>
-        </ul>
+              <li class="has-dropdown">
+                  <a href="#">Programas</a>
+                  <ul class="dropdown">
+                      <li><a href="#">Item 1</a></li>
+                      <li><a href="#">Item 2</a></li>
+                      <li><a href="#">Item 3</a></li>
+                  </ul>
+              </li>
+              <li class="has-dropdown">
+                  <a href="#">Convocatorias</a>
+                  <ul class="dropdown">
+                      <li><a href="#">Item 1</a></li>
+                      <li><a href="#">Item 2</a></li>
+                      <li><a href="#">Item 3</a></li>
+                  </ul>
+              </li>
+              <li><a href="#">Directorio</a></li>
+          </ul>
       </section>
-    </nav>  
-  </div>
+  </nav>
 {% endblock %}
 
 {% block body %}
@@ -147,36 +104,34 @@
       </div>
     </div>
 
-	<div class="row">
-        <div class="large-4 columns">
-            <center>
-              <a href="http://www.snit.mx/">
-                <img id="dgest" src="{{ asset('bundles/portada/img/dgest.png') }}" />
-              </a>
-            </center>
-        </div>
-            
-        <div class="large-4 columns">
-          <center>
-              <a href="http://www.conacyt.gob.mx/Paginas/InicioNueva.aspx">
-                <img id="conacyt" src="{{ asset('bundles/portada/img/conacyt.png') }}" />
-              </a>
-          </center>
-        </div>
-            
-        <div class="large-4 columns">
-          <center>
-            <a href="http://ieeexplore.ieee.org/Xplore/home.jsp">
-              <img id="ieee" src="{{ asset('bundles/portada/img/ieee.png') }}" />
-            </a>
-          </center>
-        </div>
-    </div>
+
 {% endblock %}
 
 {% block footer %}
 <!-- Footer -->
-	<footer class="row">
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="large-4 columns">
+            <a href="http://www.snit.mx/">
+              <img id="dgest" src="{{ asset('bundles/portada/img/dgest.png') }}" />
+            </a>
+      </div>
+              
+      <div class="large-4 columns">
+            <a href="http://www.conacyt.gob.mx/Paginas/InicioNueva.aspx">
+              <img id="conacyt" src="{{ asset('bundles/portada/img/conacyt.png') }}" />
+            </a>
+      </div>
+              
+      <div class="large-4 columns">
+          <a href="http://ieeexplore.ieee.org/Xplore/home.jsp">
+            <img id="ieee" src="{{ asset('bundles/portada/img/ieee.png') }}" />
+          </a>
+      </div>
+    </div>
+  </div>
+	
+  <footer class="row">
     	<div class="large-12 columns">
     		<hr />
         	<div class="row">

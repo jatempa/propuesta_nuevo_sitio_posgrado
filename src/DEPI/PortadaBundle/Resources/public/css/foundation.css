@@ -2936,12 +2936,12 @@ label.error {
     width: 100%;
     height: auto;
     display: block;
-    background: #222222;
+    background: #222222; 
     font-size: 16px;
     margin: 0; }
   .top-bar-section .divider,
   .top-bar-section [role="separator"] {
-    border-bottom: solid 1px #2b2b2b;
+    border-bottom: solid 1px #2b2b2b; 
     border-top: solid 1px black;
     clear: both;
     height: 1px;
@@ -2956,7 +2956,7 @@ label.error {
     font-weight: bold;
     background: #222222; }
     .top-bar-section ul li > a.button {
-      background: #2ba6cb;
+      background: #2ba6cb; 
       font-size: 0.8125em;
       padding-right: 15px;
       padding-left: 15px; }
