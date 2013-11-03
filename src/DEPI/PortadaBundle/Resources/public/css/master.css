@@ -1,28 +1,22 @@
-#s1 {
-	width: 150px;
-	height: 120px;
-}
-
-#s2 {
-	width: 150px;
-	height: 120px;
-}
-
-#s3 {
-	width: 150px;
-	height: 120px;
-}
-
-.logotipo{
-	margin-top: 25px;
-}
-
 @media only screen { 
 	.titulo{
 		font-family: 'Droid Sans', sans-serif;
 		font-size: 35px;
 		text-align: right;
 		margin-top: 35px;
+	}
+
+	#foot{
+		background-color: black;
+		height: 75px;
+	}
+
+	#redes{
+		font-family: 'Droid Sans', sans-serif;
+		font-size: 25px;
+		color: white;
+		background-color: black;
+		height: 75px;
 	}
 }
 
@@ -34,6 +28,20 @@
 		margin-top: 10px;
 		margin-bottom: 20px;
 	}
+
+	#foot{
+		background-color: black;
+		height: 75px;
+	}
+
+	#redes{
+		font-family: 'Droid Sans', sans-serif;
+		font-size: 18px;
+		color: white;
+		background-color: black;
+		height: 75px;
+	}
+
 }
 
 @media only screen and (max-width: 480px) {
@@ -43,6 +51,19 @@
 		text-align: center;
 		margin-top: 10px;
 		margin-bottom: 20px;
+	}
+
+	#foot{
+		background-color: black;
+		height: 75px;
+	}
+
+	#redes{
+		font-family: 'Droid Sans', sans-serif;
+		font-size: 14px;
+		color: white;
+		background-color: black;
+		height: 75px;
 	}
 }
 
