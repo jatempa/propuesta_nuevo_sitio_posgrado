@@ -1,12 +1,39 @@
-{% extends '::base.html.twig' %}
-
-{% block title %}Administración{% endblock %}
-
-{% block stylesheets %}
-	<link rel="stylesheet" href="{{ asset('bundles/portada/backend/css/base.css') }}">
-	<link rel="stylesheet" href="{{ asset('bundles/portada/backend/css/skeleton.css') }}">
-	<link rel="stylesheet" href="{{ asset('bundles/portada/backend/css/layout.css') }}">
-{% endblock %}
-
-{% block body %}
-{% endblock %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}Administración{% endblock %}</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+        <link rel="stylesheet" href="{{ asset('bundles/portada/backend/css/base.css') }}">
+        <link rel="stylesheet" href="{{ asset('bundles/portada/backend/css/skeleton.css') }}">
+        <link rel="stylesheet" href="{{ asset('bundles/portada/backend/css/layout.css') }}">
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        <div class="row">
+            <!-- Header -->        
+            {% block header %}{% endblock %} 
+            <!-- Menu -->
+            {% block menu %}
+                <div class="pure-menu pure-menu-open">
+                    <a class="pure-menu-heading">Catalogos</a>
+                        <ul>
+                            <li><a href="{{ path('alumnos') }}">Alumnos</a></li>
+                            <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
+                            <li><a href="{{ path('proyectos') }}">Proyectos</a></li>
+                            <li><a href="{{ path('areas') }}">Areas</a></li>
+                            <li><a href="#">Programas</a></li>
+                        </ul>
+                </div>
+            {% endblock %}    
+            <!-- Contenido -->      
+            {% block body %}{% endblock %}
+            <!-- Pie de pagina -->
+            {% block footer %}{% endblock %}
+            <!-- JavaScripts -->
+            {% block javascripts %}{% endblock %}        
+        </div>
+    </body>
+</html>
