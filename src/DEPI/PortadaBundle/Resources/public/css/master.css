@@ -14,7 +14,8 @@
 	#redes{
 		font-family: 'Droid Sans', sans-serif;
 		font-size: 20px;
-		margin-top: 10px;
+		background-color: black;
+    	height: 75px;
 	}
 }
 
@@ -29,13 +30,14 @@
 
     #pie{
 		background-color: black;
-    	height: 75px;
+    	height: 65px;
     }
 
 	#redes{
 		font-family: 'Droid Sans', sans-serif;
 		font-size: 20px;
-		margin-top: 10px;
+		background-color: black;
+    	height: 75px;
 	}
 
 }
@@ -57,7 +59,8 @@
 	#redes{
 		font-family: 'Droid Sans', sans-serif;
 		font-size: 20px;
-		margin-top: 10px;
+		background-color: black;
+    	height: 75px;
 	}
 }
 
