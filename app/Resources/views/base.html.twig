@@ -4,112 +4,21 @@
         <title>{% block title %}Posgrado e Investigación{% endblock %}</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-        <link rel="stylesheet" href="{{ asset('bundles/portada/css/foundation.css') }}">
-        <link rel="stylesheet" href="{{ asset('bundles/portada/css/master.css') }}">
-        <script src="{{ asset('bundles/portada/js/vendor/custom.modernizr.js') }}"></script>
+        {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
-    <body>        
-      <!-- Header -->
+    <body>
       <div class="row">
-        <div class="large-12 columns">
-          <img src="{{ asset('bundles/portada/img/banner_web.jpg') }}"/>
-        </div>
+        <!-- Header -->        
+        {% block header %}{% endblock %}
+        <!-- Menu -->
+        {% block menu %}{% endblock %}
+        <!-- Body -->
+        {% block body %}{% endblock %}
+        <!-- Pie de pagina -->
+        {% block footer %}{% endblock %}
       </div>
-
-      <!-- First Band (Slider) -->
-      <div class="row">
-        <div class="large-12 columns">
-          {% block slider %}
-            <ul data-orbit>
-                <li><img src="{{ asset('bundles/portada/img/a.jpg') }}"/></li>
-                <li><img src="{{ asset('bundles/portada/img/b.jpg') }}"/></li>
-                <li><img src="{{ asset('bundles/portada/img/c.jpg') }}"/></li>
-                <li><img src="{{ asset('bundles/portada/img/d.jpg') }}"/></li>
-                <li><img src="{{ asset('bundles/portada/img/e.jpg') }}"/></li>
-            </ul>
-          {% endblock %}
-        </div>
-      </div>
-
-
-
-      <div class="row">
-        <div class="large-12 columns">
-          {% block menu %}
-              <ul class="breadcrumbs right">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
-                <li><a href="#">Convocatorias</a></li>
-                <li><a href="#">Programas</a></li>
-                <li><a href="#">Investigacion</a></li>
-                <li><a href="{{ path('alumnos') }}">Alumnos</a></li>
-                <li><a href="#">Directorio</a></li>
-              </ul>
-          {% endblock %}
-        </div>
-      </div>
-      <!-- End Header and Nav -->
-
-      <!-- Body -->
-      <div class="row">
-        <div class="large-12 columns">
-            {% block body %}
-            {% endblock %}
-        </div>
-      </div>
-
-      <!-- Three-up Content Blocks -->
-      <div class="row">
-          <div class="large-4 columns">
-              <center>
-                <a href="http://www.snit.mx/">
-                  <img id="dgest" src="{{ asset('bundles/portada/img/dgest.png') }}" />
-                </a>
-              </center>
-          </div>
-              
-          <div class="large-4 columns">
-            <center>
-                <a href="http://www.conacyt.gob.mx/Paginas/InicioNueva.aspx">
-                  <img id="conacyt" src="{{ asset('bundles/portada/img/conacyt.png') }}" />
-                </a>
-            </center>
-          </div>
-              
-          <div class="large-4 columns">
-            <center>
-              <a href="http://ieeexplore.ieee.org/Xplore/home.jsp">
-                <img id="ieee" src="{{ asset('bundles/portada/img/ieee.png') }}" />
-              </a>
-            </center>
-          </div>
-      </div>
-            
-
-      <!-- Footer -->
-      <footer class="row">
-        <div class="large-12 columns">
-          <hr />
-          <div class="row">
-            <div class="large-6 columns">
-              <p>Instituto Tecnologico de Mexicali.</p>
-            </div>
-            <div class="large-6 columns">
-              <ul class="inline-list right">
-                <li><a href="#">Link 1</a></li>
-                <li><a href="#">Link 2</a></li>
-                <li><a href="#">Link 3</a></li>
-                <li><a href="#">Link 4</a></li>
-              </ul>
-            </div>
-          </div>
-        </div> 
-      </footer>
-      <script src="{{ asset('bundles/portada/js/vendor/zepto.js') }}"></script>
-      <script src="{{ asset('bundles/portada/js/vendor/jquery.js') }}"></script>
-      <script src="{{ asset('bundles/portada/js/foundation.min.js') }}"></script>
-      <script src="{{ asset('bundles/portada/js/foundation/foundation.orbit.js') }}"></script>
-      <script src="{{ asset('bundles/portada/js/master.js') }}"></script>
+      <!-- JavaScripts -->
+      {% block javascripts %}{% endblock %}
     </body>
 </html>
