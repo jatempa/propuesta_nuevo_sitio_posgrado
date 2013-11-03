@@ -12,28 +12,28 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        <div class="row">
-            <!-- Header -->        
-            {% block header %}{% endblock %} 
-            <!-- Menu -->
-            {% block menu %}
-                <div class="pure-menu pure-menu-open">
-                    <a class="pure-menu-heading">Catalogos</a>
-                        <ul>
-                            <li><a href="{{ path('alumnos') }}">Alumnos</a></li>
-                            <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
-                            <li><a href="{{ path('proyectos') }}">Proyectos</a></li>
-                            <li><a href="{{ path('areas') }}">Areas</a></li>
-                            <li><a href="#">Programas</a></li>
-                        </ul>
-                </div>
-            {% endblock %}    
-            <!-- Contenido -->      
-            {% block body %}{% endblock %}
-            <!-- Pie de pagina -->
-            {% block footer %}{% endblock %}
-            <!-- JavaScripts -->
-            {% block javascripts %}{% endblock %}        
+        <div class="container">
+            <div class="three columns sidebar">
+                <!-- Menu -->
+                {% block menu %}
+                    <div class="pure-menu pure-menu-open">
+                        <a class="pure-menu-heading">Catalogos</a>
+                            <ul>
+                                <li><a href="{{ path('alumnos') }}">Alumnos</a></li>
+                                <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
+                                <li><a href="{{ path('proyectos') }}">Proyectos</a></li>
+                                <li><a href="{{ path('areas') }}">Areas</a></li>
+                                <li><a href="#">Programas</a></li>
+                            </ul>
+                    </div>
+                {% endblock %}    
+            </div> 
+            <div class="twelve columns offset-by-one content">     
+                <!-- Contenido -->      
+                {% block body %}{% endblock %}
+                <!-- JavaScripts -->
+                {% block javascripts %}{% endblock %}   
+            </div>     
         </div>
     </body>
 </html>
