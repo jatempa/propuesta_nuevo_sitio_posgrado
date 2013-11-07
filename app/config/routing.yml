@@ -1,3 +1,7 @@
+usuario:
+    resource: "@UsuarioBundle/Resources/config/routing.yml"
+    prefix:   /
+
 proyectos_productos:
     resource: "@ProyectosProductosBundle/Resources/config/routing.yml"
     prefix:   /
