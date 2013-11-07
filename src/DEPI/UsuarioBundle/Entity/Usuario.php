@@ -3,14 +3,15 @@
 namespace DEPI\UsuarioBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use FOS\UserBundle\Model\User as BaseUser;
 
 /**
  * Usuario
  *
- * @ORM\Table()
+ * @ORM\Table(name="fos_user")
  * @ORM\Entity
  */
-class Usuario
+class Usuario extends BaseUser
 {
     /**
      * @var integer
@@ -19,76 +20,13 @@ class Usuario
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="usuario", type="string", length=20)
-     */
-    private $usuario;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="password", type="string", length=20)
-     */
-    private $password;
+    protected $id;
 
 
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
+    public function __construct()
     {
-        return $this->id;
+        parent::__construct();
+        // your own logic
     }
 
-    /**
-     * Set usuario
-     *
-     * @param string $usuario
-     * @return Usuario
-     */
-    public function setUsuario($usuario)
-    {
-        $this->usuario = $usuario;
-    
-        return $this;
-    }
-
-    /**
-     * Get usuario
-     *
-     * @return string 
-     */
-    public function getUsuario()
-    {
-        return $this->usuario;
-    }
-
-    /**
-     * Set password
-     *
-     * @param string $password
-     * @return Usuario
-     */
-    public function setPassword($password)
-    {
-        $this->password = $password;
-    
-        return $this;
-    }
-
-    /**
-     * Get password
-     *
-     * @return string 
-     */
-    public function getPassword()
-    {
-        return $this->password;
-    }
 }
