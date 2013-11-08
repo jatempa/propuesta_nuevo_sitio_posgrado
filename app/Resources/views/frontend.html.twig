@@ -17,12 +17,6 @@
   <script src="{{ asset('bundles/portada/js/master.js') }}"></script>
   <script>
       $(document).foundation();
-
-      $(document).ready(function(){
-            $('#link_contenido').click(function(){
-              $('#contenido').load("{{ path('ejemplo') }}");    
-            });
-      });
   </script>
 {% endblock %}
 
