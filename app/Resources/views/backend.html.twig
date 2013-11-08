@@ -4,11 +4,26 @@
         <title>{% block title %}Administración{% endblock %}</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+        <link rel="stylesheet" href="{{ asset('bundles/backend/css/kube.css') }}">
+        <link rel="stylesheet" href="{{ asset('bundles/backend/css/master.css') }}">
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <header class="units-row">
+            <div class="unit-push-40 unit-60">
+                {% block menu %}{% endblock %}
+            </div>
+        </header>
+
+        <div class="units-row">
+            <div class="unit-20">
+                {% block lateral %}{% endblock %}
+            </div> 
+            <div class="unit-80">
+                {% block body %}{% endblock %}
+            </div> 
+        </div>
         {% block javascript %}{% endblock %}
     </body>
 </html>
