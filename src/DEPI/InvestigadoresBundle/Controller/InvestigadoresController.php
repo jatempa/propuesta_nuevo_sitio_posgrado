@@ -17,7 +17,6 @@ use DEPI\InvestigadoresBundle\Form\InvestigadoresType;
  */
 class InvestigadoresController extends Controller
 {
-
     /**
      * Lists all Investigadores entities.
      *

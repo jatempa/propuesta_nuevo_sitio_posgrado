@@ -1,9 +1,9 @@
 {% extends '::backend.html.twig' %}
 
 {% block body %}
-    <h3>Alumnos</h3>
-
-    <table class="pure-table">
+<h3>Alumnos</h3>
+<div class="table-container">
+    <table class="width-100 table-striped">
         <thead>
             <tr>
                 <th>ID</th>
@@ -29,6 +29,13 @@
         {% endfor %}
         </tbody>
     </table>
+</div>
 
-    <a href="{{ path('alumnos_new') }}" class="small button">Nuevo</a>
+<a href="{{ path('alumnos_new') }}" class="small button">Nuevo</a>
+{% endblock %}
+
+{% block lateral %}
+    <ul>
+        <li><a href="{{ path('alumnosproyectos') }}">Alumnos y Proyectos</a></li>
+    </ul>
 {% endblock %}

@@ -63,8 +63,8 @@ class ProyectosFixtures extends AbstractFixture implements OrderedFixtureInterfa
             $entidad->setNombreCompleto($proyecto['nombre_completo']);
             $entidad->setObjetivoGeneral($proyecto['objetivo_general']);
             $entidad->setObjetivosEspecificos($proyecto['objetivos_especificos']);
-            $entidad->setFechaApertura($proyecto['fecha_apertura']);
-            $entidad->setFechaTermino($proyecto['fecha_termino']);
+            $entidad->setFechaApertura(new \DateTime($proyecto['fecha_apertura']));
+            $entidad->setFechaTermino(new \DateTime($proyecto['fecha_termino']));
             $entidad->setStatus($proyecto['status']);
             $manager->persist($entidad);
         }

@@ -4,6 +4,7 @@
   <link rel="stylesheet" href="{{ asset('bundles/portada/css/foundation.css') }}">
   <link rel="stylesheet" href="{{ asset('bundles/portada/css/master.css') }}">
   <link rel="stylesheet" href="{{ asset('bundles/portada/css/webicons.css') }}">
+  <link href='http://fonts.googleapis.com/css?family=Droid+Sans|Convergence|Amaranth' rel='stylesheet' type='text/css'>
 {% endblock %}
 
 {% block javascripts %}
@@ -15,34 +16,33 @@
   <script src="{{ asset('bundles/portada/js/foundation/foundation.orbit.js') }}"></script>
   <script src="{{ asset('bundles/portada/js/master.js') }}"></script>
   <script>
-    $(document).foundation();
+      $(document).foundation();
+
+      $(document).ready(function(){
+            $('#link_contenido').click(function(){
+              $('#contenido').load("{{ path('ejemplo') }}");    
+            });
+      });
   </script>
-  <link href='http://fonts.googleapis.com/css?family=Droid+Sans|Convergence|Amaranth' rel='stylesheet' type='text/css'>
 {% endblock %}
 
 {% block header %}
-    <!-- Header -->
-    <div class="row">
       <div class="large-7 columns">
         <img src="{{ asset('bundles/portada/img/header.png') }}"/>
       </div>
       <div class="large-5 columns">
         <div class="titulo">División de estudios de Posgrado e Investigación</div>
       </div>
-    </div> 
-
-    <!-- Banner -->
-    <div class="row">
-      <div class="large-12 columns">
-	    <ul data-orbit>
-	        <li><img src="{{ asset('bundles/portada/img/a.jpg') }}"/></li>
-	        <li><img src="{{ asset('bundles/portada/img/b.jpg') }}"/></li>
-	        <li><img src="{{ asset('bundles/portada/img/c.jpg') }}"/></li>
-	        <li><img src="{{ asset('bundles/portada/img/d.jpg') }}"/></li>
-	        <li><img src="{{ asset('bundles/portada/img/e.jpg') }}"/></li>
-	    </ul>
-      </div>
-    </div>
+{% endblock %}
+  
+{% block banner %}
+  <ul data-orbit>
+      <li><img src="{{ asset('bundles/portada/img/a.jpg') }}"/></li>
+      <li><img src="{{ asset('bundles/portada/img/b.jpg') }}"/></li>
+      <li><img src="{{ asset('bundles/portada/img/c.jpg') }}"/></li>
+      <li><img src="{{ asset('bundles/portada/img/d.jpg') }}"/></li>
+      <li><img src="{{ asset('bundles/portada/img/e.jpg') }}"/></li>
+  </ul>
 {% endblock %}
 
 {% block menu %}
@@ -62,7 +62,7 @@
               <li class="has-dropdown">
                   <a href="#">Alumnos</a>
                   <ul class="dropdown">
-                      <li><a href="#">Item 1</a></li>
+                      <li><a id="link_contenido" href="#">Alumnos</a></li>
                       <li><a href="#">Item 2</a></li>
                       <li><a href="#">Item 3</a></li>
                   </ul>
@@ -98,49 +98,25 @@
 {% endblock %}
 
 {% block body %}
-<div class="row">
-      <div class="large-12 columns">
-        {% block informacion %}
-        {% endblock %}
-      </div>
-</div>
+
 {% endblock %}
 
-{% block footer %}
-<!-- Footer -->
-  <div class="row">
-    <div class="large-12 columns">
-      <div class="large-4 columns">
-            <a href="http://www.snit.mx/">
-              <center><img src="{{ asset('bundles/portada/img/dgest.png') }}" /></center>
-            </a>
-      </div>
-              
-      <div class="large-4 columns">
-            <a href="http://www.conacyt.gob.mx/Paginas/InicioNueva.aspx">
-              <center><img src="{{ asset('bundles/portada/img/conacyt.png') }}" /></center>
-            </a>
-      </div>
-              
-      <div class="large-4 columns">
-          <a href="http://ieeexplore.ieee.org/Xplore/home.jsp">
-            <center><img src="{{ asset('bundles/portada/img/ieee.png') }}" /></center>
-          </a>
-      </div>
-    </div>
-  </div>
-	
-  <footer class="row">
-    <div class="large-12 columns">
-          <div id="pie" class="large-10 columns">
-            <img src="{{ asset('bundles/portada/img/footer.svg') }}"/>
-          </div> 
-          <div id="redes" class="large-2 columns">
-              <label>Síguenos en:</label>
-              <a class="webicon facebook" href="#">Facebook</a>
-              <a class="webicon googleplus" href="#">Google+</a>
-              <a class="webicon twitter" href="#">Twitter</a>
-          </div> 
-    </div>
-  </footer>
+{% block enlaces %}
+<div class="large-4 columns">
+      <a href="http://www.snit.mx/">
+        <center><img src="{{ asset('bundles/portada/img/dgest.png') }}" /></center>
+      </a>
+</div>
+        
+<div class="large-4 columns">
+      <a href="http://www.conacyt.gob.mx/Paginas/InicioNueva.aspx">
+        <center><img src="{{ asset('bundles/portada/img/conacyt.png') }}" /></center>
+      </a>
+</div>
+            
+<div class="large-4 columns">
+    <a href="http://ieeexplore.ieee.org/Xplore/home.jsp">
+      <center><img src="{{ asset('bundles/portada/img/ieee.png') }}" /></center>
+    </a>
+</div>
 {% endblock %}

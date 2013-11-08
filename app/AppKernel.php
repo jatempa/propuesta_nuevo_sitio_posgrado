@@ -16,6 +16,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+            new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
             new DEPI\PortadaBundle\PortadaBundle(),
             new DEPI\InvestigadoresBundle\InvestigadoresBundle(),
             new DEPI\AlumnosBundle\AlumnosBundle(),
@@ -25,10 +26,12 @@ class AppKernel extends Kernel
             new DEPI\InvestigadoresLineasBundle\InvestigadoresLineasBundle(),
             new DEPI\AreasBundle\AreasBundle(),
             new DEPI\AreasProyectosBundle\AreasProyectosBundle(),
-            new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
             new DEPI\ProductosAcademicosBundle\ProductosAcademicosBundle(),
             new DEPI\ProyectosProductosBundle\ProyectosProductosBundle(),
             new DEPI\InvestigadorProyectoBundle\InvestigadorProyectoBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
+            new DEPI\UsuarioBundle\UsuarioBundle(),
+            new DEPI\BackEndBundle\BackEndBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
