@@ -1,3 +1,31 @@
-alumnos_proyectos_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: AlumnosProyectosBundle:Default:index }
+alumnos_proyectos:
+    pattern:  /alumnos_proyectos
+    defaults: { _controller: AlumnosProyectosBundle:AlumnosProyectos:index }
+
+_alumnos_proyectos:
+    pattern: /alumnos_proyectos/
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: alumnos_proyectos}
+
+alumnos_proyectos_new:
+    pattern:  /alumnos_proyectos/new
+    defaults: { _controller: AlumnosProyectosBundle:AlumnosProyectos:new }
+
+alumnos_proyectos_edit:
+    pattern:  /alumnos_proyectos/edit/{id}
+    defaults: { _controller: AlumnosProyectosBundle:AlumnosProyectos:edit }
+
+alumnos_proyectos_show:
+    pattern:  /alumnos_proyectos/show/{id}
+    defaults: { _controller: AlumnosProyectosBundle:AlumnosProyectos:show }
+
+alumnos_proyectos_create:
+    pattern:  /alumnos_proyectos/create
+    defaults: { _controller: AlumnosProyectosBundle:AlumnosProyectos:create }
+
+alumnos_proyectos_update:
+    pattern:  /alumnos_proyectos/update/{id}
+    defaults: { _controller: AlumnosProyectosBundle:AlumnosProyectos:update }
+
+alumnos_proyectos_delete:
+    pattern:  /alumnos_proyectos/delete/{id}
+    defaults: { _controller: AlumnosProyectosBundle:AlumnosProyectos:delete }

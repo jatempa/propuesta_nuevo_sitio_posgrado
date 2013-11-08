@@ -1,3 +1,31 @@
-areas_proyectos_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: AreasProyectosBundle:Default:index }
+areas_proyectos:
+    pattern:  /areas
+    defaults: { _controller: AreasProyectosBundle:AreasProyectos:index }
+
+_areas_proyectos:
+    pattern: /areas/
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: areas_proyectos}
+
+areas_proyectos_new:
+    pattern:  /areas/new
+    defaults: { _controller: AreasProyectosBundle:AreasProyectos:new }
+
+areas_proyectos_edit:
+    pattern:  /areas/edit/{id}
+    defaults: { _controller: AreasProyectosBundle:AreasProyectos:edit }
+
+areas_proyectos_show:
+    pattern:  /areas/show/{id}
+    defaults: { _controller: AreasProyectosBundle:AreasProyectos:show }
+
+areas_proyectos_create:
+    pattern:  /areas/create
+    defaults: { _controller: AreasProyectosBundle:AreasProyectos:create }
+
+areas_proyectos_update:
+    pattern:  /areas/update/{id}
+    defaults: { _controller: AreasProyectosBundle:AreasProyectos:update }
+
+areas_proyectos_delete:
+    pattern:  /areas/delete/{id}
+    defaults: { _controller: AreasProyectosBundle:AreasProyectos:delete }

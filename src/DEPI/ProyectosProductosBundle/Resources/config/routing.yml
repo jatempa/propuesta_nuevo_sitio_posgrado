@@ -1,3 +1,31 @@
-proyectos_productos_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: ProyectosProductosBundle:Default:index }
+proyectosproductos:
+    pattern:  /proyectosproductos
+    defaults: { _controller: ProyectosProductosBundle:ProyectosProductos:index }
+
+_proyectosproductos:
+    pattern: /proyectosproductos/
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: proyectosproductos}
+
+proyectosproductos_new:
+    pattern:  /proyectosproductos/new
+    defaults: { _controller: ProyectosProductosBundle:ProyectosProductos:new }
+
+proyectosproductos_edit:
+    pattern:  /proyectosproductos/edit/{id}
+    defaults: { _controller: ProyectosProductosBundle:ProyectosProductos:edit }
+
+proyectosproductos_show:
+    pattern:  /proyectosproductos/show/{id}
+    defaults: { _controller: ProyectosProductosBundle:ProyectosProductos:show }
+
+proyectosproductos_create:
+    pattern:  /proyectosproductos/create
+    defaults: { _controller: ProyectosProductosBundle:ProyectosProductos:create }
+
+proyectosproductos_update:
+    pattern:  /proyectosproductos/update/{id}
+    defaults: { _controller: ProyectosProductosBundle:ProyectosProductos:update }
+
+proyectosproductos_delete:
+    pattern:  /proyectosproductos/delete/{id}
+    defaults: { _controller: ProyectosProductosBundle:ProyectosProductos:delete }

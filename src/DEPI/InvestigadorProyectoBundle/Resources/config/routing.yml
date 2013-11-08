@@ -1,3 +1,31 @@
-investigador_proyecto_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: InvestigadorProyectoBundle:Default:index }
+investigadorproyecto:
+    pattern:  /investigadorproyecto
+    defaults: { _controller: InvestigadorProyectoBundle:InvestigadorProyecto:index }
+
+_investigadorproyecto:
+    pattern: /investigadorproyecto/
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: investigadorproyecto}
+
+investigadorproyecto_new:
+    pattern:  /investigadorproyecto/new
+    defaults: { _controller: InvestigadorProyectoBundle:InvestigadorProyecto:new }
+
+investigadorproyecto_edit:
+    pattern:  /investigadorproyecto/edit/{id}
+    defaults: { _controller: InvestigadorProyectoBundle:InvestigadorProyecto:edit }
+
+investigadorproyecto_show:
+    pattern:  /investigadorproyecto/show/{id}
+    defaults: { _controller: InvestigadorProyectoBundle:InvestigadorProyecto:show }
+
+investigadorproyecto_create:
+    pattern:  /investigadorproyecto/create
+    defaults: { _controller: InvestigadorProyectoBundle:InvestigadorProyecto:create }
+
+investigadorproyecto_update:
+    pattern:  /investigadorproyecto/update/{id}
+    defaults: { _controller: InvestigadorProyectoBundle:InvestigadorProyecto:update }
+
+investigadorproyecto_delete:
+    pattern:  /investigadorproyecto/delete/{id}
+    defaults: { _controller: InvestigadorProyectoBundle:InvestigadorProyecto:delete }
