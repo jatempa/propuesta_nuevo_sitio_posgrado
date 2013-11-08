@@ -1,9 +1,10 @@
-{% extends '::base.html.twig' %}
+{% extends '::backend.html.twig' %}
 
-{% block body -%}
-    <h1>InvestigadorProyecto list</h1>
+{% block body %}
+<h1>InvestigadorProyecto list</h1>
 
-    <table class="records_list">
+<div class="table-container">
+    <table class="width-100 table-striped">
         <thead>
             <tr>
                 <th>Id</th>
@@ -30,12 +31,20 @@
         {% endfor %}
         </tbody>
     </table>
+</div>
 
-        <ul>
-        <li>
-            <a href="{{ path('investigadorproyecto_new') }}">
-                Create a new entry
-            </a>
-        </li>
+<ul>
+    <li>
+        <a href="{{ path('investigadorproyecto_new') }}">
+            Create a new entry
+        </a>
+    </li>
+</ul>
+{% endblock %}
+
+{% block lateral %}
+    <ul>
+        <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
+        <li><a href="{{ path('proyectos') }}">Proyectos</a></li>
     </ul>
-    {% endblock %}
+{% endblock %}

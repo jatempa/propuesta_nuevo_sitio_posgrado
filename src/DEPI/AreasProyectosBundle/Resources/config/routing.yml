@@ -1,31 +1,31 @@
-areas_proyectos:
-    pattern:  /areas
+areasproyectos:
+    pattern:  /areasproyectos
     defaults: { _controller: AreasProyectosBundle:AreasProyectos:index }
 
-_areas_proyectos:
-    pattern: /areas/
-    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: areas_proyectos}
+_areasproyectos:
+    pattern: /areasproyectos/
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: areasproyectos}
 
-areas_proyectos_new:
-    pattern:  /areas/new
+areasproyectos_new:
+    pattern:  /areasproyectos/new
     defaults: { _controller: AreasProyectosBundle:AreasProyectos:new }
 
-areas_proyectos_edit:
-    pattern:  /areas/edit/{id}
+areasproyectos_edit:
+    pattern:  /areasproyectos/edit/{id}
     defaults: { _controller: AreasProyectosBundle:AreasProyectos:edit }
 
-areas_proyectos_show:
-    pattern:  /areas/show/{id}
+areasproyectos_show:
+    pattern:  /areasproyectos/show/{id}
     defaults: { _controller: AreasProyectosBundle:AreasProyectos:show }
 
-areas_proyectos_create:
-    pattern:  /areas/create
+areasproyectos_create:
+    pattern:  /areasproyectos/create
     defaults: { _controller: AreasProyectosBundle:AreasProyectos:create }
 
-areas_proyectos_update:
-    pattern:  /areas/update/{id}
+areasproyectos_update:
+    pattern:  /areasproyectos/update/{id}
     defaults: { _controller: AreasProyectosBundle:AreasProyectos:update }
 
-areas_proyectos_delete:
-    pattern:  /areas/delete/{id}
+areasproyectos_delete:
+    pattern:  /areasproyectos/delete/{id}
     defaults: { _controller: AreasProyectosBundle:AreasProyectos:delete }

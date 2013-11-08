@@ -1,25 +1,2 @@
 {% extends '::backend.html.twig' %}
 
-{% block menu %}
-<nav class="nav-g">
-    <ul>
-        <li><a href="{{ path('admin') }}">Inicio</a></li>
-        <li><a href="{{ path('alumnos') }}">Alumnos</a></li>
-        <li><a href="{{ path('areas') }}">Áreas</a></li>
-        <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
-        <li><a href="{{ path('lineas') }}">Líneas de Investigación</a></li>
-        <li><a href="{{ path('productosacademicos') }}">Productos Académicos</a></li>
-        <li><a href="{{ path('proyectos') }}">Proyectos</a></li>
-    </ul>
-</nav>
-{% endblock %}
-
-{% block lateral %}
-<nav class="nav-v nav-stacked nav-stats">
-    <ul>
-        <li><a href="http://www.itmexicali.edu.mx/">Instituto Tecnológico de Mexicali</a></li>
-        <li><a href="{{ path('portada') }}">División de estudios de posgrado e investigación</a></li>
-        <li><a href="http://www.snit.mx/">Dirección General</a></li>
-    </ul>
-</nav>
-{% endblock %}

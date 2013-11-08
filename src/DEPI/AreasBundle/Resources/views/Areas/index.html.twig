@@ -3,7 +3,8 @@
 {% block body -%}
     <h3>Áreas</h3>
 
-    <table class="records_list">
+<div class="table-container">
+    <table class="width-100 table-striped">
         <thead>
             <tr>
                 <th>Id</th>
@@ -21,4 +22,11 @@
         {% endfor %}
         </tbody>
     </table>
+</div>
+{% endblock %}
+
+{% block lateral %}
+    <ul>
+        <li><a href="{{ path('areasproyectos') }}">Areas y Proyectos</a></li>
+    </ul>
 {% endblock %}
