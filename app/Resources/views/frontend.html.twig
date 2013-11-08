@@ -1,7 +1,7 @@
 {% extends '::base.html.twig' %}
 
 {% block stylesheets %}
-	<link rel="stylesheet" href="{{ asset('bundles/portada/css/foundation.css') }}">
+  <link rel="stylesheet" href="{{ asset('bundles/portada/css/foundation.css') }}">
   <link rel="stylesheet" href="{{ asset('bundles/portada/css/master.css') }}">
   <link rel="stylesheet" href="{{ asset('bundles/portada/css/webicons.css') }}">
 {% endblock %}
@@ -70,7 +70,7 @@
               <li class="has-dropdown">
                   <a href="#">Investigación</a>
                   <ul class="dropdown">
-                      <li><a href="#">Investigadores</a></li>
+                      <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
                       <li><a href="#">Proyectos</a></li>
                       <li><a href="#">Productos Academicos</a></li>
                   </ul>
@@ -98,14 +98,12 @@
 {% endblock %}
 
 {% block body %}
-    <div class="row">
+<div class="row">
       <div class="large-12 columns">
-          {% block informacion %}
-          {% endblock %}
+        {% block informacion %}
+        {% endblock %}
       </div>
-    </div>
-
-
+</div>
 {% endblock %}
 
 {% block footer %}
@@ -138,7 +136,6 @@
             <img src="{{ asset('bundles/portada/img/footer.svg') }}"/>
           </div> 
           <div id="redes" class="large-2 columns">
-              <br />
               <label>Síguenos en:</label>
               <a class="webicon facebook" href="#">Facebook</a>
               <a class="webicon googleplus" href="#">Google+</a>

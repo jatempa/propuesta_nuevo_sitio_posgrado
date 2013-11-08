@@ -1,10 +1,46 @@
-{% extends '::base.html.twig' %}
-
-{% block stylesheets %}
-	<link rel="stylesheet" href="{{ asset('bundles/portada/backend/css/base.css') }}">
-	<link rel="stylesheet" href="{{ asset('bundles/portada/backend/css/skeleton.css') }}">
-	<link rel="stylesheet" href="{{ asset('bundles/portada/backend/css/layout.css') }}">
-{% endblock %}
-
-{% block body %}
-{% endblock %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}Administración{% endblock %}</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+        <link rel="stylesheet" href="{{ asset('bundles/portada/backend/css/base.css') }}">
+        <link rel="stylesheet" href="{{ asset('bundles/portada/backend/css/skeleton.css') }}">
+        <link rel="stylesheet" href="{{ asset('bundles/portada/backend/css/layout.css') }}">
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        <div class="container">
+            <header class="twelve columns">
+                <div class="six columns">
+                    <img src="{{ asset('bundles/portada/img/header.png') }}"/>
+                </div>
+            </header>
+            <div class="clear"></div>
+            <div class="three columns sidebar">
+                <!-- Menu -->
+                {% block menu %}
+                    <div class="pure-menu pure-menu-open">
+                        <a class="pure-menu-heading">Catalogos</a>
+                            <ul>
+                                <li><a href="{{ path('alumnos') }}">Alumnos</a></li>
+                                <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
+                                <li><a href="{{ path('proyectos') }}">Proyectos</a></li>
+                                <li><a href="{{ path('areas') }}">Areas</a></li>
+                                <li><a href="#">Programas</a></li>
+                            </ul>
+                    </div>
+                {% endblock %}    
+            </div> 
+            <div class="twelve columns offset-by-one content">     
+                <!-- Contenido -->      
+                {% block body %}{% endblock %}
+                <!-- JavaScripts -->
+                {% block javascripts %}{% endblock %}   
+            </div>     
+                        <div class="clear"></div>
+        </div>
+    </body>
+</html>
