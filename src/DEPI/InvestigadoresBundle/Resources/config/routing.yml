@@ -29,3 +29,7 @@ investigadores_update:
 investigadores_delete:
     pattern:  /investigadores/delete/{id}
     defaults: { _controller: InvestigadoresBundle:Investigadores:delete }
+
+ejemplo:
+    pattern: /investigadores/ejemplo
+    defaults: { _controller: InvestigadoresBundle:Investigadores:ejemplo }

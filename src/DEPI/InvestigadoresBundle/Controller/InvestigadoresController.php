@@ -18,6 +18,12 @@ use DEPI\InvestigadoresBundle\Form\InvestigadoresType;
 class InvestigadoresController extends Controller
 {
 
+    public function ejemploAction()
+    {
+     
+        return $this->render("InvestigadoresBundle:Investigadores:ejemplo.html.twig");
+    }
+
     /**
      * Lists all Investigadores entities.
      *
