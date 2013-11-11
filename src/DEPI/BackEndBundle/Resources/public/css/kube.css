@@ -1307,7 +1307,7 @@ input.big {
 .req,
 .required {
   font-weight: normal;
-  color: #ef6465;
+  color: #000000;
 }
 .highlight {
   background-color: #ffff9e !important;

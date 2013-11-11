@@ -50,7 +50,7 @@ class AlumnosProyectos
      */
     public function setIdAlumno(\DEPI\AlumnosBundle\Entity\Alumnos $alumnos)
     {
-        $this->idAlumno = $idAlumno;
+        $this->idAlumno = $alumnos;
     }
 
     /**
@@ -82,10 +82,5 @@ class AlumnosProyectos
     public function getIdProyecto()
     {
         return $this->idProyecto;
-    }
-
-    public function __toString()
-    {
-        return $this->getRol();
     }
 }

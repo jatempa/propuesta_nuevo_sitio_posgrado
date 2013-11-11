@@ -112,9 +112,4 @@ class InvestigadorProyecto
     {
         return $this->fecha_creacion;
     }
-
-    public function __toString()
-    {
-        return $this->getfecha_creacion();
-    }
 }

@@ -3,7 +3,12 @@
 {% block body %}
     <h3>Alumnos</h3>
 
-    {{ form(form) }}
+    {{ form(form, {'attr': {'class': 'forms forms-inline'}}) }}
+	
+
+	<button onclick="{{ path('alumnos_new') }}">
+		Ejemplo
+	</button>
 
 <ul class="record_actions">
     <li>
