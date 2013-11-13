@@ -87,7 +87,7 @@ class InvestigadorProyecto
      */
     public function getProyectos()
     {
-        return $this->Proyectos;
+        return $this->proyectos;
     }
 
     /**
@@ -110,6 +110,6 @@ class InvestigadorProyecto
      */
     public function getFechaCreacion()
     {
-        return $this->fecha_creacion;
+        return $this->fechaCreacion;
     }
 }
