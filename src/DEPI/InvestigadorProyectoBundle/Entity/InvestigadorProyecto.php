@@ -27,16 +27,16 @@ class InvestigadorProyecto
     private $investigadores;
 
     /** @ORM\ManyToOne(targetEntity="DEPI\ProyectosBundle\Entity\Proyectos") 
-     *  @ORM\JoinColumn(name="Proyectos", referencedColumnName="id")
+     *  @ORM\JoinColumn(name="proyectos", referencedColumnName="id")
      */
-    private $Proyectos;
+    private $proyectos;
 
     /**
      * @var date
      *
      * @ORM\Column(name="fecha_creacion", type="date")
      */
-    private $fecha_creacion;
+    private $fechaCreacion;
 
     /**
      * Get id
@@ -56,7 +56,7 @@ class InvestigadorProyecto
      */
     public function setInvestigadores(\DEPI\InvestigadorProyectoBundle\Entity\Investigadores $investigadores)
     {
-        $this->investigadores = $Investigadores;
+        $this->investigadores = $investigadores;
     }
 
     /**
@@ -75,9 +75,9 @@ class InvestigadorProyecto
      * @param \DEPI\ProyectosBundle\Entity\Proyectos
      * @return InvestigadorProyecto
      */
-    public function setProyectos(\DEPI\InvestigadorProyectoBundle\Entity\Proyectos $Proyectos)
+    public function setProyectos(\DEPI\InvestigadorProyectoBundle\Entity\Proyectos $proyectos)
     {
-        $this->Proyectos = $Proyectos;
+        $this->proyectos = $proyectos;
     }
 
     /**
@@ -94,11 +94,11 @@ class InvestigadorProyecto
      * Set fecha_creacion
      *
      * @param date $fecha_creacion
-     * @return Alumno
+     * @return InvestigadorProyecto
      */
-    public function setfecha_creacion($fecha_creacion)
+    public function setFechaCreacion($fechaCreacion)
     {
-        $this->fecha_creacion = $fecha_creacion;
+        $this->fechaCreacion = $fechaCreacion;
     
         return $this;
     }
@@ -108,7 +108,7 @@ class InvestigadorProyecto
      *
      * @return date 
      */
-    public function getfecha_creacion()
+    public function getFechaCreacion()
     {
         return $this->fecha_creacion;
     }
