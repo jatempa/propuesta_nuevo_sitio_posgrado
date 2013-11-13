@@ -110,18 +110,20 @@ class AlumnosProyectosController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AlumnosProyectosBundle:AlumnosProyectos')->find($id);
+        $alumnosenproyectos = $em->getRepository('AlumnosProyectosBundle:AlumnosProyectos')
+                                 ->findDatosAlumnoProyecto($id);
 
-        if (!$entity) {
+        if (!$alumnosenproyectos) {
             throw $this->createNotFoundException('Unable to find AlumnosProyectos entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
 
-        return array(
-            'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),
-        );
+        return $this->render('AlumnosProyectosBundle:AlumnosProyectos:show.html.twig', 
+                              array('alumnosenproyectos' => $alumnosenproyectos,
+                                    'delete_form' => $deleteForm->createView(),)
+                            );
+        return ;
     }
 
     /**
