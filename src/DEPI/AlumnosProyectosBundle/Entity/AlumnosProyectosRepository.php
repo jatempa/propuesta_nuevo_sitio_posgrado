@@ -10,7 +10,7 @@ class AlumnosProyectosRepository extends EntityRepository
 	{
 		$em = $this->getEntityManager();
 
-		$dql = 'SELECT ap, alumno, proyecto 
+		$dql = 'SELECT ap, alumno, proyecto
 		        FROM AlumnosProyectosBundle:AlumnosProyectos ap
 		        JOIN ap.idAlumno alumno
 		        JOIN ap.idProyecto proyecto';
