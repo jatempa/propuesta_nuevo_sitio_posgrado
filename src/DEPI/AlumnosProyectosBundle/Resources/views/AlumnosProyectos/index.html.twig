@@ -12,17 +12,20 @@
             </tr>
         </thead>
         <tbody>
+
         {% for entity in alumnosenproyectos %}
             <tr>
                 <td><a href="{{ path('alumnosproyectos_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <ul>
-                    <li>
-                        <a href="{{ path('alumnosproyectos_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('alumnosproyectos_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
+                <td> {{ entity.idProyecto.claveItm }} </td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('alumnosproyectos_show', { 'id': entity.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('alumnosproyectos_edit', { 'id': entity.id }) }}">edit</a>
+                        </li>
+                    </ul>
                 </td>
             </tr>
         {% endfor %}
