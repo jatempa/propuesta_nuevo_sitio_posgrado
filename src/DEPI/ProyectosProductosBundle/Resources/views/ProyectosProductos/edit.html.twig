@@ -14,3 +14,10 @@
     <li>{{ form(delete_form) }}</li>
 </ul>
 {% endblock %}
+
+{% block lateral %}
+    <ul>
+        <li><a href="{{ path('proyectos') }}">Proyectos</a></li>
+        <li><a href="{{ path('productosacademicos') }}">Productos academicos</a></li>
+    </ul>
+{% endblock %}
