@@ -29,11 +29,11 @@ class AlumnosProyectosController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('AlumnosProyectosBundle:AlumnosProyectos')->findAll();
+        $alumnosenproyectos = $em->getRepository('AlumnosProyectosBundle:AlumnosProyectos')
+                                 ->findAlumnosConProyecto();
 
-        return array(
-            'entities' => $entities,
-        );
+        return $this->render('AlumnosProyectosBundle:AlumnosProyectos:index.html.twig', 
+                              array('alumnosenproyectos' => $alumnosenproyectos));
     }
     /**
      * Creates a new AlumnosProyectos entity.

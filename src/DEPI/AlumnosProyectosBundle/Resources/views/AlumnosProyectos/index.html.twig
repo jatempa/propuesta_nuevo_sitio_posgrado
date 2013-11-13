@@ -12,10 +12,9 @@
             </tr>
         </thead>
         <tbody>
-        {% for entity in entities %}
+        {% for entity in alumnosenproyectos %}
             <tr>
                 <td><a href="{{ path('alumnosproyectos_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>
                 <ul>
                     <li>
                         <a href="{{ path('alumnosproyectos_show', { 'id': entity.id }) }}">show</a>

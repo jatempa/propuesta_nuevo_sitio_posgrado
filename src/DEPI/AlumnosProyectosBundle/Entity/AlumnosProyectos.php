@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * AlumnosProyectos
  *
  * @ORM\Table(name="alumnosproyectos")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="DEPI\AlumnosProyectosBundle\Entity\AlumnosProyectosRepository")
  */
 class AlumnosProyectos
 {
@@ -27,7 +27,7 @@ class AlumnosProyectos
     private $idAlumno;
 
     /** @ORM\ManyToOne(targetEntity="DEPI\ProyectosBundle\Entity\Proyectos") 
-     *  @ORM\JoinColumn(name="idProyectos", referencedColumnName="id")
+     *  @ORM\JoinColumn(name="idProyecto", referencedColumnName="id")
      */
     private $idProyecto;
 
