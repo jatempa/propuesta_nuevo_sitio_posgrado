@@ -26,63 +26,63 @@ class Proyectos
      *
      * @ORM\Column(name="clave_itm", type="string", length=20)
      */
-    private $clave_itm;
+    private $claveItm;
 
     /**
      * @var string
      *
      * @ORM\Column(name="clave_conacyt", type="string", length=20)
      */
-    private $clave_conacyt;
+    private $claveConacyt;
 
     /**
      * @var string
      *
      * @ORM\Column(name="clave_dgest", type="string", length=20)
      */
-    private $clave_dgest;
+    private $claveDgest;
 
     /**
      * @var string
      *
      * @ORM\Column(name="nombre_corto", type="string", length=30)
      */
-    private $nombre_corto;
+    private $nombreCorto;
 
     /**
      * @var string
      *
      * @ORM\Column(name="nombre_completo", type="string", length=80)
      */
-    private $nombre_completo;
+    private $nombreCompleto;
 
     /**
      * @var string
      *
      * @ORM\Column(name="objetivo_general", type="string", length=80)
      */
-    private $objetivo_general;
+    private $objetivoGeneral;
 
     /**
      * @var string
      *
      * @ORM\Column(name="objetivos_especificos", type="text")
      */
-    private $objetivos_especificos;
+    private $objetivosEspecificos;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="fecha_apertura", type="date")
      */
-    private $fecha_apertura;
+    private $fechaApertura;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="fecha_termino", type="date")
      */
-    private $fecha_termino;
+    private $fechaTermino;
 
     /**
      * @var boolean
@@ -110,7 +110,7 @@ class Proyectos
      */
     public function setClaveItm($claveItm)
     {
-        $this->clave_itm = $claveItm;
+        $this->claveItm = $claveItm;
     
         return $this;
     }
@@ -122,7 +122,7 @@ class Proyectos
      */
     public function getClaveItm()
     {
-        return $this->clave_itm;
+        return $this->claveItm;
     }
 
     /**
@@ -133,7 +133,7 @@ class Proyectos
      */
     public function setClaveConacyt($claveConacyt)
     {
-        $this->clave_conacyt = $claveConacyt;
+        $this->claveConacyt = $claveConacyt;
     
         return $this;
     }
@@ -145,7 +145,7 @@ class Proyectos
      */
     public function getClaveConacyt()
     {
-        return $this->clave_conacyt;
+        return $this->claveConacyt;
     }
 
     /**
@@ -156,7 +156,7 @@ class Proyectos
      */
     public function setClaveDgest($claveDgest)
     {
-        $this->clave_dgest = $claveDgest;
+        $this->claveDgest = $claveDgest;
     
         return $this;
     }
@@ -168,7 +168,7 @@ class Proyectos
      */
     public function getClaveDgest()
     {
-        return $this->clave_dgest;
+        return $this->claveDgest;
     }
 
     /**
@@ -179,7 +179,7 @@ class Proyectos
      */
     public function setNombreCorto($nombreCorto)
     {
-        $this->nombre_corto = $nombreCorto;
+        $this->nombreCorto = $nombreCorto;
     
         return $this;
     }
@@ -191,7 +191,7 @@ class Proyectos
      */
     public function getNombreCorto()
     {
-        return $this->nombre_corto;
+        return $this->nombreCorto;
     }
 
     /**
@@ -202,7 +202,7 @@ class Proyectos
      */
     public function setNombreCompleto($nombreCompleto)
     {
-        $this->nombre_completo = $nombreCompleto;
+        $this->nombreCompleto = $nombreCompleto;
     
         return $this;
     }
@@ -214,7 +214,7 @@ class Proyectos
      */
     public function getNombreCompleto()
     {
-        return $this->nombre_completo;
+        return $this->nombreCompleto;
     }
 
     /**
@@ -223,9 +223,9 @@ class Proyectos
      * @param string $objetivo_general
      * @return Proyectos
      */
-    public function setObjetivoGeneral($objetivo_general)
+    public function setObjetivoGeneral($objetivoGeneral)
     {
-        $this->objetivo_general = $objetivo_general;
+        $this->objetivoGeneral = $objetivoGeneral;
     
         return $this;
     }
@@ -237,7 +237,7 @@ class Proyectos
      */
     public function getObjetivoGeneral()
     {
-        return $this->meta;
+        return $this->objetivoGeneral;
     }
 
     /**
@@ -246,9 +246,9 @@ class Proyectos
      * @param string $objetivos_especificos
      * @return Proyectos
      */
-    public function setObjetivosEspecificos($objetivos_especificos)
+    public function setObjetivosEspecificos($objetivosEspecificos)
     {
-        $this->objetivos_especificos = $objetivos_especificos;
+        $this->objetivosEspecificos = $objetivosEspecificos;
     
         return $this;
     }
@@ -260,7 +260,7 @@ class Proyectos
      */
     public function getObjetivosEspecificos()
     {
-        return $this->objetivos_especificos;
+        return $this->objetivosEspecificos;
     }
 
     /**
@@ -271,7 +271,7 @@ class Proyectos
      */
     public function setFechaApertura($fechaApertura)
     {
-        $this->fecha_apertura = $fechaApertura;
+        $this->fechaApertura = $fechaApertura;
     
         return $this;
     }
@@ -283,7 +283,7 @@ class Proyectos
      */
     public function getFechaApertura()
     {
-        return $this->fecha_apertura;
+        return $this->fechaApertura;
     }
 
     /**
@@ -294,7 +294,7 @@ class Proyectos
      */
     public function setFechaTermino($fechaTermino)
     {
-        $this->fecha_termino = $fechaTermino;
+        $this->fechaTermino = $fechaTermino;
     
         return $this;
     }
@@ -306,7 +306,7 @@ class Proyectos
      */
     public function getFechaTermino()
     {
-        return $this->fecha_termino;
+        return $this->fechaTermino;
     }
 
     /**
