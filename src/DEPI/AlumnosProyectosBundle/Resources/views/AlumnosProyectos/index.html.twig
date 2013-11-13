@@ -7,7 +7,9 @@
         <thead>
             <tr>
                 <th>Id</th>
+                <th>No Control</th>
                 <th>Alumno</th>
+                <th>Proyecto</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -16,7 +18,9 @@
         {% for entity in alumnosenproyectos %}
             <tr>
                 <td><a href="{{ path('alumnosproyectos_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td> {{ entity.idProyecto.claveItm }} </td>
+                <td>{{ entity.idAlumno.noControl }}</td>
+                <td>{{ entity.idAlumno.nombre ~ " " ~ entity.idAlumno.apellidoPaterno  ~ " " ~ entity.idAlumno.apellidoMaterno }}</td>
+                <td>{{ entity.idProyecto.nombreCorto }}</td>
                 <td>
                     <ul>
                         <li>
