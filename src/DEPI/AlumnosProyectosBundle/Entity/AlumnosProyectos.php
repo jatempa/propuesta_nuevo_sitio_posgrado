@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * AlumnosProyectos
  *
  * @ORM\Table(name="alumnosproyectos")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="DEPI\AlumnosProyectosBundle\Entity\AlumnosProyectosRepository")
  */
 class AlumnosProyectos
 {
@@ -27,7 +27,7 @@ class AlumnosProyectos
     private $idAlumno;
 
     /** @ORM\ManyToOne(targetEntity="DEPI\ProyectosBundle\Entity\Proyectos") 
-     *  @ORM\JoinColumn(name="idProyectos", referencedColumnName="id")
+     *  @ORM\JoinColumn(name="idProyecto", referencedColumnName="id")
      */
     private $idProyecto;
 
@@ -50,7 +50,7 @@ class AlumnosProyectos
      */
     public function setIdAlumno(\DEPI\AlumnosBundle\Entity\Alumnos $alumnos)
     {
-        $this->idAlumno = $idAlumno;
+        $this->idAlumno = $alumnos;
     }
 
     /**
@@ -82,10 +82,5 @@ class AlumnosProyectos
     public function getIdProyecto()
     {
         return $this->idProyecto;
-    }
-
-    public function __toString()
-    {
-        return $this->getRol();
     }
 }
