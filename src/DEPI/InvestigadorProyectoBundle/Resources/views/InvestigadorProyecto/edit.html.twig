@@ -1,6 +1,6 @@
 {% extends '::backend.html.twig' %}
 
-{% block body -%}
+{% block body %}
     <h1>InvestigadorProyecto edit</h1>
 
     {{ form(edit_form, {'attr': {'class': 'forms forms-inline'}}) }}
@@ -13,4 +13,11 @@
     </li>
     <li>{{ form(delete_form) }}</li>
 </ul>
+{% endblock %}
+
+{% block lateral %}
+    <ul>
+        <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
+        <li><a href="{{ path('proyectos') }}">Proyectos</a></li>
+    </ul>
 {% endblock %}
