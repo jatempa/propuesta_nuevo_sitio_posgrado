@@ -29,11 +29,9 @@ class AlumnosController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('AlumnosBundle:Alumnos')->findAll();
+        $alumnos = $em->getRepository('AlumnosBundle:Alumnos')->findAll();
 
-        return array(
-            'entities' => $entities,
-        );
+        return $this->render('AlumnosBundle:Alumnos:index.html.twig', array('alumnos' => $alumnos));
     }
     /**
      * Creates a new Alumnos entity.
