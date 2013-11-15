@@ -31,7 +31,7 @@ class AlumnosProyectosController extends Controller
 
         $alumnosenproyectos = $em->getRepository('AlumnosProyectosBundle:AlumnosProyectos')
                                  ->findAlumnosConProyecto();
-
+        
         return $this->render('AlumnosProyectosBundle:AlumnosProyectos:index.html.twig', 
                               array('alumnosenproyectos' => $alumnosenproyectos));
     }
