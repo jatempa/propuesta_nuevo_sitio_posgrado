@@ -10,38 +10,29 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        <header class="units-row">
-            <div class="unit-push-30 unit-70">
-                <nav class="nav-g">
-                    <ul>
-                        <li><a href="{{ path('admin') }}">Inicio</a></li>
-                        <li><a href="{{ path('alumnos') }}">Alumnos</a></li>
-                        <li><a href="{{ path('areas') }}">Áreas</a></li>
-                        <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
-                        <li><a href="{{ path('lineas') }}">Líneas de Investigación</a></li>
-                        <li><a href="{{ path('productosacademicos') }}">Productos Académicos</a></li>
-                        <li><a href="{{ path('proyectos') }}">Proyectos</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-
+   
         <div class="units-row">
             <div class="unit-20">
+                <div class="unit-push-20 unit-80">
                 <nav class="nav-v nav-stacked nav-stats">
-                    {% block lateral %}
-                        <ul>
-                            <li><a href="http://www.itmexicali.edu.mx/">Instituto Tecnológico de Mexicali</a></li>
-                            <li><a href="{{ path('portada') }}">División de estudios de posgrado e investigación</a></li>
-                            <li><a href="http://www.snit.mx/">Dirección General</a></li>
-                        </ul>
-                    {% endblock %}
+                {% block lateral %}
+                    <ul>
+                        <li><a href="http://www.itmexicali.edu.mx/">Instituto Tecnológico de Mexicali</a></li>
+                        <li><a href="{{ path('portada') }}">División de estudios de posgrado e investigación</a></li>
+                        <li><a href="http://www.snit.mx/">Dirección General</a></li>
+                    </ul>
+                {% endblock %}
                 </nav>
+                </div>
             </div>
             <div class="unit-80">
-                {% block body %}{% endblock %}
-            </div> 
+                {% block body %}
+                {% endblock %}
+            </div>
         </div>
-        {% block javascript %}{% endblock %}
+        <div class="units-row">
+                {% block opciones %}
+                {% endblock %}
+        </div> 
     </body>
 </html>
