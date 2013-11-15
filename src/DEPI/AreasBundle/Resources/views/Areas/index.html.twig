@@ -1,5 +1,9 @@
 {% extends '::backend.html.twig' %}
 
+{% block opciones %}
+    <a href="{{ path('alumnos_new') }}" class="btn">Nuevo</a>
+{% endblock %}
+
 {% block body -%}
     <h3>Áreas</h3>
 
