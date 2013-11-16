@@ -8,6 +8,11 @@ legend {
 	text-transform: uppercase;
 }
 
+.logo {
+	width: 55px;
+	height: 75px;
+}
+
 /* =Links
 -----------------------------------------------------------------------------*/
 
@@ -32,6 +37,7 @@ legend {
 	margin: 0;
 }
 #header nav {
+	margin-top: 35px;
 	padding-top: 10px;
 	float: right;
 }
