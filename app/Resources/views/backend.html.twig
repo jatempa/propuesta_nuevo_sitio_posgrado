@@ -13,13 +13,15 @@
     <div class="wrapper">
         <header id="header">
             <img src="{{ asset('bundles/portada/img/itm.png') }}" alt="" class="logo">
-            <nav class="breadcrumbs breadcrumbs-sections">
+            <nav class="nav-g">
                 <ul>
                     <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
-                    <li><a href="#">Link 3</a></li>
-                    <li><a href="#">Link 4</a></li>
+                    <li><a href="{{ path('alumnos') }}">Alumnos</a></li>
+                    <li><a href="{{ path('areas') }}">Áreas</a></li>
+                    <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
+                    <li><a href="{{ path('lineas') }}">Líneas de Investigación</a></li>
+                    <li><a href="{{ path('productosacademicos') }}">Productos Académicos</a></li>
+                    <li><a href="{{ path('proyectos') }}">Proyectos</a></li>
                 </ul>
             </nav>
         </header>
