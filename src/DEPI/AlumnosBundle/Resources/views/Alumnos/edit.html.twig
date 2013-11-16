@@ -2,11 +2,27 @@
 
 {% block body %}
 <div class="units-row">
-    <div class="unit-centered unit-40">
-    	<h3>Alumnos</h3>
-
-    	{{ form(edit_form, {'attr': {'class': 'forms forms-inline'}}) }}
-
+    <div class="unit-40">
+        {% form_theme edit_form '::fields.html.twig' %}
+        <fieldset>
+            <legend>Alumno</legend>
+            {{ form_start(edit_form) }}
+                    {{ form_label(edit_form.noControl, 'No. de control') }}
+                    {{ form_row(edit_form.noControl) }}
+                    {{ form_label(edit_form.nombre, 'Nombre(s)') }}
+                    {{ form_row(edit_form.nombre) }}
+                    {{ form_label(edit_form.apellidoPaterno, 'Apellido paterno') }}
+                    {{ form_row(edit_form.apellidoPaterno) }}
+                    {{ form_label(edit_form.apellidoMaterno, 'Apellido materno') }}
+                    {{ form_row(edit_form.apellidoMaterno) }}
+                    {{ form_label(edit_form.email, 'E-mail') }}
+                    {{ form_row(edit_form.email) }}
+                    {{ form_label(edit_form.telefono, 'Teléfono') }}
+                    {{ form_row(edit_form.telefono) }}
+                    <br>
+                    {{ form_rest(edit_form) }}
+            {{ form_end(edit_form) }}
+        </fieldset>
         <ul class="record_actions">
 		    <li>
 		        <a href="{{ path('alumnos') }}">
