@@ -1,42 +1,49 @@
 {% extends '::backend.html.twig' %}
 
 {% block body %}
-<div class="units-row">
-    <div class="unit-40">
-        {% form_theme edit_form '::fields.html.twig' %}
-        <fieldset>
-            <legend>Alumno</legend>
-            {{ form_start(edit_form) }}
-                    {{ form_label(edit_form.noControl, 'No. de control') }}
-                    {{ form_row(edit_form.noControl) }}
-                    {{ form_label(edit_form.nombre, 'Nombre(s)') }}
-                    {{ form_row(edit_form.nombre) }}
-                    {{ form_label(edit_form.apellidoPaterno, 'Apellido paterno') }}
-                    {{ form_row(edit_form.apellidoPaterno) }}
-                    {{ form_label(edit_form.apellidoMaterno, 'Apellido materno') }}
-                    {{ form_row(edit_form.apellidoMaterno) }}
-                    {{ form_label(edit_form.email, 'E-mail') }}
-                    {{ form_row(edit_form.email) }}
-                    {{ form_label(edit_form.telefono, 'Teléfono') }}
-                    {{ form_row(edit_form.telefono) }}
-                    <br>
-                    {{ form_rest(edit_form) }}
-            {{ form_end(edit_form) }}
-        </fieldset>
-        <ul class="record_actions">
-		    <li>
-		        <a href="{{ path('alumnos') }}">
-		            Back to the list
-		        </a>
-		    </li>
-		    <li>{{ form(delete_form) }}</li>
-		</ul>
+<div class="unit-80">
+    <div class="units-row">
+        <div class="unit-40">
+            {% form_theme edit_form '::fields.html.twig' %}
+            <fieldset>
+                <legend>Alumno</legend>
+                {{ form_start(edit_form) }}
+                        {{ form_label(edit_form.noControl, 'No. de control') }}
+                        {{ form_row(edit_form.noControl) }}
+                        {{ form_label(edit_form.nombre, 'Nombre(s)') }}
+                        {{ form_row(edit_form.nombre) }}
+                        {{ form_label(edit_form.apellidoPaterno, 'Apellido paterno') }}
+                        {{ form_row(edit_form.apellidoPaterno) }}
+                        {{ form_label(edit_form.apellidoMaterno, 'Apellido materno') }}
+                        {{ form_row(edit_form.apellidoMaterno) }}
+                        {{ form_label(edit_form.email, 'E-mail') }}
+                        {{ form_row(edit_form.email) }}
+                        {{ form_label(edit_form.telefono, 'Teléfono') }}
+                        {{ form_row(edit_form.telefono) }}
+                        <br>
+                        {{ form_rest(edit_form) }}
+                {{ form_end(edit_form) }}
+            </fieldset>
+            <ul class="record_actions">
+    		    <li>
+    		        <a href="{{ path('alumnos') }}">
+    		            Back to the list
+    		        </a>
+    		    </li>
+    		    <li>{{ form(delete_form) }}</li>
+    		</ul>
+        </div>
     </div>
 </div>
 {% endblock %}
 
 {% block lateral %}
-    <ul>
-        <li><a href="{{ path('alumnosproyectos') }}">Alumnos-Proyectos</a></li>
-    </ul>
+<aside class="unit-20">
+    <h5>Enlaces</h5>
+    <nav class="nav-v nav-stats">
+        <ul>
+            <li><a href="{{ path('alumnosproyectos') }}">Alumnos-Proyectos</a></li>
+        </ul>
+    </nav>
+</aside>
 {% endblock %}

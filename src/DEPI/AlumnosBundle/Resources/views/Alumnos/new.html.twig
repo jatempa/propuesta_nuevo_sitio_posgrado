@@ -1,42 +1,49 @@
 {% extends '::backend.html.twig' %}
 
 {% block body %}
-<div class="units-row">
-    <div class="unit-40">
-        {% form_theme form '::fields.html.twig' %}
-        <fieldset>
-            <legend>Alumno</legend>
-            {{ form_start(form) }}
-                    {{ form_label(form.noControl, 'No. de control') }}
-                    {{ form_row(form.noControl) }}
-                    {{ form_label(form.nombre, 'Nombre(s)') }}
-                    {{ form_row(form.nombre) }}
-                    {{ form_label(form.apellidoPaterno, 'Apellido paterno') }}
-                    {{ form_row(form.apellidoPaterno) }}
-                    {{ form_label(form.apellidoMaterno, 'Apellido materno') }}
-                    {{ form_row(form.apellidoMaterno) }}
-                    {{ form_label(form.email, 'E-mail') }}
-                    {{ form_row(form.email) }}
-                    {{ form_label(form.telefono, 'Teléfono') }}
-                    {{ form_row(form.telefono) }}
-                    <br>
-                    {{ form_rest(form) }}
-            {{ form_end(form) }}
-        </fieldset>
-    
-        <ul class="record_actions">
-            <li>
-                <a href="{{ path('alumnos') }}">
-                    Back to the list
-                </a>
-            </li>
-        </ul>  
+<div class="unit-80">
+    <div class="units-row">
+        <div class="unit-40">
+            {% form_theme form '::fields.html.twig' %}
+            <fieldset>
+                <legend>Alumno</legend>
+                {{ form_start(form) }}
+                        {{ form_label(form.noControl, 'No. de control') }}
+                        {{ form_row(form.noControl) }}
+                        {{ form_label(form.nombre, 'Nombre(s)') }}
+                        {{ form_row(form.nombre) }}
+                        {{ form_label(form.apellidoPaterno, 'Apellido paterno') }}
+                        {{ form_row(form.apellidoPaterno) }}
+                        {{ form_label(form.apellidoMaterno, 'Apellido materno') }}
+                        {{ form_row(form.apellidoMaterno) }}
+                        {{ form_label(form.email, 'E-mail') }}
+                        {{ form_row(form.email) }}
+                        {{ form_label(form.telefono, 'Teléfono') }}
+                        {{ form_row(form.telefono) }}
+                        <br>
+                        {{ form_rest(form) }}
+                {{ form_end(form) }}
+            </fieldset>
+        
+            <ul class="record_actions">
+                <li>
+                    <a href="{{ path('alumnos') }}">
+                        Back to the list
+                    </a>
+                </li>
+            </ul>  
+        </div>
     </div>
 </div>
 {% endblock %}
 
 {% block lateral %}
-    <ul>
-        <li><a href="{{ path('alumnosproyectos') }}">Alumnos-Proyectos</a></li>
-    </ul>
+<aside class="unit-20">
+    <h5>Enlaces</h5>
+    <nav class="nav-v nav-stats">
+        <ul>
+            <li><a href="{{ path('alumnosproyectos') }}">Alumnos-Proyectos</a></li>
+        </ul>
+    </nav>
+</aside>
 {% endblock %}

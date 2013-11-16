@@ -1,50 +1,53 @@
 {% extends '::backend.html.twig' %}
 
 {% block body %}
-<div class="table-container">
-    <table class="width-100 table-striped">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th class="width-10">No. de control</th>
-                <th class="width-70">Nombre</th>
-                <th class="width-10">Correo electrónico</th>
-                <th class="width-10">Teléfono</th>
-                <th>Actualizar</th>
-                <th>Consultar</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for alumno in alumnos %}
-            <tr>
-                <td><a href="{{ path('alumnos_show', { 'id': alumno.id }) }}">{{ alumno.id }}</a></td>
-                <td>{{ alumno.noControl }}</td>
-                <td>{{ alumno.apellidoPaterno ~ " " ~  alumno.apellidoMaterno ~ " " ~  alumno.nombre }}</td>
-                <td>{{ alumno.email }}</td>
-                <td>{{ alumno.telefono }}</td>
-                <td>
-                    <a href="{{ path('alumnos_edit', { 'id': alumno.id }) }}" >
-                        <center><img src="{{ asset('bundles/backend/img/cog.png') }}" alt="" /></center>
-                    </a>
-                </td>
-                <td>
-                    <a href="{{ path('alumnos_show', { 'id': alumno.id }) }}" >
-                        <center><img src="{{ asset('bundles/backend/img/search.png') }}" alt="" /></center>
-                    </a>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-</div>
-
-<div class="unit-push-80 unit-10">
-    <a href="{{ path('alumnos_new') }}" class="btn btn-blue">Nuevo</a>
+<div class="unit-80">
+    <div class="table-container">
+        <table class="width-100 table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th class="width-10">No. de control</th>
+                    <th class="width-70">Nombre</th>
+                    <th class="width-10">Correo electrónico</th>
+                    <th class="width-10">Teléfono</th>
+                    <th>Actualizar</th>
+                    <th>Consultar</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for alumno in alumnos %}
+                <tr>
+                    <td><a href="{{ path('alumnos_show', { 'id': alumno.id }) }}">{{ alumno.id }}</a></td>
+                    <td>{{ alumno.noControl }}</td>
+                    <td>{{ alumno.apellidoPaterno ~ " " ~  alumno.apellidoMaterno ~ " " ~  alumno.nombre }}</td>
+                    <td>{{ alumno.email }}</td>
+                    <td>{{ alumno.telefono }}</td>
+                    <td>
+                        <a href="{{ path('alumnos_edit', { 'id': alumno.id }) }}" >
+                            <center><img src="{{ asset('bundles/backend/img/cog.png') }}" alt="" /></center>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{ path('alumnos_show', { 'id': alumno.id }) }}" >
+                            <center><img src="{{ asset('bundles/backend/img/search.png') }}" alt="" /></center>
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </div>
 {% endblock %}
 
 {% block lateral %}
-    <ul>
-        <li><a href="{{ path('alumnosproyectos') }}">Alumnos-Proyectos</a></li>
-    </ul>
+<aside class="unit-20">
+    <h5>Enlaces</h5>
+    <nav class="nav-v nav-stats">
+        <ul>
+            <li><a href="{{ path('alumnosproyectos') }}">Alumnos-Proyectos</a></li>
+        </ul>
+    </nav>
+</aside>
 {% endblock %}

@@ -27,26 +27,10 @@
         </header>
 
         <div class="units-row">
-            <aside class="unit-20">
-                <h5>Enlaces</h5>
-                <nav class="nav-v nav-stats">
-                {% block lateral %}
-                    <ul>
-                        <li><a href="http://www.itmexicali.edu.mx/">Instituto Tecnológico de Mexicali</a></li>
-                        <li><a href="{{ path('portada') }}">División de estudios de posgrado e investigación</a></li>
-                        <li><a href="http://www.snit.mx/">Dirección General</a></li>
-                    </ul>
-                {% endblock %}
-                </nav>
-            </aside>
-            <div class="unit-80">
-                {% block body %}
-                {% endblock %}
-            </div>
-        </div>
-        <div class="units-row">
-                {% block opciones %}
-                {% endblock %}
+            {% block lateral %}
+            {% endblock %}
+            {% block body %}
+            {% endblock %}
         </div>
         <footer id="footer">&copy; Instituto Tecnológico de Mexicali.</footer>
     </div>
