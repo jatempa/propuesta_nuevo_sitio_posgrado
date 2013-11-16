@@ -5,7 +5,7 @@
     <div class="unit-40">
         {% form_theme form '::fields.html.twig' %}
         <fieldset>
-            <legend>Alumnos</legend>
+            <legend>Alumno</legend>
             {{ form_start(form) }}
                     {{ form_label(form.noControl, 'No. de control') }}
                     {{ form_row(form.noControl) }}
@@ -19,7 +19,9 @@
                     {{ form_row(form.email) }}
                     {{ form_label(form.telefono, 'Teléfono') }}
                     {{ form_row(form.telefono) }}
-            {{ form_end(form, {'render_rest': false}) }}
+                    <br>
+                    {{ form_rest(form) }}
+            {{ form_end(form) }}
         </fieldset>
     
         <ul class="record_actions">
