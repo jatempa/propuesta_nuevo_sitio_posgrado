@@ -2,19 +2,32 @@
 <html>
     <head>
         <title>{% block title %}Administración{% endblock %}</title>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="{{ asset('bundles/backend/css/kube.css') }}">
         <link rel="stylesheet" href="{{ asset('bundles/backend/css/master.css') }}">
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-   
+    <div class="wrapper">
+        <header id="header">
+            <h1>Logo</h1>
+            <nav class="nav-g">
+                <ul>
+                    <li><span>Home</span></li>
+                    <li><a href="#">Link 1</a></li>
+                    <li><a href="#">Link 2</a></li>
+                    <li><a href="#">Link 3</a></li>
+                    <li><a href="#">Link 4</a></li>
+                </ul>
+            </nav>
+        </header>
+
         <div class="units-row">
-            <div class="unit-20">
-                <div class="unit-push-20 unit-80">
-                <nav class="nav-v nav-stacked nav-stats">
+            <aside class="unit-20">
+                <h5>Enlaces</h5>
+                <nav class="nav-v nav-stats">
                 {% block lateral %}
                     <ul>
                         <li><a href="http://www.itmexicali.edu.mx/">Instituto Tecnológico de Mexicali</a></li>
@@ -23,8 +36,7 @@
                     </ul>
                 {% endblock %}
                 </nav>
-                </div>
-            </div>
+            </aside>
             <div class="unit-80">
                 {% block body %}
                 {% endblock %}
@@ -33,6 +45,8 @@
         <div class="units-row">
                 {% block opciones %}
                 {% endblock %}
-        </div> 
+        </div>
+        <footer id="footer">&copy; Instituto Tecnológico de Mexicali.</footer>
+    </div>
     </body>
 </html>
