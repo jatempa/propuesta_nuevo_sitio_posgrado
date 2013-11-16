@@ -1,31 +1,31 @@
 lineas:
-    pattern:  /lineas
+    pattern:  /posgradmin/lineas
     defaults: { _controller: LineasInvestigacionBundle:LineasInvestigacion:index }
 
 _lineas:
-    pattern: /lineas/
+    pattern: /posgradmin/lineas/
     defaults: { _controller: FrameworkBundle:Redirect:redirect, route: lineas}
 
 lineas_new:
-    pattern:  /lineas/new
+    pattern:  /posgradmin/lineas/new
     defaults: { _controller: LineasInvestigacionBundle:LineasInvestigacion:new }
 
 lineas_edit:
-    pattern:  /lineas/edit/{id}
+    pattern:  /posgradmin/lineas/edit/{id}
     defaults: { _controller: LineasInvestigacionBundle:LineasInvestigacion:edit }
 
 lineas_show:
-    pattern:  /lineas/show/{id}
+    pattern:  /posgradmin/lineas/show/{id}
     defaults: { _controller: LineasInvestigacionBundle:LineasInvestigacion:show }
 
 lineas_create:
-    pattern:  /lineas/create
+    pattern:  /posgradmin/lineas/create
     defaults: { _controller: LineasInvestigacionBundle:LineasInvestigacion:create }
 
 lineas_update:
-    pattern:  /lineas/update/{id}
+    pattern:  /posgradmin/lineas/update/{id}
     defaults: { _controller: LineasInvestigacionBundle:LineasInvestigacion:update }
 
 lineas_delete:
-    pattern:  /lineas/delete/{id}
+    pattern:  /posgradmin/lineas/delete/{id}
     defaults: { _controller: LineasInvestigacionBundle:LineasInvestigacion:delete }
