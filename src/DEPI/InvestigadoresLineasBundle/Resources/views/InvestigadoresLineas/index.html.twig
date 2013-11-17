@@ -1,50 +1,45 @@
 {% extends '::backend.html.twig' %}
 
 {% block body %}
-<h1>InvestigadoresLineas list</h1>
+<div class="unit-100">
+    <h1>InvestigadoresLineas list</h1>
 
-<div class="table-container">
-    <table class="width-60 table-striped">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Rol</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for entity in entities %}
-            <tr>
-                <td><a href="{{ path('investigadoreslineas_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.rol }}</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('investigadoreslineas_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('investigadoreslineas_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-</div>
+    <div class="table-container">
+        <table class="width-60 table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Rol</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td><a href="{{ path('investigadoreslineas_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                    <td>{{ entity.rol }}</td>
+                    <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('investigadoreslineas_show', { 'id': entity.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('investigadoreslineas_edit', { 'id': entity.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 
-<ul>
-    <li>
-        <a href="{{ path('investigadoreslineas_new') }}">
-            Create a new entry
-        </a>
-    </li>
-</ul>
-{% endblock %}
-
-{% block lateral %}
     <ul>
-        <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
-        <li><a href="{{ path('lineas') }}">Lineas de investigacion</a></li>
+        <li>
+            <a href="{{ path('investigadoreslineas_new') }}">
+                Create a new entry
+            </a>
+        </li>
     </ul>
+</div>
 {% endblock %}

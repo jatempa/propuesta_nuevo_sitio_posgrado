@@ -1,25 +1,32 @@
 {% extends '::backend.html.twig' %}
 
 {% block body %}
-<div class="units-row">
-    <div class="unit-centered unit-40">
-		<h3>Investigadores</h3>
-	    
-	    {{ form(form, {'attr': {'class': 'forms forms-inline'}}) }}
-		
-		<ul>
-			<li>
-			    <a href="{{ path('investigadores') }}">
-			        Back to the list
-			    </a>
-			</li>
-		</ul>
-    </div>
+<div class="unit-80">
+	<div class="units-row">
+	    <div class="unit-centered unit-40">
+			<h3>Investigadores</h3>
+		    
+		    {{ form(form, {'attr': {'class': 'forms forms-inline'}}) }}
+			
+			<ul>
+				<li>
+				    <a href="{{ path('investigadores') }}">
+				        Back to the list
+				    </a>
+				</li>
+			</ul>
+	    </div>
+	</div>
 </div>
 {% endblock %}
 
 {% block lateral %}
-    <ul>
-        <li><a href="{{ path('investigadorproyecto') }}">Investigadores-Proyectos</a></li>
-    </ul>
+<aside class="unit-20">
+    <h5>Enlaces</h5>
+    <nav class="nav-v nav-stats">
+        <ul>
+            <li><a href="{{ path('investigadorproyecto') }}">Investigadores-Proyectos</a></li>
+        </ul>
+    </nav>
+</aside>
 {% endblock %}

@@ -1,53 +1,60 @@
 {% extends '::backend.html.twig' %}
 
 {% block body %}
+<div class="unit-80">
+    <h3>Proyectos</h3>
+    <div class="table-container">
+        <table class="width-60 table-striped">
+            <thead>
+                <th>ID</th>
+                <th>Clave ITM</th>
+                <th>Clave CONACYT</th>
+                <th>Clave DGEST</th>
+                <th>Nombre corto</th>
+                <th>Nombre completo</th>
+                <th>Fecha de apertura</th>
+                <th>Status</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ entity.id }}</td>
+                    <td>{{ entity.claveitm }}</td>
+                    <td>{{ entity.claveconacyt }}</td>
+                    <td>{{ entity.clavedgest }}</td>
+                    <td>{{ entity.nombrecorto }}</td>
+                    <td>{{ entity.nombrecompleto }}</td>
+                    <td>{{ entity.fechaapertura|date('Y-m-d') }}</td>
+                    <td>{{ entity.status }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-<h3>Proyectos</h3>
-<div class="table-container">
-    <table class="width-60 table-striped">
-        <thead>
-            <th>ID</th>
-            <th>Clave ITM</th>
-            <th>Clave CONACYT</th>
-            <th>Clave DGEST</th>
-            <th>Nombre corto</th>
-            <th>Nombre completo</th>
-            <th>Fecha de apertura</th>
-            <th>Status</th>
-        </thead>
-        <tbody>
-            <tr>
-                <td>{{ entity.id }}</td>
-                <td>{{ entity.claveitm }}</td>
-                <td>{{ entity.claveconacyt }}</td>
-                <td>{{ entity.clavedgest }}</td>
-                <td>{{ entity.nombrecorto }}</td>
-                <td>{{ entity.nombrecompleto }}</td>
-                <td>{{ entity.fechaapertura|date('Y-m-d') }}</td>
-                <td>{{ entity.status }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('proyectos') }}">
+                Back to the list
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('proyectos_edit', { 'id': entity.id }) }}">
+                Edit
+            </a>
+        </li>
+        <li>{{ form(delete_form) }}</li>
+    </ul>
 </div>
-
-<ul class="record_actions">
-    <li>
-        <a href="{{ path('proyectos') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('proyectos_edit', { 'id': entity.id }) }}">
-            Edit
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
 {% endblock %}
 
 {% block lateral %}
-    <ul>
-        <li><a href="{{ path('alumnosproyectos') }}">Alumnos-Proyectos</a></li>
-        <li><a href="{{ path('areasproyectos') }}">Areas-Proyectos</a></li>
-    </ul>
+<aside class="unit-20">
+    <h5>Enlaces</h5>
+    <nav class="nav-v nav-stats">
+        <ul>
+            <li><a href="{{ path('alumnosproyectos') }}">Alumnos-Proyectos</a></li>
+            <li><a href="{{ path('areasproyectos') }}">Areas-Proyectos</a></li>
+            <li><a href="{{ path('proyectosproductos') }}">Proyectos-Productos Academicos</a></li>
+        </ul>
+    </nav>
+</aside>
 {% endblock %}

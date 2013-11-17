@@ -1,54 +1,49 @@
 {% extends '::backend.html.twig' %}
 
-{% block body -%}
+{% block body %}
+<div class="unit-100">
     <h1>ProyectosProductos list</h1>
 
-<div class="table-container">
-    <table class="width-60 table-striped">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Cantidad</th>
-                <th>Fechacumplimiento</th>
-                <th>Observaciones</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for entity in entities %}
-            <tr>
-                <td><a href="{{ path('proyectosproductos_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.cantidad }}</td>
-                <td>{% if entity.fechaCumplimiento %}{{ entity.fechaCumplimiento|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ entity.observaciones }}</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('proyectosproductos_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('proyectosproductos_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-</div>
+    <div class="table-container">
+        <table class="width-60 table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Cantidad</th>
+                    <th>Fechacumplimiento</th>
+                    <th>Observaciones</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td><a href="{{ path('proyectosproductos_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                    <td>{{ entity.cantidad }}</td>
+                    <td>{% if entity.fechaCumplimiento %}{{ entity.fechaCumplimiento|date('Y-m-d H:i:s') }}{% endif %}</td>
+                    <td>{{ entity.observaciones }}</td>
+                    <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('proyectosproductos_show', { 'id': entity.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('proyectosproductos_edit', { 'id': entity.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 
-<ul>
-    <li>
-        <a href="{{ path('proyectosproductos_new') }}">
-            Create a new entry
-        </a>
-    </li>
-</ul>
-{% endblock %}
-
-{% block lateral %}
     <ul>
-        <li><a href="{{ path('proyectos') }}">Proyectos</a></li>
-        <li><a href="{{ path('productosacademicos') }}">Productos academicos</a></li>
+        <li>
+            <a href="{{ path('proyectosproductos_new') }}">
+                Create a new entry
+            </a>
+        </li>
     </ul>
+</div>
 {% endblock %}

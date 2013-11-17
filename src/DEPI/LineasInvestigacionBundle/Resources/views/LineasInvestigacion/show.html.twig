@@ -1,6 +1,7 @@
 {% extends '::backend.html.twig' %}
 
 {% block body %}
+<div class="unit-80">
     <h3>Líneas de investigación</h3>
 
     <table class="pure-table">
@@ -24,23 +25,30 @@
         </tbody>
     </table>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('lineas') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('lineas_edit', { 'id': entity.id }) }}">
-            Edit
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('lineas') }}">
+                Back to the list
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('lineas_edit', { 'id': entity.id }) }}">
+                Edit
+            </a>
+        </li>
+        <li>{{ form(delete_form) }}</li>
+    </ul>
+</div>
 {% endblock %}
 
 {% block lateral %}
-    <ul>
-        <li><a href="{{ path('investigadoreslineas') }}">Investigadores-Lineas</a></li>
-    </ul>
+<aside class="unit-20">
+    <h5>Enlaces</h5>
+    <nav class="nav-v nav-stats">
+        <ul>
+            <li><a href="{{ path('investigadoreslineas') }}">Investigadores-Lineas</a></li>
+        </ul>
+    </nav>
+</aside>
 {% endblock %}
+

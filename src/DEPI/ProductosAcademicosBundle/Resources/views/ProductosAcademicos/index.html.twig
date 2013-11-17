@@ -1,43 +1,56 @@
 {% extends '::backend.html.twig' %}
 
-{% block body -%}
+{% block body %}
+<div class="unit-80">
     <h1>ProductosAcademicos list</h1>
 
-<div class="table-container">
-    <table class="width-60 table-striped">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Meta</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for entity in entities %}
-            <tr>
-                <td><a href="{{ path('productosacademicos_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.meta }}</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('productosacademicos_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('productosacademicos_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-</div>
+    <div class="table-container">
+        <table class="width-60 table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Meta</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td><a href="{{ path('productosacademicos_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                    <td>{{ entity.meta }}</td>
+                    <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('productosacademicos_show', { 'id': entity.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('productosacademicos_edit', { 'id': entity.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 
-<ul>
-    <li>
-        <a href="{{ path('productosacademicos_new') }}">
-            Create a new entry
-        </a>
-    </li>
-</ul>
+    <ul>
+        <li>
+            <a href="{{ path('productosacademicos_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block lateral %}
+<aside class="unit-20">
+    <h5>Enlaces</h5>
+    <nav class="nav-v nav-stats">
+        <ul>
+            <li><a href="{{ path('proyectosproductos') }}">Proyectos-Productos Academicos</a></li>
+        </ul>
+    </nav>
+</aside>
 {% endblock %}
