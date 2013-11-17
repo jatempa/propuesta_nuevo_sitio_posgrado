@@ -29,11 +29,10 @@ class AreasProyectosController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('AreasProyectosBundle:AreasProyectos')->findAll();
+        $entities = $em->getRepository('AreasProyectosBundle:AreasProyectos')->findAreasProyectos();
 
-        return array(
-            'entities' => $entities,
-        );
+        return $this->render('AreasProyectosBundle:AreasProyectos:index.html.twig', 
+                              array('entities' => $entities,));
     }
     /**
      * Creates a new AreasProyectos entity.

@@ -29,11 +29,10 @@ class InvestigadorProyectoController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('InvestigadorProyectoBundle:InvestigadorProyecto')->findAll();
+        $entities = $em->getRepository('InvestigadorProyectoBundle:InvestigadorProyecto')->findInvestigadorProyecto();
 
-        return array(
-            'entities' => $entities,
-        );
+        return $this->render('InvestigadorProyectoBundle:InvestigadorProyecto:index.html.twig', 
+                              array('entities' => $entities,));
     }
     /**
      * Creates a new InvestigadorProyecto entity.
