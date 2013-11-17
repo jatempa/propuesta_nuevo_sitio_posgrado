@@ -17,7 +17,7 @@ class ProyectosProductosType extends AbstractType
         $builder
             ->add('cantidad')
             ->add('fechaCumplimiento')
-            ->add('observaciones')
+            ->add('observaciones','textarea', array('attr' => array('cols' => '80', 'rows' => '8')))
             ->add('proyecto')
             ->add('productoAcademico')
         ;

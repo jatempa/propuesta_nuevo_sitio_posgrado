@@ -1,15 +1,28 @@
 {% extends '::backend.html.twig' %}
 
-{% block body -%}
+{% block body %}
+<div class="unit-80">
     <h1>ProductosAcademicos creation</h1>
 
     {{ form(form, {'attr': {'class': 'forms forms-inline'}}) }}
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('productosacademicos') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+    <ul class="record_actions">
+	    <li>
+	        <a href="{{ path('productosacademicos') }}">
+	            Back to the list
+	        </a>
+	    </li>
+	</ul>
+</div>
+{% endblock %}
+
+{% block lateral %}
+<aside class="unit-20">
+    <h5>Enlaces</h5>
+    <nav class="nav-v nav-stats">
+        <ul>
+            <li><a href="{{ path('proyectosproductos') }}">Proyectos-Productos Academicos</a></li>
+        </ul>
+    </nav>
+</aside>
 {% endblock %}

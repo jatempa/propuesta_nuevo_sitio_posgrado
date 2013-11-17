@@ -1,31 +1,31 @@
 areasproyectos:
-    pattern:  /areasproyectos
+    pattern:  /posgradmin/areasproyectos
     defaults: { _controller: AreasProyectosBundle:AreasProyectos:index }
 
 _areasproyectos:
-    pattern: /areasproyectos/
+    pattern: /posgradmin/areasproyectos/
     defaults: { _controller: FrameworkBundle:Redirect:redirect, route: areasproyectos}
 
 areasproyectos_new:
-    pattern:  /areasproyectos/new
+    pattern:  /posgradmin/areasproyectos/new
     defaults: { _controller: AreasProyectosBundle:AreasProyectos:new }
 
 areasproyectos_edit:
-    pattern:  /areasproyectos/edit/{id}
+    pattern:  /posgradmin/areasproyectos/edit/{id}
     defaults: { _controller: AreasProyectosBundle:AreasProyectos:edit }
 
 areasproyectos_show:
-    pattern:  /areasproyectos/show/{id}
+    pattern:  /posgradmin/areasproyectos/show/{id}
     defaults: { _controller: AreasProyectosBundle:AreasProyectos:show }
 
 areasproyectos_create:
-    pattern:  /areasproyectos/create
+    pattern:  /posgradmin/areasproyectos/create
     defaults: { _controller: AreasProyectosBundle:AreasProyectos:create }
 
 areasproyectos_update:
-    pattern:  /areasproyectos/update/{id}
+    pattern:  /posgradmin/areasproyectos/update/{id}
     defaults: { _controller: AreasProyectosBundle:AreasProyectos:update }
 
 areasproyectos_delete:
-    pattern:  /areasproyectos/delete/{id}
+    pattern:  /posgradmin/areasproyectos/delete/{id}
     defaults: { _controller: AreasProyectosBundle:AreasProyectos:delete }

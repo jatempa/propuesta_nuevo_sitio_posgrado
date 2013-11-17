@@ -1,31 +1,31 @@
 investigadorproyecto:
-    pattern:  /investigadorproyecto
+    pattern:  /posgradmin/investigadorproyecto
     defaults: { _controller: InvestigadorProyectoBundle:InvestigadorProyecto:index }
 
 _investigadorproyecto:
-    pattern: /investigadorproyecto/
+    pattern: /posgradmin/investigadorproyecto/
     defaults: { _controller: FrameworkBundle:Redirect:redirect, route: investigadorproyecto}
 
 investigadorproyecto_new:
-    pattern:  /investigadorproyecto/new
+    pattern:  /posgradmin/investigadorproyecto/new
     defaults: { _controller: InvestigadorProyectoBundle:InvestigadorProyecto:new }
 
 investigadorproyecto_edit:
-    pattern:  /investigadorproyecto/edit/{id}
+    pattern:  /posgradmin/investigadorproyecto/edit/{id}
     defaults: { _controller: InvestigadorProyectoBundle:InvestigadorProyecto:edit }
 
 investigadorproyecto_show:
-    pattern:  /investigadorproyecto/show/{id}
+    pattern:  /posgradmin/investigadorproyecto/show/{id}
     defaults: { _controller: InvestigadorProyectoBundle:InvestigadorProyecto:show }
 
 investigadorproyecto_create:
-    pattern:  /investigadorproyecto/create
+    pattern:  /posgradmin/investigadorproyecto/create
     defaults: { _controller: InvestigadorProyectoBundle:InvestigadorProyecto:create }
 
 investigadorproyecto_update:
-    pattern:  /investigadorproyecto/update/{id}
+    pattern:  /posgradmin/investigadorproyecto/update/{id}
     defaults: { _controller: InvestigadorProyectoBundle:InvestigadorProyecto:update }
 
 investigadorproyecto_delete:
-    pattern:  /investigadorproyecto/delete/{id}
+    pattern:  /posgradmin/investigadorproyecto/delete/{id}
     defaults: { _controller: InvestigadorProyectoBundle:InvestigadorProyecto:delete }

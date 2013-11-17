@@ -1,31 +1,31 @@
 alumnos:
-    pattern:  /alumnos
+    pattern:  /posgradmin/alumnos
     defaults: { _controller: AlumnosBundle:Alumnos:index }
 
 _alumnos:
-    pattern: /alumnos/
+    pattern: /posgradmin/alumnos/
     defaults: { _controller: FrameworkBundle:Redirect:redirect, route: alumnos}
 
 alumnos_new:
-    pattern:  /alumnos/new
+    pattern:  /posgradmin/alumnos/new
     defaults: { _controller: AlumnosBundle:Alumnos:new }
 
 alumnos_edit:
-    pattern:  /alumnos/edit/{id}
+    pattern:  /posgradmin/alumnos/edit/{id}
     defaults: { _controller: AlumnosBundle:Alumnos:edit }
 
 alumnos_show:
-    pattern:  /alumnos/show/{id}
+    pattern:  /posgradmin/alumnos/show/{id}
     defaults: { _controller: AlumnosBundle:Alumnos:show }
 
 alumnos_create:
-    pattern:  /alumnos/create
+    pattern:  /posgradmin/alumnos/create
     defaults: { _controller: AlumnosBundle:Alumnos:create }
 
 alumnos_update:
-    pattern:  /alumnos/update/{id}
+    pattern:  /posgradmin/alumnos/update/{id}
     defaults: { _controller: AlumnosBundle:Alumnos:update }
 
 alumnos_delete:
-    pattern:  /alumnos/delete/{id}
+    pattern:  /posgradmin/alumnos/delete/{id}
     defaults: { _controller: AlumnosBundle:Alumnos:delete }

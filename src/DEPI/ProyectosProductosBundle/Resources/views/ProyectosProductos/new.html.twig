@@ -1,22 +1,17 @@
 {% extends '::backend.html.twig' %}
 
-{% block body -%}
+{% block body %}
+<div class="unit-100">
     <h1>ProyectosProductos creation</h1>
 
     {{ form(form) }}
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('proyectosproductos') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
-{% endblock %}
-
-{% block lateral %}
-    <ul>
-        <li><a href="{{ path('proyectos') }}">Proyectos</a></li>
-        <li><a href="{{ path('productosacademicos') }}">Productos academicos</a></li>
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('proyectosproductos') }}">
+                Back to the list
+            </a>
+        </li>
     </ul>
+</div>
 {% endblock %}

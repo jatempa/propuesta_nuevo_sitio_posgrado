@@ -1,31 +1,31 @@
 investigadoreslineas:
-    pattern:  /investigadoreslineas
+    pattern:  /posgradmin/investigadoreslineas
     defaults: { _controller: InvestigadoresLineasBundle:InvestigadoresLineas:index }
 
 _investigadoreslineas:
-    pattern: /investigadoreslineas/
+    pattern: /posgradmin/investigadoreslineas/
     defaults: { _controller: FrameworkBundle:Redirect:redirect, route: investigadoreslineas}
 
 investigadoreslineas_new:
-    pattern:  /investigadoreslineas/new
+    pattern:  /posgradmin/investigadoreslineas/new
     defaults: { _controller: InvestigadoresLineasBundle:InvestigadoresLineas:new }
 
 investigadoreslineas_edit:
-    pattern:  /investigadoreslineas/edit/{id}
+    pattern:  /posgradmin/investigadoreslineas/edit/{id}
     defaults: { _controller: InvestigadoresLineasBundle:InvestigadoresLineas:edit }
 
 investigadoreslineas_show:
-    pattern:  /investigadoreslineas/show/{id}
+    pattern:  /posgradmin/investigadoreslineas/show/{id}
     defaults: { _controller: InvestigadoresLineasBundle:InvestigadoresLineas:show }
 
 investigadoreslineas_create:
-    pattern:  /investigadoreslineas/create
+    pattern:  /posgradmin/investigadoreslineas/create
     defaults: { _controller: InvestigadoresLineasBundle:InvestigadoresLineas:create }
 
 investigadoreslineas_update:
-    pattern:  /investigadoreslineas/update/{id}
+    pattern:  /posgradmin/investigadoreslineas/update/{id}
     defaults: { _controller: InvestigadoresLineasBundle:InvestigadoresLineas:update }
 
 investigadoreslineas_delete:
-    pattern:  /investigadoreslineas/delete/{id}
+    pattern:  /posgradmin/investigadoreslineas/delete/{id}
     defaults: { _controller: InvestigadoresLineasBundle:InvestigadoresLineas:delete }

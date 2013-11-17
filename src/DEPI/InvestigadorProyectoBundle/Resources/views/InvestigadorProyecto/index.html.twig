@@ -1,50 +1,39 @@
 {% extends '::backend.html.twig' %}
 
 {% block body %}
-<h1>InvestigadorProyecto list</h1>
+<div class="unit-100">
+    <h1>InvestigadorProyecto list</h1>
 
-<div class="table-container">
-    <table class="width-60 table-striped">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Fecha_creacion</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for entity in entities %}
-            <tr>
-                <td><a href="{{ path('investigadorproyecto_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{% if entity.fechacreacion %}{{ entity.fechacreacion|date('Y-m-d') }}{% endif %}</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('investigadorproyecto_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('investigadorproyecto_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <div class="table-container">
+        <table class="width-60 table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Fecha_creacion</th>
+                    <th>Actualizar</th>
+                    <th>Consultar</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td><a href="{{ path('investigadorproyecto_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                    <td>{% if entity.fechacreacion %}{{ entity.fechacreacion|date('Y-m-d') }}{% endif %}</td>
+                    <td>
+                        <a href="{{ path('investigadorproyecto_edit', { 'id': entity.id }) }}">
+                            <center><img src="{{ asset('bundles/backend/img/cog.png') }}" alt="" /></center>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{ path('investigadorproyecto_show', { 'id': entity.id }) }}">
+                            <center><img src="{{ asset('bundles/backend/img/search.png') }}" alt="" /></center>
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </div>
-
-<ul>
-    <li>
-        <a href="{{ path('investigadorproyecto_new') }}">
-            Create a new entry
-        </a>
-    </li>
-</ul>
-{% endblock %}
-
-{% block lateral %}
-    <ul>
-        <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
-        <li><a href="{{ path('proyectos') }}">Proyectos</a></li>
-    </ul>
+<a href="{{ path('investigadorproyecto_new') }}" class="btn btn-blue">Nuevo</a>
 {% endblock %}

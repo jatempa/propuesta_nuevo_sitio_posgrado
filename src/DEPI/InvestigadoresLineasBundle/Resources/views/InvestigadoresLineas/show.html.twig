@@ -1,6 +1,7 @@
 {% extends '::backend.html.twig' %}
 
-{% block body -%}
+{% block body %}
+<div class="unit-100">
     <h1>InvestigadoresLineas</h1>
 
     <table class="pure-table">
@@ -16,24 +17,18 @@
         </tbody>
     </table>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('investigadoreslineas') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('investigadoreslineas_edit', { 'id': entity.id }) }}">
-            Edit
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
-{% endblock %}
-
-{% block lateral %}
-    <ul>
-        <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
-        <li><a href="{{ path('lineas') }}">Lineas de investigacion</a></li>
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('investigadoreslineas') }}">
+                Back to the list
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('investigadoreslineas_edit', { 'id': entity.id }) }}">
+                Edit
+            </a>
+        </li>
+        <li>{{ form(delete_form) }}</li>
     </ul>
+</div>
 {% endblock %}

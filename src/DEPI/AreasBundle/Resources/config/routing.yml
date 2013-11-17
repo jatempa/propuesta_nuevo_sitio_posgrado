@@ -1,31 +1,31 @@
 areas:
-    pattern:  /areas
+    pattern:  /posgradmin/areas
     defaults: { _controller: AreasBundle:Areas:index }
 
 _areas:
-    pattern: /areas/
+    pattern: /posgradmin/areas/
     defaults: { _controller: FrameworkBundle:Redirect:redirect, route: areas}
 
 areas_new:
-    pattern:  /areas/new
+    pattern:  /posgradmin/areas/new
     defaults: { _controller: AreasBundle:Areas:new }
 
 areas_edit:
-    pattern:  /areas/edit/{id}
+    pattern:  /posgradmin/areas/edit/{id}
     defaults: { _controller: AreasBundle:Areas:edit }
 
 areas_show:
-    pattern:  /areas/show/{id}
+    pattern:  /posgradmin/areas/show/{id}
     defaults: { _controller: AreasBundle:Areas:show }
 
 areas_create:
-    pattern:  /areas/create
+    pattern:  /posgradmin/areas/create
     defaults: { _controller: AreasBundle:Areas:create }
 
 areas_update:
-    pattern:  /areas/update/{id}
+    pattern:  /posgradmin/areas/update/{id}
     defaults: { _controller: AreasBundle:Areas:update }
 
 areas_delete:
-    pattern:  /areas/delete/{id}
+    pattern:  /posgradmin/areas/delete/{id}
     defaults: { _controller: AreasBundle:Areas:delete }

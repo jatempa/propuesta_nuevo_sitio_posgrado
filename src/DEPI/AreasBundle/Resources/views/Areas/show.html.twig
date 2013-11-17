@@ -1,6 +1,7 @@
 {% extends '::backend.html.twig' %}
 
 {% block body %}
+<div class="unit-80">
     <h3>Áreas</h3>
 
     <table class="record_properties">
@@ -20,23 +21,29 @@
         </tbody>
     </table>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('areas') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('areas_edit', { 'id': entity.id }) }}">
-            Edit
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('areas') }}">
+                Back to the list
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('areas_edit', { 'id': entity.id }) }}">
+                Edit
+            </a>
+        </li>
+        <li>{{ form(delete_form) }}</li>
+    </ul>
+</div>
 {% endblock %}
 
 {% block lateral %}
-    <ul>
-        <li><a href="{{ path('areasproyectos') }}">Areas y Proyectos</a></li>
-    </ul>
+<aside class="unit-20">
+    <h5>Enlaces</h5>
+    <nav class="nav-v nav-stats">
+        <ul>
+            <li><a href="{{ path('areasproyectos') }}">Areas-Proyectos</a></li>
+        </ul>
+    </nav>
+</aside>
 {% endblock %}

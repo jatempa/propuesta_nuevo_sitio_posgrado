@@ -1,31 +1,31 @@
 proyectos:
-    pattern:  /proyectos
+    pattern:  /posgradmin/proyectos
     defaults: { _controller: ProyectosBundle:Proyectos:index }
 
 _proyectos:
-    pattern: /proyectos/
+    pattern: /posgradmin/proyectos/
     defaults: { _controller: FrameworkBundle:Redirect:redirect, route: proyectos}
 
 proyectos_new:
-    pattern:  /proyectos/new
+    pattern:  /posgradmin/proyectos/new
     defaults: { _controller: ProyectosBundle:Proyectos:new }
 
 proyectos_edit:
-    pattern:  /proyectos/edit/{id}
+    pattern:  /posgradmin/proyectos/edit/{id}
     defaults: { _controller: ProyectosBundle:Proyectos:edit }
 
 proyectos_show:
-    pattern:  /proyectos/show/{id}
+    pattern:  /posgradmin/proyectos/show/{id}
     defaults: { _controller: ProyectosBundle:Proyectos:show }
 
 proyectos_create:
-    pattern:  /proyectos/create
+    pattern:  /posgradmin/proyectos/create
     defaults: { _controller: ProyectosBundle:Proyectos:create }
 
 proyectos_update:
-    pattern:  /proyectos/update/{id}
+    pattern:  /posgradmin/proyectos/update/{id}
     defaults: { _controller: ProyectosBundle:Proyectos:update }
 
 proyectos_delete:
-    pattern:  /proyectos/delete/{id}
+    pattern:  /posgradmin/proyectos/delete/{id}
     defaults: { _controller: ProyectosBundle:Proyectos:delete }

@@ -1,31 +1,31 @@
 alumnosproyectos:
-    pattern:  /alumnosproyectos
+    pattern:  /posgradmin/alumnosproyectos
     defaults: { _controller: AlumnosProyectosBundle:AlumnosProyectos:index }
 
 _alumnosproyectos:
-    pattern: /alumnosproyectos/
+    pattern: /posgradmin/alumnosproyectos/
     defaults: { _controller: FrameworkBundle:Redirect:redirect, route: alumnosproyectos}
 
 alumnosproyectos_new:
-    pattern:  /alumnosproyectos/new
+    pattern:  /posgradmin/alumnosproyectos/new
     defaults: { _controller: AlumnosProyectosBundle:AlumnosProyectos:new }
 
 alumnosproyectos_edit:
-    pattern:  /alumnosproyectos/edit/{id}
+    pattern:  /posgradmin/alumnosproyectos/edit/{id}
     defaults: { _controller: AlumnosProyectosBundle:AlumnosProyectos:edit }
 
 alumnosproyectos_show:
-    pattern:  /alumnosproyectos/show/{id}
+    pattern:  /posgradmin/alumnosproyectos/show/{id}
     defaults: { _controller: AlumnosProyectosBundle:AlumnosProyectos:show }
 
 alumnosproyectos_create:
-    pattern:  /alumnosproyectos/create
+    pattern:  /posgradmin/alumnosproyectos/create
     defaults: { _controller: AlumnosProyectosBundle:AlumnosProyectos:create }
 
 alumnosproyectos_update:
-    pattern:  /alumnosproyectos/update/{id}
+    pattern:  /posgradmin/alumnosproyectos/update/{id}
     defaults: { _controller: AlumnosProyectosBundle:AlumnosProyectos:update }
 
 alumnosproyectos_delete:
-    pattern:  /alumnosproyectos/delete/{id}
+    pattern:  /posgradmin/alumnosproyectos/delete/{id}
     defaults: { _controller: AlumnosProyectosBundle:AlumnosProyectos:delete }
