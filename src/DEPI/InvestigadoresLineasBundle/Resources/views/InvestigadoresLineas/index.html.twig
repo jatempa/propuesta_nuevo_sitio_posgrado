@@ -9,6 +9,8 @@
             <thead>
                 <tr>
                     <th>Id</th>
+                    <th>Investigador</th>
+                    <th>Linea de investigacion</th>
                     <th>Rol</th>
                     <th>Actualizar</th>
                     <th>Consultar</th>
@@ -18,8 +20,11 @@
             {% for entity in entities %}
                 <tr>
                     <td><a href="{{ path('investigadoreslineas_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                    <td>{{ entity.rol }}</td>
                     <td>
+                        {{ entity.investigadores.nombre ~ " " ~  entity.investigadores.apellidoPaterno ~ " " ~  entity.investigadores.apellidoMaterno }}
+                    </td>
+                    <td>{{ entity.lineasinvestigacion.nombre }}</td>
+                    <td>{{ entity.rol }}</td>
                     <td>
                         <a href="{{ path('investigadoreslineas_edit', { 'id': entity.id }) }}">
                             <center><img src="{{ asset('bundles/backend/img/cog.png') }}" alt="" /></center>

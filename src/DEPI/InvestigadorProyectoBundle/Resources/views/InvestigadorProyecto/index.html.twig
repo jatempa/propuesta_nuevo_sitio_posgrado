@@ -7,15 +7,22 @@
             <thead>
                 <tr>
                     <th>Id</th>
+                    <th>Investigador</th>
+                    <th>Proyecto</th>
                     <th>Fechacreacion</th>
-                    <th>Actions</th>
+                    <th>Actualizar</th>
+                    <th>Consultar</th>
                 </tr>
             </thead>
             <tbody>
             {% for entity in entities %}
                 <tr>
                     <td><a href="{{ path('investigadorproyecto_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                    <td>{% if entity.fechaCreacion %}{{ entity.fechaCreacion|date('Y-m-d H:i:s') }}{% endif %}</td>
+                    <td>
+                        {{ entity.investigadores.nombre  ~ " " ~  entity.investigadores.apellidoPaterno ~ " " ~  entity.investigadores.apellidoMaterno }}
+                    </td>
+                    <td>{{ entity.proyectos.nombreCompleto }}</td>
+                    <td>{% if entity.fechaCreacion %}{{ entity.fechaCreacion|date('Y-m-d') }}{% endif %}</td>
                     <td>
                         <a href="{{ path('investigadorproyecto_edit', { 'id': entity.id }) }}" >
                             <center><img src="{{ asset('bundles/backend/img/cog.png') }}" alt="" /></center>
