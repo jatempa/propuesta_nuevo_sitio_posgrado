@@ -1013,6 +1013,7 @@ a.label-yellow:hover {
   background: #e0e0e0;
 }
 .btn-black {
+  float: right;
   text-transform: uppercase;
   border-color: #000;
   background-color: #2e2e2e;
@@ -1025,6 +1026,7 @@ a.label-yellow:hover {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4d4d4d', endColorstr='#000000', GradientType=0);
 }
 .btn-red {
+  float: right;
   text-transform: uppercase;
   border-color: #c01415;
   border-bottom-color: #910f10;
@@ -1038,6 +1040,7 @@ a.label-yellow:hover {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ef6465', endColorstr='#d71618', GradientType=0);
 }
 .btn-orange {
+  float: right;
   text-transform: uppercase;
   border-color: #cd640b;
   border-bottom-color: #9c4c08;
@@ -1051,6 +1054,7 @@ a.label-yellow:hover {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f48a30', endColorstr='#e5700c', GradientType=0);
 }
 .btn-green {
+  float: right;
   text-transform: uppercase;
   border-color: #5a6d2b;
   border-bottom-color: #3c491d;
@@ -1064,6 +1068,7 @@ a.label-yellow:hover {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#90af45', endColorstr='#63782f', GradientType=0);
 }
 .btn-blue {
+  float: right;
   text-transform: uppercase;
   border-color: #104769;
   border-bottom-color: #09293d;
@@ -1077,6 +1082,7 @@ a.label-yellow:hover {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1c7ab4', endColorstr='#155c88', GradientType=0);
 }
 .btn-yellow {
+  float: right;
   text-transform: uppercase;
   border-color: #b7900b;
   border-bottom-color: #876a08;
