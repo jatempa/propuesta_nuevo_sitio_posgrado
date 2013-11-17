@@ -9,15 +9,15 @@ class AlumnosProyectosRepository extends EntityRepository
 	public function findAlumnosConProyecto()
 	{
 		$em = $this->getEntityManager();
-		
-		$dql = 'SELECT ap, alumno, proyecto
-		        FROM AlumnosProyectosBundle:AlumnosProyectos ap
-		        JOIN ap.idAlumno alumno
-		        JOIN ap.idProyecto proyecto';
 
-		$consulta = $em->createQuery($dql);
-               
-		return $consulta->getResult();
+		$dql = $em->createQueryBuilder();
+ 
+		$dql->select('ap', 'alumno', 'proyecto')
+		    ->from('AlumnosProyectosBundle:AlumnosProyectos', 'ap')
+		    ->Join('ap.idAlumno', 'alumno')
+		    ->Join('ap.idProyecto', 'proyecto');
+
+		return $dql->getQuery()->getResult();
 	}
 
 	public function findDatosAlumnoProyecto($id)
