@@ -4,14 +4,14 @@
 <div class="unit-100">
     <h1>InvestigadorProyecto creation</h1>
 
-    {{ form(form, {'attr': {'class': 'forms forms-inline'}}) }}
+    {{ form(form) }}
 
     <ul class="record_actions">
-        <li>
-            <a href="{{ path('investigadorproyecto') }}">
-                Back to the list
-            </a>
-        </li>
-    </ul>
+	    <li>
+	        <a href="{{ path('investigadorproyecto') }}">
+	            Back to the list
+	        </a>
+	    </li>
+	</ul>
 </div>
 {% endblock %}

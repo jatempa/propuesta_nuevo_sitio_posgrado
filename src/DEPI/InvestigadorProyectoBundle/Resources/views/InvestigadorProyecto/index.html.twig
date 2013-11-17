@@ -2,30 +2,27 @@
 
 {% block body %}
 <div class="unit-100">
-    <h1>InvestigadorProyecto list</h1>
-
     <div class="table-container">
-        <table class="width-60 table-striped">
+        <table class="table-striped">
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Fecha_creacion</th>
-                    <th>Actualizar</th>
-                    <th>Consultar</th>
+                    <th>Fechacreacion</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
             {% for entity in entities %}
                 <tr>
                     <td><a href="{{ path('investigadorproyecto_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                    <td>{% if entity.fechacreacion %}{{ entity.fechacreacion|date('Y-m-d') }}{% endif %}</td>
+                    <td>{% if entity.fechaCreacion %}{{ entity.fechaCreacion|date('Y-m-d H:i:s') }}{% endif %}</td>
                     <td>
-                        <a href="{{ path('investigadorproyecto_edit', { 'id': entity.id }) }}">
+                        <a href="{{ path('investigadorproyecto_edit', { 'id': entity.id }) }}" >
                             <center><img src="{{ asset('bundles/backend/img/cog.png') }}" alt="" /></center>
                         </a>
                     </td>
                     <td>
-                        <a href="{{ path('investigadorproyecto_show', { 'id': entity.id }) }}">
+                        <a href="{{ path('investigadorproyecto_show', { 'id': entity.id }) }}" >
                             <center><img src="{{ asset('bundles/backend/img/search.png') }}" alt="" /></center>
                         </a>
                     </td>

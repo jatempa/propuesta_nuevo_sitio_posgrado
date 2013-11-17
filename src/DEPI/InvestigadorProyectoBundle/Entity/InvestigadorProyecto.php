@@ -54,7 +54,7 @@ class InvestigadorProyecto
      * @param \DEPI\InvestigadoresBundle\Entity\Investigadores
      * @return InvestigadorProyecto
      */
-    public function setInvestigadores(\DEPI\InvestigadorProyectoBundle\Entity\Investigadores $investigadores)
+    public function setInvestigadores(\DEPI\InvestigadoresBundle\Entity\Investigadores $investigadores)
     {
         $this->investigadores = $investigadores;
     }
@@ -75,7 +75,7 @@ class InvestigadorProyecto
      * @param \DEPI\ProyectosBundle\Entity\Proyectos
      * @return InvestigadorProyecto
      */
-    public function setProyectos(\DEPI\InvestigadorProyectoBundle\Entity\Proyectos $proyectos)
+    public function setProyectos(\DEPI\ProyectosBundle\Entity\Proyectos $proyectos)
     {
         $this->proyectos = $proyectos;
     }

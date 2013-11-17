@@ -11,13 +11,13 @@
                 <td>{{ entity.id }}</td>
             </tr>
             <tr>
-                <th>Fecha_creacion</th>
-                <td>{{ entity.fechacreacion|date('Y-m-d H:i:s') }}</td>
+                <th>Fechacreacion</th>
+                <td>{{ entity.fechaCreacion|date('Y-m-d H:i:s') }}</td>
             </tr>
         </tbody>
     </table>
 
-    <ul class="record_actions">
+        <ul class="record_actions">
         <li>
             <a href="{{ path('investigadorproyecto') }}">
                 Back to the list
