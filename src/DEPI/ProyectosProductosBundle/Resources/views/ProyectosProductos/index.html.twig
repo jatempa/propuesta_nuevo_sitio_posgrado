@@ -12,7 +12,8 @@
                     <th>Cantidad</th>
                     <th>Fechacumplimiento</th>
                     <th>Observaciones</th>
-                    <th>Actions</th>
+                    <th>Actualizar</th>
+                    <th>Consultar</th>
                 </tr>
             </thead>
             <tbody>
@@ -23,14 +24,15 @@
                     <td>{% if entity.fechaCumplimiento %}{{ entity.fechaCumplimiento|date('Y-m-d H:i:s') }}{% endif %}</td>
                     <td>{{ entity.observaciones }}</td>
                     <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('proyectosproductos_show', { 'id': entity.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('proyectosproductos_edit', { 'id': entity.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                        <a href="{{ path('proyectosproductos_edit', { 'id': entity.id }) }}">
+                            <center><img src="{{ asset('bundles/backend/img/cog.png') }}" alt="" /></center>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{ path('proyectosproductos_show', { 'id': entity.id }) }}">
+                            <center><img src="{{ asset('bundles/backend/img/search.png') }}" alt="" /></center>
+                        </a>
+                    </td>
                     </td>
                 </tr>
             {% endfor %}

@@ -5,7 +5,7 @@
     <h3>Proyectos</h3>
 
     <div class="table-container">
-        <table class="width-60 table-striped">
+        <table class="table-striped">
             <thead>
                 <tr>
                     <th>Id</th>
@@ -17,6 +17,8 @@
                     <th>Fecha_apertura</th>
                     <th>Fecha_termino</th>
                     <th>Status</th>
+                    <th>Actualizar</th>
+                    <th>Consultar</th>
                 </tr>
             </thead>
             <tbody>
@@ -31,6 +33,16 @@
                     <td>{% if entity.fechaapertura %}{{ entity.fechaapertura|date('Y-m-d') }}{% endif %}</td>
                     <td>{% if entity.fechatermino %}{{ entity.fechatermino|date('Y-m-d') }}{% endif %}</td>
                     <td>{{ entity.status }}</td>
+                    <td>
+                        <a href="{{ path('proyectos_edit', { 'id': entity.id }) }}">
+                            <center><img src="{{ asset('bundles/backend/img/cog.png') }}" alt="" /></center>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{ path('proyectos_show', { 'id': entity.id }) }}">
+                            <center><img src="{{ asset('bundles/backend/img/search.png') }}" alt="" /></center>
+                        </a>
+                    </td>
                 </tr>
             {% endfor %}
             </tbody>

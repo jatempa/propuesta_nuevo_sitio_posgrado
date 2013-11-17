@@ -5,11 +5,12 @@
     <h1>AreasProyectos list</h1>
 
     <div class="table-container">
-        <table class="width-60 table-striped">
+        <table class="width-100 table-striped">
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Actions</th>
+                    <th>Actualizar</th>
+                    <th>Consultar</th>
                 </tr>
             </thead>
             <tbody>
@@ -17,14 +18,14 @@
                 <tr>
                     <td><a href="{{ path('areasproyectos_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                     <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('areasproyectos_show', { 'id': entity.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('areasproyectos_edit', { 'id': entity.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                        <a href="{{ path('areasproyectos_edit', { 'id': entity.id }) }}">
+                            <center><img src="{{ asset('bundles/backend/img/cog.png') }}" alt="" /></center>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{ path('areasproyectos_show', { 'id': entity.id }) }}">
+                            <center><img src="{{ asset('bundles/backend/img/search.png') }}" alt="" /></center>
+                        </a>
                     </td>
                 </tr>
             {% endfor %}

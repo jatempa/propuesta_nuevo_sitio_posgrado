@@ -5,7 +5,7 @@
     <h3>Investigadores</h3>
 
     <div class="table-container">
-        <table class="width-60 table-striped">
+        <table class="table-striped">
             <thead>
                 <tr>
                     <th>Id</th>
@@ -16,6 +16,8 @@
                     <th>Telefono</th>
                     <th>Grado</th>
                     <th>Sni</th>
+                    <th>Actualizar</th>
+                    <th>Consultar</th>
                 </tr>
             </thead>
             <tbody>
@@ -29,6 +31,16 @@
                     <td>{{ entity.telefono }}</td>
                     <td>{{ entity.grado }}</td>
                     <td>{{ entity.sni }}</td>
+                    <td>
+                        <a href="{{ path('investigadores_edit', { 'id': entity.id }) }}">
+                            <center><img src="{{ asset('bundles/backend/img/cog.png') }}" alt="" /></center>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{ path('investigadores_show', { 'id': entity.id }) }}">
+                            <center><img src="{{ asset('bundles/backend/img/search.png') }}" alt="" /></center>
+                        </a>
+                    </td>
                 </tr>
             {% endfor %}
             </tbody>

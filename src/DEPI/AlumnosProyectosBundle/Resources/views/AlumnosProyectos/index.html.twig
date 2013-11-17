@@ -4,14 +4,15 @@
 <div class="unit-100">
     <h3>Alumnos Proyectos list</h3>
     <div class="table-container">
-        <table class="width-60 table-striped">
+        <table class="width-100 table-striped">
             <thead>
                 <tr>
                     <th>Id</th>
                     <th class="width-20">No Control</th>
                     <th class="width-40">Alumno</th>
                     <th class="width-40">Proyecto</th>
-                    <th>Actions</th>
+                    <th>Actualizar</th>
+                    <th>Consultar</th>
                 </tr>
             </thead>
             <tbody>
@@ -23,14 +24,14 @@
                     <td>{{ entity.idAlumno.nombre ~ " " ~ entity.idAlumno.apellidoPaterno  ~ " " ~ entity.idAlumno.apellidoMaterno }}</td>
                     <td>{{ entity.idProyecto.nombreCorto }}</td>
                     <td>
-                        <ul>
-                            <li>
-                                <a href="{{ path('alumnosproyectos_show', { 'id': entity.id }) }}">show</a>
-                            </li>
-                            <li>
-                                <a href="{{ path('alumnosproyectos_edit', { 'id': entity.id }) }}">edit</a>
-                            </li>
-                        </ul>
+                        <a href="{{ path('alumnosproyectos_edit', { 'id': entity.id }) }}">
+                            <center><img src="{{ asset('bundles/backend/img/cog.png') }}" alt="" /></center>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{ path('alumnosproyectos_show', { 'id': entity.id }) }}">
+                            <center><img src="{{ asset('bundles/backend/img/search.png') }}" alt="" /></center>
+                        </a>
                     </td>
                 </tr>
             {% endfor %}
