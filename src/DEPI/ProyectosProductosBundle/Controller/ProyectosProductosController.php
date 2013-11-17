@@ -29,11 +29,10 @@ class ProyectosProductosController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('ProyectosProductosBundle:ProyectosProductos')->findAll();
+        $entities = $em->getRepository('ProyectosProductosBundle:ProyectosProductos')->findProyectosProductos();
 
-        return array(
-            'entities' => $entities,
-        );
+        return $this->render('ProyectosProductosBundle:ProyectosProductos:index.html.twig', 
+                              array('entities' => $entities,));
     }
     /**
      * Creates a new ProyectosProductos entity.

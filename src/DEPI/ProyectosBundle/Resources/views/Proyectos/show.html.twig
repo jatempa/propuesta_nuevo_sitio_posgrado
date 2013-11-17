@@ -2,33 +2,56 @@
 
 {% block body %}
 <div class="unit-80">
-    <h3>Proyectos</h3>
-    <div class="table-container">
-        <table class="width-60 table-striped">
-            <thead>
-                <th>ID</th>
-                <th>Clave ITM</th>
-                <th>Clave CONACYT</th>
-                <th>Clave DGEST</th>
-                <th>Nombre corto</th>
-                <th>Nombre completo</th>
-                <th>Fecha de apertura</th>
+    <h1>Proyectos</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Claveitm</th>
+                <td>{{ entity.claveItm }}</td>
+            </tr>
+            <tr>
+                <th>Claveconacyt</th>
+                <td>{{ entity.claveConacyt }}</td>
+            </tr>
+            <tr>
+                <th>Clavedgest</th>
+                <td>{{ entity.claveDgest }}</td>
+            </tr>
+            <tr>
+                <th>Nombrecorto</th>
+                <td>{{ entity.nombreCorto }}</td>
+            </tr>
+            <tr>
+                <th>Nombrecompleto</th>
+                <td>{{ entity.nombreCompleto }}</td>
+            </tr>
+            <tr>
+                <th>Objetivogeneral</th>
+                <td>{{ entity.objetivoGeneral }}</td>
+            </tr>
+            <tr>
+                <th>Objetivosespecificos</th>
+                <td>{{ entity.objetivosEspecificos }}</td>
+            </tr>
+            <tr>
+                <th>Fechaapertura</th>
+                <td>{{ entity.fechaApertura|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Fechatermino</th>
+                <td>{{ entity.fechaTermino|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
                 <th>Status</th>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>{{ entity.id }}</td>
-                    <td>{{ entity.claveitm }}</td>
-                    <td>{{ entity.claveconacyt }}</td>
-                    <td>{{ entity.clavedgest }}</td>
-                    <td>{{ entity.nombrecorto }}</td>
-                    <td>{{ entity.nombrecompleto }}</td>
-                    <td>{{ entity.fechaapertura|date('Y-m-d') }}</td>
-                    <td>{{ entity.status }}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+                <td>{{ entity.status }}</td>
+            </tr>
+        </tbody>
+    </table>
 
     <ul class="record_actions">
         <li>
@@ -51,9 +74,9 @@
     <h5>Enlaces</h5>
     <nav class="nav-v nav-stats">
         <ul>
-            <li><a href="{{ path('alumnosproyectos') }}">Alumnos-Proyectos</a></li>
             <li><a href="{{ path('areasproyectos') }}">Areas-Proyectos</a></li>
-            <li><a href="{{ path('proyectosproductos') }}">Proyectos-Productos Academicos</a></li>
+            <li><a href="{{ path('areasproyectos') }}">ProductosAcademicos-Proyectos</a></li>
+            <li><a href="{{ path('areasproyectos') }}">Alumnos-Proyectos</a></li>
         </ul>
     </nav>
 </aside>

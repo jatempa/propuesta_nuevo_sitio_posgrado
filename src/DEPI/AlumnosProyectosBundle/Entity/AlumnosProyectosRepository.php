@@ -9,30 +9,31 @@ class AlumnosProyectosRepository extends EntityRepository
 	public function findAlumnosConProyecto()
 	{
 		$em = $this->getEntityManager();
-		
-		$dql = 'SELECT ap, alumno, proyecto
-		        FROM AlumnosProyectosBundle:AlumnosProyectos ap
-		        JOIN ap.idAlumno alumno
-		        JOIN ap.idProyecto proyecto';
 
-		$consulta = $em->createQuery($dql);
-               
-		return $consulta->getResult();
+		$dql = $em->createQueryBuilder();
+ 
+		$dql->select('ap', 'alumno', 'proyecto')
+		    ->from('AlumnosProyectosBundle:AlumnosProyectos', 'ap')
+		    ->Join('ap.idAlumno', 'alumno')
+		    ->Join('ap.idProyecto', 'proyecto');
+
+		return $dql->getQuery()->getResult();
 	}
 
 	public function findDatosAlumnoProyecto($id)
 	{
 		$em = $this->getEntityManager();
 
-		$dql = 'SELECT ap, alumno, proyecto
-		        FROM AlumnosProyectosBundle:AlumnosProyectos ap
-		        JOIN ap.idAlumno alumno
-		        JOIN ap.idProyecto proyecto
-		        WHERE ap.id = :id_alumnoproyecto';
-
-		$consulta = $em->createQuery($dql);
+		$dql = $em->createQueryBuilder();
+ 
+		$dql->select('ap', 'alumno', 'proyecto')
+		    ->from('AlumnosProyectosBundle:AlumnosProyectos', 'ap')
+		    ->Join('ap.idAlumno', 'alumno')
+		    ->Join('ap.idProyecto', 'proyecto')
+		    ->where('ap.id = :id_alumnoproyecto' );
+		$consulta = $dql->getQuery();
 		$consulta -> setParameter('id_alumnoproyecto', $id);
 
-		return $consulta->getSingleResult();
+		return  $consulta->getSingleResult();
 	}
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace DEPI\UsuarioBundle\Tests\Controller;
+namespace DEPI\UserBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

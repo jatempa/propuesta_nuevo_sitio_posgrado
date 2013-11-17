@@ -5,10 +5,12 @@
     <h1>ProyectosProductos list</h1>
 
     <div class="table-container">
-        <table class="width-60 table-striped">
+        <table class="table-striped">
             <thead>
                 <tr>
                     <th>Id</th>
+                    <th>Proyecto</th>
+                    <th>Producto</th>
                     <th>Cantidad</th>
                     <th>Fechacumplimiento</th>
                     <th>Observaciones</th>
@@ -20,8 +22,10 @@
             {% for entity in entities %}
                 <tr>
                     <td><a href="{{ path('proyectosproductos_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                    <td>{{ entity.proyecto.nombreCorto }}</td>
+                    <td>{{ entity.productoAcademico.meta }}</td>
                     <td>{{ entity.cantidad }}</td>
-                    <td>{% if entity.fechaCumplimiento %}{{ entity.fechaCumplimiento|date('Y-m-d H:i:s') }}{% endif %}</td>
+                    <td>{% if entity.fechaCumplimiento %}{{ entity.fechaCumplimiento|date('Y-m-d') }}{% endif %}</td>
                     <td>{{ entity.observaciones }}</td>
                     <td>
                         <a href="{{ path('proyectosproductos_edit', { 'id': entity.id }) }}">

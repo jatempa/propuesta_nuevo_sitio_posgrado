@@ -1,17 +1,17 @@
 <?php
 
-namespace DEPI\UsuarioBundle\Entity;
+namespace DEPI\UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use FOS\UserBundle\Model\User as BaseUser;
+use FOS\UserBundle\Entity\User as BaseUser;
 
 /**
- * Usuario
+ * User
  *
  * @ORM\Table(name="fos_user")
  * @ORM\Entity
  */
-class Usuario extends BaseUser
+class User extends BaseUser
 {
     /**
      * @var integer
@@ -21,7 +21,6 @@ class Usuario extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
-
 
     public function __construct()
     {

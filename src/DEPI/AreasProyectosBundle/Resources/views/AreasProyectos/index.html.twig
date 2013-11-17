@@ -5,10 +5,12 @@
     <h1>AreasProyectos list</h1>
 
     <div class="table-container">
-        <table class="width-100 table-striped">
+        <table class="table-striped">
             <thead>
                 <tr>
                     <th>Id</th>
+                    <th>Areas</th>
+                    <th>Proyectos</th>
                     <th>Actualizar</th>
                     <th>Consultar</th>
                 </tr>
@@ -17,6 +19,8 @@
             {% for entity in entities %}
                 <tr>
                     <td><a href="{{ path('areasproyectos_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                    <td>{{ entity.area.nombre }}</td>
+                    <td>{{ entity.proyecto.nombreCorto }}</td>
                     <td>
                         <a href="{{ path('areasproyectos_edit', { 'id': entity.id }) }}">
                             <center><img src="{{ asset('bundles/backend/img/cog.png') }}" alt="" /></center>

@@ -29,11 +29,10 @@ class InvestigadoresLineasController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('InvestigadoresLineasBundle:InvestigadoresLineas')->findAll();
+        $entities = $em->getRepository('InvestigadoresLineasBundle:InvestigadoresLineas')->findInvestigadoresLineas();
 
-        return array(
-            'entities' => $entities,
-        );
+        return $this->render('InvestigadoresLineasBundle:InvestigadoresLineas:index.html.twig', 
+                              array('entities' => $entities,));
     }
     /**
      * Creates a new InvestigadoresLineas entity.
