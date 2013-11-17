@@ -4,6 +4,10 @@ body {
 
 }
 
+textarea {
+	resize: none;
+}
+
 legend {
 	text-transform: uppercase;
 }
