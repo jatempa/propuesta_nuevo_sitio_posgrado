@@ -1,8 +1,6 @@
 {% block form_row %}
 {% spaceless %}
-    <div class="forms forms-inline">
-        {{ form_errors(form) }}
-        {{ form_widget(form) }}
-    </div>
+    {{ form_errors(form) }}
+    {{ form_widget(form) }}
 {% endspaceless %}
 {% endblock form_row %}
