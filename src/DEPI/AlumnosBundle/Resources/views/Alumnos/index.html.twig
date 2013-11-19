@@ -6,7 +6,6 @@
         <table class="width-100 table-striped">
             <thead>
                 <tr>
-                    <th>ID</th>
                     <th>No. de control</th>
                     <th>Nombre</th>
                     <th>Apellido Paterno</th>
@@ -18,7 +17,6 @@
             <tbody>
             {% for alumno in alumnos %}
                 <tr>
-                    <td><a href="{{ path('alumnos_show', { 'id': alumno.id }) }}">{{ alumno.id }}</a></td>
                     <td>{{ alumno.noControl }}</td>
                     <td>{{ alumno.nombre }}</td>
                     <td>{{ alumno.apellidoPaterno }}</td>
