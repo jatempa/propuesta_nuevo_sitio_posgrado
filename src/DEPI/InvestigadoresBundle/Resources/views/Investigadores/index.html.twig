@@ -5,17 +5,13 @@
     <h3>Investigadores</h3>
 
     <div class="table-container">
-        <table class="table-striped">
+        <table class="width-100 table-striped">
             <thead>
                 <tr>
                     <th>Id</th>
                     <th>Nombre</th>
                     <th>Apellidopaterno</th>
                     <th>Apellidomaterno</th>
-                    <th>Email</th>
-                    <th>Telefono</th>
-                    <th>Grado</th>
-                    <th>Sni</th>
                     <th>Actualizar</th>
                     <th>Consultar</th>
                 </tr>
@@ -27,10 +23,6 @@
                     <td>{{ entity.nombre }}</td>
                     <td>{{ entity.apellidoPaterno }}</td>
                     <td>{{ entity.apellidoMaterno }}</td>
-                    <td>{{ entity.email }}</td>
-                    <td>{{ entity.telefono }}</td>
-                    <td>{{ entity.grado }}</td>
-                    <td>{{ entity.sni }}</td>
                     <td>
                         <a href="{{ path('investigadores_edit', { 'id': entity.id }) }}">
                             <center><img src="{{ asset('bundles/backend/img/cog.png') }}" alt="" /></center>
