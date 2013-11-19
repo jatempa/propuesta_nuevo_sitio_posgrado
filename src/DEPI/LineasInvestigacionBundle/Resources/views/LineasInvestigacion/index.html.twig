@@ -5,13 +5,12 @@
     <h3>Líneas de investigación</h3>
 
     <div class="table-container">
-        <table class="table-striped">
+        <table class="width-100 table-striped">
             <thead>
                 <tr>
                     <th>Id</th>
                     <th>Clave</th>
                     <th>Nombre</th>
-                    <th>Descripcion</th>
                     <th>Actualizar</th>
                     <th>Consultar</th>
                 </tr>
@@ -22,7 +21,6 @@
                     <td><a href="{{ path('lineas_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                     <td>{{ entity.clave }}</td>
                     <td>{{ entity.nombre }}</td>
-                    <td>{{ entity.descripcion }}</td>
                     <td>
                         <a href="{{ path('lineas_edit', { 'id': entity.id }) }}">
                             <center><img src="{{ asset('bundles/backend/img/cog.png') }}" alt="" /></center>
