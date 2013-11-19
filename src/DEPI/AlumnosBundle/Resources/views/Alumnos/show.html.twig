@@ -2,7 +2,7 @@
 
 {% block body %}
 <div class="unit-80">
-        <table class="table-bordered table-striped">
+        <table class="table-striped">
             <thead>
                 <tr>
                     <th>No. de control</th>
@@ -25,19 +25,12 @@
             </tbody>
         </table>
 
-    <ul class="record_actions">
-        <li>
-            <a href="{{ path('alumnos') }}">
-                Back to the list
-            </a>
-        </li>
-        <li>
-            <a href="{{ path('alumnos_edit', { 'id': entity.id }) }}">
-                Edit
-            </a>
-        </li>
-        <li>{{ form(delete_form) }}</li>
-    </ul>
+            
+    <div class="units-row">
+        <div class="unit-push-80 unit-20">
+            <a href="{{ path('alumnos_edit', { 'id': entity.id }) }}" class="btn btn-blue">Editar</a>
+        </div>
+    </div>
 </div>
 {% endblock %}
 
