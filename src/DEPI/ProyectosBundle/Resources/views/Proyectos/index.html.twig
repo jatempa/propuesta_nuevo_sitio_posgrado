@@ -8,16 +8,9 @@
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Claveitm</th>
-                    <th>Claveconacyt</th>
-                    <th>Clavedgest</th>
-                    <th>Nombrecorto</th>
-                    <th>Nombrecompleto</th>
-                    <th>Objetivogeneral</th>
-                    <th>Objetivosespecificos</th>
-                    <th>Fechaapertura</th>
-                    <th>Fechatermino</th>
-                    <th>Status</th>
+                    <th class="width-30">Nombrecompleto</th>
+                    <th class="width-30">Objetivogeneral</th>
+                    <th>Fecha de apertura</th>
                     <th>Actualizar</th>
                     <th>Consultar</th>
                 </tr>
@@ -26,16 +19,9 @@
             {% for entity in entities %}
                 <tr>
                     <td><a href="{{ path('proyectos_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                    <td>{{ entity.claveItm }}</td>
-                    <td>{{ entity.claveConacyt }}</td>
-                    <td>{{ entity.claveDgest }}</td>
-                    <td>{{ entity.nombreCorto }}</td>
                     <td>{{ entity.nombreCompleto }}</td>
                     <td>{{ entity.objetivoGeneral }}</td>
-                    <td>{{ entity.objetivosEspecificos }}</td>
                     <td>{% if entity.fechaApertura %}{{ entity.fechaApertura|date('Y-m-d') }}{% endif %}</td>
-                    <td>{% if entity.fechaTermino %}{{ entity.fechaTermino|date('Y-m-d') }}{% endif %}</td>
-                    <td>{{ entity.status }}</td>
                     <td>
                         <a href="{{ path('proyectos_edit', { 'id': entity.id }) }}">
                             <center><img src="{{ asset('bundles/backend/img/cog.png') }}" alt="" /></center>

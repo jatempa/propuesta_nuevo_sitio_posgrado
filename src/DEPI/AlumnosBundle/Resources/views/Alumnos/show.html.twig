@@ -2,14 +2,15 @@
 
 {% block body %}
 <div class="unit-80">
-        <table class="table-bordered table-striped">
+    <div class="table-container">
+        <table class="width-100 table-striped">
             <thead>
                 <tr>
                     <th>No. de control</th>
                     <th>Nombre(s)</th>
                     <th>Apellido paterno</th>
                     <th>Apellido materno</th>
-                    <th>E-mail</th>
+                    <th>Correo electrónico</th>
                     <th>Teléfono</th>
                 </tr>
             </thead>
@@ -24,26 +25,19 @@
                 </tr>
             </tbody>
         </table>
-
-    <ul class="record_actions">
-        <li>
-            <a href="{{ path('alumnos') }}">
-                Back to the list
-            </a>
-        </li>
-        <li>
-            <a href="{{ path('alumnos_edit', { 'id': entity.id }) }}">
-                Edit
-            </a>
-        </li>
-        <li>{{ form(delete_form) }}</li>
-    </ul>
+    </div>
+            
+    <div class="units-row">
+        <div class="unit-push-80 unit-20">
+            <a href="{{ path('alumnos_edit', { 'id': entity.id }) }}" class="btn btn-blue">Editar</a>
+        </div>
+    </div>
 </div>
 {% endblock %}
 
 {% block lateral %}
 <aside class="unit-20">
-    <h5>Opciones</h5>
+    <h5>Enlaces</h5>
     <nav class="nav-v nav-stats">
         <ul>
             <li><a href="{{ path('alumnosproyectos') }}">Alumnos-Proyectos</a></li>

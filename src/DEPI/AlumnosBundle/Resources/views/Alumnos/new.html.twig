@@ -3,7 +3,7 @@
 {% block body %}
 <div class="unit-80">
     <div class="units-row">
-        <div class="unit-50">
+        <div class="unit-push-20 unit-60">
             {% form_theme form '::fields.html.twig' %}
             <fieldset>
                 <legend>Alumno</legend>
@@ -27,7 +27,7 @@
                         {{ form_row(form.apellidoMaterno) }}
                     </div>
                     <div class="pure-control-group"> 
-                        {{ form_label(form.email, 'E-mail') }}
+                        {{ form_label(form.email, 'Correo electrónico') }}
                         {{ form_row(form.email) }}
                     </div>
                     <div class="pure-control-group"> 
