@@ -12,14 +12,19 @@ legend {
 	text-transform: uppercase;
 }
 
-.logo {
-	width: 55px;
-	height: 75px;
-}
-
 /* =Links
 -----------------------------------------------------------------------------*/
 
+.enlace a {
+ 	text-decoration: none;
+ 	color: #333333;
+}
+
+.enlace a:focus,
+.enlace a:hover {
+	text-decoration: none;
+	color: #333333;
+}
 
 /* =Layout
 -----------------------------------------------------------------------------*/
@@ -50,20 +55,12 @@ legend {
 /* =Nav
 -----------------------------------------------------------------------------*/
 
-.enlace a {
- 	text-decoration: none;
- 	color: #333333;
-}
-
-.enlace a:focus,
-.enlace a:hover {
-	text-decoration: none;
-	color: #333333;
-}
 
 /* =Misc
 -----------------------------------------------------------------------------*/
-
+th {
+	font-weight: bold; /*Formato de letra en negrita*/
+}
 
 /* =Footer
 -----------------------------------------------------------------------------*/
