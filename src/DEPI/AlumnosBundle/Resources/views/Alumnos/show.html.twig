@@ -1,26 +1,36 @@
 {% extends '::backend.html.twig' %}
 
+{% block mapa %}
+    <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
+    <li><a href="{{ path('alumnos') }}">Alumnos</a></li>
+    <li><span>Consultar alumno</span></li>
+{% endblock %}
+
 {% block body %}
 <div class="unit-80">
     <div class="table-container">
-        <table class="width-100 table-striped">
-            <thead>
-                <tr>
-                    <th>No. de control</th>
-                    <th>Nombre(s)</th>
-                    <th>Apellido paterno</th>
-                    <th>Apellido materno</th>
-                    <th>Correo electrónico</th>
-                    <th>Teléfono</th>
-                </tr>
-            </thead>
+        <table class="unit-push-20 unit-60">
             <tbody>
                 <tr>
+                    <th>No. de control</th>
                     <td>{{ entity.noControl }}</td>
-                    <td>{{ entity.nombre }}</td>                
-                    <td>{{ entity.apellidoPaterno }}</td>                
-                    <td>{{ entity.apellidoMaterno }}</td>                
-                    <td>{{ entity.email }}</td>                
+                </tr>
+                <tr>
+                    <th>Nombre(s)</th>
+                    <td>{{ entity.nombre }}</td>
+                </tr>
+                <tr>
+                    <th>Apellido paterno</th>
+                    <td>{{ entity.apellidoPaterno }}</td> 
+                </tr>
+                <tr>
+                    <th>Apellido materno</th>
+                    <td>{{ entity.apellidoMaterno }}</td> 
+                </tr>
+                    <th>Correo electrónico</th>
+                    <td>{{ entity.email }}</td>    
+                <tr>
+                    <th>Teléfono</th>           
                     <td>{{ entity.telefono }}</td>
                 </tr>
             </tbody>
@@ -28,7 +38,7 @@
     </div>
             
     <div class="units-row">
-        <div class="unit-push-80 unit-20">
+        <div class="unit-push-60 unit-20">
             <a href="{{ path('alumnos_edit', { 'id': entity.id }) }}" class="btn btn-blue">Editar</a>
         </div>
     </div>
