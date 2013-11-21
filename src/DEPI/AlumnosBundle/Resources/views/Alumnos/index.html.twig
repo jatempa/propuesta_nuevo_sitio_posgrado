@@ -1,7 +1,7 @@
 {% extends '::backend.html.twig' %}
 
 {% block mapa %}
-    <li><a href="{{ path('posgradmin') }}" >Inicio</a></li>
+    <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
     <li><span>Alumnos</span></li>
 {% endblock %}
 
@@ -22,10 +22,26 @@
             <tbody>
             {% for alumno in alumnos %}
                 <tr>
-                    <td>{{ alumno.noControl }}</td>
-                    <td>{{ alumno.nombre }}</td>
-                    <td>{{ alumno.apellidoPaterno }}</td>
-                    <td>{{ alumno.apellidoMaterno }}</td>
+                    <td class="enlace">
+                        <a href="{{ path('alumnos_show', { 'id': alumno.id }) }}" >
+                            {{ alumno.noControl }}
+                        </a>
+                    </td>
+                    <td class="enlace">
+                        <a href="{{ path('alumnos_show', { 'id': alumno.id }) }}" >
+                            {{ alumno.nombre }}
+                        </a>
+                    </td>
+                    <td class="enlace">
+                        <a href="{{ path('alumnos_show', { 'id': alumno.id }) }}" >
+                            {{ alumno.apellidoPaterno }}
+                        </a>
+                    </td>
+                    <td class="enlace">
+                        <a href="{{ path('alumnos_show', { 'id': alumno.id }) }}" >
+                            {{ alumno.apellidoMaterno }}
+                        </a>
+                    </td>
                     <td>
                         <a href="{{ path('alumnos_edit', { 'id': alumno.id }) }}" >
                             <center><img src="{{ asset('bundles/backend/img/cog.png') }}" alt="" /></center>
@@ -44,4 +60,3 @@
 </div>
 <a href="{{ path('alumnos_new') }}" class="btn btn-blue">Nuevo</a>
 {% endblock %}
-

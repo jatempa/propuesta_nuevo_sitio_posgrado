@@ -12,8 +12,7 @@
     <body>
         <div class="wrapper">
             <header id="header">
-                <img src="{{ asset('bundles/portada/img/itm.png') }}" alt="" class="logo">
-                <nav class="nav-g">
+                <nav class="breadcrumbs">
                     <ul>
                         <li><a href="{{ path('alumnos') }}">Alumnos</a></li>
                         <li><a href="{{ path('areas') }}">Áreas</a></li>
@@ -34,9 +33,21 @@
                     </ul>
                 </nav>                
             </div>
-            
+
             <div class="units-row">
                 {% block lateral %}
+                <aside class="unit-20">
+                    <nav class="nav-v nav-stacked nav-stats">
+                        <ul>
+                            <li><a href="{{ path('alumnos') }}">Alumnos</a></li>
+                            <li><a href="{{ path('areas') }}">Áreas</a></li>
+                            <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
+                            <li><a href="{{ path('lineas') }}">Líneas de Investigación</a></li>
+                            <li><a href="{{ path('productosacademicos') }}">Productos Académicos</a></li>
+                            <li><a href="{{ path('proyectos') }}">Proyectos</a></li>
+                        </ul>
+                    </nav>
+                </aside>
                 {% endblock %}
                 {% block body %}
                 {% endblock %}
