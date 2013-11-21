@@ -1,5 +1,10 @@
 {% extends '::backend.html.twig' %}
 
+{% block mapa %}
+    <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
+    <li>Alumnos</li>
+{% endblock %}
+
 {% block body %}
 <div class="unit-80">
     <div class="units-row">
@@ -38,12 +43,12 @@
 
 
             <div class="units-row">
-                <div class="unit-push-50 unit-20">
+                <div class="unit-push-80 unit-20">
                     {{ form_row(edit_form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
 
                 {{ form_end(edit_form) }}
                 </div>
-                <div class="unit-push-60 unit-20">
+                <div class="unit-push-30 unit-20">
                     {{ form_start(delete_form, { 'attr': {'class': 'pure-form pure-form-aligned'} }) }}
                         {{ form_row(delete_form.submit, { 'attr': {'class': 'btn btn-red'} }) }}
                     {{ form_end(delete_form) }}                    
