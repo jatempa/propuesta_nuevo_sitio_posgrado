@@ -14,13 +14,26 @@
             <header id="header">
                 <nav class="breadcrumbs">
                     <ul>
-                        {% block mapa %}
-                            <li><span>Inicio</span></li>
-                        {% endblock %}
+                        <li><a href="{{ path('alumnos') }}">Alumnos</a></li>
+                        <li><a href="{{ path('areas') }}">Áreas</a></li>
+                        <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
+                        <li><a href="{{ path('lineas') }}">Líneas de Investigación</a></li>
+                        <li><a href="{{ path('productosacademicos') }}">Productos Académicos</a></li>
+                        <li><a href="{{ path('proyectos') }}">Proyectos</a></li>
                     </ul>
                 </nav>
             </header>
-        
+
+            <div class="units-row">
+                <nav class="breadcrumbs">
+                    <ul>
+                        {% block mapa %}
+                        <li><span>Inicio</span></li>
+                        {% endblock %}
+                    </ul>
+                </nav>                
+            </div>
+
             <div class="units-row">
                 {% block lateral %}
                 <aside class="unit-20">
