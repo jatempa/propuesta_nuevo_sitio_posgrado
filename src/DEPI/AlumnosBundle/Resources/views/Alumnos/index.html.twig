@@ -5,6 +5,7 @@
     <li><span>Alumnos</span></li>
 {% endblock %}
 
+
 {% block body %}
 <div class="unit-100">
     <div class="table-container">
@@ -12,44 +13,44 @@
             <thead>
                 <tr>
                     <th>No. de control</th>
-                    <th>Nombre</th>
-                    <th>Apellido Paterno</th>
-                    <th>Apellido Materno</th>
-                    <th>Actualizar</th>
-                    <th>Consultar</th>
+                    <th>Nombre(s)</th>
+                    <th>Apellido paterno</th>
+                    <th>Apellido materno</th>
+                    <th>Correo electrónico</th>
+                    <th>Teléfono</th>
                 </tr>
             </thead>
             <tbody>
             {% for alumno in alumnos %}
                 <tr>
-                    <td class="enlace">
-                        <a href="{{ path('alumnos_show', { 'id': alumno.id }) }}" >
+                    <td class="width-20 enlace">
+                        <a href="{{ path('alumnos_edit', { 'id': alumno.id }) }}" >
                             {{ alumno.noControl }}
                         </a>
                     </td>
-                    <td class="enlace">
-                        <a href="{{ path('alumnos_show', { 'id': alumno.id }) }}" >
+                    <td class="width-20 enlace">
+                        <a href="{{ path('alumnos_edit', { 'id': alumno.id }) }}" >
                             {{ alumno.nombre }}
                         </a>
                     </td>
-                    <td class="enlace">
-                        <a href="{{ path('alumnos_show', { 'id': alumno.id }) }}" >
+                    <td class="width-20 enlace">
+                        <a href="{{ path('alumnos_edit', { 'id': alumno.id }) }}" >
                             {{ alumno.apellidoPaterno }}
                         </a>
                     </td>
-                    <td class="enlace">
-                        <a href="{{ path('alumnos_show', { 'id': alumno.id }) }}" >
+                    <td class="width-20 enlace">
+                        <a href="{{ path('alumnos_edit', { 'id': alumno.id }) }}" >
                             {{ alumno.apellidoMaterno }}
                         </a>
                     </td>
-                    <td>
+                    <td class="width-10 enlace">
                         <a href="{{ path('alumnos_edit', { 'id': alumno.id }) }}" >
-                            <center><img src="{{ asset('bundles/backend/img/cog.png') }}" alt="" /></center>
+                            {{ alumno.email }}
                         </a>
                     </td>
-                    <td>
-                        <a href="{{ path('alumnos_show', { 'id': alumno.id }) }}" >
-                            <center><img src="{{ asset('bundles/backend/img/search.png') }}" alt="" /></center>
+                    <td class="width-10 enlace">
+                        <a href="{{ path('alumnos_edit', { 'id': alumno.id }) }}" >
+                            {{ alumno.telefono }}
                         </a>
                     </td>
                 </tr>
