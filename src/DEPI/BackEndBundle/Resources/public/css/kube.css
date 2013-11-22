@@ -618,7 +618,7 @@ table.table-hovered thead tr:hover th {
 .pure-form input[type="color"],
 .pure-form select,
 .pure-form textarea {
-    padding: 0.5em 1.6em;
+    padding: 0.5em 3.6em;
     display: inline-block;
     border: 1px solid #ccc;
     font-size: 0.98em;
