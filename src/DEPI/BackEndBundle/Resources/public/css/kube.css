@@ -781,7 +781,7 @@ table.table-hovered thead tr:hover th {
     display: inline-block;
     vertical-align: middle;
     width: 10em;
-    margin: 0 1.5em 0 0;
+    margin: 0 1em 0 0;
 }
 .pure-form-aligned .pure-controls {
     margin: 1.5em 0 0 10em;
@@ -2177,6 +2177,14 @@ select.unit-100 {
 @media (min-width: 768px) {
   .desktop-hide {
     display: none;
+  }
+
+  .pure-form-aligned .pure-control-group label {
+    text-align: right;
+    display: inline-block;
+    vertical-align: middle;
+    width: 10em;
+    margin: 0 1em 0 0;
   }
 }
 /* =Mobile (Portrait)
