@@ -2,7 +2,8 @@
 
 {% block mapa %}
     <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
-    <li>Alumnos</li>
+    <li><a href="{{ path('alumnos') }}">Alumnos</a></li>
+    <li><span>Actualizar datos del alumno</span></li>
 {% endblock %}
 
 {% block body %}
@@ -54,7 +55,6 @@
                     {{ form_end(delete_form) }}                    
                 </div>    
             </div>
-
 
         </div>
     </div>

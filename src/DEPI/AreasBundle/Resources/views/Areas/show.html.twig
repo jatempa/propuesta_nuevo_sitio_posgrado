@@ -1,7 +1,13 @@
 {% extends '::backend.html.twig' %}
 
+{% block mapa %}
+    <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
+    <li><a href="{{ path('areas') }}">Áreas</a></li>
+    <li><span>Consultar área de investigación</span></li>
+{% endblock %}
+
 {% block body %}
-<div class="unit-80">
+<div class="unit-100">
     <h3>Áreas</h3>
 
     <table class="record_properties">

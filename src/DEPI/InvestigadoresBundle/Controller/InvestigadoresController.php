@@ -75,7 +75,7 @@ class InvestigadoresController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array('label' => 'Grabar'));
 
         return $form;
     }
@@ -164,7 +164,7 @@ class InvestigadoresController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => 'Actualizar'));
 
         return $form;
     }
@@ -239,7 +239,7 @@ class InvestigadoresController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('investigadores_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', array('label' => 'Eliminar'))
             ->getForm()
         ;
     }

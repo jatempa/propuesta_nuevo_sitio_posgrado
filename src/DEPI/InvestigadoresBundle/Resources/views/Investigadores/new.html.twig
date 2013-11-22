@@ -1,20 +1,57 @@
 {% extends '::backend.html.twig' %}
 
+{% block mapa %}
+    <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
+    <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
+    <li><span>Agregar un nuevo investigador</span></li>
+{% endblock %}
+
 {% block body %}
-<div class="unit-80">
-	<div class="units-row">
-	    <div class="unit-centered unit-40">
-			<h3>Investigadores</h3>
-		    
-		    {{ form(form, {'attr': {'class': 'forms forms-inline'}}) }}
-			
-			<ul>
-				<li>
-				    <a href="{{ path('investigadores') }}">
-				        Back to the list
-				    </a>
-				</li>
-			</ul>
+<div class="unit-100">
+    <div class="units-row">
+        <div class="unit-centered unit-50">
+        	{% form_theme form '::fields.html.twig' %}
+            <fieldset>
+                <legend>Investigadores</legend>
+                
+                {{ form_start(form, { 'attr': {'class': 'pure-form pure-form-aligned'} }) }}
+                    <div class="pure-control-group">    
+                        {{ form_label(form.nombre, 'Nombre(s)') }}
+                        {{ form_row(form.nombre) }}
+                    </div>
+                    <div class="pure-control-group"> 
+                        {{ form_label(form.apellidoPaterno, 'Apellido paterno') }}
+                        {{ form_row(form.apellidoPaterno) }}
+                    </div>
+                    <div class="pure-control-group"> 
+                        {{ form_label(form.apellidoMaterno, 'Apellido materno') }}
+                        {{ form_row(form.apellidoMaterno) }}
+                    </div>
+                    <div class="pure-control-group"> 
+                        {{ form_label(form.email, 'Correo electrónico') }}
+                        {{ form_row(form.email) }}
+                    </div>
+                    <div class="pure-control-group"> 
+                        {{ form_label(form.telefono, 'Teléfono') }}
+                        {{ form_row(form.telefono) }}
+                    </div>
+                    <div class="pure-control-group"> 
+                        {{ form_label(form.grado, 'Grado') }}
+                        {{ form_row(form.grado) }}
+                    </div>
+                    <div class="pure-control-group"> 
+                        {{ form_label(form.sni, 'SNI') }}
+                        {{ form_row(form.sni) }}
+                    </div>
+            </fieldset>
+
+            <div class="units-row">
+                <div class="unit-push-80 unit-20">
+                    {{ form_row(form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
+
+                {{ form_end(form) }}
+                </div>
+            </div>
 	    </div>
 	</div>
 </div>

@@ -1,21 +1,65 @@
 {% extends '::backend.html.twig' %}
 
+{% block mapa %}
+    <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
+    <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
+    <li><span>Actualizar datos del investigador</span></li>
+{% endblock %}
+
 {% block body %}
-<div class="unit-80">
+<div class="unit-100">
     <div class="units-row">
-        <div class="unit-centered unit-40">
-        	<h3>Investigadores</h3>
+        <div class="unit-centered unit-50">
+            {% form_theme edit_form '::fields.html.twig' %}
+            <fieldset>
+                <legend>Investigador</legend>
 
-        	{{ form(edit_form, {'attr': {'class': 'forms forms-inline'}}) }}
+                {{ form_start(edit_form, { 'attr': {'class': 'pure-form pure-form-aligned'} }) }}
 
-            <ul class="record_actions">
-    		    <li>
-    		        <a href="{{ path('investigadores') }}">
-    		            Back to the list
-    		        </a>
-    		    </li>
-    		    <li>{{ form(delete_form) }}</li>
-    		</ul>
+                    <div class="pure-control-group">    
+                        {{ form_label(edit_form.nombre, 'Nombre(s)') }}
+                        {{ form_row(edit_form.nombre) }}
+                    </div>
+                    <div class="pure-control-group"> 
+                        {{ form_label(edit_form.apellidoPaterno, 'Apellido paterno') }}
+                        {{ form_row(edit_form.apellidoPaterno) }}
+                    </div>
+                    <div class="pure-control-group"> 
+                        {{ form_label(edit_form.apellidoMaterno, 'Apellido materno') }}
+                        {{ form_row(edit_form.apellidoMaterno) }}
+                    </div>
+                    <div class="pure-control-group"> 
+                        {{ form_label(edit_form.email, 'Correo electrónico') }}
+                        {{ form_row(edit_form.email) }}
+                    </div>
+                    <div class="pure-control-group"> 
+                        {{ form_label(edit_form.telefono, 'Teléfono') }}
+                        {{ form_row(edit_form.telefono) }}
+                    </div>
+                    <div class="pure-control-group"> 
+                        {{ form_label(edit_form.grado, 'Grado') }}
+                        {{ form_row(edit_form.grado) }}
+                    </div>
+                    <div class="pure-control-group"> 
+                        {{ form_label(edit_form.sni, 'SNI') }}
+                        {{ form_row(edit_form.sni) }}
+                    </div>
+            </fieldset>
+
+
+            <div class="units-row">
+                <div class="unit-push-80 unit-20">
+                    {{ form_row(edit_form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
+
+                {{ form_end(edit_form) }}
+                </div>
+                <div class="unit-push-30 unit-20">
+                    {{ form_start(delete_form, { 'attr': {'class': 'pure-form pure-form-aligned'} }) }}
+                        {{ form_row(delete_form.submit, { 'attr': {'class': 'btn btn-red'} }) }}
+                    {{ form_end(delete_form) }}                    
+                </div>    
+            </div>
+
         </div>
     </div>
 </div>

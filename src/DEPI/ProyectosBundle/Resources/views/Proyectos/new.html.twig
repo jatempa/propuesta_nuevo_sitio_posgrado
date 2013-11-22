@@ -1,17 +1,71 @@
 {% extends '::backend.html.twig' %}
 
+{% block mapa %}
+    <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
+    <li><a href="{{ path('proyectos') }}">Proyectos</a></li>
+    <li><span>Agregar un nuevo proyectos</span></li>
+{% endblock %}
+
 {% block body %}
-<div class="unit-80">
-    <h1>Proyectos creation</h1>
+<div class="unit-100">
+    <div class="units-row">
+        <div class="unit-centered unit-50">
+            {% form_theme form '::fields.html.twig' %}
+            <fieldset>
+                <legend>Proyecto</legend>
+                {{ form_start(form, { 'attr': {'class': 'forms'} }) }}
 
-    {{ form(form) }}
+                    <div class="pure-control-group">
+                        {{ form_label(form.claveItm) }}
+                        {{ form_row(form.claveItm) }}
+                    </div>
+                    <div class="pure-control-group">
+                        {{ form_label(form.claveDgest, 'Clave DGEST') }}
+                        {{ form_row(form.claveDgest) }}
+                    </div>
+                    <div class="pure-control-group">
+                        {{ form_label(form.claveConacyt, 'Clave Conacyt') }}
+                        {{ form_row(form.claveConacyt) }}
+                    </div>
+                    <div class="pure-control-group">    
+                        {{ form_label(form.nombreCorto, 'Nombre corto') }}
+                        {{ form_row(form.nombreCorto) }}
+                    </div>
+                    <div class="pure-control-group">    
+                        {{ form_label(form.nombreCompleto, 'Nombre completo') }}
+                        {{ form_row(form.nombreCompleto) }}
+                    </div>
+                    <div class="pure-control-group">    
+                        {{ form_label(form.objetivoGeneral, 'Objetivo general') }}
+                        {{ form_row(form.objetivoGeneral) }}
+                    </div>
+                    <div class="pure-control-group">    
+                        {{ form_label(form.objetivosEspecificos, 'Objetivos específicos') }}
+                        {{ form_row(form.objetivosEspecificos) }}
+                    </div>
+                    <div class="pure-control-group">    
+                        {{ form_label(form.fechaApertura, 'Fecha de apertura') }}
+                        {{ form_row(form.fechaApertura) }}
+                    </div>
+                    <div class="pure-control-group">    
+                        {{ form_label(form.fechaTermino, 'Fecha de termino') }}
+                        {{ form_row(form.fechaTermino) }}
+                    </div>
+                    <div class="pure-control-group">    
+                        {{ form_label(form.status, 'Estatus') }}
+                        {{ form_row(form.status) }}
+                    </div>
+            </fieldset>
 
-    <ul class="record_actions">
-        <li>
-            <a href="{{ path('proyectos') }}">
-                Back to the list
-            </a>
-        </li>
-    </ul>
+
+            <div class="units-row">
+                <div class="unit-push-80 unit-20">
+                    {{ form_row(form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
+
+                {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

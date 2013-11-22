@@ -1,36 +1,61 @@
 {% extends '::backend.html.twig' %}
 
-{% block body %}
-<div class="unit-80">
-    <h3>Investigadores</h3>
+{% block mapa %}
+    <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
+    <li><span>Investigadores</span></li>
+{% endblock %}
 
+{% block body %}
+<div class="unit-100">
     <div class="table-container">
         <table class="width-100 table-striped">
             <thead>
                 <tr>
-                    <th>Id</th>
                     <th>Nombre</th>
                     <th>Apellidopaterno</th>
                     <th>Apellidomaterno</th>
-                    <th>Actualizar</th>
-                    <th>Consultar</th>
+                    <th>Correo electrónico</th>
+                    <th>Teléfono</th>
+                    <th>Grado</th>
+                    <th>Sni</th>
                 </tr>
             </thead>
             <tbody>
             {% for entity in entities %}
                 <tr>
-                    <td><a href="{{ path('investigadores_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                    <td>{{ entity.nombre }}</td>
-                    <td>{{ entity.apellidoPaterno }}</td>
-                    <td>{{ entity.apellidoMaterno }}</td>
-                    <td>
-                        <a href="{{ path('investigadores_edit', { 'id': entity.id }) }}">
-                            <center><img src="{{ asset('bundles/backend/img/cog.png') }}" alt="" /></center>
+                    <td class="width-20 enlace">
+                        <a href="{{ path('investigadores_edit', { 'id': entity.id }) }}" >
+                            {{ entity.nombre }}
                         </a>
                     </td>
-                    <td>
-                        <a href="{{ path('investigadores_show', { 'id': entity.id }) }}">
-                            <center><img src="{{ asset('bundles/backend/img/search.png') }}" alt="" /></center>
+                    <td class="width-20 enlace">
+                        <a href="{{ path('investigadores_edit', { 'id': entity.id }) }}" >
+                            {{ entity.apellidoPaterno }}
+                        </a>
+                    </td>
+                    <td class="width-20 enlace">
+                        <a href="{{ path('investigadores_edit', { 'id': entity.id }) }}" >
+                            {{ entity.apellidoMaterno }}
+                        </a>
+                    </td>
+                    <td class="width-20 enlace">
+                        <a href="{{ path('investigadores_edit', { 'id': entity.id }) }}" >
+                            {{ entity.email }}
+                        </a>
+                    </td>
+                    <td class="width-20 enlace">
+                        <a href="{{ path('investigadores_edit', { 'id': entity.id }) }}" >
+                            {{ entity.telefono }}
+                        </a>
+                    </td>
+                    <td class="enlace">
+                        <a href="{{ path('investigadores_edit', { 'id': entity.id }) }}" >
+                            {{ entity.grado }}
+                        </a>
+                    </td>
+                    <td class="enlace">
+                        <a href="{{ path('investigadores_edit', { 'id': entity.id }) }}" >
+                            {{ entity.sni }}
                         </a>
                     </td>
                 </tr>

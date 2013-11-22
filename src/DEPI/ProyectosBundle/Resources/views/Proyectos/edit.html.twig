@@ -1,18 +1,78 @@
 {% extends '::backend.html.twig' %}
 
+{% block mapa %}
+    <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
+    <li><a href="{{ path('proyectos') }}">Proyectos</a></li>
+    <li><span>Actualizar datos del proyecto</span></li>
+{% endblock %}
+
 {% block body %}
-<div class="unit-80">
-    <h1>Proyectos edit</h1>
+<div class="unit-100">
+    <div class="units-row">
+        <div class="unit-centered unit-50">
+            {% form_theme edit_form '::fields.html.twig' %}
+            <fieldset>
+                <legend>Proyecto</legend>
+                
+                {{ form_start(edit_form, { 'attr': {'class': 'pure-form pure-form-aligned'} }) }}
 
-    {{ form(edit_form) }}
+                    <div class="pure-control-group">
+                        {{ form_label(edit_form.claveItm, 'Clave ITM') }}
+                        {{ form_row(edit_form.claveItm) }}
+                    </div>
+                    <div class="pure-control-group">
+                        {{ form_label(edit_form.claveDgest, 'Clave DGEST') }}
+                        {{ form_row(edit_form.claveDgest) }}
+                    </div>
+                    <div class="pure-control-group">
+                        {{ form_label(edit_form.claveConacyt, 'Clave Conacyt') }}
+                        {{ form_row(edit_form.claveConacyt) }}
+                    </div>
+                    <div class="pure-control-group">    
+                        {{ form_label(edit_form.nombreCorto, 'Nombre corto') }}
+                        {{ form_row(edit_form.nombreCorto) }}
+                    </div>
+                    <div class="pure-control-group">    
+                        {{ form_label(edit_form.nombreCompleto, 'Nombre completo') }}
+                        {{ form_row(edit_form.nombreCompleto) }}
+                    </div>
+                    <div class="pure-control-group">    
+                        {{ form_label(edit_form.objetivoGeneral, 'Objetivo general') }}
+                        {{ form_row(edit_form.objetivoGeneral) }}
+                    </div>
+                    <div class="pure-control-group">    
+                        {{ form_label(edit_form.objetivosEspecificos, 'Objetivos específicos') }}
+                        {{ form_row(edit_form.objetivosEspecificos) }}
+                    </div>
+                    <div class="pure-control-group">    
+                        {{ form_label(edit_form.fechaApertura, 'Fecha de apertura') }}
+                        {{ form_row(edit_form.fechaApertura) }}
+                    </div>
+                    <div class="pure-control-group">    
+                        {{ form_label(edit_form.fechaTermino, 'Fecha de termino') }}
+                        {{ form_row(edit_form.fechaTermino) }}
+                    </div>
+                    <div class="pure-control-group">    
+                        {{ form_label(edit_form.status, 'Estatus') }}
+                        {{ form_row(edit_form.status) }}
+                    </div>
+            </fieldset>
 
-    <ul class="record_actions">
-	    <li>
-	        <a href="{{ path('proyectos') }}">
-	            Back to the list
-	        </a>
-	    </li>
-	    <li>{{ form(delete_form) }}</li>
-	</ul>
+
+            <div class="units-row">
+                <div class="unit-push-80 unit-20">
+                    {{ form_row(edit_form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
+
+                {{ form_end(edit_form) }}
+                </div>
+                <div class="unit-push-30 unit-20">
+                    {{ form_start(delete_form, { 'attr': {'class': 'pure-form pure-form-aligned'} }) }}
+                        {{ form_row(delete_form.submit, { 'attr': {'class': 'btn btn-red'} }) }}
+                    {{ form_end(delete_form) }}                    
+                </div>    
+            </div>
+
+        </div>
+    </div>
 </div>
 {% endblock %}
