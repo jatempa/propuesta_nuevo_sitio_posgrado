@@ -75,46 +75,6 @@ th {
 -----------------------------------------------------------------------------*/
 @media only screen and (min-width: 768px) and (max-width: 959px) {
     .wrapper { width: 748px; }
-
-    .pure-form-aligned .pure-control-group label {
-	    text-align: left;
-	    display: inline-block;
-	    vertical-align: middle;
-	    width: 10em;
-	    margin: 0 1em 0 0;
-	}
-
-	.pure-form input[type="text"],
-	.pure-form input[type="password"],
-	.pure-form input[type="email"],
-	.pure-form input[type="url"],
-	.pure-form input[type="date"],
-	.pure-form input[type="month"],
-	.pure-form input[type="time"],
-	.pure-form input[type="datetime"],
-	.pure-form input[type="datetime-local"],
-	.pure-form input[type="week"],
-	.pure-form input[type="number"],
-	.pure-form input[type="search"],
-	.pure-form input[type="tel"],
-	.pure-form input[type="color"],
-	.pure-form select,
-	.pure-form textarea {
-	    padding: 0.5em 5.6em;
-	    display: inline-block;
-	    border: 1px solid #ccc;
-	    font-size: 0.98em;
-	    box-shadow: inset 0 1px 3px #ddd;
-	    border-radius: 4px;
-	    -webkit-transition: 0.3s linear border;
-	    -moz-transition: 0.3s linear border;
-	    -ms-transition: 0.3s linear border;
-	    -o-transition: 0.3s linear border;
-	    transition: 0.3s linear border;
-	    -webkit-box-sizing: border-box;
-	    -moz-box-sizing: border-box;
-	    box-sizing: border-box;
-	}
 }
 
 
@@ -126,58 +86,10 @@ th {
 	#header h1 { margin-bottom: .5em; }
 	#nav ul li { margin: 0; float: none; margin-bottom: 1px; background-color: #f6f6f6; }
 	#nav ul li a, #nav ul li span { display: block; padding: 2px 5px; }
-
-    .pure-form-aligned .pure-control-group label {
-	    text-align: left;
-	    display: inline-block;
-	    vertical-align: middle;
-	    width: 10em;
-	    margin: 0 1em 0 0;
-	}
 }
 
 /* =Mobile (Landscape)
 -----------------------------------------------------------------------------*/
 @media only screen and (min-width: 480px) and (max-width: 767px) {
 	.wrapper { width: 420px; }
-
-	.pure-form-aligned .pure-control-group label {
-	    text-align: left;
-	    display: inline-block;
-	    vertical-align: middle;
-	    width: 10em;
-	    margin: 0 1em 0 0;
-	}
-
-	.pure-form input[type="text"],
-	.pure-form input[type="password"],
-	.pure-form input[type="email"],
-	.pure-form input[type="url"],
-	.pure-form input[type="date"],
-	.pure-form input[type="month"],
-	.pure-form input[type="time"],
-	.pure-form input[type="datetime"],
-	.pure-form input[type="datetime-local"],
-	.pure-form input[type="week"],
-	.pure-form input[type="number"],
-	.pure-form input[type="search"],
-	.pure-form input[type="tel"],
-	.pure-form input[type="color"],
-	.pure-form select,
-	.pure-form textarea {
-	    padding: 0.5em 1.6em;
-	    display: inline-block;
-	    border: 1px solid #ccc;
-	    font-size: 0.98em;
-	    box-shadow: inset 0 1px 3px #ddd;
-	    border-radius: 4px;
-	    -webkit-transition: 0.3s linear border;
-	    -moz-transition: 0.3s linear border;
-	    -ms-transition: 0.3s linear border;
-	    -o-transition: 0.3s linear border;
-	    transition: 0.3s linear border;
-	    -webkit-box-sizing: border-box;
-	    -moz-box-sizing: border-box;
-	    box-sizing: border-box;
-	}
 }
