@@ -14,10 +14,6 @@ alumnosproyectos_edit:
     pattern:  /posgradmin/alumnosproyectos/edit/{id}
     defaults: { _controller: AlumnosProyectosBundle:AlumnosProyectos:edit }
 
-alumnosproyectos_show:
-    pattern:  /posgradmin/alumnosproyectos/show/{id}
-    defaults: { _controller: AlumnosProyectosBundle:AlumnosProyectos:show }
-
 alumnosproyectos_create:
     pattern:  /posgradmin/alumnosproyectos/create
     defaults: { _controller: AlumnosProyectosBundle:AlumnosProyectos:create }
