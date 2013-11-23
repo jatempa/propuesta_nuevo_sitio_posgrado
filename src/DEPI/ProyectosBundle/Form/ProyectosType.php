@@ -22,8 +22,8 @@ class ProyectosType extends AbstractType
             ->add('nombreCompleto', 'text')
             ->add('objetivoGeneral', 'text')
             ->add('objetivosEspecificos', 'textarea')
-            ->add('fechaApertura', 'genemu_jquerydate', array('widget' => 'single_text'))
-            ->add('fechaTermino', 'genemu_jquerydate', array('widget' => 'single_text'))
+            ->add('fechaApertura', 'date', array('widget' => 'single_text'))
+            ->add('fechaTermino', 'date', array('widget' => 'single_text'))
             ->add('status', 'checkbox')
         ;
     }
