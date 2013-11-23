@@ -13,48 +13,59 @@
             {% form_theme form '::fields.html.twig' %}
             <fieldset>
                 <legend>Proyecto</legend>
-                {{ form_start(form, { 'attr': {'class': 'forms'} }) }}
-
-                    <div class="pure-control-group">
-                        {{ form_label(form.claveItm) }}
-                        {{ form_row(form.claveItm) }}
-                    </div>
-                    <div class="pure-control-group">
-                        {{ form_label(form.claveDgest, 'Clave DGEST') }}
-                        {{ form_row(form.claveDgest) }}
-                    </div>
-                    <div class="pure-control-group">
-                        {{ form_label(form.claveConacyt, 'Clave Conacyt') }}
-                        {{ form_row(form.claveConacyt) }}
-                    </div>
-                    <div class="pure-control-group">    
-                        {{ form_label(form.nombreCorto, 'Nombre corto') }}
-                        {{ form_row(form.nombreCorto) }}
-                    </div>
-                    <div class="pure-control-group">    
-                        {{ form_label(form.nombreCompleto, 'Nombre completo') }}
-                        {{ form_row(form.nombreCompleto) }}
-                    </div>
-                    <div class="pure-control-group">    
-                        {{ form_label(form.objetivoGeneral, 'Objetivo general') }}
-                        {{ form_row(form.objetivoGeneral) }}
-                    </div>
-                    <div class="pure-control-group">    
-                        {{ form_label(form.objetivosEspecificos, 'Objetivos específicos') }}
-                        {{ form_row(form.objetivosEspecificos) }}
-                    </div>
-                    <div class="pure-control-group">    
-                        {{ form_label(form.fechaApertura, 'Fecha de apertura') }}
-                        {{ form_row(form.fechaApertura) }}
-                    </div>
-                    <div class="pure-control-group">    
-                        {{ form_label(form.fechaTermino, 'Fecha de termino') }}
-                        {{ form_row(form.fechaTermino) }}
-                    </div>
-                    <div class="pure-control-group">    
-                        {{ form_label(form.status, 'Estatus') }}
-                        {{ form_row(form.status) }}
-                    </div>
+                {{ form_start(form, { 'attr': {'class': 'forms forms-columnar'} }) }}
+					
+                    <p>
+                    	{{ form_label(form.claveItm, 'Clave ITM') }}
+                        {{ form_widget(form.claveItm) }}
+                    </p>
+                        
+                    
+                    <p>
+                    	{{ form_label(form.claveDgest, 'Clave DGEST') }}
+                        {{ form_widget(form.claveDgest) }}
+                    </p>
+                    
+                    <p>
+                    	{{ form_label(form.claveConacyt, 'Clave Conacyt') }}
+                        {{ form_widget(form.claveConacyt) }}
+                    </p>
+                        
+                    <p>
+                    	{{ form_label(form.nombreCorto, 'Nombre corto') }}
+                        {{ form_widget(form.nombreCorto) }}
+                    </p>
+                        
+                    <p>
+                    	{{ form_label(form.nombreCompleto, 'Nombre completo') }}
+                        {{ form_widget(form.nombreCompleto) }}
+                    </p>
+                        
+                    <p>
+                    	{{ form_label(form.objetivoGeneral, 'Objetivo general') }}
+                        {{ form_widget(form.objetivoGeneral) }}
+                    </p>
+                        
+                    <p>
+                    	{{ form_label(form.objetivosEspecificos, 'Objetivos específicos') }}
+                        {{ form_widget(form.objetivosEspecificos) }}
+                    </p>
+                      
+	                <p>
+	                	{{ form_label(form.fechaApertura, 'Fecha de apertura') }}
+	                    {{ form_widget(form.fechaApertura) }}
+	                </p>
+	                    
+	                <p>
+	                	{{ form_label(form.fechaTermino, 'Fecha de termino') }}
+                        {{ form_widget(form.fechaTermino) }}
+	                </p>
+ 
+                    <p>
+                    	{{ form_label(form.status, 'Estatus') }}
+                        {{ form_widget(form.status) }}
+                    </p>
+                   
             </fieldset>
 
 
