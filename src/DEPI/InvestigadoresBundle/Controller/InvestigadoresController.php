@@ -75,7 +75,7 @@ class InvestigadoresController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Grabar'));
+        $form->add('submit', 'submit', array('label' => 'Guardar'));
 
         return $form;
     }

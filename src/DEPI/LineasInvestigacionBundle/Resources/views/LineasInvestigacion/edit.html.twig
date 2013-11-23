@@ -13,37 +13,38 @@
             {% form_theme edit_form '::fields.html.twig' %}
             <fieldset>
                 <legend>Línea de investigación</legend>
-                
-                {{ form_start(edit_form, { 'attr': {'class': 'pure-form pure-form-aligned'} }) }}
-
-                    <div class="pure-control-group">
+                {{ form_start(edit_form, { 'attr': {'class': 'forms forms-columnar'} }) }}
+                    <p>
                         {{ form_label(edit_form.clave, 'Clave') }}
-                        {{ form_row(edit_form.clave) }}
-                    </div>
-                    <div class="pure-control-group">    
+                        {{ form_widget(edit_form.clave, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                        
+                    
+                    <p>
                         {{ form_label(edit_form.nombre, 'Nombre') }}
-                        {{ form_row(edit_form.nombre) }}
-                    </div>
-                    <div class="pure-control-group"> 
+                        {{ form_widget(edit_form.nombre, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                    
+                    <p>
                         {{ form_label(edit_form.descripcion, 'Descripción') }}
-                        {{ form_row(edit_form.descripcion) }}
-                    </div>
+                        {{ form_widget(edit_form.descripcion, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                        
+                    <p>
+                        {{ form_widget(edit_form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
+                    </p>
+
+                    <p>
+                         {{ form_widget(edit_form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
+                    {{ form_end(edit_form) }}
+                    </p>
+
+                    <p>
+                        {{ form_start(delete_form) }}
+                            {{ form_widget(delete_form.submit, { 'attr': {'class': 'btn btn-red'} }) }}
+                        {{ form_end(delete_form) }}
+                    </p>
             </fieldset>
-
-
-            <div class="units-row">
-                <div class="unit-push-80 unit-20">
-                    {{ form_row(edit_form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
-
-                {{ form_end(edit_form) }}
-                </div>
-                <div class="unit-push-30 unit-20">
-                    {{ form_start(delete_form, { 'attr': {'class': 'pure-form pure-form-aligned'} }) }}
-                        {{ form_row(delete_form.submit, { 'attr': {'class': 'btn btn-red'} }) }}
-                    {{ form_end(delete_form) }}                    
-                </div>    
-            </div>
-
         </div>
     </div>
 </div>

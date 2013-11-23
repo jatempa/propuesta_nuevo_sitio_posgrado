@@ -13,65 +13,71 @@
             {% form_theme edit_form '::fields.html.twig' %}
             <fieldset>
                 <legend>Proyecto</legend>
-                
-                {{ form_start(edit_form, { 'attr': {'class': 'pure-form pure-form-aligned'} }) }}
-
-                    <div class="pure-control-group">
+                {{ form_start(edit_form, { 'attr': {'class': 'forms forms-columnar'} }) }}
+                    
+                    <p>
                         {{ form_label(edit_form.claveItm, 'Clave ITM') }}
-                        {{ form_row(edit_form.claveItm) }}
-                    </div>
-                    <div class="pure-control-group">
+                        {{ form_widget(edit_form.claveItm, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                        
+                    
+                    <p>
                         {{ form_label(edit_form.claveDgest, 'Clave DGEST') }}
-                        {{ form_row(edit_form.claveDgest) }}
-                    </div>
-                    <div class="pure-control-group">
+                        {{ form_widget(edit_form.claveDgest, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                    
+                    <p>
                         {{ form_label(edit_form.claveConacyt, 'Clave Conacyt') }}
-                        {{ form_row(edit_form.claveConacyt) }}
-                    </div>
-                    <div class="pure-control-group">    
+                        {{ form_widget(edit_form.claveConacyt, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                        
+                    <p>
                         {{ form_label(edit_form.nombreCorto, 'Nombre corto') }}
-                        {{ form_row(edit_form.nombreCorto) }}
-                    </div>
-                    <div class="pure-control-group">    
+                        {{ form_widget(edit_form.nombreCorto, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                        
+                    <p>
                         {{ form_label(edit_form.nombreCompleto, 'Nombre completo') }}
-                        {{ form_row(edit_form.nombreCompleto) }}
-                    </div>
-                    <div class="pure-control-group">    
+                        {{ form_widget(edit_form.nombreCompleto, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                        
+                    <p>
                         {{ form_label(edit_form.objetivoGeneral, 'Objetivo general') }}
-                        {{ form_row(edit_form.objetivoGeneral) }}
-                    </div>
-                    <div class="pure-control-group">    
+                        {{ form_widget(edit_form.objetivoGeneral, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                        
+                    <p>
                         {{ form_label(edit_form.objetivosEspecificos, 'Objetivos específicos') }}
-                        {{ form_row(edit_form.objetivosEspecificos) }}
-                    </div>
-                    <div class="pure-control-group">    
+                        {{ form_widget(edit_form.objetivosEspecificos, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                      
+                    <p>
                         {{ form_label(edit_form.fechaApertura, 'Fecha de apertura') }}
-                        {{ form_row(edit_form.fechaApertura) }}
-                    </div>
-                    <div class="pure-control-group">    
+                        {{ form_widget(edit_form.fechaApertura, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                        
+                    <p>
                         {{ form_label(edit_form.fechaTermino, 'Fecha de termino') }}
-                        {{ form_row(edit_form.fechaTermino) }}
-                    </div>
-                    <div class="pure-control-group">    
+                        {{ form_widget(edit_form.fechaTermino, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+ 
+                    <p>
                         {{ form_label(edit_form.status, 'Estatus') }}
-                        {{ form_row(edit_form.status) }}
-                    </div>
+                        {{ form_widget(edit_form.status) }}
+                    </p>
+
+                    <p>
+                        {{ form_widget(edit_form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
+
+                    {{ form_end(edit_form) }}
+                    </p>
+
+                    <p>
+                        {{ form_start(delete_form) }}
+                            {{ form_widget(delete_form.submit, { 'attr': {'class': 'btn btn-red'} }) }}
+                        {{ form_end(delete_form) }} 
+                    </p>
             </fieldset>
-
-
-            <div class="units-row">
-                <div class="unit-push-80 unit-20">
-                    {{ form_row(edit_form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
-
-                {{ form_end(edit_form) }}
-                </div>
-                <div class="unit-push-30 unit-20">
-                    {{ form_start(delete_form, { 'attr': {'class': 'pure-form pure-form-aligned'} }) }}
-                        {{ form_row(delete_form.submit, { 'attr': {'class': 'btn btn-red'} }) }}
-                    {{ form_end(delete_form) }}                    
-                </div>    
-            </div>
-
         </div>
     </div>
 </div>

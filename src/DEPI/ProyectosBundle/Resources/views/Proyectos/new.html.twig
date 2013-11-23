@@ -17,65 +17,59 @@
 					
                     <p>
                     	{{ form_label(form.claveItm, 'Clave ITM') }}
-                        {{ form_widget(form.claveItm) }}
+                        {{ form_widget(form.claveItm, { 'attr': {'class': 'width-100'} }) }}
                     </p>
                         
                     
                     <p>
                     	{{ form_label(form.claveDgest, 'Clave DGEST') }}
-                        {{ form_widget(form.claveDgest) }}
+                        {{ form_widget(form.claveDgest, { 'attr': {'class': 'width-100'} }) }}
                     </p>
                     
                     <p>
                     	{{ form_label(form.claveConacyt, 'Clave Conacyt') }}
-                        {{ form_widget(form.claveConacyt) }}
+                        {{ form_widget(form.claveConacyt, { 'attr': {'class': 'width-100'} }) }}
                     </p>
                         
                     <p>
                     	{{ form_label(form.nombreCorto, 'Nombre corto') }}
-                        {{ form_widget(form.nombreCorto) }}
+                        {{ form_widget(form.nombreCorto, { 'attr': {'class': 'width-100'} }) }}
                     </p>
                         
                     <p>
                     	{{ form_label(form.nombreCompleto, 'Nombre completo') }}
-                        {{ form_widget(form.nombreCompleto) }}
+                        {{ form_widget(form.nombreCompleto, { 'attr': {'class': 'width-100'} }) }}
                     </p>
                         
                     <p>
                     	{{ form_label(form.objetivoGeneral, 'Objetivo general') }}
-                        {{ form_widget(form.objetivoGeneral) }}
+                        {{ form_widget(form.objetivoGeneral, { 'attr': {'class': 'width-100'} }) }}
                     </p>
                         
                     <p>
                     	{{ form_label(form.objetivosEspecificos, 'Objetivos específicos') }}
-                        {{ form_widget(form.objetivosEspecificos) }}
+                        {{ form_widget(form.objetivosEspecificos, { 'attr': {'class': 'width-100'} }) }}
                     </p>
                       
 	                <p>
 	                	{{ form_label(form.fechaApertura, 'Fecha de apertura') }}
-	                    {{ form_widget(form.fechaApertura) }}
+	                    {{ form_widget(form.fechaApertura, { 'attr': {'class': 'width-100'} }) }}
 	                </p>
 	                    
 	                <p>
 	                	{{ form_label(form.fechaTermino, 'Fecha de termino') }}
-                        {{ form_widget(form.fechaTermino) }}
+                        {{ form_widget(form.fechaTermino, { 'attr': {'class': 'width-100'} }) }}
 	                </p>
  
                     <p>
                     	{{ form_label(form.status, 'Estatus') }}
                         {{ form_widget(form.status) }}
                     </p>
-                   
+
+                    <p>
+                        {{ form_row(form.submit, { 'attr': {'class': 'btn btn-blue width-20'} }) }}
+                    </p>
             </fieldset>
-
-
-            <div class="units-row">
-                <div class="unit-push-80 unit-20">
-                    {{ form_row(form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
-
-                {{ form_end(form) }}
-                </div>
-            </div>
         </div>
     </div>
 </div>

@@ -13,23 +13,19 @@
             {% form_theme form '::fields.html.twig' %}
             <fieldset>
                 <legend>Producto Académico</legend>
-                
-                {{ form_start(form, { 'attr': {'class': 'pure-form pure-form-aligned'} }) }}
-
-                    <div class="pure-control-group">
+                {{ form_start(form, { 'attr': {'class': 'forms forms-columnar'} }) }}
+                    
+                    <p>
                         {{ form_label(form.meta, 'Meta') }}
-                        {{ form_row(form.meta) }}
-                    </div>
-
-            </fieldset>
-
-            <div class="units-row">
-                <div class="unit-push-80 unit-20">
-                    {{ form_row(form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
+                        {{ form_widget(form.meta, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                        
+                    <p>
+                        {{ form_widget(form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
+                    </p>
 
                 {{ form_end(form) }}
-                </div>
-            </div>
+            </fieldset>
         </div>
     </div>
 </div>

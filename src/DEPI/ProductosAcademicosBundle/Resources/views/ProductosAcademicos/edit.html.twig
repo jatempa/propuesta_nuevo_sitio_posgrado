@@ -13,28 +13,26 @@
             {% form_theme edit_form '::fields.html.twig' %}
             <fieldset>
                 <legend>Producto Académico</legend>
-                
-                {{ form_start(edit_form, { 'attr': {'class': 'pure-form pure-form-aligned'} }) }}
-
-                    <div class="pure-control-group">
+                {{ form_start(edit_form, { 'attr': {'class': 'forms forms-columnar'} }) }}
+                    
+                    <p>
                         {{ form_label(edit_form.meta, 'Meta') }}
-                        {{ form_row(edit_form.meta) }}
-                    </div>
+                        {{ form_widget(edit_form.meta, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                        
+                    <p>
+                        {{ form_widget(edit_form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
+                    {{ form_end(edit_form) }}
+                    </p>
 
-            </fieldset>
-			
-			<div class="units-row">
-                <div class="unit-push-80 unit-20">
-                    {{ form_row(edit_form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
+                    <p>
+                        {{ form_start(delete_form) }}
+                            {{ form_widget(delete_form.submit, { 'attr': {'class': 'btn btn-red'} }) }}
+                        {{ form_end(delete_form) }}
+                    </p>
 
                 {{ form_end(edit_form) }}
-                </div>
-                <div class="unit-push-30 unit-20">
-                    {{ form_start(delete_form, { 'attr': {'class': 'pure-form pure-form-aligned'} }) }}
-                        {{ form_row(delete_form.submit, { 'attr': {'class': 'btn btn-red'} }) }}
-                    {{ form_end(delete_form) }}                    
-                </div>    
-            </div>
+            </fieldset>
         </div>
     </div>
 </div>
