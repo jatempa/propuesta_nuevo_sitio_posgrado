@@ -52,7 +52,7 @@ class AreasProyectosController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('areasproyectos_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('areasproyectos', array('id' => $entity->getId())));
         }
 
         return array(
@@ -75,7 +75,7 @@ class AreasProyectosController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array('label' => 'Guardar'));
 
         return $form;
     }
@@ -95,31 +95,6 @@ class AreasProyectosController extends Controller
         return array(
             'entity' => $entity,
             'form'   => $form->createView(),
-        );
-    }
-
-    /**
-     * Finds and displays a AreasProyectos entity.
-     *
-     * @Route("/{id}", name="areasproyectos_show")
-     * @Method("GET")
-     * @Template()
-     */
-    public function showAction($id)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('AreasProyectosBundle:AreasProyectos')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find AreasProyectos entity.');
-        }
-
-        $deleteForm = $this->createDeleteForm($id);
-
-        return array(
-            'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),
         );
     }
 
@@ -164,7 +139,7 @@ class AreasProyectosController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => 'Actualizar'));
 
         return $form;
     }
@@ -192,7 +167,7 @@ class AreasProyectosController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('areasproyectos_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('areasproyectos', array('id' => $id)));
         }
 
         return array(
@@ -239,7 +214,7 @@ class AreasProyectosController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('areasproyectos_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', array('label' => 'Eliminar'))
             ->getForm()
         ;
     }

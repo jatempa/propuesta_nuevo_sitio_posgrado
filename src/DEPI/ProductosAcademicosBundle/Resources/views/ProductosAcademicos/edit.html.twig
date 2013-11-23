@@ -1,18 +1,39 @@
 {% extends '::backend.html.twig' %}
 
+{% block mapa %}
+    <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
+    <li><a href="{{ path('productosacademicos') }}">Productos Académicos</a></li>
+    <li><span>Actualizar datos de un producto académico</span></li>
+{% endblock %}
+
 {% block body %}
-<div class="unit-80">
-    <h1>ProductosAcademicos edit</h1>
+<div class="unit-100">
+    <div class="units-row">
+        <div class="unit-centered unit-50">
+            {% form_theme edit_form '::fields.html.twig' %}
+            <fieldset>
+                <legend>Producto Académico</legend>
+                {{ form_start(edit_form, { 'attr': {'class': 'forms forms-columnar'} }) }}
+                    
+                    <p>
+                        {{ form_label(edit_form.meta, 'Meta') }}
+                        {{ form_widget(edit_form.meta, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                        
+                    <p>
+                        {{ form_widget(edit_form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
+                    {{ form_end(edit_form) }}
+                    </p>
 
-    {{ form(edit_form, {'attr': {'class': 'forms forms-inline'}}) }}
+                    <p>
+                        {{ form_start(delete_form) }}
+                            {{ form_widget(delete_form.submit, { 'attr': {'class': 'btn btn-red'} }) }}
+                        {{ form_end(delete_form) }}
+                    </p>
 
-    <ul class="record_actions">
-	    <li>
-	        <a href="{{ path('productosacademicos') }}">
-	            Back to the list
-	        </a>
-	    </li>
-	    <li>{{ form(delete_form) }}</li>
-	</ul>
+                {{ form_end(edit_form) }}
+            </fieldset>
+        </div>
+    </div>
 </div>
 {% endblock %}

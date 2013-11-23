@@ -2,60 +2,62 @@
 
 {% block mapa %}
     <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
-    <li>Alumnos</li>
+    <li><a href="{{ path('alumnos') }}">Alumnos</a></li>
+    <li><span>Actualizar datos del alumno</span></li>
 {% endblock %}
 
 {% block body %}
-<div class="unit-80">
+<div class="unit-100">
     <div class="units-row">
-        <div class="unit-push-20 unit-60">
+        <div class="unit-centered unit-50">
             {% form_theme edit_form '::fields.html.twig' %}
             <fieldset>
                 <legend>Alumno</legend>
                 
-                {{ form_start(edit_form, { 'attr': {'class': 'pure-form pure-form-aligned'} }) }}
-
-                    <div class="pure-control-group">
-                        {{ form_label(edit_form.noControl, 'No. de control') }}
-                        {{ form_row(edit_form.noControl) }}
-                    </div>
-                    <div class="pure-control-group">    
+                {{ form_start(edit_form, { 'attr': {'class': 'forms forms-columnar'} }) }}
+                    
+                    <p>
+                        {{ form_label(edit_form.noControl, 'No. de Control') }}
+                        {{ form_widget(edit_form.noControl, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                        
+                    
+                    <p>
                         {{ form_label(edit_form.nombre, 'Nombre(s)') }}
-                        {{ form_row(edit_form.nombre) }}
-                    </div>
-                    <div class="pure-control-group"> 
-                        {{ form_label(edit_form.apellidoPaterno, 'Apellido paterno') }}
-                        {{ form_row(edit_form.apellidoPaterno) }}
-                    </div>
-                    <div class="pure-control-group"> 
-                        {{ form_label(edit_form.apellidoMaterno, 'Apellido materno') }}
-                        {{ form_row(edit_form.apellidoMaterno) }}
-                    </div>
-                    <div class="pure-control-group"> 
+                        {{ form_widget(edit_form.nombre, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                    
+                    <p>
+                        {{ form_label(edit_form.apellidoPaterno, 'Apellido Paterno') }}
+                        {{ form_widget(edit_form.apellidoPaterno, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                        
+                    <p>
+                        {{ form_label(edit_form.apellidoMaterno, 'Apellido Materno') }}
+                        {{ form_widget(edit_form.apellidoMaterno, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                        
+                    <p>
                         {{ form_label(edit_form.email, 'Correo electrónico') }}
-                        {{ form_row(edit_form.email) }}
-                    </div>
-                    <div class="pure-control-group"> 
+                        {{ form_widget(edit_form.email, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                        
+                    <p>
                         {{ form_label(edit_form.telefono, 'Teléfono') }}
-                        {{ form_row(edit_form.telefono) }}
-                    </div>
+                        {{ form_widget(edit_form.telefono, { 'attr': {'class': 'width-100'} }) }}
+                    </p>    
+
+                    <p>
+                         {{ form_widget(edit_form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
+                    {{ form_end(edit_form) }}
+                    </p>
+
+                    <p>
+                        {{ form_start(delete_form) }}
+                            {{ form_widget(delete_form.submit, { 'attr': {'class': 'btn btn-red'} }) }}
+                        {{ form_end(delete_form) }}
+                    </p>
             </fieldset>
-
-
-            <div class="units-row">
-                <div class="unit-push-80 unit-20">
-                    {{ form_row(edit_form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
-
-                {{ form_end(edit_form) }}
-                </div>
-                <div class="unit-push-30 unit-20">
-                    {{ form_start(delete_form, { 'attr': {'class': 'pure-form pure-form-aligned'} }) }}
-                        {{ form_row(delete_form.submit, { 'attr': {'class': 'btn btn-red'} }) }}
-                    {{ form_end(delete_form) }}                    
-                </div>    
-            </div>
-
-
         </div>
     </div>
 </div>

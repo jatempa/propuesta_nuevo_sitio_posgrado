@@ -14,10 +14,6 @@ investigadorproyecto_edit:
     pattern:  /posgradmin/investigadorproyecto/edit/{id}
     defaults: { _controller: InvestigadorProyectoBundle:InvestigadorProyecto:edit }
 
-investigadorproyecto_show:
-    pattern:  /posgradmin/investigadorproyecto/show/{id}
-    defaults: { _controller: InvestigadorProyectoBundle:InvestigadorProyecto:show }
-
 investigadorproyecto_create:
     pattern:  /posgradmin/investigadorproyecto/create
     defaults: { _controller: InvestigadorProyectoBundle:InvestigadorProyecto:create }

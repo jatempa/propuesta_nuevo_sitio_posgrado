@@ -14,10 +14,6 @@ investigadores_edit:
     pattern:  /posgradmin/investigadores/edit/{id}
     defaults: { _controller: InvestigadoresBundle:Investigadores:edit }
 
-investigadores_show:
-    pattern:  /posgradmin/investigadores/show/{id}
-    defaults: { _controller: InvestigadoresBundle:Investigadores:show }
-
 investigadores_create:
     pattern:  /posgradmin/investigadores/create
     defaults: { _controller: InvestigadoresBundle:Investigadores:create }

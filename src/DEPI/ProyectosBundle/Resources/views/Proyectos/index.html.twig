@@ -1,35 +1,61 @@
 {% extends '::backend.html.twig' %}
 
+{% block mapa %}
+    <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
+    <li><span>Proyectos</span></li>
+{% endblock %}
+
 {% block body %}
-<div class="unit-80">
-    <h3>Proyectos list</h3>
+<aside class="unit-25 unit-padding">
+    <h6>Opciones</h6>
+    <nav class="nav-v">
+        <ul>
+            <li><a href="{{ path('alumnosproyectos') }}">Registro de alumnos</a></li>
+            <li><a href="{{ path('investigadorproyecto') }}">Registro de investigadores</a></li>
+            <li><a href="{{ path('proyectosproductos') }}">Registro de productos académicos</a></li>
+            <li><a href="{{ path('areasproyectos') }}">Registrar área de investigación</a></li>
+        </ul>
+    </nav>
+</aside>
+
+<div class="unit-75">
     <div class="table-container">
-        <table class="width-100 table-striped">
+        <table class="table-striped">
             <thead>
                 <tr>
-                    <th>Id</th>
-                    <th class="width-30">Nombrecompleto</th>
-                    <th class="width-30">Objetivogeneral</th>
+                    <th>Clave ITM</th>
+                    <th>Proyecto</th>
+                    <th>Objetivo general</th>
                     <th>Fecha de apertura</th>
-                    <th>Actualizar</th>
-                    <th>Consultar</th>
+                    <th>Fecha de termino</th>
                 </tr>
             </thead>
             <tbody>
             {% for entity in entities %}
                 <tr>
-                    <td><a href="{{ path('proyectos_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                    <td>{{ entity.nombreCompleto }}</td>
-                    <td>{{ entity.objetivoGeneral }}</td>
-                    <td>{% if entity.fechaApertura %}{{ entity.fechaApertura|date('Y-m-d') }}{% endif %}</td>
-                    <td>
+                    <td class="enlace">
                         <a href="{{ path('proyectos_edit', { 'id': entity.id }) }}">
-                            <center><img src="{{ asset('bundles/backend/img/cog.png') }}" alt="" /></center>
+                            {{ entity.claveItm }}
                         </a>
                     </td>
-                    <td>
-                        <a href="{{ path('proyectos_show', { 'id': entity.id }) }}">
-                            <center><img src="{{ asset('bundles/backend/img/search.png') }}" alt="" /></center>
+                    <td class="enlace">
+                        <a href="{{ path('proyectos_edit', { 'id': entity.id }) }}">
+                            {{ entity.nombreCompleto }}
+                        </a>
+                    </td>
+                    <td class="enlace">
+                        <a href="{{ path('proyectos_edit', { 'id': entity.id }) }}">
+                            {{ entity.objetivoGeneral }}
+                        </a>
+                    </td>
+                    <td class="enlace">
+                        <a href="{{ path('proyectos_edit', { 'id': entity.id }) }}">
+                            {% if entity.fechaApertura %}{{ entity.fechaApertura|date('Y-m-d') }}{% endif %}
+                        </a>
+                    </td>
+                    <td class="enlace">
+                        <a href="{{ path('proyectos_edit', { 'id': entity.id }) }}">
+                            {% if entity.fechaTermino %}{{ entity.fechaTermino|date('Y-m-d') }}{% endif %}
                         </a>
                     </td>
                 </tr>

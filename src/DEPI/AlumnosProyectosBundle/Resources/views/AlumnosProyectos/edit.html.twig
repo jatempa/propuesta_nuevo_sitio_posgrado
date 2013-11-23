@@ -1,18 +1,43 @@
 {% extends '::backend.html.twig' %}
 
+{% block mapa %}
+    <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
+    <li><a href="{{ path('alumnosproyectos') }}">Alumnos y Proyectos</a></li>
+    <li><span>Actualización de datos de alumno en un proyecto</span></li>
+{% endblock %}
+
 {% block body %}
-<div class="unit-80">
-    <h1>AlumnosProyectos edit</h1>
+<div class="unit-100">
+    <div class="units-row">
+        <div class="unit-centered unit-50">
+            {% form_theme edit_form '::fields.html.twig' %}
+            <fieldset>
+                <legend>Alumnos y Proyectos</legend>
+                {{ form_start(edit_form, { 'attr': {'class': 'forms forms-columnar'} }) }}
+                    
+                    <p>
+                        {{ form_label(edit_form.idAlumno, 'No. de Control') }}
+                        {{ form_widget(edit_form.idAlumno, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                        
+                    
+                    <p>
+                        {{ form_label(edit_form.idProyecto, 'Proyecto') }}
+                        {{ form_widget(edit_form.idProyecto, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
 
-    {{ form(edit_form, {'attr': {'class': 'forms forms-inline'}}) }}
+                    <p>
+                         {{ form_widget(edit_form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
+                    {{ form_end(edit_form) }}
+                    </p>
 
-	<ul class="record_actions">
-	    <li>
-	        <a href="{{ path('alumnosproyectos') }}">
-	            Back to the list
-	        </a>
-	    </li>
-	    <li>{{ form(delete_form) }}</li>
-	</ul>
+                    <p>
+                        {{ form_start(delete_form) }}
+                            {{ form_widget(delete_form.submit, { 'attr': {'class': 'btn btn-red'} }) }}
+                        {{ form_end(delete_form) }}
+                    </p>
+            </fieldset>
+        </div>
+    </div>
 </div>
 {% endblock %}

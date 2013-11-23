@@ -14,10 +14,6 @@ alumnos_edit:
     pattern:  /posgradmin/alumnos/edit/{id}
     defaults: { _controller: AlumnosBundle:Alumnos:edit }
 
-alumnos_show:
-    pattern:  /posgradmin/alumnos/show/{id}
-    defaults: { _controller: AlumnosBundle:Alumnos:show }
-
 alumnos_create:
     pattern:  /posgradmin/alumnos/create
     defaults: { _controller: AlumnosBundle:Alumnos:create }

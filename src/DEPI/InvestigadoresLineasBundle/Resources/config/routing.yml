@@ -14,10 +14,6 @@ investigadoreslineas_edit:
     pattern:  /posgradmin/investigadoreslineas/edit/{id}
     defaults: { _controller: InvestigadoresLineasBundle:InvestigadoresLineas:edit }
 
-investigadoreslineas_show:
-    pattern:  /posgradmin/investigadoreslineas/show/{id}
-    defaults: { _controller: InvestigadoresLineasBundle:InvestigadoresLineas:show }
-
 investigadoreslineas_create:
     pattern:  /posgradmin/investigadoreslineas/create
     defaults: { _controller: InvestigadoresLineasBundle:InvestigadoresLineas:create }

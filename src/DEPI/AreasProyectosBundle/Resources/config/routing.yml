@@ -14,10 +14,6 @@ areasproyectos_edit:
     pattern:  /posgradmin/areasproyectos/edit/{id}
     defaults: { _controller: AreasProyectosBundle:AreasProyectos:edit }
 
-areasproyectos_show:
-    pattern:  /posgradmin/areasproyectos/show/{id}
-    defaults: { _controller: AreasProyectosBundle:AreasProyectos:show }
-
 areasproyectos_create:
     pattern:  /posgradmin/areasproyectos/create
     defaults: { _controller: AreasProyectosBundle:AreasProyectos:create }

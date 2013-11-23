@@ -1,21 +1,41 @@
 {% extends '::backend.html.twig' %}
 
+{% block mapa %}
+    <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
+    <li><a href="{{ path('areas') }}">Áreas</a></li>
+    <li><span>Actualizar datos del área de investigación</span></li>
+{% endblock %}
+
 {% block body %}
-<div class="unit-80">
+<div class="unit-100">
     <div class="units-row">
-        <div class="unit-centered unit-40">
-        	<h3>Áreas</h3>
+        <div class="unit-centered unit-50">
+            {% form_theme edit_form '::fields.html.twig' %}
+            <fieldset>
+                <legend>Áreas</legend>
+                {{ form_start(edit_form, { 'attr': {'class': 'forms forms-columnar'} }) }}
+                
+                    <p>
+                        {{ form_label(edit_form.nombre, 'Nombre') }}
+                        {{ form_widget(edit_form.nombre, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                        
+                    <p>
+                        {{ form_label(edit_form.descripcion, 'Descripción') }}
+                        {{ form_widget(edit_form.descripcion, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                        
+                    <p>
+                         {{ form_widget(edit_form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
+                    {{ form_end(edit_form) }}
+                    </p>
 
-        	{{ form(edit_form, {'attr': {'class': 'forms forms-inline'}}) }}
-
-        	<ul class="record_actions">
-    		    <li>
-    		        <a href="{{ path('areas') }}">
-    		            Back to the list
-    		        </a>
-    		    </li>
-    		    <li>{{ form(delete_form) }}</li>
-    		</ul>
+                    <p>
+                        {{ form_start(delete_form) }}
+                            {{ form_widget(delete_form.submit, { 'attr': {'class': 'btn btn-red'} }) }}
+                        {{ form_end(delete_form) }}
+                    </p>
+            </fieldset>
         </div>
     </div>
 </div>

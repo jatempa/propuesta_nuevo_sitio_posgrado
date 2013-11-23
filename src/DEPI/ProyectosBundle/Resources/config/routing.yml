@@ -14,10 +14,6 @@ proyectos_edit:
     pattern:  /posgradmin/proyectos/edit/{id}
     defaults: { _controller: ProyectosBundle:Proyectos:edit }
 
-proyectos_show:
-    pattern:  /posgradmin/proyectos/show/{id}
-    defaults: { _controller: ProyectosBundle:Proyectos:show }
-
 proyectos_create:
     pattern:  /posgradmin/proyectos/create
     defaults: { _controller: ProyectosBundle:Proyectos:create }

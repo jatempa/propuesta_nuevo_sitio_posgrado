@@ -1,32 +1,28 @@
 {% extends '::backend.html.twig' %}
 
+{% block mapa %}
+    <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
+    <li><span>Áreas</span></li>
+{% endblock %}
+
 {% block body %}
-<div class="unit-80">
-    <h3>Áreas</h3>
+<div class="unit-100">
     <div class="table-container">
         <table class="width-100 table-striped">
             <thead>
                 <tr>
-                    <th>Id</th>
-                    <th class="width-80">Nombre</th>
-                    <th>Actualizar</th>
-                    <th>Consultar</th>
+                    <th class="width-40">Nombre</th>
+                    <th class="width-60">Descripción</th>
                 </tr>
             </thead>
             <tbody>
             {% for entity in entities %}
                 <tr>
-                    <td><a href="{{ path('areas_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                    <td>{{ entity.nombre }}</td>
-                    <td>
-                        <a href="{{ path('areas_edit', { 'id': entity.id }) }}">
-                            <center><img src="{{ asset('bundles/backend/img/cog.png') }}" alt="" /></center>
-                        </a>
+                    <td class="width-40 enlace">
+                        <a href="{{ path('areas_edit', { 'id': entity.id }) }}">{{ entity.nombre }}</a>
                     </td>
-                    <td>
-                        <a href="{{ path('areas_show', { 'id': entity.id }) }}">
-                            <center><img src="{{ asset('bundles/backend/img/search.png') }}" alt="" /></center>
-                        </a>
+                    <td  class="width-60 enlace">
+                        <a href="{{ path('areas_edit', { 'id': entity.id }) }}">{{ entity.descripcion }}</a>
                     </td>
                 </tr>
             {% endfor %}

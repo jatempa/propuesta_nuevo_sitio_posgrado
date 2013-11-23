@@ -12,10 +12,10 @@
     <body>
         <div class="wrapper">
             <header id="header">
-                <nav class="breadcrumbs">
+                <nav class="nav-g">
                     <ul>
                         <li><a href="{{ path('alumnos') }}">Alumnos</a></li>
-                        <li><a href="{{ path('areas') }}">Áreas</a></li>
+                        <li><a href="{{ path('areas') }}">Áreas de investigación</a></li>
                         <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
                         <li><a href="{{ path('lineas') }}">Líneas de Investigación</a></li>
                         <li><a href="{{ path('productosacademicos') }}">Productos Académicos</a></li>
@@ -36,23 +36,14 @@
 
             <div class="units-row">
                 {% block lateral %}
-                <aside class="unit-20">
-                    <nav class="nav-v nav-stacked nav-stats">
-                        <ul>
-                            <li><a href="{{ path('alumnos') }}">Alumnos</a></li>
-                            <li><a href="{{ path('areas') }}">Áreas</a></li>
-                            <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
-                            <li><a href="{{ path('lineas') }}">Líneas de Investigación</a></li>
-                            <li><a href="{{ path('productosacademicos') }}">Productos Académicos</a></li>
-                            <li><a href="{{ path('proyectos') }}">Proyectos</a></li>
-                        </ul>
-                    </nav>
-                </aside>
                 {% endblock %}
                 {% block body %}
                 {% endblock %}
             </div>
             <footer id="footer">&copy; Instituto Tecnológico de Mexicali.</footer>
         </div>
+        {% block javascripts %}
+            <script type="text/javascript" src="{{ asset('bundles/backend/js/kube.css') }}"></script>
+        {% endblock %}
     </body>
 </html>

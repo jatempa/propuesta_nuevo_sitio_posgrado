@@ -1,20 +1,35 @@
 {% extends '::backend.html.twig' %}
 
+{% block mapa %}
+    <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
+    <li><a href="{{ path('areas') }}">Áreas</a></li>
+    <li><span>Agregar una nueva área de investigación</span></li>
+{% endblock %}
+
 {% block body %}
-<div class="unit-80">
+<div class="unit-100">
     <div class="units-row">
-        <div class="unit-centered unit-40">
-        	<h3>Áreas</h3>
+        <div class="unit-centered unit-50">
+            {% form_theme form '::fields.html.twig' %}
+            <fieldset>
+                <legend>Áreas</legend>
+                {{ form_start(form, { 'attr': {'class': 'forms forms-columnar'} }) }}
+                    
+                    <p>
+                        {{ form_label(form.nombre, 'Nombre') }}
+                        {{ form_widget(form.nombre, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                        
+                    <p>
+                        {{ form_label(form.descripcion, 'Descripción') }}
+                        {{ form_widget(form.descripcion, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
 
-        	{{ form(form, {'attr': {'class': 'forms forms-inline'}}) }}
-
-            <ul class="record_actions">
-    		    <li>
-    		        <a href="{{ path('areas') }}">
-    		            Back to the list
-    		        </a>
-    		    </li>
-    		</ul>
+                    <p>
+                        {{ form_widget(form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
+                    </p>
+                {{ form_end(form) }}
+            </fieldset>
         </div>
     </div>
 </div>

@@ -14,10 +14,6 @@ lineas_edit:
     pattern:  /posgradmin/lineas/edit/{id}
     defaults: { _controller: LineasInvestigacionBundle:LineasInvestigacion:edit }
 
-lineas_show:
-    pattern:  /posgradmin/lineas/show/{id}
-    defaults: { _controller: LineasInvestigacionBundle:LineasInvestigacion:show }
-
 lineas_create:
     pattern:  /posgradmin/lineas/create
     defaults: { _controller: LineasInvestigacionBundle:LineasInvestigacion:create }

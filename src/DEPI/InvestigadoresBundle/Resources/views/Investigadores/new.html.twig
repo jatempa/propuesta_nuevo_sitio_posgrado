@@ -1,20 +1,61 @@
 {% extends '::backend.html.twig' %}
 
+{% block mapa %}
+    <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
+    <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
+    <li><span>Agregar un nuevo investigador</span></li>
+{% endblock %}
+
 {% block body %}
-<div class="unit-80">
-	<div class="units-row">
-	    <div class="unit-centered unit-40">
-			<h3>Investigadores</h3>
-		    
-		    {{ form(form, {'attr': {'class': 'forms forms-inline'}}) }}
-			
-			<ul>
-				<li>
-				    <a href="{{ path('investigadores') }}">
-				        Back to the list
-				    </a>
-				</li>
-			</ul>
+<div class="unit-100">
+    <div class="units-row">
+        <div class="unit-centered unit-50">
+        	{% form_theme form '::fields.html.twig' %}
+            <fieldset>
+                <legend>Investigadores</legend>
+                {{ form_start(form, { 'attr': {'class': 'forms forms-columnar'} }) }}
+                    
+                    <p>
+                        {{ form_label(form.nombre, 'Nombre(s)') }}
+                        {{ form_widget(form.nombre, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                    
+                    <p>
+                        {{ form_label(form.apellidoPaterno, 'Apellido Paterno') }}
+                        {{ form_widget(form.apellidoPaterno, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                        
+                    <p>
+                        {{ form_label(form.apellidoMaterno, 'Apellido Materno') }}
+                        {{ form_widget(form.apellidoMaterno, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                        
+                    <p>
+                        {{ form_label(form.email, 'Correo electrónico') }}
+                        {{ form_widget(form.email, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                        
+                    <p>
+                        {{ form_label(form.telefono, 'Teléfono') }}
+                        {{ form_widget(form.telefono, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+
+                    <p>
+                        {{ form_label(form.grado, 'Grado') }}
+                        {{ form_widget(form.grado, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+
+                    <p>
+                        {{ form_label(form.sni, 'SNI') }}
+                        {{ form_widget(form.sni, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+
+                    <p>
+                        {{ form_widget(form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
+                    </p>
+
+                {{ form_end(form) }}
+            </fieldset>
 	    </div>
 	</div>
 </div>

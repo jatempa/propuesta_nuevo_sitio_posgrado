@@ -14,10 +14,6 @@ proyectosproductos_edit:
     pattern:  /posgradmin/proyectosproductos/edit/{id}
     defaults: { _controller: ProyectosProductosBundle:ProyectosProductos:edit }
 
-proyectosproductos_show:
-    pattern:  /posgradmin/proyectosproductos/show/{id}
-    defaults: { _controller: ProyectosProductosBundle:ProyectosProductos:show }
-
 proyectosproductos_create:
     pattern:  /posgradmin/proyectosproductos/create
     defaults: { _controller: ProyectosProductosBundle:ProyectosProductos:create }

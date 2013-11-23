@@ -1,34 +1,43 @@
 {% extends '::backend.html.twig' %}
 
-{% block body %}
-<div class="unit-80">
-    <h1>AreasProyectos list</h1>
+{% block mapa %}
+    <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
+    <li><span>Áreas de investigación</span></li>
+{% endblock %}
 
+{% block body %}
+<aside class="unit-25 unit-padding">
+    <h6>Opciones</h6>
+    <nav class="nav-v">
+        <ul>
+            <li><a href="{{ path('alumnosproyectos') }}">Registro de alumnos</a></li>
+            <li><a href="{{ path('investigadorproyecto') }}">Registro de investigadores</a></li>
+            <li><a href="{{ path('proyectosproductos') }}">Registro de productos académicos</a></li>
+            <li><a href="{{ path('areasproyectos') }}">Registrar área de investigación</a></li>
+        </ul>
+    </nav>
+</aside>
+
+<div class="unit-75">
     <div class="table-container">
-        <table class="table-striped">
+        <table class="width-100 table-striped">
             <thead>
                 <tr>
-                    <th>Id</th>
-                    <th>Areas</th>
-                    <th>Proyectos</th>
-                    <th>Actualizar</th>
-                    <th>Consultar</th>
+                    <th class="width-50">Áreas de investigación</th>
+                    <th class="width-50">Proyectos</th>
                 </tr>
             </thead>
             <tbody>
             {% for entity in entities %}
                 <tr>
-                    <td><a href="{{ path('areasproyectos_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                    <td>{{ entity.area.nombre }}</td>
-                    <td>{{ entity.proyecto.nombreCorto }}</td>
-                    <td>
+                    <td class="enlace">
                         <a href="{{ path('areasproyectos_edit', { 'id': entity.id }) }}">
-                            <center><img src="{{ asset('bundles/backend/img/cog.png') }}" alt="" /></center>
+                            {{ entity.area.nombre }}
                         </a>
                     </td>
-                    <td>
-                        <a href="{{ path('areasproyectos_show', { 'id': entity.id }) }}">
-                            <center><img src="{{ asset('bundles/backend/img/search.png') }}" alt="" /></center>
+                    <td class="enlace">
+                        <a href="{{ path('areasproyectos_edit', { 'id': entity.id }) }}">
+                            {{ entity.proyecto.nombreCorto }}
                         </a>
                     </td>
                 </tr>

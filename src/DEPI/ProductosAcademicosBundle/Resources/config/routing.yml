@@ -14,10 +14,6 @@ productosacademicos_edit:
     pattern:  /posgradmin/productosacademicos/edit/{id}
     defaults: { _controller: ProductosAcademicosBundle:ProductosAcademicos:edit }
 
-productosacademicos_show:
-    pattern:  /posgradmin/productosacademicos/show/{id}
-    defaults: { _controller: ProductosAcademicosBundle:ProductosAcademicos:show }
-
 productosacademicos_create:
     pattern:  /posgradmin/productosacademicos/create
     defaults: { _controller: ProductosAcademicosBundle:ProductosAcademicos:create }

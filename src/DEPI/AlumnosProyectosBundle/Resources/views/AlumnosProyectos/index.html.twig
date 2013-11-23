@@ -1,36 +1,50 @@
 {% extends '::backend.html.twig' %}
 
+{% block mapa %}
+    <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
+    <li><span>Alumnos y Proyectos</span></li>
+{% endblock %}
+
 {% block body %}
-<div class="unit-80">
-    <h3>Alumnos Proyectos list</h3>
+<aside class="unit-25 unit-padding">
+    <h6>Opciones</h6>
+    <nav class="nav-v">
+        <ul>
+            <li><a href="{{ path('alumnosproyectos') }}">Registro de alumnos</a></li>
+            <li><a href="{{ path('investigadorproyecto') }}">Registro de investigadores</a></li>
+            <li><a href="{{ path('proyectosproductos') }}">Registro de productos académicos</a></li>
+            <li><a href="{{ path('areasproyectos') }}">Registrar área de investigación</a></li>
+        </ul>
+    </nav>
+</aside>
+
+<div class="unit-75">
     <div class="table-container">
         <table class="width-100 table-striped">
             <thead>
                 <tr>
-                    <th>Id</th>
                     <th class="width-20">No Control</th>
                     <th class="width-40">Alumno</th>
                     <th class="width-40">Proyecto</th>
-                    <th>Actualizar</th>
-                    <th>Consultar</th>
                 </tr>
             </thead>
             <tbody>
 
             {% for entity in alumnosenproyectos %}
                 <tr>
-                    <td><a href="{{ path('alumnosproyectos_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                    <td>{{ entity.idAlumno.noControl }}</td>
-                    <td>{{ entity.idAlumno.nombre ~ " " ~ entity.idAlumno.apellidoPaterno  ~ " " ~ entity.idAlumno.apellidoMaterno }}</td>
-                    <td>{{ entity.idProyecto.nombreCorto }}</td>
-                    <td>
+                     <td class="enlace">
                         <a href="{{ path('alumnosproyectos_edit', { 'id': entity.id }) }}">
-                            <center><img src="{{ asset('bundles/backend/img/cog.png') }}" alt="" /></center>
+                            {{ entity.idAlumno.noControl }}
                         </a>
                     </td>
-                    <td>
-                        <a href="{{ path('alumnosproyectos_show', { 'id': entity.id }) }}">
-                            <center><img src="{{ asset('bundles/backend/img/search.png') }}" alt="" /></center>
+                    <td class="enlace">
+                        <a href="{{ path('alumnosproyectos_edit', { 'id': entity.id }) }}">
+                            {{ entity.idAlumno.nombre ~ " " ~ entity.idAlumno.apellidoPaterno  ~ " " ~ entity.idAlumno.apellidoMaterno }}
+                        </a>
+                    </td>
+                    <td class="enlace">
+                        <a href="{{ path('alumnosproyectos_edit', { 'id': entity.id }) }}">
+                            {{ entity.idProyecto.nombreCorto }}
                         </a>
                     </td>
                 </tr>

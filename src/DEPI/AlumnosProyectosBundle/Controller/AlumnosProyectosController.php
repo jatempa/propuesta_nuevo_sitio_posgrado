@@ -53,7 +53,7 @@ class AlumnosProyectosController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('alumnosproyectos_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('alumnosproyectos', array('id' => $entity->getId())));
         }
 
         return array(
@@ -76,7 +76,7 @@ class AlumnosProyectosController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array('label' => 'Guardar'));
 
         return $form;
     }
@@ -97,33 +97,6 @@ class AlumnosProyectosController extends Controller
             'entity' => $entity,
             'form'   => $form->createView(),
         );
-    }
-
-    /**
-     * Finds and displays a AlumnosProyectos entity.
-     *
-     * @Route("/{id}", name="alumnosproyectos_show")
-     * @Method("GET")
-     * @Template()
-     */
-    public function showAction($id)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $alumnosenproyectos = $em->getRepository('AlumnosProyectosBundle:AlumnosProyectos')
-                                 ->findDatosAlumnoProyecto($id);
-
-        if (!$alumnosenproyectos) {
-            throw $this->createNotFoundException('Unable to find AlumnosProyectos entity.');
-        }
-
-        $deleteForm = $this->createDeleteForm($id);
-
-        return $this->render('AlumnosProyectosBundle:AlumnosProyectos:show.html.twig', 
-                              array('alumnosenproyectos' => $alumnosenproyectos,
-                                    'delete_form' => $deleteForm->createView(),)
-                            );
-        return ;
     }
 
     /**
@@ -167,7 +140,7 @@ class AlumnosProyectosController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => 'Actualizar'));
 
         return $form;
     }
@@ -195,7 +168,7 @@ class AlumnosProyectosController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('alumnosproyectos_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('alumnosproyectos', array('id' => $id)));
         }
 
         return array(
@@ -242,7 +215,7 @@ class AlumnosProyectosController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('alumnosproyectos_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', array('label' => 'Eliminar'))
             ->getForm()
         ;
     }

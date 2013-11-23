@@ -1,17 +1,76 @@
 {% extends '::backend.html.twig' %}
 
+{% block mapa %}
+    <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
+    <li><a href="{{ path('proyectos') }}">Proyectos</a></li>
+    <li><span>Agregar un nuevo proyectos</span></li>
+{% endblock %}
+
 {% block body %}
-<div class="unit-80">
-    <h1>Proyectos creation</h1>
+<div class="unit-100">
+    <div class="units-row">
+        <div class="unit-centered unit-50">
+            {% form_theme form '::fields.html.twig' %}
+            <fieldset>
+                <legend>Proyecto</legend>
+                {{ form_start(form, { 'attr': {'class': 'forms forms-columnar'} }) }}
+					
+                    <p>
+                    	{{ form_label(form.claveItm, 'Clave ITM') }}
+                        {{ form_widget(form.claveItm, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                        
+                    
+                    <p>
+                    	{{ form_label(form.claveDgest, 'Clave DGEST') }}
+                        {{ form_widget(form.claveDgest, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                    
+                    <p>
+                    	{{ form_label(form.claveConacyt, 'Clave Conacyt') }}
+                        {{ form_widget(form.claveConacyt, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                        
+                    <p>
+                    	{{ form_label(form.nombreCorto, 'Nombre corto') }}
+                        {{ form_widget(form.nombreCorto, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                        
+                    <p>
+                    	{{ form_label(form.nombreCompleto, 'Nombre completo') }}
+                        {{ form_widget(form.nombreCompleto, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                        
+                    <p>
+                    	{{ form_label(form.objetivoGeneral, 'Objetivo general') }}
+                        {{ form_widget(form.objetivoGeneral, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                        
+                    <p>
+                    	{{ form_label(form.objetivosEspecificos, 'Objetivos específicos') }}
+                        {{ form_widget(form.objetivosEspecificos, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                      
+	                <p>
+	                	{{ form_label(form.fechaApertura, 'Fecha de apertura') }}
+	                    {{ form_widget(form.fechaApertura, { 'attr': {'class': 'width-100'} }) }}
+	                </p>
+	                    
+	                <p>
+	                	{{ form_label(form.fechaTermino, 'Fecha de termino') }}
+                        {{ form_widget(form.fechaTermino, { 'attr': {'class': 'width-100'} }) }}
+	                </p>
+ 
+                    <p>
+                    	{{ form_label(form.status, 'Estatus') }}
+                        {{ form_widget(form.status) }}
+                    </p>
 
-    {{ form(form) }}
-
-    <ul class="record_actions">
-        <li>
-            <a href="{{ path('proyectos') }}">
-                Back to the list
-            </a>
-        </li>
-    </ul>
+                    <p>
+                        {{ form_row(form.submit, { 'attr': {'class': 'btn btn-blue width-20'} }) }}
+                    </p>
+            </fieldset>
+        </div>
+    </div>
 </div>
 {% endblock %}
