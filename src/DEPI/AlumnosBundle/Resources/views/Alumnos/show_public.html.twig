@@ -1,0 +1,53 @@
+{% extends '::frontend.html.twig' %}
+
+{% block body %}
+<div class="unit-100">
+        <table class="table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>No. de control</th>
+                    <th>Nombre(s)</th>
+                    <th>Apellido paterno</th>
+                    <th>Apellido materno</th>
+                    <th>E-mail</th>
+                    <th>Teléfono</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ entity.noControl }}</td>
+                    <td>{{ entity.nombre }}</td>                
+                    <td>{{ entity.apellidoPaterno }}</td>                
+                    <td>{{ entity.apellidoMaterno }}</td>                
+                    <td>{{ entity.email }}</td>                
+                    <td>{{ entity.telefono }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('alumnos') }}">
+                Regresar a la lista
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('alumnos_edit', { 'id': entity.id }) }}">
+                Editar
+            </a>
+        </li>
+        <li>aqui estaba el delete</li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block lateral %}
+<aside class="unit-0">
+    <h5>Opciones</h5>
+    <nav class="nav-v nav-stats">
+        <ul>
+            <li><a href="{{ path('alumnosproyectos') }}">Alumnos-Proyectos</a></li>
+        </ul>
+    </nav>
+</aside>
+{% endblock %}

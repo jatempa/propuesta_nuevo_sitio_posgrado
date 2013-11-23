@@ -1,0 +1,63 @@
+{% extends '::frontend.html.twig' %}
+
+{% block body %}
+<h2>Alumnos pertenecientes al Departamento de Posgrado e Investigación</h2>
+
+
+
+{% for alumno in alumnos %}
+
+    {% if loop.first %}
+        <!-- Using only the large-block-grid -->
+        <ul class="large-block-grid-6">
+    {% endif %}    
+
+    <li>
+        {% if file_exists('bundles/portada/img/' ~ alumno.id ~ '.png') %}
+                    <img src="{{ asset('bundles/portada/img/' ~ alumno.id ~ '.png') }}" alt="" />      
+                    {% else %}
+                    <img src="{{ asset('bundles/portada/img/unknown-person.gif') }}" alt="" />                     
+        {% endif %}
+        
+        {{ alumno.apellidoPaterno ~ " " ~  alumno.apellidoMaterno ~ " " ~  alumno.nombre }}
+        <p><a href="mailto:{{ alumno.email }}" > {{ alumno.email }} </a></p>
+        <p><a href="#" data-reveal-id="modal{{ alumno.id }}">Mas información</a></p>
+
+        <div id="modal{{ alumno.id }}" class="reveal-modal normal">
+        <div class="large-3 columns">
+            {% if file_exists('bundles/portada/img/' ~ alumno.id ~ '.png') %}
+                <img src="{{ asset('bundles/portada/img/' ~ alumno.id ~ '.png') }}" alt="" />      
+            {% else %}
+                <img src="{{ asset('bundles/portada/img/unknown-person.gif') }}" alt="" />      
+            {% endif %}
+        </div>
+        <div class="large-9 columns">
+            <p class="lead">{{ alumno.apellidoPaterno ~ " " ~  alumno.apellidoMaterno ~ " " ~  alumno.nombre }}</p>
+            <a href="mailto:{{ alumno.email }}" > {{ alumno.email }} </a>
+        </div>
+      <a class="close-reveal-modal">&#215;</a>      
+    </div>
+
+    </li>
+
+
+    {% if loop.index is divisible by(6) %}
+    </ul>
+    <ul class="large-block-grid-6">
+    {% endif %}  
+
+{% endfor %}
+</ul>
+
+{% endblock %}
+
+{% block lateral %}
+<aside class="unit-20">
+    <h5>Opciones</h5>
+    <nav class="nav-v nav-stats">
+        <ul>
+            <li><a href="{{ path('alumnosproyectos') }}">Alumnos-Proyectos</a></li>
+        </ul>
+    </nav>
+</aside>
+{% endblock %}
