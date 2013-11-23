@@ -51,7 +51,7 @@ class AlumnosController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('alumnos_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('alumnos', array('id' => $entity->getId())));
         }
 
         return array(
@@ -94,31 +94,6 @@ class AlumnosController extends Controller
         return array(
             'entity' => $entity,
             'form'   => $form->createView(),
-        );
-    }
-
-    /**
-     * Finds and displays a Alumnos entity.
-     *
-     * @Route("/{id}", name="alumnos_show")
-     * @Method("GET")
-     * @Template()
-     */
-    public function showAction($id)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('AlumnosBundle:Alumnos')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Alumnos entity.');
-        }
-
-        $deleteForm = $this->createDeleteForm($id);
-
-        return array(
-            'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),
         );
     }
 

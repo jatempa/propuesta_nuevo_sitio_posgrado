@@ -100,33 +100,6 @@ class AlumnosProyectosController extends Controller
     }
 
     /**
-     * Finds and displays a AlumnosProyectos entity.
-     *
-     * @Route("/{id}", name="alumnosproyectos_show")
-     * @Method("GET")
-     * @Template()
-     */
-    public function showAction($id)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $alumnosenproyectos = $em->getRepository('AlumnosProyectosBundle:AlumnosProyectos')
-                                 ->findDatosAlumnoProyecto($id);
-
-        if (!$alumnosenproyectos) {
-            throw $this->createNotFoundException('Unable to find AlumnosProyectos entity.');
-        }
-
-        $deleteForm = $this->createDeleteForm($id);
-
-        return $this->render('AlumnosProyectosBundle:AlumnosProyectos:show.html.twig', 
-                              array('alumnosenproyectos' => $alumnosenproyectos,
-                                    'delete_form' => $deleteForm->createView(),)
-                            );
-        return ;
-    }
-
-    /**
      * Displays a form to edit an existing AlumnosProyectos entity.
      *
      * @Route("/{id}/edit", name="alumnosproyectos_edit")

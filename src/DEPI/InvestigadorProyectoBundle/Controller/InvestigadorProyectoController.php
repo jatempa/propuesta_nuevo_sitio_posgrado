@@ -99,31 +99,6 @@ class InvestigadorProyectoController extends Controller
     }
 
     /**
-     * Finds and displays a InvestigadorProyecto entity.
-     *
-     * @Route("/{id}", name="investigadorproyecto_show")
-     * @Method("GET")
-     * @Template()
-     */
-    public function showAction($id)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('InvestigadorProyectoBundle:InvestigadorProyecto')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find InvestigadorProyecto entity.');
-        }
-
-        $deleteForm = $this->createDeleteForm($id);
-
-        return array(
-            'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),
-        );
-    }
-
-    /**
      * Displays a form to edit an existing InvestigadorProyecto entity.
      *
      * @Route("/{id}/edit", name="investigadorproyecto_edit")

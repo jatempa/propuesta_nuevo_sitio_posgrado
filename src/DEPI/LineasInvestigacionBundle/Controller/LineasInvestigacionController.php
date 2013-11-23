@@ -53,7 +53,7 @@ class LineasInvestigacionController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('lineas_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('lineas', array('id' => $entity->getId())));
         }
 
         return array(
@@ -96,31 +96,6 @@ class LineasInvestigacionController extends Controller
         return array(
             'entity' => $entity,
             'form'   => $form->createView(),
-        );
-    }
-
-    /**
-     * Finds and displays a LineasInvestigacion entity.
-     *
-     * @Route("/{id}", name="lineas_show")
-     * @Method("GET")
-     * @Template()
-     */
-    public function showAction($id)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('LineasInvestigacionBundle:LineasInvestigacion')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find LineasInvestigacion entity.');
-        }
-
-        $deleteForm = $this->createDeleteForm($id);
-
-        return array(
-            'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),
         );
     }
 
@@ -193,7 +168,7 @@ class LineasInvestigacionController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('lineas_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('lineas', array('id' => $id)));
         }
 
         return array(

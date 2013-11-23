@@ -52,7 +52,7 @@ class InvestigadoresLineasController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('investigadoreslineas_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('investigadoreslineas', array('id' => $entity->getId())));
         }
 
         return array(
@@ -75,7 +75,7 @@ class InvestigadoresLineasController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array('label' => 'Guardar'));
 
         return $form;
     }
@@ -95,31 +95,6 @@ class InvestigadoresLineasController extends Controller
         return array(
             'entity' => $entity,
             'form'   => $form->createView(),
-        );
-    }
-
-    /**
-     * Finds and displays a InvestigadoresLineas entity.
-     *
-     * @Route("/{id}", name="investigadoreslineas_show")
-     * @Method("GET")
-     * @Template()
-     */
-    public function showAction($id)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('InvestigadoresLineasBundle:InvestigadoresLineas')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find InvestigadoresLineas entity.');
-        }
-
-        $deleteForm = $this->createDeleteForm($id);
-
-        return array(
-            'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),
         );
     }
 
@@ -164,10 +139,11 @@ class InvestigadoresLineasController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => 'Actualizar'));
 
         return $form;
     }
+  
     /**
      * Edits an existing InvestigadoresLineas entity.
      *
@@ -192,7 +168,7 @@ class InvestigadoresLineasController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('investigadoreslineas_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('investigadoreslineas', array('id' => $id)));
         }
 
         return array(
@@ -239,7 +215,7 @@ class InvestigadoresLineasController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('investigadoreslineas_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', array('label' => 'Eliminar'))
             ->getForm()
         ;
     }

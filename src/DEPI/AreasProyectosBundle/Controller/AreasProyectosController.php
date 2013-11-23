@@ -99,31 +99,6 @@ class AreasProyectosController extends Controller
     }
 
     /**
-     * Finds and displays a AreasProyectos entity.
-     *
-     * @Route("/{id}", name="areasproyectos_show")
-     * @Method("GET")
-     * @Template()
-     */
-    public function showAction($id)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('AreasProyectosBundle:AreasProyectos')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find AreasProyectos entity.');
-        }
-
-        $deleteForm = $this->createDeleteForm($id);
-
-        return array(
-            'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),
-        );
-    }
-
-    /**
      * Displays a form to edit an existing AreasProyectos entity.
      *
      * @Route("/{id}/edit", name="areasproyectos_edit")

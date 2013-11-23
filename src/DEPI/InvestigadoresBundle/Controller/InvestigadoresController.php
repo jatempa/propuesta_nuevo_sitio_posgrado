@@ -52,7 +52,7 @@ class InvestigadoresController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('investigadores_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('investigadores', array('id' => $entity->getId())));
         }
 
         return array(
@@ -95,31 +95,6 @@ class InvestigadoresController extends Controller
         return array(
             'entity' => $entity,
             'form'   => $form->createView(),
-        );
-    }
-
-    /**
-     * Finds and displays a Investigadores entity.
-     *
-     * @Route("/{id}", name="investigadores_show")
-     * @Method("GET")
-     * @Template()
-     */
-    public function showAction($id)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('InvestigadoresBundle:Investigadores')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Investigadores entity.');
-        }
-
-        $deleteForm = $this->createDeleteForm($id);
-
-        return array(
-            'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),
         );
     }
 
@@ -192,7 +167,7 @@ class InvestigadoresController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('investigadores_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('investigadores', array('id' => $id)));
         }
 
         return array(

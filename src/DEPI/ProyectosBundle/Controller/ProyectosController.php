@@ -53,7 +53,7 @@ class ProyectosController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('proyectos_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('proyectos', array('id' => $entity->getId())));
         }
 
         return array(
@@ -96,31 +96,6 @@ class ProyectosController extends Controller
         return array(
             'entity' => $entity,
             'form'   => $form->createView(),
-        );
-    }
-
-    /**
-     * Finds and displays a Proyectos entity.
-     *
-     * @Route("/{id}", name="proyectos_show")
-     * @Method("GET")
-     * @Template()
-     */
-    public function showAction($id)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('ProyectosBundle:Proyectos')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Proyectos entity.');
-        }
-
-        $deleteForm = $this->createDeleteForm($id);
-
-        return array(
-            'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),
         );
     }
 
@@ -193,7 +168,7 @@ class ProyectosController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('proyectos_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('proyectos', array('id' => $id)));
         }
 
         return array(

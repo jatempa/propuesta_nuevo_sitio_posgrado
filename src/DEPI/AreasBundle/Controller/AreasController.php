@@ -53,7 +53,7 @@ class AreasController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('areas_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('areas', array('id' => $entity->getId())));
         }
 
         return array(
@@ -96,31 +96,6 @@ class AreasController extends Controller
         return array(
             'entity' => $entity,
             'form'   => $form->createView(),
-        );
-    }
-
-    /**
-     * Finds and displays a Areas entity.
-     *
-     * @Route("/{id}", name="areas_show")
-     * @Method("GET")
-     * @Template()
-     */
-    public function showAction($id)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('AreasBundle:Areas')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Areas entity.');
-        }
-
-        $deleteForm = $this->createDeleteForm($id);
-
-        return array(
-            'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),
         );
     }
 
@@ -193,7 +168,7 @@ class AreasController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('areas_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('areas', array('id' => $id)));
         }
 
         return array(
