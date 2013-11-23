@@ -1,42 +1,63 @@
 {% extends '::backend.html.twig' %}
 
-{% block body %}
-<div class="unit-80">
-    <h1>ProyectosProductos list</h1>
+{% block mapa %}
+    <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
+    <li><a href="{{ path('proyectos') }}">Proyectos</a></li>
+    <li><span>Productos Académicos de los Proyectos</span></li>
+{% endblock %}
 
+{% block body %}
+<aside class="unit-25 unit-padding">
+    <h6>Opciones</h6>
+    <nav class="nav-v">
+        <ul>
+            <li><a href="{{ path('alumnosproyectos') }}">Registro de alumnos</a></li>
+            <li><a href="{{ path('investigadorproyecto') }}">Registro de investigadores</a></li>
+            <li><span>Registro de productos académicos</span></li>
+            <li><a href="{{ path('areasproyectos') }}">Registrar área de investigación</a></li>
+        </ul>
+    </nav>
+</aside>
+
+<div class="unit-75">
     <div class="table-container">
-        <table class="table-striped">
+        <table class="width-100 table-striped">
             <thead>
                 <tr>
-                    <th>Id</th>
                     <th>Proyecto</th>
                     <th>Producto</th>
                     <th>Cantidad</th>
-                    <th>Fechacumplimiento</th>
+                    <th>Fecha de cumplimiento</th>
                     <th>Observaciones</th>
-                    <th>Actualizar</th>
-                    <th>Consultar</th>
                 </tr>
             </thead>
             <tbody>
             {% for entity in entities %}
                 <tr>
-                    <td><a href="{{ path('proyectosproductos_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                    <td>{{ entity.proyecto.nombreCorto }}</td>
-                    <td>{{ entity.productoAcademico.meta }}</td>
-                    <td>{{ entity.cantidad }}</td>
-                    <td>{% if entity.fechaCumplimiento %}{{ entity.fechaCumplimiento|date('Y-m-d') }}{% endif %}</td>
-                    <td>{{ entity.observaciones }}</td>
-                    <td>
+                    <td class="enlace" >
                         <a href="{{ path('proyectosproductos_edit', { 'id': entity.id }) }}">
-                            <center><img src="{{ asset('bundles/backend/img/cog.png') }}" alt="" /></center>
+                            {{ entity.proyecto.nombreCorto }}
                         </a>
                     </td>
-                    <td>
-                        <a href="{{ path('proyectosproductos_show', { 'id': entity.id }) }}">
-                            <center><img src="{{ asset('bundles/backend/img/search.png') }}" alt="" /></center>
+                    <td class="enlace" >
+                        <a href="{{ path('proyectosproductos_edit', { 'id': entity.id }) }}">
+                            {{ entity.productoAcademico.meta }}
                         </a>
                     </td>
+                    <td class="enlace" >
+                        <a href="{{ path('proyectosproductos_edit', { 'id': entity.id }) }}">
+                            {{ entity.cantidad }}
+                        </a>
+                    </td>
+                    <td class="enlace" >
+                        <a href="{{ path('proyectosproductos_edit', { 'id': entity.id }) }}">
+                            {% if entity.fechaCumplimiento %}{{ entity.fechaCumplimiento|date('Y-m-d') }}{% endif %}
+                        </a>
+                    </td>
+                    <td class="enlace" >
+                        <a href="{{ path('proyectosproductos_edit', { 'id': entity.id }) }}">
+                            {{ entity.observaciones }}
+                        </a>
                     </td>
                 </tr>
             {% endfor %}

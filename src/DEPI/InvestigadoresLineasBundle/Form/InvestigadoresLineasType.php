@@ -15,7 +15,7 @@ class InvestigadoresLineasType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('rol')
+            ->add('rol', 'choice', array('choices' => array('Responsable' => 'Responsable', 'Participante' => 'Participante')))
             ->add('investigadores')
             ->add('lineasinvestigacion')
         ;

@@ -1,18 +1,49 @@
 {% extends '::backend.html.twig' %}
 
-{% block body -%}
-<div class="unit-80">
-    <h1>InvestigadoresLineas edit</h1>
+{% block mapa %}
+    <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
+    <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
+    <li><a href="{{ path('investigadoreslineas') }}">Investigadores y líneas de investigación</a></li>
+    <li><span>Actualizar datos de investigadores y líneas de investigación</span></li>
+{% endblock %}
 
-    {{ form(edit_form, {'attr': {'class': 'forms forms-inline'}}) }}
+{% block body %}
+<div class="unit-100">
+    <div class="units-row">
+        <div class="unit-centered unit-50">
+            {% form_theme edit_form '::fields.html.twig' %}
+            <fieldset>
+                <legend>Alumnos y Proyectos</legend>
+                {{ form_start(edit_form, { 'attr': {'class': 'forms forms-columnar'} }) }}
+                    
+                    <p>
+                        {{ form_label(edit_form.investigadores, 'Investigador') }}
+                        {{ form_widget(edit_form.investigadores, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                        
+                    
+                    <p>
+                        {{ form_label(edit_form.lineasinvestigacion, 'Línea de investigación') }}
+                        {{ form_widget(edit_form.lineasinvestigacion, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
 
-    <ul class="record_actions">
-        <li>
-            <a href="{{ path('investigadoreslineas') }}">
-                Back to the list
-            </a>
-        </li>
-        <li>{{ form(delete_form) }}</li>
-    </ul>
+                    <p>
+                        {{ form_label(edit_form.rol, 'Rol') }}
+                        {{ form_widget(edit_form.rol, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+
+                    <p>
+                         {{ form_widget(edit_form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
+                    {{ form_end(edit_form) }}
+                    </p>
+
+                    <p>
+                        {{ form_start(delete_form) }}
+                            {{ form_widget(delete_form.submit, { 'attr': {'class': 'btn btn-red'} }) }}
+                        {{ form_end(delete_form) }}
+                    </p>
+            </fieldset>
+        </div>
+    </div>
 </div>
 {% endblock %}
