@@ -29,3 +29,11 @@ alumnos_update:
 alumnos_delete:
     pattern:  /posgradmin/alumnos/delete/{id}
     defaults: { _controller: AlumnosBundle:Alumnos:delete }
+
+alumnos_public:
+    pattern:  /alumnos
+    defaults: { _controller: AlumnosBundle:AlumnosPublic:index }
+
+alumnos_show_public:
+    pattern:  /alumnos/show/{id}
+    defaults: { _controller: AlumnosBundle:AlumnosPublic:show }
