@@ -1,17 +1,44 @@
 {% extends '::backend.html.twig' %}
 
+{% block mapa %}
+    <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
+    <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
+    <li><a href="{{ path('investigadoreslineas') }}">Investigadores y líneas de investigación</a></li>
+    <li><span>Registro de investigador en una línea de investigación</span></li>
+{% endblock %}
+
 {% block body %}
-<div class="unit-80">
-    <h1>InvestigadoresLineas creation</h1>
+<div class="unit-100">
+    <div class="units-row">
+        <div class="unit-centered unit-50">
+            {% form_theme form '::fields.html.twig' %}
+            <fieldset>
+                <legend>Investigadores y líneas de investigación</legend>
+                {{ form_start(form, { 'attr': {'class': 'forms forms-columnar'} }) }}
+                    
+                    <p>
+                        {{ form_label(form.investigadores, 'Investigador') }}
+                        {{ form_widget(form.investigadores, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                        
+                    
+                    <p>
+                        {{ form_label(form.lineasinvestigacion, 'Líneas de investigación') }}
+                        {{ form_widget(form.lineasinvestigacion, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
 
-    {{ form(form, {'attr': {'class': 'forms forms-inline'}}) }}
+                    <p>
+                        {{ form_label(form.rol, 'Rol') }}
+                        {{ form_widget(form.rol, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                    
+                    <p>
+                        {{ form_widget(form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
+                    </p>
 
-    <ul class="record_actions">
-        <li>
-            <a href="{{ path('investigadoreslineas') }}">
-                Back to the list
-            </a>
-        </li>
-    </ul>
+                {{ form_end(form) }}
+            </fieldset>
+        </div>
+    </div>
 </div>
 {% endblock %}

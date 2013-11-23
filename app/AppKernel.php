@@ -32,7 +32,6 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new DEPI\BackEndBundle\BackEndBundle(),
             new DEPI\UserBundle\UserBundle(),
-            new Genemu\Bundle\FormBundle\GenemuFormBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

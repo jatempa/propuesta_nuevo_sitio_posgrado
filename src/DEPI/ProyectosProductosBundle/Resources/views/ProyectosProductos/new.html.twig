@@ -1,17 +1,51 @@
 {% extends '::backend.html.twig' %}
 
+{% block mapa %}
+    <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
+    <li><a href="{{ path('proyectosproductos') }}">Alumnos y Proyectos</a></li>
+    <li><span>Registro de alumnos a un proyecto</span></li>
+{% endblock %}
+
 {% block body %}
-<div class="unit-80">
-    <h1>ProyectosProductos creation</h1>
+<div class="unit-100">
+    <div class="units-row">
+        <div class="unit-centered unit-50">
+            {% form_theme form '::fields.html.twig' %}
+            <fieldset>
+                <legend>Alumnos y Proyectos</legend>
+                {{ form_start(form, { 'attr': {'class': 'forms forms-columnar'} }) }}
+                    
+                    <p>
+                        {{ form_label(form.cantidad, 'Cantidad') }}
+                        {{ form_widget(form.cantidad, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
 
-    {{ form(form) }}
+                    <p>
+                        {{ form_label(form.fechaCumplimiento, 'Fecha de cumplimiento') }}
+                        {{ form_widget(form.fechaCumplimiento, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
 
-    <ul class="record_actions">
-        <li>
-            <a href="{{ path('proyectosproductos') }}">
-                Back to the list
-            </a>
-        </li>
-    </ul>
+                    <p>
+                        {{ form_label(form.observaciones, 'Observaciones') }}
+                        {{ form_widget(form.observaciones, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+
+                    <p>
+                        {{ form_label(form.proyecto, 'Proyecto') }}
+                        {{ form_widget(form.proyecto, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+
+                    <p>
+                        {{ form_label(form.productoAcademico, 'Producto académico') }}
+                        {{ form_widget(form.productoAcademico, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+
+                    <p>
+                        {{ form_widget(form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
+                    </p>
+                {{ form_end(form) }}
+            </fieldset>
+        </div>
+    </div>
 </div>
 {% endblock %}
