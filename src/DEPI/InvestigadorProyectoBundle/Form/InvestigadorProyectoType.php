@@ -15,7 +15,6 @@ class InvestigadorProyectoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('fechaCreacion')
             ->add('investigadores')
             ->add('proyectos')
         ;

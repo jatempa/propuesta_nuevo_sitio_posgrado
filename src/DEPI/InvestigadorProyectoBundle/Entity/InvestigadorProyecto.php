@@ -32,13 +32,6 @@ class InvestigadorProyecto
     private $proyectos;
 
     /**
-     * @var date
-     *
-     * @ORM\Column(name="fecha_creacion", type="date")
-     */
-    private $fechaCreacion;
-
-    /**
      * Get id
      *
      * @return integer 
@@ -88,28 +81,5 @@ class InvestigadorProyecto
     public function getProyectos()
     {
         return $this->proyectos;
-    }
-
-    /**
-     * Set fecha_creacion
-     *
-     * @param date $fecha_creacion
-     * @return InvestigadorProyecto
-     */
-    public function setFechaCreacion($fechaCreacion)
-    {
-        $this->fechaCreacion = $fechaCreacion;
-    
-        return $this;
-    }
-
-    /**
-     * Get fecha_creacion
-     *
-     * @return date 
-     */
-    public function getFechaCreacion()
-    {
-        return $this->fechaCreacion;
     }
 }

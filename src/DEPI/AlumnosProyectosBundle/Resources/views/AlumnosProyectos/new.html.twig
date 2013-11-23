@@ -1,17 +1,38 @@
 {% extends '::backend.html.twig' %}
 
+{% block mapa %}
+    <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
+    <li><a href="{{ path('alumnosproyectos') }}">Alumnos y Proyectos</a></li>
+    <li><span>Registro de alumnos a un proyecto</span></li>
+{% endblock %}
+
 {% block body -%}
-<div class="unit-80">
-        <h1>AlumnosProyectos creation</h1>
+<div class="unit-100">
+    <div class="units-row">
+        <div class="unit-centered unit-50">
+            {% form_theme form '::fields.html.twig' %}
+            <fieldset>
+                <legend>Alumnos y Proyectos</legend>
+                {{ form_start(form, { 'attr': {'class': 'forms forms-columnar'} }) }}
+                    
+                    <p>
+                        {{ form_label(form.idAlumno, 'No. de Control') }}
+                        {{ form_widget(form.idAlumno, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                        
+                    
+                    <p>
+                        {{ form_label(form.idProyecto, 'Proyecto') }}
+                        {{ form_widget(form.idProyecto, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                    
+                    <p>
+                        {{ form_widget(form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
+                    </p>
 
-        {{ form(form, {'attr': {'class': 'forms forms-inline'}}) }}
-
-    <ul class="record_actions">
-        <li>
-            <a href="{{ path('alumnosproyectos') }}">
-                Back to the list
-            </a>
-        </li>
-    </ul>
+                {{ form_end(form) }}
+            </fieldset>
+        </div>
+    </div>
 </div>
 {% endblock %}

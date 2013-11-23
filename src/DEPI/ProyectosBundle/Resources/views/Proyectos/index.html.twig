@@ -7,21 +7,20 @@
 
 {% block body %}
 <aside class="unit-25 unit-padding">
-    <h6>Sidebar</h6>
+    <h6>Opciones</h6>
     <nav class="nav-v">
         <ul>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
+            <li><a href="{{ path('alumnosproyectos') }}">Registro de alumnos</a></li>
+            <li><a href="{{ path('investigadorproyecto') }}">Registro de investigadores</a></li>
+            <li><a href="{{ path('proyectosproductos') }}">Registro de productos académicos</a></li>
+            <li><a href="{{ path('areasproyectos') }}">Registrar área de investigación</a></li>
         </ul>
     </nav>
 </aside>
 
 <div class="unit-75">
     <div class="table-container">
-        <table class="width-100 table-striped">
+        <table class="table-striped">
             <thead>
                 <tr>
                     <th>Clave ITM</th>

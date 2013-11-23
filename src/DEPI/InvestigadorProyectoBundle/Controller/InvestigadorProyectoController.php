@@ -52,7 +52,7 @@ class InvestigadorProyectoController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('investigadorproyecto_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('investigadorproyecto', array('id' => $entity->getId())));
         }
 
         return array(
@@ -75,7 +75,7 @@ class InvestigadorProyectoController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array('label' => 'Guardar'));
 
         return $form;
     }
@@ -164,7 +164,7 @@ class InvestigadorProyectoController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => 'Actualizar'));
 
         return $form;
     }
@@ -192,7 +192,7 @@ class InvestigadorProyectoController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('investigadorproyecto_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('investigadorproyecto', array('id' => $id)));
         }
 
         return array(
@@ -239,7 +239,7 @@ class InvestigadorProyectoController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('investigadorproyecto_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', array('label' => 'Eliminar'))
             ->getForm()
         ;
     }
