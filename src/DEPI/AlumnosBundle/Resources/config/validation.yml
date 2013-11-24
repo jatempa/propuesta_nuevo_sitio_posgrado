@@ -1,0 +1,6 @@
+DEPI\AlumnosBundle\Entity\Alumnos:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+            fields: noControl
+            errorPath: noControl
+            message: 'El alumno con el número de control específicado, ya existe en la base de datos.'

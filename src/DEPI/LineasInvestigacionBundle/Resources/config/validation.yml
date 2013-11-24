@@ -1,0 +1,6 @@
+DEPI\LineasInvestigacionBundle\Entity\LineasInvestigacion:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+            fields: clave
+            errorPath: clave
+            message: 'La líneas de investigación con esta clave específicada, ya existe en la base de datos.'

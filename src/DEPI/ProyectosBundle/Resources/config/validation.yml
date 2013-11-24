@@ -1,0 +1,6 @@
+DEPI\ProyectosBundle\Entity\Proyectos:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+            fields: claveItm
+            errorPath: claveItm
+            message: 'El proyecto con esta clave específicada, ya existe en la base de datos.'
