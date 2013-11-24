@@ -65,10 +65,11 @@
                     	{{ form_label(form.status, 'Estatus') }}
                         {{ form_widget(form.status) }}
                     </p>
-
+                    
                     <p>
-                        {{ form_row(form.submit, { 'attr': {'class': 'btn btn-blue width-20'} }) }}
+                        {{ form_widget(form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
                     </p>
+                {{ form_end(form) }}
             </fieldset>
         </div>
     </div>
