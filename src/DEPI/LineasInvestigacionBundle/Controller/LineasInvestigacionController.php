@@ -53,7 +53,7 @@ class LineasInvestigacionController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('lineas', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('lineas'));
         }
 
         return array(
@@ -168,7 +168,7 @@ class LineasInvestigacionController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('lineas', array('id' => $id)));
+            return $this->redirect($this->generateUrl('lineas'));
         }
 
         return array(

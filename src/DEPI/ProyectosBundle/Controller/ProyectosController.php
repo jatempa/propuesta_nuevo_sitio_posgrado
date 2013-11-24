@@ -53,7 +53,7 @@ class ProyectosController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('proyectos', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('proyectos'));
         }
 
         return array(
@@ -168,7 +168,7 @@ class ProyectosController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('proyectos', array('id' => $id)));
+            return $this->redirect($this->generateUrl('proyectos'));
         }
 
         return array(

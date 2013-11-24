@@ -53,7 +53,7 @@ class ProductosAcademicosController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('productosacademicos', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('productosacademicos'));
         }
 
         return array(
@@ -168,7 +168,7 @@ class ProductosAcademicosController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('productosacademicos', array('id' => $id)));
+            return $this->redirect($this->generateUrl('productosacademicos'));
         }
 
         return array(

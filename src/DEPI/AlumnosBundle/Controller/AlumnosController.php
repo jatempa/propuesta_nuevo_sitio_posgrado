@@ -51,7 +51,7 @@ class AlumnosController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('alumnos', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('alumnos'));
         }
 
         return array(
@@ -166,7 +166,7 @@ class AlumnosController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('alumnos', array('id' => $id)));
+            return $this->redirect($this->generateUrl('alumnos'));
         }
 
         return array(

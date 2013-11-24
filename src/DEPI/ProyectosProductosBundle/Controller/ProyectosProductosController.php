@@ -52,7 +52,7 @@ class ProyectosProductosController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('proyectosproductos', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('proyectosproductos'));
         }
 
         return array(
@@ -167,7 +167,7 @@ class ProyectosProductosController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('proyectosproductos', array('id' => $id)));
+            return $this->redirect($this->generateUrl('proyectosproductos'));
         }
 
         return array(

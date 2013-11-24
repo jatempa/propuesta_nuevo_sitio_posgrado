@@ -53,7 +53,7 @@ class AreasController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('areas', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('areas'));
         }
 
         return array(
@@ -168,7 +168,7 @@ class AreasController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('areas', array('id' => $id)));
+            return $this->redirect($this->generateUrl('areas'));
         }
 
         return array(
