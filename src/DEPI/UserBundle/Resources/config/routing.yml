@@ -1,7 +1,0 @@
-posgradmin:
-    pattern:  /posgradmin
-    defaults: { _controller: UserBundle:Default:index }
-
-_posgradmin:
-    pattern: /posgradmin/
-    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: posgradmin}

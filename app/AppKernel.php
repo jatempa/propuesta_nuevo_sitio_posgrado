@@ -29,7 +29,6 @@ class AppKernel extends Kernel
             new DEPI\ProductosAcademicosBundle\ProductosAcademicosBundle(),
             new DEPI\ProyectosProductosBundle\ProyectosProductosBundle(),
             new DEPI\InvestigadorProyectoBundle\InvestigadorProyectoBundle(),
-            new FOS\UserBundle\FOSUserBundle(),
             new DEPI\BackEndBundle\BackEndBundle(),
             new DEPI\UserBundle\UserBundle(),
         );
