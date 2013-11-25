@@ -244,6 +244,6 @@ class Investigadores
 
     public function __toString()
     {
-        return $this->getNombre();
+        return $this->getNombre().' '.$this->getApellidoPaterno().' '.$this->getApellidoMaterno();
     }
 }
