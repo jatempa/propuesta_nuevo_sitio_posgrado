@@ -52,39 +52,19 @@
       <section class="top-bar-section">
           <!-- Left Nav Section -->
           <ul class="right">
-              <li class="active"><a href="#">Inicio</a></li>
+              <li><a href="{{ path('portada') }}">Inicio</a></li>
               <li class="has-dropdown">
-                  <a href="#">Alumnos</a>
+                <a href="#">Investigación</a>
                   <ul class="dropdown">
-                      <li><a id="link_contenido" href="{{ path('alumnos_public') }}">Alumnos</a></li>
-                      <li><a href="#">Item 2</a></li>
-                      <li><a href="#">Item 3</a></li>
+                    <li><a  id="link_contenido" href="{{ path('alumnos_public') }}">Alumnos</a></li>
+                    <li><a href="#">Áreas de investigación</a></li>
+                    <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
+                    <li><a href="#">Lineas de investigación</a></li>
+                    <li><a href="#">Proyectos</a></li>
                   </ul>
               </li>
-              <li class="has-dropdown">
-                  <a href="#">Investigación</a>
-                  <ul class="dropdown">
-                      <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
-                      <li><a href="#">Proyectos</a></li>
-                      <li><a href="#">Productos Academicos</a></li>
-                  </ul>
-              </li>
-              <li class="has-dropdown">
-                  <a href="#">Programas</a>
-                  <ul class="dropdown">
-                      <li><a href="#">Item 1</a></li>
-                      <li><a href="#">Item 2</a></li>
-                      <li><a href="#">Item 3</a></li>
-                  </ul>
-              </li>
-              <li class="has-dropdown">
-                  <a href="#">Convocatorias</a>
-                  <ul class="dropdown">
-                      <li><a href="#">Item 1</a></li>
-                      <li><a href="#">Item 2</a></li>
-                      <li><a href="#">Item 3</a></li>
-                  </ul>
-              </li>
+              <li><a href="#">Programas</a></li>
+              <li><a href="#">Convocatorias</a></li>
               <li><a href="#">Directorio</a></li>
           </ul>
       </section>
