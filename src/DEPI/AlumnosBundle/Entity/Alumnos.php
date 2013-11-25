@@ -214,6 +214,6 @@ class Alumnos
 
     public function __toString()
     {
-        return $this->getNoControl();
+        return $this->getNoControl().' - '.$this->getNombre().' '.$this->getApellidoPaterno().' '.$this->getApellidoMaterno();
     }
 }
