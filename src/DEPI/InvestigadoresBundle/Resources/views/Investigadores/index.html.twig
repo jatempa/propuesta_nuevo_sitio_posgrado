@@ -21,12 +21,9 @@
             <thead>
                 <tr>
                     <th>Nombre</th>
-                    <th>Apellidopaterno</th>
-                    <th>Apellidomaterno</th>
+                    <th>Apellido paterno</th>
+                    <th>Apellido materno</th>
                     <th>Correo electrónico</th>
-                    <th>Teléfono</th>
-                    <th>Grado</th>
-                    <th>Sni</th>
                 </tr>
             </thead>
             <tbody>
@@ -50,21 +47,6 @@
                     <td class="width-20 enlace">
                         <a href="{{ path('investigadores_edit', { 'id': entity.id }) }}" >
                             {{ entity.email }}
-                        </a>
-                    </td>
-                    <td class="width-20 enlace">
-                        <a href="{{ path('investigadores_edit', { 'id': entity.id }) }}" >
-                            {{ entity.telefono }}
-                        </a>
-                    </td>
-                    <td class="enlace">
-                        <a href="{{ path('investigadores_edit', { 'id': entity.id }) }}" >
-                            {{ entity.grado }}
-                        </a>
-                    </td>
-                    <td class="enlace">
-                        <a href="{{ path('investigadores_edit', { 'id': entity.id }) }}" >
-                            {{ entity.sni }}
                         </a>
                     </td>
                 </tr>
