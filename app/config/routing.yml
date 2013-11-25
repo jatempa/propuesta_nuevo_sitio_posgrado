@@ -2,10 +2,6 @@ back_end:
     resource: "@BackEndBundle/Resources/config/routing.yml"
     prefix:   /
 
-user:
-    resource: "@UserBundle/Resources/config/routing.yml"
-    prefix:   /
-
 proyectos_productos:
     resource: "@ProyectosProductosBundle/Resources/config/routing.yml"
     prefix:   /
