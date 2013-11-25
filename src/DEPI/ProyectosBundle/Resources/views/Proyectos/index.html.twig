@@ -20,10 +20,9 @@
 
 <div class="unit-75">
     <div class="table-container">
-        <table class="table-striped">
+        <table class="width-100 table-striped">
             <thead>
                 <tr>
-                    <th>Clave ITM</th>
                     <th>Proyecto</th>
                     <th>Objetivo general</th>
                     <th>Fecha de apertura</th>
@@ -33,27 +32,22 @@
             <tbody>
             {% for entity in entities %}
                 <tr>
-                    <td class="enlace">
-                        <a href="{{ path('proyectos_edit', { 'id': entity.id }) }}">
-                            {{ entity.claveItm }}
-                        </a>
-                    </td>
-                    <td class="enlace">
+                    <td class="width-40 enlace">
                         <a href="{{ path('proyectos_edit', { 'id': entity.id }) }}">
                             {{ entity.nombreCompleto }}
                         </a>
                     </td>
-                    <td class="enlace">
+                    <td class="width-30 enlace">
                         <a href="{{ path('proyectos_edit', { 'id': entity.id }) }}">
                             {{ entity.objetivoGeneral }}
                         </a>
                     </td>
-                    <td class="enlace">
+                    <td class="width-10 enlace">
                         <a href="{{ path('proyectos_edit', { 'id': entity.id }) }}">
                             {% if entity.fechaApertura %}{{ entity.fechaApertura|date('Y-m-d') }}{% endif %}
                         </a>
                     </td>
-                    <td class="enlace">
+                    <td class="width-10 enlace">
                         <a href="{{ path('proyectos_edit', { 'id': entity.id }) }}">
                             {% if entity.fechaTermino %}{{ entity.fechaTermino|date('Y-m-d') }}{% endif %}
                         </a>
