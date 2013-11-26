@@ -16,16 +16,15 @@
                 {{ form_start(edit_form, { 'attr': {'class': 'forms forms-columnar'} }) }}
                     
                     <p>
+                        {{ form_label(edit_form.proyectos, 'Proyecto') }}
+                        {{ form_widget(edit_form.proyectos, { 'attr': {'class': 'width-100'} }) }}
+                    </p>  
+                    
+                    <p>
                         {{ form_label(edit_form.investigadores, 'Investigador') }}
                         {{ form_widget(edit_form.investigadores, { 'attr': {'class': 'width-100'} }) }}
                     </p>
                         
-                    
-                    <p>
-                        {{ form_label(edit_form.proyectos, 'Proyecto') }}
-                        {{ form_widget(edit_form.proyectos, { 'attr': {'class': 'width-100'} }) }}
-                    </p>                    
-
                     <p>
                          {{ form_widget(edit_form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
                     {{ form_end(edit_form) }}

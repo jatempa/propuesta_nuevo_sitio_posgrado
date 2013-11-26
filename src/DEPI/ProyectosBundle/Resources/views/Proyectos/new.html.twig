@@ -15,6 +15,26 @@
                 {{ form_start(form, { 'attr': {'class': 'forms forms-columnar'} }) }}
 					
                     <p>
+                        {{ form_label(form.nombreCorto, 'Nombre corto') }}
+                        {{ form_widget(form.nombreCorto, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                        
+                    <p>
+                        {{ form_label(form.nombreCompleto, 'Nombre completo') }}
+                        {{ form_widget(form.nombreCompleto, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                        
+                    <p>
+                        {{ form_label(form.objetivoGeneral, 'Objetivo general') }}
+                        {{ form_widget(form.objetivoGeneral, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                        
+                    <p>
+                        {{ form_label(form.objetivosEspecificos, 'Objetivos específicos') }}
+                        {{ form_widget(form.objetivosEspecificos, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                    
+                    <p>
                     	{{ form_label(form.claveItm, 'Clave ITM') }}
                         {{ form_widget(form.claveItm, { 'attr': {'class': 'width-100'} }) }}
                     </p>
@@ -29,27 +49,7 @@
                     	{{ form_label(form.claveConacyt, 'Clave Conacyt') }}
                         {{ form_widget(form.claveConacyt, { 'attr': {'class': 'width-100'} }) }}
                     </p>
-                        
-                    <p>
-                    	{{ form_label(form.nombreCorto, 'Nombre corto') }}
-                        {{ form_widget(form.nombreCorto, { 'attr': {'class': 'width-100'} }) }}
-                    </p>
-                        
-                    <p>
-                    	{{ form_label(form.nombreCompleto, 'Nombre completo') }}
-                        {{ form_widget(form.nombreCompleto, { 'attr': {'class': 'width-100'} }) }}
-                    </p>
-                        
-                    <p>
-                    	{{ form_label(form.objetivoGeneral, 'Objetivo general') }}
-                        {{ form_widget(form.objetivoGeneral, { 'attr': {'class': 'width-100'} }) }}
-                    </p>
-                        
-                    <p>
-                    	{{ form_label(form.objetivosEspecificos, 'Objetivos específicos') }}
-                        {{ form_widget(form.objetivosEspecificos, { 'attr': {'class': 'width-100'} }) }}
-                    </p>
-                      
+                          
 	                <p>
 	                	{{ form_label(form.fechaApertura, 'Fecha de apertura') }}
 	                    {{ form_widget(form.fechaApertura, { 'attr': {'class': 'width-100'} }) }}
