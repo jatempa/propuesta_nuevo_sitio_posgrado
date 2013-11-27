@@ -1,11 +1,11 @@
 {% extends '::frontend.html.twig' %}
 
 {% block body %}
-<h2>Alumnos pertenecientes al Departamento de Posgrado e Investigación</h2>
+<h3> Alumnos pertenecientes al Departamento de Posgrado e Investigación </h3>
 
 
 
-{% for alumno in alumnos %}
+{% for entity in entities %}
 
     {% if loop.first %}
         <!-- Using only the large-block-grid -->
@@ -13,29 +13,32 @@
     {% endif %}    
 
     <li>
-        {% if file_exists('bundles/portada/img/' ~ alumno.id ~ '.png') %}
-                    <img src="{{ asset('bundles/portada/img/' ~ alumno.id ~ '.png') }}" alt="" />      
+    <div>
+        {% if file_exists('bundles/alumnos/img/' ~ entity.id ~ '.png') %}
+                    <img src="{{ asset('bundles/alumnos/img/' ~ entity.id ~ '.png') }}" alt="" width="135" height="135" />      
                     {% else %}
-                    <img src="{{ asset('bundles/portada/img/unknown-person.gif') }}" alt="" />                     
+                    <img src="{{ asset('bundles/alumnos/img/unknown-person.gif') }}" alt="" width="135" height="135" />                     
         {% endif %}
         
-        {{ alumno.apellidoPaterno ~ " " ~  alumno.apellidoMaterno ~ " " ~  alumno.nombre }}
-        <p><a href="mailto:{{ alumno.email }}" > {{ alumno.email }} </a></p>
-        <p><a href="#" data-reveal-id="modal{{ alumno.id }}">Mas información</a></p>
+        <p><a href="#" data-reveal-id="modal{{ entity.id }}"> 
+            {{ entity.apellidoPaterno ~ " " ~  entity.apellidoMaterno ~ " " ~  entity.nombre }} 
+        </a></p>
 
-        <div id="modal{{ alumno.id }}" class="reveal-modal normal">
-        <div class="large-3 columns">
-            {% if file_exists('bundles/portada/img/' ~ alumno.id ~ '.png') %}
-                <img src="{{ asset('bundles/portada/img/' ~ alumno.id ~ '.png') }}" alt="" />      
-            {% else %}
-                <img src="{{ asset('bundles/portada/img/unknown-person.gif') }}" alt="" />      
-            {% endif %}
+        <div id="modal{{ entity.id }}" class="reveal-modal normal">
+            <div class="large-3 columns">
+                {% if file_exists('bundles/alumnos/img/' ~ entity.id ~ '.png') %}
+                    <img src="{{ asset('bundles/alumnos/img/' ~ entity.id ~ '.png') }}" alt="" />      
+                {% else %}
+                    <img src="{{ asset('bundles/alumnos/img/unknown-person.gif') }}" alt="" />      
+                {% endif %}
+            </div>
+            <div class="large-9 columns">
+                <p class="lead">{{ entity.apellidoPaterno ~ " " ~  entity.apellidoMaterno ~ " " ~  entity.nombre }}</p>
+                <a href="mailto:{{ entity.email }}" > {{ entity.email }} </a>
+            </div>
+            <a class="close-reveal-modal">&#215;</a>      
         </div>
-        <div class="large-9 columns">
-            <p class="lead">{{ alumno.apellidoPaterno ~ " " ~  alumno.apellidoMaterno ~ " " ~  alumno.nombre }}</p>
-            <a href="mailto:{{ alumno.email }}" > {{ alumno.email }} </a>
-        </div>
-      <a class="close-reveal-modal">&#215;</a>      
+
     </div>
 
     </li>

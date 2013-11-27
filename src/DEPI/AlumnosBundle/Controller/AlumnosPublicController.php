@@ -29,9 +29,9 @@ class AlumnosPublicController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $alumnos = $em->getRepository('AlumnosBundle:Alumnos')->findAll();
+        $entities = $em->getRepository('AlumnosBundle:Alumnos')->findAll();
 
-        return $this->render('AlumnosBundle:Alumnos:index_public.html.twig', array('alumnos' => $alumnos));
+        return $this->render('AlumnosBundle:Alumnos:index_public.html.twig', array('entities' => $entities));
     }
 
     /**

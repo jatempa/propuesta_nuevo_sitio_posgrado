@@ -1,0 +1,74 @@
+{% extends '::frontend.html.twig' %}
+
+{% block body %}
+<h3> Investigadores pertenecientes al Departamento de Posgrado e Investigación </h3>
+
+
+
+{% for entity in entities %}
+
+    {% if loop.first %}
+        <!-- Using only the large-block-grid -->
+        <ul class="large-block-grid-4">
+    {% endif %}    
+
+    <li>
+    <div>
+        {% if file_exists('bundles/investigadores/img/' ~ entity.id ~ '.png') %}
+                    <img src="{{ asset('bundles/investigadores/img/' ~ entity.id ~ '.png') }}" alt="" width="135" height="135" />      
+                    {% else %}
+                        {% if file_exists('bundles/investigadores/img/' ~ entity.id ~ '.jpg') %}
+                        <img src="{{ asset('bundles/investigadores/img/' ~ entity.id ~ '.jpg') }}" alt="" width="135" height="135" />      
+                        {% else %}
+                            <img src="{{ asset('bundles/investigadores/img/unknown-person.gif') }}" alt="" width="135" height="135" />  
+                        {% endif %}                   
+        {% endif %}
+        
+        <p><a href="#" data-reveal-id="modal{{ entity.id }}"> 
+            {{ entity.apellidoPaterno ~ " " ~  entity.apellidoMaterno ~ " " ~  entity.nombre }} 
+        </a></p>
+
+        <div id="modal{{ entity.id }}" class="reveal-modal normal">
+            <div class="large-3 columns">
+        {% if file_exists('bundles/investigadores/img/' ~ entity.id ~ '.png') %}
+                    <img src="{{ asset('bundles/investigadores/img/' ~ entity.id ~ '.png') }}" alt="" width="135" height="135" />      
+                    {% else %}
+                        {% if file_exists('bundles/investigadores/img/' ~ entity.id ~ '.jpg') %}
+                        <img src="{{ asset('bundles/investigadores/img/' ~ entity.id ~ '.jpg') }}" alt="" width="135" height="135" />      
+                        {% else %}
+                            <img src="{{ asset('bundles/investigadores/img/unknown-person.gif') }}" alt="" width="135" height="135" />  
+                        {% endif %}                   
+        {% endif %}
+            </div>
+            <div class="large-9 columns">
+                <p class="lead">{{ entity.apellidoPaterno ~ " " ~  entity.apellidoMaterno ~ " " ~  entity.nombre }}</p>
+                <a href="mailto:{{ entity.email }}" > {{ entity.email }} </a>
+            </div>
+            <a class="close-reveal-modal">&#215;</a>      
+        </div>
+
+    </div>
+
+    </li>
+
+
+    {% if loop.index is divisible by(4) %}
+    </ul>
+    <ul class="large-block-grid-4">
+    {% endif %}  
+
+{% endfor %}
+</ul>
+
+{% endblock %}
+
+{% block lateral %}
+<aside class="unit-20">
+    <h5>Opciones</h5>
+    <nav class="nav-v nav-stats">
+        <ul>
+            <li><a href="{{ path('investigadoresproyectos') }}">Alumnos-Proyectos</a></li>
+        </ul>
+    </nav>
+</aside>
+{% endblock %}

@@ -24,6 +24,7 @@
 		height: 75px;
     	vertical-align: center;
 	}
+
 }
 
 @media only screen and (max-width: 942px) {
@@ -46,6 +47,11 @@
 		background-color: black;
 		height: 75px;
     	vertical-align: center;
+	}
+
+	[class*="block-grid-"] {
+		font-size: 14px;
+		text-align: center;
 	}
 
 }
@@ -75,6 +81,11 @@
 		background-color: black;
     	height: 75px;
     	vertical-align: center;
+	}
+	
+	[class*="block-grid-"] {
+		font-size: 12px;
+		text-align: center;
 	}
 }
 
