@@ -91,4 +91,9 @@ class EntidadApoyo
     {
         return $this->clave;
     }
+
+    public function __toString()
+    {
+        return $this->getClave();
+    }
 }
