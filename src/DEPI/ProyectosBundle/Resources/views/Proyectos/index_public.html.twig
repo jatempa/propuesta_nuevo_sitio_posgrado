@@ -1,0 +1,86 @@
+{% extends '::frontend.html.twig' %}
+
+{% block body %}
+<h3> Proyectos de Investigación </h3>
+
+
+
+{% for entity in entities %}
+
+    {% if loop.first %}
+        <!-- Using only the large-block-grid -->
+        <ul class="large-block-grid-6">
+    {% endif %}    
+
+    <lu>
+    <div>
+	<div class="small-6 small-centered large-uncentered columns">
+        	<p><a href="#" data-reveal-id="modal{{ entity.id }}"> 
+        		{{ entity.nombreCompleto}} 
+        	</a></p>
+	</div>
+        <div id="modal{{ entity.id }}" class="reveal-modal normal">
+          <div class="large-4 columns">
+                <h3 class="lead">{{ "Nombre:"}}</h3>
+           </div>  
+	   <div class="large-8 columns">
+                <h3 class="lead">{{ entity.NombreCorto}}</h3>
+            </div>
+	  <div class="large-4 columns">
+                <p class="lead" style="background-color:#F8F8F8">{{ "Clave Conacyt:"}}</p>
+           </div>  
+	   <div class="large-8 columns">
+                <p class="lead" style="background-color:#F8F8F8">{{ entity.ClaveConacyt }}</p>
+            </div>
+	  <div class="large-4 columns">
+                <p class="lead">{{ "Clave Dgest:"}}</p>
+           </div>  
+	   <div class="large-8 columns">
+                <p class="lead">{{ entity.claveDgest }}</p>
+            </div>
+	  <div class="large-4 columns">
+                <p class="lead" style="background-color:#F8F8F8">{{ "Clave ITM:"}}</p>
+           </div>  
+	   <div class="large-8 columns">
+                <p class="lead" style="background-color:#F8F8F8">{{ entity.claveItm }}</p>
+            </div>
+	   <div class="large-4 columns">
+                <p class="lead">Objetivo General:</p>
+           </div>  
+	   <div class="large-8 columns">
+                <p class="lead">{{ entity.objetivoGeneral }}</p>
+            </div>
+
+	  <div class="large-4 columns">
+                <p class="lead" style="background-color:#F8F8F8">Objetivo Especifico:</p>
+           </div>  
+	   <div class="large-8 columns">
+                <p class="lead" style="background-color:#F8F8F8">{{ entity.objetivosEspecificos }}</p>
+            </div>
+
+	  <a class="close-reveal-modal">&#215;</a>      
+        </div>
+    </div>
+    </lu>
+
+
+    {% if loop.index is divisible by(6) %}
+    </ul>
+    <ul class="large-block-grid-9">
+    {% endif %}  
+
+{% endfor %}
+</ul>
+
+{% endblock %}
+
+{% block lateral %}
+<aside class="unit-20">
+    <h5>Opciones</h5>
+    <nav class="nav-v nav-stats">
+        <ul>
+            <li><a href="{{ path('proyectos') }}">Proyectos</a></li>
+        </ul>
+    </nav>
+</aside>
+{% endblock %}
