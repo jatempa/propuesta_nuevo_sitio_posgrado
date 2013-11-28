@@ -35,19 +35,14 @@
                     </p>
                     
                     <p>
-                    	{{ form_label(form.claveItm, 'Clave ITM') }}
-                        {{ form_widget(form.claveItm, { 'attr': {'class': 'width-100'} }) }}
+                    	{{ form_label(form.claveA, 'Clave A') }}
+                        {{ form_widget(form.claveA, { 'attr': {'class': 'width-100'} }) }}
                     </p>
                         
                     
                     <p>
-                    	{{ form_label(form.claveDgest, 'Clave DGEST') }}
-                        {{ form_widget(form.claveDgest, { 'attr': {'class': 'width-100'} }) }}
-                    </p>
-                    
-                    <p>
-                    	{{ form_label(form.claveConacyt, 'Clave Conacyt') }}
-                        {{ form_widget(form.claveConacyt, { 'attr': {'class': 'width-100'} }) }}
+                    	{{ form_label(form.claveB, 'Clave B') }}
+                        {{ form_widget(form.claveB, { 'attr': {'class': 'width-100'} }) }}
                     </p>
                           
 	                <p>
@@ -68,7 +63,6 @@
                     <p>
                         {{ form_widget(form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
                     </p>
-                    <h6>{{ form_errors(form.claveItm) }}</h6>
                 {{ form_end(form) }}
             </fieldset>
         </div>
