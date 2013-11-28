@@ -24,23 +24,16 @@ class Proyectos
     /**
      * @var string
      *
-     * @ORM\Column(name="clave_itm", type="string", length=20)
+     * @ORM\Column(name="claveA", type="string", length=20)
      */
-    private $claveItm;
+    private $claveA;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="clave_conacyt", type="string", length=20)
+     * @ORM\Column(name="claveB", type="string", length=20)
      */
-    private $claveConacyt;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="clave_dgest", type="string", length=20)
-     */
-    private $claveDgest;
+    private $claveB;
 
     /**
      * @var string
@@ -103,72 +96,49 @@ class Proyectos
     }
 
     /**
-     * Set clave_itm
+     * Set claveA
      *
-     * @param string $claveItm
+     * @param string $claveA
      * @return Proyectos
      */
-    public function setClaveItm($claveItm)
+    public function setClaveA($claveA)
     {
-        $this->claveItm = $claveItm;
+        $this->claveA = $claveA;
     
         return $this;
     }
 
     /**
-     * Get clave_itm
+     * Get claveA
      *
      * @return string 
      */
-    public function getClaveItm()
+    public function getClaveA()
     {
-        return $this->claveItm;
+        return $this->claveA;
     }
 
     /**
-     * Set clave_conacyt
+     * Set claveB
      *
-     * @param string $claveConacyt
+     * @param string $claveB
      * @return Proyectos
      */
-    public function setClaveConacyt($claveConacyt)
+    public function setClaveB($claveB)
     {
-        $this->claveConacyt = $claveConacyt;
+        $this->claveB = $claveB;
     
         return $this;
     }
 
     /**
-     * Get clave_conacyt
+     * Get claveB
      *
      * @return string 
      */
-    public function getClaveConacyt()
+    public function getClaveB()
     {
-        return $this->claveConacyt;
-    }
-
-    /**
-     * Set clave_dgest
-     *
-     * @param string $claveDgest
-     * @return Proyectos
-     */
-    public function setClaveDgest($claveDgest)
-    {
-        $this->claveDgest = $claveDgest;
-    
-        return $this;
-    }
-
-    /**
-     * Get clave_dgest
-     *
-     * @return string 
-     */
-    public function getClaveDgest()
-    {
-        return $this->claveDgest;
+        return $this->claveB;
     }
 
     /**
