@@ -5,22 +5,17 @@
 
 
 
-{% for entity in entities %}
-
-    {% if loop.first %}
-        <!-- Using only the large-block-grid -->
-        <ul class="large-block-grid-4">
-    {% endif %}    
+<ul class="small-block-grid-3 large-block-grid-7" align="center">
+{% for entity in entities %}   
 
     <li>
-    <div>
         {% if file_exists('bundles/investigadores/img/' ~ entity.id ~ '.png') %}
-                    <img src="{{ asset('bundles/investigadores/img/' ~ entity.id ~ '.png') }}" alt="" width="135" height="135" />      
+                    <img src="{{ asset('bundles/investigadores/img/' ~ entity.id ~ '.png') }}" alt=""  />      
                     {% else %}
                         {% if file_exists('bundles/investigadores/img/' ~ entity.id ~ '.jpg') %}
-                        <img src="{{ asset('bundles/investigadores/img/' ~ entity.id ~ '.jpg') }}" alt="" width="135" height="135" />      
+                        <img src="{{ asset('bundles/investigadores/img/' ~ entity.id ~ '.jpg') }}" alt=""  />      
                         {% else %}
-                            <img src="{{ asset('bundles/investigadores/img/unknown-person.gif') }}" alt="" width="135" height="135" />  
+                            <img src="{{ asset('bundles/investigadores/img/unknown-person.gif') }}" alt="" />  
                         {% endif %}                   
         {% endif %}
         
@@ -31,12 +26,12 @@
         <div id="modal{{ entity.id }}" class="reveal-modal normal">
             <div class="large-3 columns">
         {% if file_exists('bundles/investigadores/img/' ~ entity.id ~ '.png') %}
-                    <img src="{{ asset('bundles/investigadores/img/' ~ entity.id ~ '.png') }}" alt="" width="135" height="135" />      
+                    <img src="{{ asset('bundles/investigadores/img/' ~ entity.id ~ '.png') }}" alt=""  />      
                     {% else %}
                         {% if file_exists('bundles/investigadores/img/' ~ entity.id ~ '.jpg') %}
-                        <img src="{{ asset('bundles/investigadores/img/' ~ entity.id ~ '.jpg') }}" alt="" width="135" height="135" />      
+                        <img src="{{ asset('bundles/investigadores/img/' ~ entity.id ~ '.jpg') }}" alt="" />      
                         {% else %}
-                            <img src="{{ asset('bundles/investigadores/img/unknown-person.gif') }}" alt="" width="135" height="135" />  
+                            <img src="{{ asset('bundles/investigadores/img/unknown-person.gif') }}" alt=""  />  
                         {% endif %}                   
         {% endif %}
             </div>
@@ -47,15 +42,9 @@
             <a class="close-reveal-modal">&#215;</a>      
         </div>
 
-    </div>
 
     </li>
 
-
-    {% if loop.index is divisible by(4) %}
-    </ul>
-    <ul class="large-block-grid-4">
-    {% endif %}  
 
 {% endfor %}
 </ul>
