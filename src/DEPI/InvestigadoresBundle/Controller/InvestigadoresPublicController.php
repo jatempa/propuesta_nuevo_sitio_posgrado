@@ -27,11 +27,32 @@ class InvestigadoresPublicController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
+        $em2 = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('InvestigadoresBundle:Investigadores')->findAll();
+        $entitiesLineas = $em2->getRepository('InvestigadoresLineasBundle:InvestigadoresLineas')->findInvestigadoresLineas();
 
-        return $this->render('InvestigadoresBundle:Investigadores:index_public.html.twig', array('entities' => $entities));
+        return $this->render('InvestigadoresBundle:Investigadores:index_public.html.twig', 
+            array('entities' => $entities,
+                  'entitiesLineas' => $entitiesLineas,
+                ));
     }
+
+    // /**
+    //  * Lists all Investigadores entities.
+    //  *
+    //  * @Route("/", name="investigadores")
+    //  * @Method("GET")
+    //  * @Template()
+    //  */
+    // public function indexAction()
+    // {
+    //     $em = $this->getDoctrine()->getManager();
+
+    //     $entities = $em->getRepository('InvestigadoresLineasBundle:InvestigadoresLineas')->findInvestigadoresLineas();
+
+    //     return $this->render('InvestigadoresBundle:Investigadores:index_public.html.twig', array('entities' => $entities));
+    // }
 
     /**
      * Finds and displays a Investigadores entity.
