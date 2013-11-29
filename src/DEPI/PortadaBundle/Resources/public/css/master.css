@@ -81,11 +81,6 @@
 		background-color: black;
     	height: 75px;
     	vertical-align: center;
-	}
-	
-	[class*="block-grid-"] {
-		font-size: 12px;
-		text-align: center;
-	}
+	}	
 }
 
