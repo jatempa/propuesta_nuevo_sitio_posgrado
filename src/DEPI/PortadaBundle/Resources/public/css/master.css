@@ -3,6 +3,11 @@
 	height: 250px;
 }
 
+#new, article > header {
+	font-size: 21px;
+	font-family: 'Oxygen', sans-serif;
+}
+
 #depi{
 	margin-top: 30px;
 	height: 500px;
@@ -12,7 +17,7 @@
 #myCanvas {
 	width: 220px;
 	height: 5px;
-	background-color: #3A33FF;
+	background-color: #3333FF;
 }
 
 @media only screen { 
