@@ -29,7 +29,7 @@ class AlumnosController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $alumnos = $em->getRepository('AlumnosBundle:Alumnos')->findAll();
+        $alumnos = $em->getRepository('AlumnosBundle:Alumnos')->findAlumnos();
 
         return $this->render('AlumnosBundle:Alumnos:index.html.twig', array('alumnos' => $alumnos));
     }
