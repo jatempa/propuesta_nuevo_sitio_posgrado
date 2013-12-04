@@ -24,20 +24,6 @@ class Proyectos
     /**
      * @var string
      *
-     * @ORM\Column(name="claveA", type="string", length=20)
-     */
-    private $claveA;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="claveB", type="string", length=20)
-     */
-    private $claveB;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="nombre_corto", type="string", length=30)
      */
     private $nombreCorto;
@@ -78,6 +64,20 @@ class Proyectos
     private $fechaTermino;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="claveA", type="string", length=20)
+     */
+    private $claveA;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="claveB", type="string", length=20, nullable=true)
+     */
+    private $claveB = null;
+
+    /**
      * Get id
      *
      * @return integer 
@@ -85,52 +85,6 @@ class Proyectos
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set claveA
-     *
-     * @param string $claveA
-     * @return Proyectos
-     */
-    public function setClaveA($claveA)
-    {
-        $this->claveA = $claveA;
-    
-        return $this;
-    }
-
-    /**
-     * Get claveA
-     *
-     * @return string 
-     */
-    public function getClaveA()
-    {
-        return $this->claveA;
-    }
-
-    /**
-     * Set claveB
-     *
-     * @param string $claveB
-     * @return Proyectos
-     */
-    public function setClaveB($claveB)
-    {
-        $this->claveB = $claveB;
-    
-        return $this;
-    }
-
-    /**
-     * Get claveB
-     *
-     * @return string 
-     */
-    public function getClaveB()
-    {
-        return $this->claveB;
     }
 
     /**
@@ -269,6 +223,52 @@ class Proyectos
     public function getFechaTermino()
     {
         return $this->fechaTermino;
+    }
+
+    /**
+     * Set claveA
+     *
+     * @param string $claveA
+     * @return Proyectos
+     */
+    public function setClaveA($claveA)
+    {
+        $this->claveA = $claveA;
+    
+        return $this;
+    }
+
+    /**
+     * Get claveA
+     *
+     * @return string 
+     */
+    public function getClaveA()
+    {
+        return $this->claveA;
+    }
+
+    /**
+     * Set claveB
+     *
+     * @param string $claveB
+     * @return Proyectos
+     */
+    public function setClaveB($claveB)
+    {
+        $this->claveB = $claveB;
+    
+        return $this;
+    }
+
+    /**
+     * Get claveB
+     *
+     * @return string 
+     */
+    public function getClaveB()
+    {
+        return $this->claveB;
     }
 
     public function __toString()

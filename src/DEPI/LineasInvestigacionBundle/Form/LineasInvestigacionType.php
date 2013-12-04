@@ -17,7 +17,7 @@ class LineasInvestigacionType extends AbstractType
         $builder
             ->add('clave')
             ->add('nombre')
-            ->add('descripcion', 'textarea', array('attr' => array('rows' => '6')))
+            ->add('descripcion', 'textarea', array('required' => false, 'attr' => array('rows' => '6')))
         ;
     }
     

@@ -16,7 +16,7 @@ class AreasType extends AbstractType
     {
         $builder
             ->add('nombre')
-            ->add('descripcion', 'textarea', array('attr' => array('rows' => '6')))
+            ->add('descripcion', 'textarea', array('required' => false, 'attr' => array('rows' => '6')))
         ;
     }
     

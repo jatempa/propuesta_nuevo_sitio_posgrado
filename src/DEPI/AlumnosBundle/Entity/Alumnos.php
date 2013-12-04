@@ -45,7 +45,7 @@ class Alumnos
     /**
      * @var string
      *
-     * @ORM\Column(name="apellido_materno", type="string", length=30)
+     * @ORM\Column(name="apellido_materno", type="string", length=30, nullable=true)
      */
     private $apellidoMaterno;
 
@@ -59,7 +59,7 @@ class Alumnos
     /**
      * @var string
      *
-     * @ORM\Column(name="telefono", type="string", length=20)
+     * @ORM\Column(name="telefono", type="string", length=20, nullable=true)
      */
     private $telefono;
 

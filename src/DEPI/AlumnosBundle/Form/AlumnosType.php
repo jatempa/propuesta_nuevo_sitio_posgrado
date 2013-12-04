@@ -18,9 +18,9 @@ class AlumnosType extends AbstractType
             ->add('noControl', 'text')
             ->add('nombre', 'text')
             ->add('apellidoPaterno', 'text')
-            ->add('apellidoMaterno', 'text')
+            ->add('apellidoMaterno', 'text', array('required' => false))
             ->add('email', 'email')
-            ->add('telefono', 'text')
+            ->add('telefono', 'text', array('required' => false))
         ;
     }
     

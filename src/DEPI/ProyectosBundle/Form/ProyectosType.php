@@ -15,14 +15,14 @@ class ProyectosType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('claveA', 'text')
-            ->add('claveB', 'text')
             ->add('nombreCorto', 'text')
             ->add('nombreCompleto', 'text')
             ->add('objetivoGeneral', 'text')
             ->add('objetivosEspecificos', 'textarea', array('attr' => array('rows' => '6')))
             ->add('fechaApertura', 'date', array('widget' => 'single_text'))
             ->add('fechaTermino', 'date', array('widget' => 'single_text'))
+            ->add('claveA', 'text')
+            ->add('claveB', 'text', array('required' => false))
         ;
     }
     
