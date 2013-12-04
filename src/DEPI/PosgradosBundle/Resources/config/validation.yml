@@ -1,0 +1,6 @@
+DEPI\PosgradosBundle\Entity\Posgrados:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+            fields: clave
+            errorPath: clave
+            message: 'El área de posgrado con esta clave específicada, ya existe en la base de datos.'
