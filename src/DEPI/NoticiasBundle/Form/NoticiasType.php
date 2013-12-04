@@ -16,8 +16,8 @@ class NoticiasType extends AbstractType
     {
         $builder
             ->add('titulo')
-            ->add('contenido')
-            ->add('fechaPublicacion')
+            ->add('contenido', 'textarea', array('attr' => array('rows' => '6')))
+            ->add('fechaPublicacion', 'date', array('widget' => 'single_text'))
         ;
     }
     
