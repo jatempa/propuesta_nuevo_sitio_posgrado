@@ -18,14 +18,14 @@
         </ul>
     </nav>
 </aside>
-
 <div class="unit-75">
     <div class="table-container">
         <table class="width-100 table-striped">
             <thead>
                 <tr>
-                    <th class="width-50">Áreas de investigación</th>
-                    <th class="width-50">Proyectos</th>
+                    <th class="width-40">Áreas de investigación</th>
+                    <th class="width-30">Proyectos</th>
+                    <th class="width-30">Área de posgrado</th>
                 </tr>
             </thead>
             <tbody>
@@ -39,6 +39,11 @@
                     <td class="enlace">
                         <a href="{{ path('areasproyectos_edit', { 'id': entity.id }) }}">
                             {{ entity.proyecto.nombreCorto }}
+                        </a>
+                    </td>
+                    <td class="enlace">
+                        <a href="{{ path('areasproyectos_edit', { 'id': entity.id }) }}">
+                            {{ entity.posgrado.nombre }}
                         </a>
                     </td>
                 </tr>

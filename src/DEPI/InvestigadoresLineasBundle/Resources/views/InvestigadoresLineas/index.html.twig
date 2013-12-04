@@ -24,6 +24,7 @@
                 <tr>
                     <th>Investigador</th>
                     <th>Línea de investigación</th>
+                    <th>Área de posgrado</th>
                     <th>Rol</th>
                 </tr>
             </thead>
@@ -38,6 +39,11 @@
                     <td class="enlace">
                         <a href="{{ path('investigadoreslineas_edit', { 'id': entity.id }) }}">
                             {{ entity.lineasinvestigacion.nombre }}
+                        </a>
+                    </td>
+                     <td class="enlace">
+                        <a href="{{ path('investigadoreslineas_edit', { 'id': entity.id }) }}">
+                            {{ entity.posgrado.nombre }}
                         </a>
                     </td>
                     <td class="enlace">

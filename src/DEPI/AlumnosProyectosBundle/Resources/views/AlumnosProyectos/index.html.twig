@@ -24,9 +24,10 @@
         <table class="width-100 table-striped">
             <thead>
                 <tr>
-                    <th class="width-20">No Control</th>
-                    <th class="width-40">Alumno</th>
-                    <th class="width-40">Proyecto</th>
+                    <th class="width-10">No Control</th>
+                    <th class="width-30">Alumno</th>
+                    <th class="width-30">Proyecto</th>
+                    <th class="width-30">Área de posgrado</th>
                 </tr>
             </thead>
             <tbody>
@@ -46,6 +47,11 @@
                     <td class="enlace">
                         <a href="{{ path('alumnosproyectos_edit', { 'id': entity.id }) }}">
                             {{ entity.proyecto.nombreCorto }}
+                        </a>
+                    </td>
+                    <td class="enlace">
+                        <a href="{{ path('alumnosproyectos_edit', { 'id': entity.id }) }}">
+                            {{ entity.posgrado.nombre }}
                         </a>
                     </td>
                 </tr>
