@@ -2,10 +2,6 @@ noticias:
     resource: "@NoticiasBundle/Resources/config/routing.yml"
     prefix:   /
 
-entidad_apoyo:
-    resource: "@EntidadApoyoBundle/Resources/config/routing.yml"
-    prefix:   /
-
 back_end:
     resource: "@BackEndBundle/Resources/config/routing.yml"
     prefix:   /

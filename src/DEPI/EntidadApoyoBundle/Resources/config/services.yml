@@ -1,7 +1,0 @@
-parameters:
-#    entidad_apoyo.example.class: DEPI\EntidadApoyoBundle\Example
-
-services:
-#    entidad_apoyo.example:
-#        class: %entidad_apoyo.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
