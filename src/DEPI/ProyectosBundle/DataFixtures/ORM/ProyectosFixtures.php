@@ -12,9 +12,8 @@ class ProyectosFixtures extends AbstractFixture implements OrderedFixtureInterfa
   {
 
         $proyectos = array(
-            array('clave_itm' => 'Itm04490259mxl',
-                  'clave_conacyt' => 'Conacyt0440259mxl',
-                  'clave_dgest' => 'Dgest0440259mxl',
+            array('claveA' => 'Itm04490259mxl',
+                  'claveB' => 'Conacyt0440259mxl',
                   'nombre_corto' => 'Proyecto computacion obicua',
                   'nombre_completo' => 'Proyecto computacion obicua completo',
                   'objetivo_general' => 'Obtener el grado de maestria',
@@ -22,9 +21,8 @@ class ProyectosFixtures extends AbstractFixture implements OrderedFixtureInterfa
                   'fecha_apertura' => '2013-10-29',
                   'fecha_termino' => '2014-10-29',
                   'status' => '1'),
-            array('clave_itm' => 'Itm04490260mxl',
-                  'clave_conacyt' => 'Conacyt0440260mxl',
-                  'clave_dgest' => 'Dgest0440260mxl',
+            array('claveA' => 'Itm04490260mxl',
+                  'claveB' => 'Conacyt0440260mxl',
                   'nombre_corto' => 'Proyecto senales digitales',
                   'nombre_completo' => 'Proyecto senales digitales completo',
                   'objetivo_general' => 'Obtener el grado de maestria',
@@ -32,9 +30,8 @@ class ProyectosFixtures extends AbstractFixture implements OrderedFixtureInterfa
                   'fecha_apertura' => '2013-10-29',
                   'fecha_termino' => '2014-10-29',
                   'status' => '1'),
-            array('clave_itm' => 'Itm04490261mxl',
-                  'clave_conacyt' => 'Conacyt0440261mxl',
-                  'clave_dgest' => 'Dgest0440261mxl',
+            array('claveA' => 'Itm04490261mxl',
+                  'claveB' => 'Conacyt0440261mxl',
                   'nombre_corto' => 'Proyecto redes inalambricas',
                   'nombre_completo' => 'Proyecto redes inalambricas completo',
                   'objetivo_general' => 'Obtener el grado de maestria',
@@ -42,9 +39,8 @@ class ProyectosFixtures extends AbstractFixture implements OrderedFixtureInterfa
                   'fecha_apertura' => '2013-10-29',
                   'fecha_termino' => '2014-10-29',
                   'status' => '0'),
-            array('clave_itm' => 'Itm04490262mxl',
-                  'clave_conacyt' => 'Conacyt0440262mxl',
-                  'clave_dgest' => 'Dgest0440262mxl',
+            array('claveA' => 'Itm04490262mxl',
+                  'claveB' => 'Conacyt0440262mxl',
                   'nombre_corto' => 'Proyecto sistemas distribuidos',
                   'nombre_completo' => 'Proyecto sistemas distribuidos completo',
                   'objetivo_general' => 'Obtener el grado de maestria',
@@ -56,9 +52,8 @@ class ProyectosFixtures extends AbstractFixture implements OrderedFixtureInterfa
 
         foreach ($proyectos as $proyecto) {
             $entidad = new Proyectos();
-            $entidad->setClaveItm($proyecto['clave_itm']);
-            $entidad->setClaveConacyt($proyecto['clave_conacyt']);
-            $entidad->setClaveDgest($proyecto['clave_dgest']);
+            $entidad->setClaveA($proyecto['claveA']);
+            $entidad->setClaveB($proyecto['claveB']);
             $entidad->setNombreCorto($proyecto['nombre_corto']);
             $entidad->setNombreCompleto($proyecto['nombre_completo']);
             $entidad->setObjetivoGeneral($proyecto['objetivo_general']);

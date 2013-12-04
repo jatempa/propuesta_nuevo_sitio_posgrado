@@ -16,6 +16,16 @@
                 {{ form_start(form, { 'attr': {'class': 'forms forms-columnar'} }) }}
                     
                     <p>
+                        {{ form_label(form.proyecto, 'Proyecto') }}
+                        {{ form_widget(form.proyecto, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+
+                    <p>
+                        {{ form_label(form.productoAcademico, 'Producto académico') }}
+                        {{ form_widget(form.productoAcademico, { 'attr': {'class': 'width-100'} }) }}
+                    </p>                    
+
+                    <p>
                         {{ form_label(form.cantidad, 'Cantidad') }}
                         {{ form_widget(form.cantidad, { 'attr': {'class': 'width-100'} }) }}
                     </p>
@@ -28,16 +38,6 @@
                     <p>
                         {{ form_label(form.observaciones, 'Observaciones') }}
                         {{ form_widget(form.observaciones, { 'attr': {'class': 'width-100'} }) }}
-                    </p>
-
-                    <p>
-                        {{ form_label(form.proyecto, 'Proyecto') }}
-                        {{ form_widget(form.proyecto, { 'attr': {'class': 'width-100'} }) }}
-                    </p>
-
-                    <p>
-                        {{ form_label(form.productoAcademico, 'Producto académico') }}
-                        {{ form_widget(form.productoAcademico, { 'attr': {'class': 'width-100'} }) }}
                     </p>
 
                     <p>

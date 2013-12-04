@@ -15,18 +15,4 @@ class AlumnosRepository extends EntityRepository
 
 		return $dql->getQuery()->getResult();
 	}
-
-	public function findAlumno($noControl)
-	{
-		$em = $this->getEntityManager();
-		$dql = $em->createQueryBuilder();
-		$dql->select('a')
-		    ->from('AlumnosBundle:Alumnos', 'a')
-		    ->where('a.noControl = :noControl');
-		
-		$consulta = $dql->getQuery();
-		$consulta -> setParameter('noControl', $noControl);
-
-		return  $consulta->getSingleResult();
-	}
 }

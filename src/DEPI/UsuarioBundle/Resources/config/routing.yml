@@ -1,0 +1,9 @@
+usuario_login:
+    pattern:  /posgradmin/login
+    defaults: { _controller: UsuarioBundle:Usuario:index }
+
+usuario_login_check:
+    pattern:  /posgradmin/login_check
+
+usuario_logout:
+    pattern:  /posgradmin/logout

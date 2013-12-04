@@ -1,0 +1,27 @@
+entidadapoyo:
+    pattern:  /posgradmin/entidadapoyo
+    defaults: { _controller: EntidadApoyoBundle:EntidadApoyo:index }
+
+_entidadapoyo:
+    pattern: /posgradmin/entidadapoyo/
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: entidadapoyo}
+
+entidadapoyo_new:
+    pattern:  /posgradmin/entidadapoyo/new
+    defaults: { _controller: EntidadApoyoBundle:EntidadApoyo:new }
+
+entidadapoyo_edit:
+    pattern:  /posgradmin/entidadapoyo/edit/{id}
+    defaults: { _controller: EntidadApoyoBundle:EntidadApoyo:edit }
+
+entidadapoyo_create:
+    pattern:  /posgradmin/entidadapoyo/create
+    defaults: { _controller: EntidadApoyoBundle:EntidadApoyo:create }
+
+entidadapoyo_update:
+    pattern:  /posgradmin/entidadapoyo/update/{id}
+    defaults: { _controller: EntidadApoyoBundle:EntidadApoyo:update }
+
+entidadapoyo_delete:
+    pattern:  /posgradmin/entidadapoyo/delete/{id}
+    defaults: { _controller: EntidadApoyoBundle:EntidadApoyo:delete }

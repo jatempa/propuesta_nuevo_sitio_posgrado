@@ -16,6 +16,16 @@
                 {{ form_start(edit_form, { 'attr': {'class': 'forms forms-columnar'} }) }}
                     
                     <p>
+                        {{ form_label(edit_form.proyecto, 'Proyecto') }}
+                        {{ form_widget(edit_form.proyecto, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+
+                    <p>
+                        {{ form_label(edit_form.productoAcademico, 'Producto académico') }}
+                        {{ form_widget(edit_form.productoAcademico, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+
+                    <p>
                         {{ form_label(edit_form.cantidad, 'Cantidad') }}
                         {{ form_widget(edit_form.cantidad, { 'attr': {'class': 'width-100'} }) }}
                     </p>
@@ -32,18 +42,9 @@
                     </p>
 
                     <p>
-                        {{ form_label(edit_form.proyecto, 'Proyecto') }}
-                        {{ form_widget(edit_form.proyecto, { 'attr': {'class': 'width-100'} }) }}
-                    </p>
-
-                    <p>
-                        {{ form_label(edit_form.productoAcademico, 'Producto académico') }}
-                        {{ form_widget(edit_form.productoAcademico, { 'attr': {'class': 'width-100'} }) }}
-                    </p>
-
-                    <p>
                          {{ form_widget(edit_form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
                     {{ form_end(edit_form) }}
+                    
                     </p>
 
                     <p>

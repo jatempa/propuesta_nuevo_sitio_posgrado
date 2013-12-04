@@ -15,9 +15,9 @@ class ProyectosProductosType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('cantidad', 'integer')
+            ->add('cantidad', 'integer', array('required' => false))
             ->add('fechaCumplimiento', 'date', array('widget' => 'single_text'))
-            ->add('observaciones','textarea', array('attr' => array('rows' => '10')))
+            ->add('observaciones','textarea', array('attr' => array('rows' => '6')))
             ->add('proyecto')
             ->add('productoAcademico')
         ;

@@ -1,0 +1,44 @@
+{% extends '::frontend.html.twig' %}
+
+{% block body %}
+<h3> Proyectos de Investigación </h3>
+
+<dl class="accordion" data-accordion> 
+{% for entity in entities %}
+
+
+ 	<div class="small-11 small-centered large-uncentered columns">
+		<dd> <a href="#"{{ entity.ID}}><ins>{{ entity.nombreCompleto}}</ins></a> 
+		<div id="panel1" class="content active">
+			<p style="background-color:#F8F8F8">Nombre:  {{ entity.NombreCorto}}  </p>
+			<p >Clave Conacyt:  {{ entity.ClaveA }} </p>
+			<p  style="background-color:#F8F8F8">Clave Dgest:  {{ entity.claveB }}</p>
+			<p >Clave ITM: {{ entity.claveB }} </p>
+			<p style="background-color:#F8F8F8">Objetivo General:  					{{ entity.objetivoGeneral }}</p>
+			<p >Objetivo Especifico: {{entity.objetivosEspecificos }}</p> 
+		</div> 
+		</dd>        	
+
+    </div>
+
+    {% if loop.index is divisible by(6) %}
+    </ul>
+    <ul class="large-block-grid-9">
+    {% endif %}  
+
+{% endfor %}
+</ul>
+</dl>
+
+{% endblock %}
+
+{% block lateral %}
+<aside class="unit-20">
+    <h5>Opciones</h5>
+    <nav class="nav-v nav-stats">
+        <ul>
+            <li><a href="{{ path('proyectos') }}">Proyectos</a></li>
+        </ul>
+    </nav>
+</aside>
+{% endblock %}
