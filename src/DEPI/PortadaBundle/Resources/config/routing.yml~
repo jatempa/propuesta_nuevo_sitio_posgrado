@@ -1,7 +1,0 @@
-portada:
-    pattern:  /
-    defaults: { _controller: PortadaBundle:Sitio:index }
-
-directorio:
-    pattern:  /directorio
-    defaults: { _controller: PortadaBundle:Sitio:directorio }
