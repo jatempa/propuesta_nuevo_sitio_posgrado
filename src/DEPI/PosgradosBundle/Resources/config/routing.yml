@@ -1,3 +1,27 @@
-posgrados_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: PosgradosBundle:Default:index }
+posgrados:
+    pattern:  /posgradmin/posgrados
+    defaults: { _controller: PosgradosBundle:Posgrados:index }
+
+_posgrados:
+    pattern: /posgradmin/posgrados/
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: posgrados}
+
+posgrados_new:
+    pattern:  /posgradmin/posgrados/new
+    defaults: { _controller: PosgradosBundle:Posgrados:new }
+
+posgrados_edit:
+    pattern:  /posgradmin/posgrados/edit/{id}
+    defaults: { _controller: PosgradosBundle:Posgrados:edit }
+
+posgrados_create:
+    pattern:  /posgradmin/posgrados/create
+    defaults: { _controller: PosgradosBundle:Posgrados:create }
+
+posgrados_update:
+    pattern:  /posgradmin/posgrados/update/{id}
+    defaults: { _controller: PosgradosBundle:Posgrados:update }
+
+posgrados_delete:
+    pattern:  /posgradmin/posgrados/delete/{id}
+    defaults: { _controller: PosgradosBundle:Posgrados:delete }

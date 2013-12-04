@@ -168,7 +168,7 @@ class PosgradosController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('posgrados');
+            return $this->redirect($this->generateUrl('posgrados'));
         }
 
         return array(
