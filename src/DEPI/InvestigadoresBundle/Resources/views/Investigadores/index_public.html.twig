@@ -23,7 +23,7 @@
             {{ entity.apellidoPaterno ~ " " ~  entity.apellidoMaterno ~ " " ~  entity.nombre }} 
         </a></p>
 
-        <p><a href="{{ path('investigadores_show_public', { 'id': entity.id }) }}" data-reveal-id="modal"> 
+        <p><a href="#" data-reveal-id="modal" data-reveal-ajax="{{ path('investigadores_show_public', { 'id': entity.id }) }}" data-reveal-ajax="true"> 
             Abre modal
         </a></p>
         {% block modal %}
