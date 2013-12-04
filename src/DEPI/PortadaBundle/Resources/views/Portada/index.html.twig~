@@ -26,7 +26,7 @@
 </section>    
 <div id="depi" class="large-9 columns">
     <p>
-		<u><b>La Maestría en Ingeniería Electrónica</b></u>, cuenta con dos líneas de trabajo, <b>Computación Ubicua</b> y <b>Procesamiento digital de señales</b>, estas tiene un gran espectro reticular, permitiendo al alumno y a su asesor mucha flexibilidad en cuanto a la elección de materias, de acuerdo a su perfil de licenciatura y de sus intereses profesionales
+		<u><b>La Maestría en Ingeniería Electrónica</b></u>, cuenta con dos líneas de trabajo, <u>Computación Ubicua</u> y <u>Procesamiento digital de señales</u>, estas tiene un gran espectro reticular, permitiendo al alumno y a su asesor mucha flexibilidad en cuanto a la elección de materias, de acuerdo a su perfil de licenciatura y de sus intereses profesionales
 	</p>
 </div>	
 {% endblock %}
