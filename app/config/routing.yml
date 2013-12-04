@@ -60,5 +60,3 @@ investigadores:
 portada:
     resource: "@PortadaBundle/Resources/config/routing.yml"
     prefix:   /
-
-

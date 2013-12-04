@@ -1,12 +1,7 @@
 portada:
-<<<<<<< HEAD
     pattern:  /depi
-    defaults: { _controller: PortadaBundle:Sitio:index }
-=======
-    pattern:  /
     defaults: { _controller: PortadaBundle:Sitio:index }
 
 directorio:
     pattern:  /directorio
     defaults: { _controller: PortadaBundle:Sitio:directorio }
->>>>>>> ddc083813f2278b70b970b357acf8dcd6c8e21f0
