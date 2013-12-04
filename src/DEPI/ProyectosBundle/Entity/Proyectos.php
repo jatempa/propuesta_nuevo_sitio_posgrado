@@ -78,14 +78,6 @@ class Proyectos
     private $fechaTermino;
 
     /**
-     * @var boolean
-     *
-     * @ORM\Column(name="status", type="boolean")
-     */
-    private $status;
-
-
-    /**
      * Get id
      *
      * @return integer 
@@ -277,29 +269,6 @@ class Proyectos
     public function getFechaTermino()
     {
         return $this->fechaTermino;
-    }
-
-    /**
-     * Set status
-     *
-     * @param boolean $status
-     * @return Proyectos
-     */
-    public function setStatus($status)
-    {
-        $this->status = $status;
-    
-        return $this;
-    }
-
-    /**
-     * Get status
-     *
-     * @return boolean 
-     */
-    public function getStatus()
-    {
-        return $this->status;
     }
 
     public function __toString()

@@ -23,7 +23,6 @@ class ProyectosType extends AbstractType
             ->add('objetivosEspecificos', 'textarea', array('attr' => array('rows' => '6')))
             ->add('fechaApertura', 'date', array('widget' => 'single_text'))
             ->add('fechaTermino', 'date', array('widget' => 'single_text'))
-            ->add('status', 'checkbox')
         ;
     }
     
