@@ -1,15 +1,41 @@
-{% extends '::base.html.twig' %}
+{% extends '::backend.html.twig' %}
 
-{% block body -%}
-    <h1>Posgrados creation</h1>
+{% block mapa %}
+    <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
+    <li><a href="{{ path('posgrados') }}">Posgrados</a></li>
+    <li><span>Agregar una nueva área de posgrado</span></li>
+{% endblock %}
 
-    {{ form(form) }}
+{% block body %}
+<div class="unit-100">
+    <div class="units-row">
+        <div class="unit-centered unit-50">
+            <fieldset>
+                <legend>Área de posgrado</legend>
+                {{ form_start(form, { 'attr': {'class': 'forms forms-columnar'} }) }}
+                    
+                    <p>
+                        {{ form_label(form.nombre, 'Nombre') }}
+                        {{ form_widget(form.nombre, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('posgrados') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+                    <p>
+                        {{ form_label(form.objetivoGeneral, 'Objetivo General') }}
+                        {{ form_widget(form.objetivoGeneral, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+
+                    <p>
+                        {{ form_label(form.clave, 'Clave') }}
+                        {{ form_widget(form.clave, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                     
+                    <p>
+                        {{ form_widget(form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
+                    </p>
+                    <h6>{{ form_errors(form.clave) }}</h6>
+                {{ form_end(form) }}
+            </fieldset>
+        </div>
+    </div>
+</div>
 {% endblock %}
