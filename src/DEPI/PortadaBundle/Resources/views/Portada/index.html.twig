@@ -11,17 +11,13 @@
 			Noticias
 			<canvas id="myCanvas" ></canvas>
 		</header>
+		{% for entity in entities %}
 			<p>
-				Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
+				{{ entity.fechaPublicacion|date('M')  ~ " " ~ 
+				   entity.fechaPublicacion|date('d')  ~ " " ~ 
+				   entity.contenido }}
 			</p>
-
-			<p>
-				Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
-			</p>
-
-			<p>
-				Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.	
-			</p>
+		{% endfor %}
 	</article>
 </section>    
 <div id="depi" class="large-9 columns">
@@ -30,4 +26,3 @@
 	</p>
 </div>	
 {% endblock %}
-
