@@ -1,7 +1,3 @@
-noticias:
-    resource: "@NoticiasBundle/Resources/config/routing.yml"
-    prefix:   /
-
 usuario:
     resource: "@UsuarioBundle/Resources/config/routing.yml"
     prefix:   /
