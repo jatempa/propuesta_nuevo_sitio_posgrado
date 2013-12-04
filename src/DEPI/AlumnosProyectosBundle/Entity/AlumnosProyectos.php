@@ -22,14 +22,14 @@ class AlumnosProyectos
     private $id;
 
     /** @ORM\ManyToOne(targetEntity="DEPI\AlumnosBundle\Entity\Alumnos") 
-     *  @ORM\JoinColumn(name="idAlumno", referencedColumnName="id")
+     *  @ORM\JoinColumn(name="alumno", referencedColumnName="id")
      */
-    private $idAlumno;
+    private $alumno;
 
     /** @ORM\ManyToOne(targetEntity="DEPI\ProyectosBundle\Entity\Proyectos") 
-     *  @ORM\JoinColumn(name="idProyecto", referencedColumnName="id")
+     *  @ORM\JoinColumn(name="proyecto", referencedColumnName="id")
      */
-    private $idProyecto;
+    private $proyecto;
 
 
     /**
@@ -48,19 +48,19 @@ class AlumnosProyectos
      * @param \DEPI\AlumnosBundle\Entity\Alumnos
      * @return AlumnosProyectos
      */
-    public function setIdAlumno(\DEPI\AlumnosBundle\Entity\Alumnos $alumnos)
+    public function setAlumno(\DEPI\AlumnosBundle\Entity\Alumnos $alumno)
     {
-        $this->idAlumno = $alumnos;
+        $this->alumno = $alumno;
     }
 
     /**
-     * Get idAlumno
+     * Get alumno
      *
      * @return \DEPI\AlumnosBundle\Entity\Alumnos
      */
-    public function getIdAlumno()
+    public function getAlumno()
     {
-        return $this->idAlumno;
+        return $this->alumno;
     }
 
     /**
@@ -69,18 +69,18 @@ class AlumnosProyectos
      * @param \DEPI\ProyectosBundle\Entity\Proyectos
      * @return AlumnosProyectos
      */
-    public function setIdProyecto(\DEPI\ProyectosBundle\Entity\Proyectos $idProyecto)
+    public function setProyecto(\DEPI\ProyectosBundle\Entity\Proyectos $proyecto)
     {
-        $this->idProyecto = $idProyecto;
+        $this->proyecto = $proyecto;
     }
 
     /**
-     * Get idProyecto
+     * Get proyecto
      *
      * @return \DEPI\ProyectosBundle\Entity\Proyectos 
      */
-    public function getIdProyecto()
+    public function getProyecto()
     {
-        return $this->idProyecto;
+        return $this->proyecto;
     }
 }

@@ -35,17 +35,17 @@
                 <tr>
                      <td class="enlace">
                         <a href="{{ path('alumnosproyectos_edit', { 'id': entity.id }) }}">
-                            {{ entity.idAlumno.noControl }}
+                            {{ entity.alumno.noControl }}
                         </a>
                     </td>
                     <td class="enlace">
                         <a href="{{ path('alumnosproyectos_edit', { 'id': entity.id }) }}">
-                            {{ entity.idAlumno.nombre ~ " " ~ entity.idAlumno.apellidoPaterno  ~ " " ~ entity.idAlumno.apellidoMaterno }}
+                            {{ entity.alumno.nombre ~ " " ~ entity.alumno.apellidoPaterno  ~ " " ~ entity.alumno.apellidoMaterno }}
                         </a>
                     </td>
                     <td class="enlace">
                         <a href="{{ path('alumnosproyectos_edit', { 'id': entity.id }) }}">
-                            {{ entity.idProyecto.nombreCorto }}
+                            {{ entity.proyecto.nombreCorto }}
                         </a>
                     </td>
                 </tr>

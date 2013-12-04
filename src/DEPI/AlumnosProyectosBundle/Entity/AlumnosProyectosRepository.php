@@ -14,8 +14,8 @@ class AlumnosProyectosRepository extends EntityRepository
  
 		$dql->select('ap', 'alumno', 'proyecto')
 		    ->from('AlumnosProyectosBundle:AlumnosProyectos', 'ap')
-		    ->Join('ap.idAlumno', 'alumno')
-		    ->Join('ap.idProyecto', 'proyecto');
+		    ->Join('ap.alumno', 'alumno')
+		    ->Join('ap.proyecto', 'proyecto');
 
 		return $dql->getQuery()->getResult();
 	}
@@ -28,8 +28,8 @@ class AlumnosProyectosRepository extends EntityRepository
  
 		$dql->select('ap', 'alumno', 'proyecto')
 		    ->from('AlumnosProyectosBundle:AlumnosProyectos', 'ap')
-		    ->Join('ap.idAlumno', 'alumno')
-		    ->Join('ap.idProyecto', 'proyecto')
+		    ->Join('ap.alumno', 'alumno')
+		    ->Join('ap.proyecto', 'proyecto')
 		    ->where('ap.id = :id_alumnoproyecto' );
 		$consulta = $dql->getQuery();
 		$consulta -> setParameter('id_alumnoproyecto', $id);

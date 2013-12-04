@@ -16,7 +16,7 @@ class InvestigadorProyectoType extends AbstractType
     {
         $builder
             ->add('investigadores')
-            ->add('proyectos')
+            ->add('proyecto')
         ;
     }
     
