@@ -5,21 +5,22 @@
 {% endblock %}
 
 {% block body %}
-<section id="news" class="large-3 columns">
-	<article>
-		<header>
-			Noticias
-			<canvas id="myCanvas" ></canvas>
-		</header>
-		{% for entity in entities %}
-			<p>
-				{{ entity.fechaPublicacion|date('M')  ~ " " ~ 
-				   entity.fechaPublicacion|date('d')  ~ " " ~ 
-				   entity.contenido }}
-			</p>
-		{% endfor %}
-	</article>
-</section>    
+<article class="large-3 columns">
+	<header id="title" >
+		Noticias
+	</header>
+	<canvas id="myCanvas"></canvas>
+	{% for entity in entities %}
+	<section class="row">
+		<div id="now" class="large-3 columns">
+			{{ entity.fechaPublicacion|date('M d') }}
+		</div>
+		<p id="news" class="large-9 columns">
+			{{ entity.contenido }}
+		</p>
+	</section>
+	{% endfor %}
+</article>    
 <div id="depi" class="large-9 columns">
     <p>
 		<u><b>La Maestría en Ingeniería Electrónica</b></u>, cuenta con dos líneas de trabajo, <b>Computación Ubicua</b> y <b>Procesamiento digital de señales</b>, estas tiene un gran espectro reticular, permitiendo al alumno y a su asesor mucha flexibilidad en cuanto a la elección de materias, de acuerdo a su perfil de licenciatura y de sus intereses profesionales

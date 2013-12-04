@@ -2,29 +2,8 @@
 	height: 500px;
 }
 
-#news{
-	margin-top: 30px;
-}
-
-#new, article > header {
-	font-size: 21px;
-	font-family: 'Oxygen', sans-serif;
-}
-
-#new, article {
-	font-size: 14px;
-	font-family: 'Droid Sans', sans-serif;
-}
-
 #depi{
 	margin-top: 30px;
-}
-
-
-#myCanvas {
-	width: 220px;
-	height: 5px;
-	background-color: #7A95FF;
 }
 
 @media only screen { 
@@ -52,6 +31,30 @@
 		background-color: black;
 		height: 75px;
     	vertical-align: center;
+	}
+
+	#myCanvas {
+		width: 220px;
+		height: 5px;
+		background-color: #7A95FF;
+		margin-top: 10px;
+		margin-bottom: 15px;
+	}
+
+	#title{
+		margin-top: 30px;
+		font-size: 20px;
+		font-family: 'Oxygen-Bold', sans-serif;
+	}
+	
+	#now {
+		font-size: 20px;
+		font-family: 'Droid Sans', sans-serif;
+	}
+
+	#news {
+		font-size: 14px;
+		font-family: 'Droid Sans', sans-serif;
 	}
 }
 
@@ -81,7 +84,32 @@
 		font-size: 14px;
 		text-align: center;
 	}
+}
 
+@media only screen and (max-width: 768px) {
+	#myCanvas {
+		width: 160px;
+		height: 5px;
+		background-color: #7A95FF;
+		margin-top: 5px;
+		margin-bottom: 10px;
+	}
+	
+	#title{
+		margin-top: 30px;
+		font-size: 18px;
+		font-family: 'Oxygen-Bold', sans-serif;
+	}
+
+	#now {
+		font-size: 16px;
+		font-family: 'Droid Sans', sans-serif;
+	}
+
+	#news {
+		font-size: 12px;
+		font-family: 'Droid Sans', sans-serif;
+	}
 }
 
 @media only screen and (max-width: 480px) {
@@ -110,5 +138,55 @@
     	height: 75px;
     	vertical-align: center;
 	}	
+
+	#myCanvas {
+		width: 425px;
+		height: 5px;
+		background-color: #7A95FF;
+		margin-top: 10px;
+		margin-bottom: 15px;
+	}
+
+	#title{
+		margin-top: 30px;
+		font-size: 20px;
+		font-family: 'Oxygen-Bold', sans-serif;
+	}
+
+	#now {
+		font-size: 15px;
+		font-family: 'Droid Sans', sans-serif;
+		font-style: italic;
+	}
+
+	#news {
+		font-size: 15px;
+		font-family: 'Droid Sans', sans-serif;
+	}
 }
 
+@media only screen and (max-width: 320px) {
+	#myCanvas {
+		width: 280px;
+		height: 5px;
+		background-color: #7A95FF;
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+
+	#title{
+		margin-top: 30px;
+		font-size: 18px;
+		font-family: 'Oxygen-Bold', sans-serif;
+	}
+
+	#now {
+		font-size: 15px;
+		font-family: 'Droid Sans', sans-serif;
+		font-style: italic;
+	}
+	#news {
+		font-size: 12px;
+		font-family: 'Droid Sans', sans-serif;
+	}
+}
