@@ -32,6 +32,7 @@ class AppKernel extends Kernel
             new DEPI\BackEndBundle\BackEndBundle(),
             new DEPI\EntidadApoyoBundle\EntidadApoyoBundle(),
             new DEPI\UsuarioBundle\UsuarioBundle(),
+            new DEPI\NoticiasBundle\NoticiasBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

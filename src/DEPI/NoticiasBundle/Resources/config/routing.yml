@@ -1,3 +1,31 @@
-noticias_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: NoticiasBundle:Default:index }
+noticias:
+    pattern:  /posgradmin/noticias
+    defaults: { _controller: NoticiasBundle:Noticias:index }
+
+_noticias:
+    pattern: /posgradmin/noticias/
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: noticias}
+
+noticias_new:
+    pattern:  /posgradmin/noticias/new
+    defaults: { _controller: NoticiasBundle:Noticias:new }
+
+noticias_edit:
+    pattern:  /posgradmin/noticias/edit/{id}
+    defaults: { _controller: NoticiasBundle:Noticias:edit }
+
+noticias_show:
+    pattern:  /posgradmin/noticias/show/{id}
+    defaults: { _controller: NoticiasBundle:Noticias:show }
+
+noticias_create:
+    pattern:  /posgradmin/noticias/create
+    defaults: { _controller: NoticiasBundle:Noticias:create }
+
+noticias_update:
+    pattern:  /posgradmin/noticias/update/{id}
+    defaults: { _controller: NoticiasBundle:Noticias:update }
+
+noticias_delete:
+    pattern:  /posgradmin/noticias/delete/{id}
+    defaults: { _controller: NoticiasBundle:Noticias:delete }

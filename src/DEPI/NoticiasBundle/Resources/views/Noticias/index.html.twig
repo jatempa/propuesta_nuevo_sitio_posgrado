@@ -1,45 +1,44 @@
 {% extends '::backend.html.twig' %}
 
+{% block mapa %}
+    <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
+    <li><span>Noticias</span></li>
+{% endblock %}
+
 {% block body %}
-    <h1>Noticias list</h1>
-
-    <table class="records_list">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Titulo</th>
-                <th>Contenido</th>
-                <th>Fechapublicacion</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for entity in entities %}
-            <tr>
-                <td><a href="{{ path('noticias_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.titulo }}</td>
-                <td>{{ entity.contenido }}</td>
-                <td>{% if entity.fechaPublicacion %}{{ entity.fechaPublicacion|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('noticias_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('noticias_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-        <ul>
-        <li>
-            <a href="{{ path('noticias_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
-    {% endblock %}
+<div class="unit-100">
+    <div class="table-container">
+        <table class="width-100 table-striped">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Contenido</th>
+                    <th>Fecha de publicación</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td class="width-20 enlace">
+                        <a href="{{ path('noticias_edit', { 'id': alumno.id }) }}" >
+                            {{ entity.titulo }}
+                        </a>
+                    </td>
+                    <td class="width-20 enlace">
+                        <a href="{{ path('noticias_edit', { 'id': alumno.id }) }}" >
+                            {{ entity.contenido }}
+                        </a>
+                    </td>
+                    <td class="width-20 enlace">
+                        <a href="{{ path('noticias_edit', { 'id': alumno.id }) }}" >
+                            {% if entity.fechaPublicacion %}{{ entity.fechaPublicacion|date('Y-m-d') }}{% endif %}
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<a href="{{ path('noticias_new') }}" class="btn btn-blue">Nuevo</a>        
+{% endblock %}

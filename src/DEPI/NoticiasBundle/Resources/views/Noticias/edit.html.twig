@@ -1,16 +1,46 @@
 {% extends '::backend.html.twig' %}
 
+{% block mapa %}
+    <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
+    <li><a href="{{ path('noticias') }}">Noticias</a></li>
+    <li><span>Actualizar noticias</span></li>
+{% endblock %}
+
 {% block body %}
-    <h1>Noticias edit</h1>
+<div class="unit-100">
+    <div class="units-row">
+        <div class="unit-centered unit-50">
+            <fieldset>
+                <legend>Noticias</legend>
+                {{ form_start(edit_form, { 'attr': {'class': 'forms forms-columnar'} }) }}
+                
+                    <p>
+                        {{ form_label(edit_form.nombre, 'Titulo') }}
+                        {{ form_widget(edit_form.nombre, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                        
+                    <p>
+                        {{ form_label(edit_form.descripcion, 'Contenido') }}
+                        {{ form_widget(edit_form.descripcion, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
 
-    {{ form(edit_form) }}
+                    <p>
+                        {{ form_label(edit_form.descripcion, 'Contenido') }}
+                        {{ form_widget(edit_form.descripcion, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                        
+                    <p>
+                         {{ form_widget(edit_form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
+                    {{ form_end(edit_form) }}
+                    </p>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('noticias') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+                    <p>
+                        {{ form_start(delete_form) }}
+                            {{ form_widget(delete_form.submit, { 'attr': {'class': 'btn btn-red'} }) }}
+                        {{ form_end(delete_form) }}
+                    </p>
+            </fieldset>
+        </div>
+    </div>
+</div>
 {% endblock %}

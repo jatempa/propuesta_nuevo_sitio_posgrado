@@ -6,10 +6,13 @@ security:
             form_login:
                 login_path: /posgradmin/login
                 check_path: /posgradmin/login_check
+                default_target_path: /posgradmin
 
     access_control:
         - { path: ^/usuario/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/depi, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/usuario/*, roles: ROLE_USUARIO }
+
 
     providers:
         usuarios:
