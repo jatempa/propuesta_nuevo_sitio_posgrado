@@ -121,4 +121,9 @@ class Posgrados
     {
         return $this->clave;
     }
+
+    public function __toString()
+    {
+        return $this->getNombre();
+    } 
 }

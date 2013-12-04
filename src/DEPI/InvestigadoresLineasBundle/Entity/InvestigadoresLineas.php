@@ -97,16 +97,6 @@ class InvestigadoresLineas
     }
 
     /**
-     * Get investigadores
-     *
-     * @return \DEPI\InvestigadoresBundle\Entity\Investigadores
-     */
-    public function getInvestigadores()
-    {
-        return $this->investigadores;
-    }
-
-    /**
      * Set posgrado
      *
      * @param \DEPI\PosgradosBundle\Entity\Posgrados
