@@ -31,6 +31,11 @@ class AlumnosProyectos
      */
     private $proyecto;
 
+    /** @ORM\ManyToOne(targetEntity="DEPI\PosgradosBundle\Entity\Posgrados") 
+     *  @ORM\JoinColumn(name="posgrado", referencedColumnName="id")
+     */
+    private $posgrado;
+
 
     /**
      * Get id
@@ -82,5 +87,26 @@ class AlumnosProyectos
     public function getProyecto()
     {
         return $this->proyecto;
+    }
+
+    /**
+     * Set posgrado
+     *
+     * @param \DEPI\PosgradosBundle\Entity\Posgrados
+     * @return Posgrados
+     */
+    public function setPosgrado(\DEPI\PosgradosBundle\Entity\Posgrados $posgrado)
+    {
+        $this->posgrado = $posgrado;
+    }
+
+    /**
+     * Get posgrado
+     *
+     * @return \DEPI\PosgradosBundle\Entity\Posgrados
+     */
+    public function getPosgrado()
+    {
+        return $this->posgrado;
     }
 }

@@ -33,6 +33,11 @@ class AreasProyectos
      */
     private $area;
 
+    /** @ORM\ManyToOne(targetEntity="DEPI\PosgradosBundle\Entity\Posgrados") 
+     *  @ORM\JoinColumn(name="posgrado", referencedColumnName="id")
+     */
+    private $posgrado;
+
 
     /**
      * Get id
@@ -84,5 +89,26 @@ class AreasProyectos
     public function getArea()
     {
         return $this->area;
+    }
+
+    /**
+     * Set posgrado
+     *
+     * @param \DEPI\PosgradosBundle\Entity\Posgrados
+     * @return Posgrados
+     */
+    public function setPosgrado(\DEPI\PosgradosBundle\Entity\Posgrados $posgrado)
+    {
+        $this->posgrado = $posgrado;
+    }
+
+    /**
+     * Get posgrado
+     *
+     * @return \DEPI\PosgradosBundle\Entity\Posgrados
+     */
+    public function getPosgrado()
+    {
+        return $this->posgrado;
     }
 }

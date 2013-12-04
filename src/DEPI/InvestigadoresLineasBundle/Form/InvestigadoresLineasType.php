@@ -18,6 +18,7 @@ class InvestigadoresLineasType extends AbstractType
             ->add('rol', 'choice', array('choices' => array('Responsable' => 'Responsable', 'Participante' => 'Participante')))
             ->add('investigadores')
             ->add('lineasinvestigacion')
+            ->add('posgrado')
         ;
     }
     

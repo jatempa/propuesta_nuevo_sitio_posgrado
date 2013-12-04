@@ -17,6 +17,7 @@ class AlumnosProyectosType extends AbstractType
         $builder
             ->add('alumno')
             ->add('proyecto')
+            ->add('posgrado')
         ;
     }
     

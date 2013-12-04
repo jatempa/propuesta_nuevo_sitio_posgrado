@@ -31,6 +31,11 @@ class InvestigadoresLineas
      */
     private $lineasinvestigacion;
 
+    /** @ORM\ManyToOne(targetEntity="DEPI\PosgradosBundle\Entity\Posgrados") 
+     *  @ORM\JoinColumn(name="posgrado", referencedColumnName="id")
+     */
+    private $posgrado;
+
     /**
      * @var string
      *
@@ -89,6 +94,37 @@ class InvestigadoresLineas
     public function getLineasinvestigacion()
     {
         return $this->lineasinvestigacion;
+    }
+
+    /**
+     * Get investigadores
+     *
+     * @return \DEPI\InvestigadoresBundle\Entity\Investigadores
+     */
+    public function getInvestigadores()
+    {
+        return $this->investigadores;
+    }
+
+    /**
+     * Set posgrado
+     *
+     * @param \DEPI\PosgradosBundle\Entity\Posgrados
+     * @return Posgrados
+     */
+    public function setPosgrado(\DEPI\PosgradosBundle\Entity\Posgrados $posgrado)
+    {
+        $this->posgrado = $posgrado;
+    }
+
+    /**
+     * Get posgrado
+     *
+     * @return \DEPI\PosgradosBundle\Entity\Posgrados
+     */
+    public function getPosgrado()
+    {
+        return $this->posgrado;
     }
 
     /**
