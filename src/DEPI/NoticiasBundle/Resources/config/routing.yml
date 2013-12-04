@@ -14,10 +14,6 @@ noticias_edit:
     pattern:  /posgradmin/noticias/edit/{id}
     defaults: { _controller: NoticiasBundle:Noticias:edit }
 
-noticias_show:
-    pattern:  /posgradmin/noticias/show/{id}
-    defaults: { _controller: NoticiasBundle:Noticias:show }
-
 noticias_create:
     pattern:  /posgradmin/noticias/create
     defaults: { _controller: NoticiasBundle:Noticias:create }
