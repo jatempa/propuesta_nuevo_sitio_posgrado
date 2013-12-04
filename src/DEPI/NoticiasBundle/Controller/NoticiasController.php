@@ -53,7 +53,7 @@ class NoticiasController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('noticias_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('noticias'));
         }
 
         return array(
@@ -76,7 +76,7 @@ class NoticiasController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array('label' => 'Guardar'));
 
         return $form;
     }
@@ -96,31 +96,6 @@ class NoticiasController extends Controller
         return array(
             'entity' => $entity,
             'form'   => $form->createView(),
-        );
-    }
-
-    /**
-     * Finds and displays a Noticias entity.
-     *
-     * @Route("/{id}", name="noticias_show")
-     * @Method("GET")
-     * @Template()
-     */
-    public function showAction($id)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('NoticiasBundle:Noticias')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Noticias entity.');
-        }
-
-        $deleteForm = $this->createDeleteForm($id);
-
-        return array(
-            'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),
         );
     }
 
@@ -165,7 +140,7 @@ class NoticiasController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => 'Actualizar'));
 
         return $form;
     }
@@ -193,7 +168,7 @@ class NoticiasController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('noticias_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('noticias'));
         }
 
         return array(
@@ -240,7 +215,7 @@ class NoticiasController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('noticias_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', array('label' => 'Eliminar'))
             ->getForm()
         ;
     }
