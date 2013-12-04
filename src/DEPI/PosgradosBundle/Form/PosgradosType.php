@@ -15,9 +15,9 @@ class PosgradosType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nombre')
-            ->add('objetivoGeneral')
-            ->add('clave')
+            ->add('nombre', 'text')
+            ->add('objetivoGeneral', 'text', array('required' => false))
+            ->add('clave', 'text', array('required' => false))
         ;
     }
     
