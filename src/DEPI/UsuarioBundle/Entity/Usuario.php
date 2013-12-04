@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Usuario
  *
- * @ORM\Table()
+ * @ORM\Table(name="usuarios")
  * @ORM\Entity
  */
 class Usuario implements UserInterface
