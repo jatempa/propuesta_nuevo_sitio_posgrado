@@ -8,7 +8,11 @@ class SitioController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('PortadaBundle:Portada:index.html.twig');
+    	$em = $this->getDoctrine()->getManager();
+
+        $entities = $em->getRepository('NoticiasBundle:Noticias')->findAll();
+
+        return $this->render('PortadaBundle:Portada:index.html.twig',  array('entities' => $entities));
     }
 
 	public function directorioAction()
