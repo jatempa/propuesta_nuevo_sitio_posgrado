@@ -6,16 +6,18 @@
 
 {% block body %}
 <article class="large-3 columns">
-	<header id="title" >
-		Noticias
-	</header>
-	<canvas id="myCanvas"></canvas>
+	<div class="row">
+		<header id="title"  class="large-12 columns">
+			Noticias
+		</header>
+		<canvas id="myCanvas"  class="large-12 columns"></canvas>
+	</div>
 	{% for entity in entities %}
 	<section class="row">
-		<div id="now" class="large-3 columns">
+		<div id="now" class="small-2 large-3 columns">
 			{{ entity.fechaPublicacion|date('M d') }}
 		</div>
-		<p id="news" class="large-9 columns">
+		<p id="news" class="small-10 large-9 columns">
 			{{ entity.contenido }}
 		</p>
 	</section>

@@ -2,6 +2,19 @@
 	height: 500px;
 }
 
+#title{
+	margin-top: 30px;
+	font-size: 20px;
+	font-family: 'Oxygen-Bold', sans-serif;
+}
+
+#myCanvas {
+        height: 5px;
+        background-color: #7A95FF;
+        margin-top: 10px;
+        margin-bottom: 15px;
+}
+
 #depi{
 	margin-top: 30px;
 }
@@ -33,27 +46,13 @@
     	vertical-align: center;
 	}
 
-	#myCanvas {
-		width: 220px;
-		height: 5px;
-		background-color: #7A95FF;
-		margin-top: 10px;
-		margin-bottom: 15px;
-	}
-
-	#title{
-		margin-top: 30px;
-		font-size: 20px;
-		font-family: 'Oxygen-Bold', sans-serif;
-	}
-	
 	#now {
 		font-size: 20px;
 		font-family: 'Droid Sans', sans-serif;
 	}
 
 	#news {
-		font-size: 14px;
+		font-size: 15px;
 		font-family: 'Droid Sans', sans-serif;
 	}
 }
@@ -87,20 +86,6 @@
 }
 
 @media only screen and (max-width: 768px) {
-	#myCanvas {
-		width: 160px;
-		height: 5px;
-		background-color: #7A95FF;
-		margin-top: 5px;
-		margin-bottom: 10px;
-	}
-	
-	#title{
-		margin-top: 30px;
-		font-size: 18px;
-		font-family: 'Oxygen-Bold', sans-serif;
-	}
-
 	#now {
 		font-size: 16px;
 		font-family: 'Droid Sans', sans-serif;
@@ -139,20 +124,6 @@
     	vertical-align: center;
 	}	
 
-	#myCanvas {
-		width: 425px;
-		height: 5px;
-		background-color: #7A95FF;
-		margin-top: 10px;
-		margin-bottom: 15px;
-	}
-
-	#title{
-		margin-top: 30px;
-		font-size: 20px;
-		font-family: 'Oxygen-Bold', sans-serif;
-	}
-
 	#now {
 		font-size: 15px;
 		font-family: 'Droid Sans', sans-serif;
@@ -160,26 +131,12 @@
 	}
 
 	#news {
-		font-size: 15px;
+		font-size: 12px;
 		font-family: 'Droid Sans', sans-serif;
 	}
 }
 
 @media only screen and (max-width: 320px) {
-	#myCanvas {
-		width: 280px;
-		height: 5px;
-		background-color: #7A95FF;
-		margin-top: 15px;
-		margin-bottom: 15px;
-	}
-
-	#title{
-		margin-top: 30px;
-		font-size: 18px;
-		font-family: 'Oxygen-Bold', sans-serif;
-	}
-
 	#now {
 		font-size: 15px;
 		font-family: 'Droid Sans', sans-serif;
