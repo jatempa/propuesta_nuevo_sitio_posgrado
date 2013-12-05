@@ -6,7 +6,19 @@
 {% endblock %}
 
 {% block body %}
-<div class="unit-100">
+<aside class="unit-25 unit-padding">
+    <h6>Opciones</h6>
+    <nav class="nav-v">
+        <ul>
+            <li><a href="{{ path('posgradoalumnos') }}">Registro de alumnos</a></li>
+            <li><a href="{{ path('posgradoareas') }}">Registrar área de investigación</a></li>
+            <li><a href="{{ path('posgradoinvestigadores') }}">Registro de investigadores</a></li>
+            <li><a href="{{ path('posgradolineas') }}">Registro de lineas de investigación</a></li>
+        </ul>
+    </nav>
+</aside>
+
+<div class="unit-75">
     <div class="table-container">
         <table class="width-100 table-striped">
             <thead>
