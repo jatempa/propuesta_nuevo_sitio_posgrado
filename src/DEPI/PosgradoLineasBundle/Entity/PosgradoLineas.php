@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * PosgradoLineas
  *
- * @ORM\Table()
+ * @ORM\Table(nam="posgradolineas")
  * @ORM\Entity
  */
 class PosgradoLineas
@@ -21,17 +21,13 @@ class PosgradoLineas
      */
     private $id;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="posgrado", type="integer")
+    /** @ORM\ManyToOne(targetEntity="DEPI\PosgradosBundle\Entity\Posgrados") 
+     *  @ORM\JoinColumn(name="posgrado", referencedColumnName="id")
      */
     private $posgrado;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="lineasinvestigacion", type="integer")
+    /** @ORM\ManyToOne(targetEntity="DEPI\LineasInvestigacionBundle\Entity\LineasInvestigacion") 
+     *  @ORM\JoinColumn(name="lineasinvestigacion", referencedColumnName="id")
      */
     private $lineasinvestigacion;
 
@@ -49,20 +45,18 @@ class PosgradoLineas
     /**
      * Set posgrado
      *
-     * @param integer $posgrado
+     * @param \DEPI\PosgradosBundle\Entity\Posgrados $posgrado
      * @return PosgradoLineas
      */
-    public function setPosgrado($posgrado)
+    public function setPosgrado(\DEPI\PosgradosBundle\Entity\Posgrados $posgrado)
     {
         $this->posgrado = $posgrado;
-    
-        return $this;
     }
 
     /**
      * Get posgrado
      *
-     * @return integer 
+     * @return \DEPI\PosgradosBundle\Entity\Posgrados
      */
     public function getPosgrado()
     {
@@ -72,20 +66,18 @@ class PosgradoLineas
     /**
      * Set lineasinvestigacion
      *
-     * @param integer $lineasinvestigacion
+     * @param \DEPI\LineasInvestigacionBundle\Entity\LineasInvestigacion
      * @return PosgradoLineas
      */
-    public function setLineasinvestigacion($lineasinvestigacion)
+    public function setLineasinvestigacion(\DEPI\LineasInvestigacionBundle\Entity\LineasInvestigacion $lineasinvestigacion)
     {
         $this->lineasinvestigacion = $lineasinvestigacion;
-    
-        return $this;
     }
 
     /**
      * Get lineasinvestigacion
      *
-     * @return integer 
+     * @return \DEPI\LineasInvestigacionBundle\Entity\LineasInvestigacion
      */
     public function getLineasinvestigacion()
     {
