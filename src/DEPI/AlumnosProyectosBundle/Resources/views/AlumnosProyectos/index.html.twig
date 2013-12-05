@@ -36,22 +36,22 @@
                 <tr>
                      <td class="enlace">
                         <a href="{{ path('alumnosproyectos_edit', { 'id': entity.id }) }}">
-                            {{ entity.alumno.noControl }}
+                            {{ entity.noControl }}
                         </a>
                     </td>
                     <td class="enlace">
                         <a href="{{ path('alumnosproyectos_edit', { 'id': entity.id }) }}">
-                            {{ entity.alumno.nombre ~ " " ~ entity.alumno.apellidoPaterno  ~ " " ~ entity.alumno.apellidoMaterno }}
+                            {{ entity.nom_alum ~ " " ~ entity.apellidoPaterno  ~ " " ~ entity.apellidoMaterno }}
                         </a>
                     </td>
                     <td class="enlace">
                         <a href="{{ path('alumnosproyectos_edit', { 'id': entity.id }) }}">
-                            {{ entity.proyecto.nombreCorto }}
+                            {{ entity.nombreCorto }}
                         </a>
                     </td>
                     <td class="enlace">
                         <a href="{{ path('alumnosproyectos_edit', { 'id': entity.id }) }}">
-                            {{ entity.posgrado.nombre }}
+                            {{ entity.nom_posg }}
                         </a>
                     </td>
                 </tr>

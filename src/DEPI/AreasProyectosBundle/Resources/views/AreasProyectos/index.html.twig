@@ -33,17 +33,17 @@
                 <tr>
                     <td class="enlace">
                         <a href="{{ path('areasproyectos_edit', { 'id': entity.id }) }}">
-                            {{ entity.area.nombre }}
+                            {{ entity.nom_area }}
                         </a>
                     </td>
                     <td class="enlace">
                         <a href="{{ path('areasproyectos_edit', { 'id': entity.id }) }}">
-                            {{ entity.proyecto.nombreCorto }}
+                            {{ entity.nombreCorto }}
                         </a>
                     </td>
                     <td class="enlace">
                         <a href="{{ path('areasproyectos_edit', { 'id': entity.id }) }}">
-                            {{ entity.posgrado.nombre }}
+                            {{ entity.nom_posg }}
                         </a>
                     </td>
                 </tr>

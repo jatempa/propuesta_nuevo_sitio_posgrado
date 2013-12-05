@@ -31,14 +31,14 @@
             <tbody>
             {% for entity in entities %}
                 <tr>
-                    <td class="enlace width-50">
+                    <td class="enlace width-40">
                         <a href="{{ path('investigadorproyecto_edit', { 'id': entity.id }) }}" >
-                            {{ entity.investigadores.nombre  ~ " " ~  entity.investigadores.apellidoPaterno ~ " " ~  entity.investigadores.apellidoMaterno }}
+                            {{ entity.nombre  ~ " " ~  entity.apellidoPaterno ~ " " ~  entity.apellidoMaterno }}
                         </a>
                     </td>
-                    <td class="enlace width-50">
+                    <td class="enlace width-60">
                         <a href="{{ path('investigadorproyecto_edit', { 'id': entity.id }) }}" >
-                            {{ entity.proyecto.nombreCompleto }}
+                            {{ entity.nombreCompleto }}
                         </a>
                     </td>
                 </tr>

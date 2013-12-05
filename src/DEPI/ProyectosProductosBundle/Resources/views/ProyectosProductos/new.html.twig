@@ -3,8 +3,8 @@
 {% block mapa %}
     <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
     <li><a href="{{ path('proyectos') }}">Proyectos</a></li>
-    <li><a href="{{ path('proyectosproductos') }}">Alumnos y Proyectos</a></li>
-    <li><span>Registro de alumnos a un proyecto</span></li>
+    <li><a href="{{ path('proyectosproductos') }}">Proyectos y Prod. académicos</a></li>
+    <li><span>Registro de un prod. académicos de un proyecto</span></li>
 {% endblock %}
 
 {% block body %}
@@ -12,7 +12,7 @@
     <div class="units-row">
         <div class="unit-centered unit-50">
             <fieldset>
-                <legend>Alumnos y Proyectos</legend>
+                <legend>Proyectos y Prod. académicos</legend>
                 {{ form_start(form, { 'attr': {'class': 'forms forms-columnar'} }) }}
                     
                     <p>
