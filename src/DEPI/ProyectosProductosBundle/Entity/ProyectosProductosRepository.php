@@ -12,7 +12,9 @@ class ProyectosProductosRepository extends EntityRepository
 
 		$dql = $em->createQueryBuilder();
  
-		$dql->select('projprod', 'productos', 'proyectos')
+		$dql->select('projprod.id, projprod.cantidad, projprod.observaciones', 
+			         'productos.id, productos.meta', 
+			         'proyectos.id, proyectos.nombreCorto')
 		    ->from('ProyectosProductosBundle:ProyectosProductos', 'projprod')
 		    ->Join('projprod.productoAcademico', 'productos')
 		    ->Join('projprod.proyecto', 'proyectos');
