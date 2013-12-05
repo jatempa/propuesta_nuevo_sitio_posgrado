@@ -15,8 +15,7 @@ class InvestigadoresLineasRepository extends EntityRepository
 		$dql->select('invlin', 'investigador', 'linea', 'posgrado')
 		    ->from('InvestigadoresLineasBundle:InvestigadoresLineas', 'invlin')
 		    ->Join('invlin.investigadores', 'investigador')
-		    ->Join('invlin.lineasinvestigacion', 'linea')
-		    ->Join('invlin.posgrado', 'posgrado');
+		    ->Join('invlin.lineasinvestigacion', 'linea');
 
 		return $dql->getQuery()->getResult();
 	}

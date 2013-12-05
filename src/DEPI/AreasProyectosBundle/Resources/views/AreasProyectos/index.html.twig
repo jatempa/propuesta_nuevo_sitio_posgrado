@@ -25,7 +25,6 @@
                 <tr>
                     <th class="width-40">Áreas de investigación</th>
                     <th class="width-30">Proyectos</th>
-                    <th class="width-30">Área de posgrado</th>
                 </tr>
             </thead>
             <tbody>
@@ -33,17 +32,12 @@
                 <tr>
                     <td class="enlace">
                         <a href="{{ path('areasproyectos_edit', { 'id': entity.id }) }}">
-                            {{ entity.nom_area }}
+                            {{ entity.nombre }}
                         </a>
                     </td>
                     <td class="enlace">
                         <a href="{{ path('areasproyectos_edit', { 'id': entity.id }) }}">
                             {{ entity.nombreCorto }}
-                        </a>
-                    </td>
-                    <td class="enlace">
-                        <a href="{{ path('areasproyectos_edit', { 'id': entity.id }) }}">
-                            {{ entity.nom_posg }}
                         </a>
                     </td>
                 </tr>

@@ -27,7 +27,6 @@
                     <th class="width-10">No Control</th>
                     <th class="width-30">Alumno</th>
                     <th class="width-30">Proyecto</th>
-                    <th class="width-30">Área de posgrado</th>
                 </tr>
             </thead>
             <tbody>
@@ -41,17 +40,12 @@
                     </td>
                     <td class="enlace">
                         <a href="{{ path('alumnosproyectos_edit', { 'id': entity.id }) }}">
-                            {{ entity.nom_alum ~ " " ~ entity.apellidoPaterno  ~ " " ~ entity.apellidoMaterno }}
+                            {{ entity.nombre ~ " " ~ entity.apellidoPaterno  ~ " " ~ entity.apellidoMaterno }}
                         </a>
                     </td>
                     <td class="enlace">
                         <a href="{{ path('alumnosproyectos_edit', { 'id': entity.id }) }}">
                             {{ entity.nombreCorto }}
-                        </a>
-                    </td>
-                    <td class="enlace">
-                        <a href="{{ path('alumnosproyectos_edit', { 'id': entity.id }) }}">
-                            {{ entity.nom_posg }}
                         </a>
                     </td>
                 </tr>

@@ -17,7 +17,6 @@ class AreasProyectosType extends AbstractType
         $builder
             ->add('proyecto')
             ->add('area')
-            ->add('posgrado')
         ;
     }
     
