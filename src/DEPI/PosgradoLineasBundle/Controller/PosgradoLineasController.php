@@ -100,6 +100,33 @@ class PosgradoLineasController extends Controller
     }
 
     /**
+     * Displays a form to edit an existing PosgradoLineas entity.
+     *
+     * @Route("/{id}/edit", name="posgradolineas_edit")
+     * @Method("GET")
+     * @Template()
+     */
+    public function editAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('PosgradoLineasBundle:PosgradoLineas')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find PosgradoLineas entity.');
+        }
+
+        $editForm = $this->createEditForm($entity);
+        $deleteForm = $this->createDeleteForm($id);
+
+        return array(
+            'entity'      => $entity,
+            'edit_form'   => $editForm->createView(),
+            'delete_form' => $deleteForm->createView(),
+        );
+    }
+
+    /**
     * Creates a form to edit a PosgradoLineas entity.
     *
     * @param PosgradoLineas $entity The entity

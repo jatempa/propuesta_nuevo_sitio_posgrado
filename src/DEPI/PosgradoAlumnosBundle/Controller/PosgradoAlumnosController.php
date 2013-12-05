@@ -100,6 +100,33 @@ class PosgradoAlumnosController extends Controller
     }
 
     /**
+     * Displays a form to edit an existing PosgradoAlumnos entity.
+     *
+     * @Route("/{id}/edit", name="posgradoalumnos_edit")
+     * @Method("GET")
+     * @Template()
+     */
+    public function editAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('PosgradoAlumnosBundle:PosgradoAlumnos')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find PosgradoAlumnos entity.');
+        }
+
+        $editForm = $this->createEditForm($entity);
+        $deleteForm = $this->createDeleteForm($id);
+
+        return array(
+            'entity'      => $entity,
+            'edit_form'   => $editForm->createView(),
+            'delete_form' => $deleteForm->createView(),
+        );
+    }
+
+    /**
     * Creates a form to edit a PosgradoAlumnos entity.
     *
     * @param PosgradoAlumnos $entity The entity
