@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * PosgradoAreas
  *
- * @ORM\Table()
+ * @ORM\Table(name="posgradoareas")
  * @ORM\Entity
  */
 class PosgradoAreas
@@ -21,17 +21,13 @@ class PosgradoAreas
      */
     private $id;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="posgrado", type="integer")
+    /** @ORM\ManyToOne(targetEntity="DEPI\PosgradosBundle\Entity\Posgrados") 
+     *  @ORM\JoinColumn(name="posgrado", referencedColumnName="id")
      */
     private $posgrado;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="area", type="integer")
+    /** @ORM\ManyToOne(targetEntity="DEPI\AreasBundle\Entity\Areas") 
+     *  @ORM\JoinColumn(name="area", referencedColumnName="id")
      */
     private $area;
 
@@ -49,20 +45,18 @@ class PosgradoAreas
     /**
      * Set posgrado
      *
-     * @param integer $posgrado
+     * @param \DEPI\PosgradosBundle\Entity\Posgrados $posgrado
      * @return PosgradoAreas
      */
-    public function setPosgrado($posgrado)
+    public function setPosgrado(\DEPI\PosgradosBundle\Entity\Posgrados $posgrado)
     {
         $this->posgrado = $posgrado;
-    
-        return $this;
     }
 
     /**
      * Get posgrado
      *
-     * @return integer 
+     * @return \DEPI\PosgradosBundle\Entity\Posgrados
      */
     public function getPosgrado()
     {
@@ -72,23 +66,22 @@ class PosgradoAreas
     /**
      * Set area
      *
-     * @param integer $area
+     * @param \DEPI\AreasBundle\Entity\Areas $area
      * @return PosgradoAreas
      */
-    public function setArea($area)
+    public function setArea(\DEPI\AreasBundle\Entity\Areas $area)
     {
         $this->area = $area;
-    
-        return $this;
     }
 
     /**
      * Get area
      *
-     * @return integer 
+     * @return \DEPI\AreasBundle\Entity\Areas
      */
     public function getArea()
     {
         return $this->area;
     }
+
 }
