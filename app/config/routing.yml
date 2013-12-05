@@ -1,3 +1,19 @@
+posgrado_investigadores:
+    resource: "@PosgradoInvestigadoresBundle/Resources/config/routing.yml"
+    prefix:   /
+
+posgrado_lineas:
+    resource: "@PosgradoLineasBundle/Resources/config/routing.yml"
+    prefix:   /
+
+posgrado_areas:
+    resource: "@PosgradoAreasBundle/Resources/config/routing.yml"
+    prefix:   /
+
+posgrado_alumnos:
+    resource: "@PosgradoAlumnosBundle/Resources/config/routing.yml"
+    prefix:   /
+
 posgrados:
     resource: "@PosgradosBundle/Resources/config/routing.yml"
     prefix:   /

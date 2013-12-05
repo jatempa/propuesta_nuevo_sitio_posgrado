@@ -1,0 +1,3 @@
+posgrado_areas_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: PosgradoAreasBundle:Default:index }
