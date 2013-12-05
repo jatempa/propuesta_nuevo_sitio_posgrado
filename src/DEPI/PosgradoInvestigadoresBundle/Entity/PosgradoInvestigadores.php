@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * PosgradoInvestigadores
  *
- * @ORM\Table()
+ * @ORM\Table(name="posgradoinvestigadores")
  * @ORM\Entity
  */
 class PosgradoInvestigadores
@@ -21,19 +21,15 @@ class PosgradoInvestigadores
      */
     private $id;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="posgrado", type="integer")
+    /** @ORM\ManyToOne(targetEntity="DEPI\PosgradosBundle\Entity\Posgrados") 
+     *  @ORM\JoinColumn(name="posgrado", referencedColumnName="id")
      */
     private $posgrado;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="investigador", type="integer")
+    /** @ORM\ManyToOne(targetEntity="DEPI\InvestigadoresBundle\Entity\Investigadores") 
+     *  @ORM\JoinColumn(name="investigadores", referencedColumnName="id")
      */
-    private $investigador;
+    private $investigadores;
 
 
     /**
@@ -49,20 +45,18 @@ class PosgradoInvestigadores
     /**
      * Set posgrado
      *
-     * @param integer $posgrado
+     * @param \DEPI\PosgradosBundle\Entity\Posgrados $posgrado
      * @return PosgradoInvestigadores
      */
-    public function setPosgrado($posgrado)
+    public function setPosgrado(\DEPI\PosgradosBundle\Entity\Posgrados $posgrado)
     {
         $this->posgrado = $posgrado;
-    
-        return $this;
     }
 
     /**
      * Get posgrado
      *
-     * @return integer 
+     * @return \DEPI\PosgradosBundle\Entity\Posgrados
      */
     public function getPosgrado()
     {
@@ -70,25 +64,23 @@ class PosgradoInvestigadores
     }
 
     /**
-     * Set investigador
+     * Set investigadores
      *
-     * @param integer $investigador
+     * @param \DEPI\InvestigadoresBundle\Entity\Investigadores
      * @return PosgradoInvestigadores
      */
-    public function setInvestigador($investigador)
+    public function setInvestigadores(\DEPI\InvestigadoresBundle\Entity\Investigadores $investigadores)
     {
-        $this->investigador = $investigador;
-    
-        return $this;
+        $this->investigadores = $investigadores;
     }
 
     /**
-     * Get investigador
+     * Get Investigadores
      *
-     * @return integer 
+     * @return \DEPI\InvestigadoresBundle\Entity\Investigadores
      */
-    public function getInvestigador()
+    public function getInvestigadores()
     {
-        return $this->investigador;
+        return $this->investigadores;
     }
 }
