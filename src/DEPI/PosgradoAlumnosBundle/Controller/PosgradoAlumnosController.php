@@ -53,7 +53,7 @@ class PosgradoAlumnosController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('posgradoalumnos_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('posgradoalumnos'));
         }
 
         return array(
@@ -76,7 +76,7 @@ class PosgradoAlumnosController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array('label' => 'Guardar'));
 
         return $form;
     }
@@ -100,58 +100,6 @@ class PosgradoAlumnosController extends Controller
     }
 
     /**
-     * Finds and displays a PosgradoAlumnos entity.
-     *
-     * @Route("/{id}", name="posgradoalumnos_show")
-     * @Method("GET")
-     * @Template()
-     */
-    public function showAction($id)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('PosgradoAlumnosBundle:PosgradoAlumnos')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find PosgradoAlumnos entity.');
-        }
-
-        $deleteForm = $this->createDeleteForm($id);
-
-        return array(
-            'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),
-        );
-    }
-
-    /**
-     * Displays a form to edit an existing PosgradoAlumnos entity.
-     *
-     * @Route("/{id}/edit", name="posgradoalumnos_edit")
-     * @Method("GET")
-     * @Template()
-     */
-    public function editAction($id)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('PosgradoAlumnosBundle:PosgradoAlumnos')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find PosgradoAlumnos entity.');
-        }
-
-        $editForm = $this->createEditForm($entity);
-        $deleteForm = $this->createDeleteForm($id);
-
-        return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-        );
-    }
-
-    /**
     * Creates a form to edit a PosgradoAlumnos entity.
     *
     * @param PosgradoAlumnos $entity The entity
@@ -165,7 +113,7 @@ class PosgradoAlumnosController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => 'Actualizar'));
 
         return $form;
     }
@@ -193,7 +141,7 @@ class PosgradoAlumnosController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('posgradoalumnos_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('posgradoalumnos'));
         }
 
         return array(
@@ -240,7 +188,7 @@ class PosgradoAlumnosController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('posgradoalumnos_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', array('label' => 'Eliminar'))
             ->getForm()
         ;
     }
