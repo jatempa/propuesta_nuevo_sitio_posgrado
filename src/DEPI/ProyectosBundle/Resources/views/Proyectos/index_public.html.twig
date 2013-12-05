@@ -7,9 +7,9 @@
 		{% for entity in entities %}
                              <section >
 
-			<p class="title" data-section-title><a href="#">{{ entity.nombreCompleto}}</a></p>
+			<p class="title" data-section-title><a href="#">{{ entity.nombreCorto}}</a></p>
 			<div class="content" data-section-content>
-				<p style="background-color:#F8F8F8">Nombre:  {{ entity.NombreCorto}}  </p>
+				<p style="background-color:#F8F8F8">Nombre:  {{ entity.NombreCompleto}}  </p>
 				<p >Clave Conacyt:  {{ entity.ClaveA }} </p>
 				<p  style="background-color:#F8F8F8">Clave Dgest:  {{ entity.claveB }}</p>
 				<p >Clave ITM: {{ entity.claveB }} </p>
