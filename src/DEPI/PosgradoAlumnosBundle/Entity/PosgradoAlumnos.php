@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * PosgradoAlumnos
  *
- * @ORM\Table()
+ * @ORM\Table(name="posgradoalumnos")
  * @ORM\Entity
  */
 class PosgradoAlumnos
@@ -21,17 +21,13 @@ class PosgradoAlumnos
      */
     private $id;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="posgrado", type="integer")
+    /** @ORM\ManyToOne(targetEntity="DEPI\PosgradosBundle\Entity\Posgrados") 
+     *  @ORM\JoinColumn(name="posgrado", referencedColumnName="id")
      */
     private $posgrado;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="alumno", type="integer")
+    /** @ORM\ManyToOne(targetEntity="DEPI\AlumnosBundle\Entity\Alumnos") 
+     *  @ORM\JoinColumn(name="alumno", referencedColumnName="id")
      */
     private $alumno;
 
@@ -45,24 +41,22 @@ class PosgradoAlumnos
     {
         return $this->id;
     }
-
+ 
     /**
      * Set posgrado
      *
-     * @param integer $posgrado
+     * @param \DEPI\PosgradosBundle\Entity\Posgrados $posgrado
      * @return PosgradoAlumnos
      */
-    public function setPosgrado($posgrado)
+    public function setPosgrado(\DEPI\PosgradosBundle\Entity\Posgrados $posgrado)
     {
         $this->posgrado = $posgrado;
-    
-        return $this;
     }
 
     /**
      * Get posgrado
      *
-     * @return integer 
+     * @return \DEPI\PosgradosBundle\Entity\Posgrados
      */
     public function getPosgrado()
     {
@@ -70,22 +64,20 @@ class PosgradoAlumnos
     }
 
     /**
-     * Set alumno
+     * Set alumnos
      *
-     * @param integer $alumno
-     * @return PosgradoAlumnos
+     * @param \DEPI\AlumnosBundle\Entity\Alumnos
+     * @return AlumnosProyectos
      */
-    public function setAlumno($alumno)
+    public function setAlumno(\DEPI\AlumnosBundle\Entity\Alumnos $alumno)
     {
         $this->alumno = $alumno;
-    
-        return $this;
     }
 
     /**
      * Get alumno
      *
-     * @return integer 
+     * @return \DEPI\AlumnosBundle\Entity\Alumnos
      */
     public function getAlumno()
     {
