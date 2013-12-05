@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * PosgradoLineas
  *
- * @ORM\Table(nam="posgradolineas")
+ * @ORM\Table(name="posgradolineas")
  * @ORM\Entity
  */
 class PosgradoLineas
