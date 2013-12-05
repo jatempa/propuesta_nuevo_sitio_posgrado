@@ -15,7 +15,7 @@
 	{% for entity in entities %}
 	<section class="row">
 		<div id="now" class="small-2 large-3 columns">
-			{{ entity.fechaPublicacion|date('M d') }}
+			{{ entity.fechaPublicacion|date('d M') }}
 		</div>
 		<p id="news" class="small-10 large-9 columns">
 			{{ entity.contenido }}
