@@ -1,6 +1,13 @@
 {% extends '::backend.html.twig' %}
 
-{% block body -%}
+{% block mapa %}
+    <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
+    <li><a href="{{ path('posgrados') }}">Posgrados</a></li>
+    <li><a href="{{ path('posgradoinvestigadores') }}">Posgrado e Investigadores</a></li>
+    <li><span>Registro de un investigador en un posgrado</span></li>
+{% endblock %}
+
+{% block body %}
     <h1>PosgradoInvestigadores creation</h1>
 
     {{ form(form) }}

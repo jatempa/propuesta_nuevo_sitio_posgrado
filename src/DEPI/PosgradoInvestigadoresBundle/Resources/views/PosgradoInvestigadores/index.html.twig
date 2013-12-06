@@ -1,5 +1,11 @@
 {% extends '::backend.html.twig' %}
 
+{% block mapa %}
+    <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
+    <li><a href="{{ path('posgrados') }}">Posgrados</a></li>
+    <li><span>Posgrado e Investigadores</span></li>
+{% endblock %}
+
 {% block body -%}
     <h1>PosgradoInvestigadores list</h1>
 

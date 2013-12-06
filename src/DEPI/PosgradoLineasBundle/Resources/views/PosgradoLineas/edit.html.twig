@@ -1,6 +1,13 @@
 {% extends '::backend.html.twig' %}
 
-{% block body -%}
+{% block mapa %}
+    <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
+    <li><a href="{{ path('posgrados') }}">Posgrados</a></li>
+    <li><a href="{{ path('posgradolineas') }}">Posgrado y Líneas de inv.</a></li>
+    <li><span>Actualizar datos de una líneas de inv. en un posgrado</span></li>
+{% endblock %}
+
+{% block body %}
     <h1>PosgradoLineas edit</h1>
 
     {{ form(edit_form) }}
