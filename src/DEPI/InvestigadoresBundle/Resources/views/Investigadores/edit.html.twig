@@ -12,7 +12,7 @@
         <div class="unit-30">
             <fieldset>
                 <legend>Foto</legend>
-                <img id="foto" src="" />
+                <img id="foto" src="{{ asset('uploads/images/') ~ entity.rutaFoto }}" />
             </fieldset>
         </div>
         <div class="units-centered unit-50">
@@ -56,6 +56,12 @@
                         {{ form_widget(edit_form.sni, { 'attr': {'class': 'width-100'} }) }}
                     </p>
 
+                    <p>
+                        {{ form_label(edit_form.foto, 'Foto') }}
+                        {{ form_widget(edit_form.foto, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_errors(edit_form.foto) }}
+                    </p>
+                    
                     <p>
                          {{ form_widget(edit_form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
                     {{ form_end(edit_form) }}

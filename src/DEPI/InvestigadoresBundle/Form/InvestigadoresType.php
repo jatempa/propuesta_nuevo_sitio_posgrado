@@ -22,6 +22,7 @@ class InvestigadoresType extends AbstractType
             ->add('telefono', 'text', array('required' => false))
             ->add('grado', 'text', array('required' => false))
             ->add('sni', 'text', array('required' => false))
+            ->add('foto', 'file', array('required' => false))
         ;
     }
     
