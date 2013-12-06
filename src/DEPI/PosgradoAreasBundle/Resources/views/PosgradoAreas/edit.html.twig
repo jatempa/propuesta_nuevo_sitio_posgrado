@@ -4,20 +4,42 @@
     <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
     <li><a href="{{ path('posgrados') }}">Posgrados</a></li>
     <li><a href="{{ path('posgradoareas') }}">Posgrado y Áreas de inv.</a></li>
-    <li><span>Actualizar datos de un área de investigación de un posgrado</span></li>
+    <li><span>Actualizar datos de un área de investigación en un posgrado</span></li>
 {% endblock %}
 
 {% block body -%}
-    <h1>PosgradoAreas edit</h1>
+<div class="unit-100">
+    <div class="units-row">
+        <div class="unit-centered unit-50">
+            <fieldset>
+                <legend>Posgrado y Alumnos</legend>
+                {{ form_start(edit_form, { 'attr': {'class': 'forms forms-columnar'} }) }}
+                    
+                    <p>
+                        {{ form_label(edit_form.posgrado, 'Posgrado') }}
+                        {{ form_widget(edit_form.posgrado, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
 
-    {{ form(edit_form) }}
+                    <p>
+                        {{ form_label(edit_form.area, 'Área') }}
+                        {{ form_widget(edit_form.area, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('posgradoareas') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+                    <p>
+                         {{ form_widget(edit_form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
+                    {{ form_end(edit_form) }}
+                    
+                    </p>
+
+                    <p>
+                        {{ form_start(delete_form) }}
+                            {{ form_widget(delete_form.submit, { 'attr': {'class': 'btn btn-red'} }) }}
+                        {{ form_end(delete_form) }}
+                    </p>
+
+            </fieldset>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

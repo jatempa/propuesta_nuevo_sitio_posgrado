@@ -8,16 +8,34 @@
 {% endblock %}
 
 {% block body %}
-    <h1>PosgradoLineas edit</h1>
+<div class="unit-100">
+    <div class="units-row">
+        <div class="unit-centered unit-50">
+            <fieldset>
+                <legend>Posgrado y Áreas de investigación</legend>
+                {{ form_start(edit_form, { 'attr': {'class': 'forms forms-columnar'} }) }}                    
+                    <p>
+                        {{ form_label(edit_form.posgrado, 'Posgrado') }}
+                        {{ form_widget(edit_form.posgrado, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
 
-    {{ form(edit_form) }}
+                    <p>
+                        {{ form_label(edit_form.lineasinvestigacion, 'Líneas de investigación') }}
+                        {{ form_widget(edit_form.lineasinvestigacion, { 'attr': {'class': 'width-100'} }) }}
+                    </p>                    
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('posgradolineas') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+                    <p>
+                        {{ form_widget(edit_form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
+                    </p>
+                {{ form_end(edit_form) }}
+
+                    <p>
+                        {{ form_start(delete_form) }}
+                            {{ form_widget(delete_form.submit, { 'attr': {'class': 'btn btn-red'} }) }}
+                        {{ form_end(delete_form) }}
+                    </p>
+            </fieldset>
+        </div>
+    </div>
+</div>
 {% endblock %}
