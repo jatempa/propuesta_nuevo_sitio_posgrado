@@ -14,10 +14,10 @@ class PosgradoAlumnosRepository extends EntityRepository
  
 		$dql->select('posgalu', 
 			         'posgrado.id, posgrado.nombre nom_posgrado',
-			         'alumnos.id, alumnos.nombre, alumnos.apellidoPaterno, alumnos.apellidoMaterno')
+			         'alumno.id, alumno.nombre, alumno.apellidoPaterno, alumno.apellidoMaterno')
 		    ->from('PosgradoAlumnosBundle:PosgradoAlumnos', 'posgalu')
 		    ->Join('posgalu.posgrado', 'posgrado')
-		    ->Join('posgalu.alumnos', 'alumnos');
+		    ->Join('posgalu.alumno', 'alumno');
 
 		return $dql->getQuery()->getResult();
 	}

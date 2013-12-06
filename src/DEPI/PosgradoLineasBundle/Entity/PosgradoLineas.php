@@ -66,7 +66,7 @@ class PosgradoLineas
     /**
      * Set lineasinvestigacion
      *
-     * @param \DEPI\LineasInvestigacionBundle\Entity\LineasInvestigacion
+     * @param \DEPI\LineasInvestigacionBundle\Entity\LineasInvestigacion $lineasinvestigacion
      * @return PosgradoLineas
      */
     public function setLineasinvestigacion(\DEPI\LineasInvestigacionBundle\Entity\LineasInvestigacion $lineasinvestigacion)

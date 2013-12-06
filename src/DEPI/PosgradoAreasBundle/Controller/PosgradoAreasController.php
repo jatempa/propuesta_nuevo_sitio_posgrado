@@ -29,11 +29,9 @@ class PosgradoAreasController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('PosgradoAreasBundle:PosgradoAreas')->findAll();
+        $entities = $em->getRepository('PosgradoAreasBundle:PosgradoAreas')->findPosgradoAreas();
 
-        return array(
-            'entities' => $entities,
-        );
+        return $this->render('PosgradoAreasBundle:PosgradoAreas:index.html.twig', array('entities' => $entities));
     }
     /**
      * Creates a new PosgradoAreas entity.

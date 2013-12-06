@@ -29,11 +29,9 @@ class PosgradoAlumnosController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('PosgradoAlumnosBundle:PosgradoAlumnos')->findAll();
+        $entities = $em->getRepository('PosgradoAlumnosBundle:PosgradoAlumnos')->findPosgradoAlumnos();
 
-        return array(
-            'entities' => $entities,
-        );
+        return $this->render('PosgradoAlumnosBundle:PosgradoAlumnos:index.html.twig', array('entities' => $entities));
     }
     /**
      * Creates a new PosgradoAlumnos entity.

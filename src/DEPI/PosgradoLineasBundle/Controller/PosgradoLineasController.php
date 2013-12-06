@@ -29,11 +29,9 @@ class PosgradoLineasController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('PosgradoLineasBundle:PosgradoLineas')->findAll();
+        $entities = $em->getRepository('PosgradoLineasBundle:PosgradoLineas')->findPosgradoLineas();
 
-        return array(
-            'entities' => $entities,
-        );
+        return $this->render('PosgradoLineasBundle:PosgradoLineas:index.html.twig', array('entities' => $entities));
     }
     /**
      * Creates a new PosgradoLineas entity.

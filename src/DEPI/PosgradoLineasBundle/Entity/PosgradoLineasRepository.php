@@ -16,7 +16,7 @@ class PosgradoLineasRepository extends EntityRepository
 			         'lineasinvestigacion.id, lineasinvestigacion.nombre nom_linea',
 			         'posgrado.id, posgrado.nombre nom_posgrado')
 		    ->from('PosgradoLineasBundle:PosgradoLineas', 'posglin')
-		    ->Join('posglin.lineasinvestigacion', 'lineas')
+		    ->Join('posglin.lineasinvestigacion', 'lineasinvestigacion')
 		    ->Join('posglin.posgrado', 'posgrado');
 
 		return $dql->getQuery()->getResult();

@@ -29,11 +29,9 @@ class PosgradoInvestigadoresController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('PosgradoInvestigadoresBundle:PosgradoInvestigadores')->findAll();
+        $entities = $em->getRepository('PosgradoInvestigadoresBundle:PosgradoInvestigadores')->findPosgradoInvestigadores();
 
-        return array(
-            'entities' => $entities,
-        );
+        return $this->render('PosgradoInvestigadoresBundle:PosgradoInvestigadores:index.html.twig', array('entities' => $entities));
     }
     /**
      * Creates a new PosgradoInvestigadores entity.

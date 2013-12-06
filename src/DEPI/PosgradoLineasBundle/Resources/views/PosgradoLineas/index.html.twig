@@ -7,39 +7,45 @@
 {% endblock %}
 
 {% block body %}
-    <h1>PosgradoLineas list</h1>
-
-    <table class="records_list">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for entity in entities %}
-            <tr>
-                <td><a href="{{ path('posgradolineas_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('posgradolineas_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('posgradolineas_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
+<aside class="unit-25 unit-padding">
+    <h6>Opciones</h6>
+    <nav class="nav-v">
         <ul>
-        <li>
-            <a href="{{ path('posgradolineas_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
-    {% endblock %}
+            <li><a href="{{ path('posgradoalumnos') }}">Registro de alumnos</a></li>
+            <li><a href="{{ path('posgradoareas') }}">Registrar área de investigación</a></li>
+            <li><a href="{{ path('posgradoinvestigadores') }}">Registro de investigadores</a></li>
+            <li><span>Registro de lineas de investigación</span></li>
+        </ul>
+    </nav>
+</aside>
+
+<div class="unit-75">
+    <div class="table-container">
+        <table class="width-100 table-striped">
+            <thead>
+                <tr>
+                    <th>Posgrados</th>
+                    <th>Líneas de investigación</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td class="width-50 enlace" >
+                        <a href="{{ path('posgradolineas_edit', { 'id': entity.id }) }}">
+                            {{ entity.nom_posgrado }}
+                        </a>
+                    </td>
+                    <td class="width-50 enlace" >
+                        <a href="{{ path('posgradolineas_edit', { 'id': entity.id }) }}">
+                            {{ entity.nom_linea }}
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<a href="{{ path('posgradolineas_new') }}" class="btn btn-blue">Nuevo</a>
+{% endblock %}
