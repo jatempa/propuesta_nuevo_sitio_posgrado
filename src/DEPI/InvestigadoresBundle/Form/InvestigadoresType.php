@@ -17,11 +17,11 @@ class InvestigadoresType extends AbstractType
         $builder
             ->add('nombre')
             ->add('apellidoPaterno')
-            ->add('apellidoMaterno',  array('required' => false))
+            ->add('apellidoMaterno', 'text', array('required' => false))
             ->add('email')
-            ->add('telefono',  array('required' => false))
-            ->add('grado',  array('required' => false))
-            ->add('sni',  array('required' => false))
+            ->add('telefono', 'text', array('required' => false))
+            ->add('grado', 'text', array('required' => false))
+            ->add('sni', 'text', array('required' => false))
         ;
     }
     
