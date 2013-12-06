@@ -12,9 +12,9 @@ class AreasProyectosRepository extends EntityRepository
 
 		$dql = $em->createQueryBuilder();
  
-		$dql->select('areaspro', 
-			         'areas.id, areas.nombre',
-			         'proyectos.id, proyectos.nombreCorto')
+		$dql->select('areaspro.id', 
+			         'areas.nombre',
+			         'proyectos.nombreCorto')
 		    ->from('AreasProyectosBundle:AreasProyectos', 'areaspro')
 		    ->Join('areaspro.area', 'areas')
 		    ->Join('areaspro.proyecto', 'proyectos');

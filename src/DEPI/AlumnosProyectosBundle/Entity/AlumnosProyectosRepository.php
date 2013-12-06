@@ -12,9 +12,9 @@ class AlumnosProyectosRepository extends EntityRepository
 
 		$dql = $em->createQueryBuilder();
  
-		$dql->select('ap', 
-			         'alumno.id, alumno.noControl, alumno.nombre, alumno.apellidoPaterno, alumno.apellidoMaterno', 
-			         'proyecto.id, proyecto.nombreCorto')
+		$dql->select('ap.id', 
+			         'alumno.noControl, alumno.nombre, alumno.apellidoPaterno, alumno.apellidoMaterno', 
+			         'proyecto.nombreCorto')
 		    ->from('AlumnosProyectosBundle:AlumnosProyectos', 'ap')
 		    ->Join('ap.alumno', 'alumno')
 		    ->Join('ap.proyecto', 'proyecto');
