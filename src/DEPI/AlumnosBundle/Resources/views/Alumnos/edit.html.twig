@@ -13,7 +13,7 @@
             <fieldset>
                 <legend>Alumno</legend>
                 
-                {{ form_start(edit_form, { 'attr': {'class': 'forms forms-columnar'} }) }}
+                {{ form_start(edit_form, { 'attr': {'enctype': 'multipart/form-data', 'class': 'forms forms-columnar'} }) }}
                     
                     <p>
                         {{ form_label(edit_form.noControl, 'No. de Control') }}
@@ -45,6 +45,11 @@
                         {{ form_label(edit_form.telefono, 'Teléfono') }}
                         {{ form_widget(edit_form.telefono, { 'attr': {'class': 'width-100'} }) }}
                     </p>    
+                    
+                    <p>
+                        {{ form_label(edit_form.foto, 'Foto') }}
+                        {{ form_widget(edit_form.foto, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
 
                     <p>
                          {{ form_widget(edit_form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
