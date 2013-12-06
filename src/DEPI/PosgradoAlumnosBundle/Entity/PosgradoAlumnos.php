@@ -67,7 +67,7 @@ class PosgradoAlumnos
      * Set alumnos
      *
      * @param \DEPI\AlumnosBundle\Entity\Alumnos
-     * @return AlumnosProyectos
+     * @return PosgradoAlumnos
      */
     public function setAlumno(\DEPI\AlumnosBundle\Entity\Alumnos $alumno)
     {

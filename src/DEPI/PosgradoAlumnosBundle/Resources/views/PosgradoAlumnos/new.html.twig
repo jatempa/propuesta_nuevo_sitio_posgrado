@@ -7,16 +7,30 @@
     <li><span>Registro de alumno en un posgrado</span></li>
 {% endblock %}
 
-{% block body -%}
-    <h1>PosgradoAlumnos creation</h1>
+{% block body %}
+<div class="unit-100">
+    <div class="units-row">
+        <div class="unit-centered unit-50">
+            <fieldset>
+                <legend>Posgrado y Alumnos</legend>
+                {{ form_start(form, { 'attr': {'class': 'forms forms-columnar'} }) }}
+                    
+                    <p>
+                        {{ form_label(form.posgrado, 'Posgrado') }}
+                        {{ form_widget(form.posgrado, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
 
-    {{ form(form) }}
+                    <p>
+                        {{ form_label(form.alumno, 'Alumno') }}
+                        {{ form_widget(form.alumno, { 'attr': {'class': 'width-100'} }) }}
+                    </p>                    
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('posgradoalumnos') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+                    <p>
+                        {{ form_widget(form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
+                    </p>
+                {{ form_end(form) }}
+            </fieldset>
+        </div>
+    </div>
+</div>
 {% endblock %}

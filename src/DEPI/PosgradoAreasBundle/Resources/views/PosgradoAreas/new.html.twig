@@ -7,16 +7,29 @@
     <li><span>Registro de un área de investigación en un posgrado</span></li>
 {% endblock %}
 
-{% block body -%}
-    <h1>PosgradoAreas creation</h1>
+{% block body %}
+<div class="unit-100">
+    <div class="units-row">
+        <div class="unit-centered unit-50">
+            <fieldset>
+                <legend>Posgrado y Áreas de investigación</legend>
+                {{ form_start(form, { 'attr': {'class': 'forms forms-columnar'} }) }}                    
+                    <p>
+                        {{ form_label(form.posgrado, 'Posgrado') }}
+                        {{ form_widget(form.posgrado, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
 
-    {{ form(form) }}
+                    <p>
+                        {{ form_label(form.area, 'Áreas de investigación') }}
+                        {{ form_widget(form.area, { 'attr': {'class': 'width-100'} }) }}
+                    </p>                    
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('posgradoareas') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+                    <p>
+                        {{ form_widget(form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
+                    </p>
+                {{ form_end(form) }}
+            </fieldset>
+        </div>
+    </div>
+</div>
 {% endblock %}

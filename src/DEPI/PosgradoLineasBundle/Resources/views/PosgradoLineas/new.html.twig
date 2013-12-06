@@ -7,16 +7,29 @@
     <li><span>Registro de una línea de inv. en un posgrado</span></li>
 {% endblock %}
 
-{% block body -%}
-    <h1>PosgradoLineas creation</h1>
+{% block body %}
+<div class="unit-100">
+    <div class="units-row">
+        <div class="unit-centered unit-50">
+            <fieldset>
+                <legend>Posgrado e Investigadores</legend>
+                {{ form_start(form, { 'attr': {'class': 'forms forms-columnar'} }) }}                    
+                    <p>
+                        {{ form_label(form.posgrado, 'Posgrado') }}
+                        {{ form_widget(form.posgrado, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
 
-    {{ form(form) }}
+                    <p>
+                        {{ form_label(form.lineasinvestigacion, 'Líneas de investigación') }}
+                        {{ form_widget(form.lineasinvestigacion, { 'attr': {'class': 'width-100'} }) }}
+                    </p>                    
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('posgradolineas') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+                    <p>
+                        {{ form_widget(form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
+                    </p>
+                {{ form_end(form) }}
+            </fieldset>
+        </div>
+    </div>
+</div>
 {% endblock %}

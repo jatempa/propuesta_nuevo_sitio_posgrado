@@ -98,6 +98,33 @@ class PosgradoAreasController extends Controller
     }
 
     /**
+     * Displays a form to edit an existing PosgradoAreas entity.
+     *
+     * @Route("/{id}/edit", name="posgradoareas_edit")
+     * @Method("GET")
+     * @Template()
+     */
+    public function editAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('PosgradoAreasBundle:PosgradoAreas')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find PosgradoAreas entity.');
+        }
+
+        $editForm = $this->createEditForm($entity);
+        $deleteForm = $this->createDeleteForm($id);
+
+        return array(
+            'entity'      => $entity,
+            'edit_form'   => $editForm->createView(),
+            'delete_form' => $deleteForm->createView(),
+        );
+    }
+
+    /**
     * Creates a form to edit a PosgradoAreas entity.
     *
     * @param PosgradoAreas $entity The entity

@@ -7,17 +7,38 @@
     <li><span>Actualizar datos de un alumno en un posgrado</span></li>
 {% endblock %}
 
-{% block body -%}
-    <h1>PosgradoAlumnos edit</h1>
+{% block body %}
+<div class="unit-100">
+    <div class="units-row">
+        <div class="unit-centered unit-50">
+            <fieldset>
+                <legend>Posgrado y Alumnos</legend>
+                {{ form_start(edit_form, { 'attr': {'class': 'forms forms-columnar'} }) }}
+                    
+                    <p>
+                        {{ form_label(edit_form.posgrado, 'Posgrado') }}
+                        {{ form_widget(edit_form.posgrado, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
 
-    {{ form(edit_form) }}
+                    <p>
+                        {{ form_label(edit_form.alumno, 'Alumno') }}
+                        {{ form_widget(edit_form.alumno, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('posgradoalumnos') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+                    <p>
+                         {{ form_widget(edit_form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
+                    {{ form_end(edit_form) }}
+                    
+                    </p>
+
+                    <p>
+                        {{ form_start(delete_form) }}
+                            {{ form_widget(delete_form.submit, { 'attr': {'class': 'btn btn-red'} }) }}
+                        {{ form_end(delete_form) }}
+                    </p>
+
+            </fieldset>
+        </div>
+    </div>
+</div>
 {% endblock %}
