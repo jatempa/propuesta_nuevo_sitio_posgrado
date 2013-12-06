@@ -9,13 +9,13 @@
 {% block contenido %}
 <div class="unit-100">
     <div class="units-row">
-        <div class="unit-50">
+        <div class="unit-30">
             <fieldset>
-                <legend>Imagen</legend>
-                <img src="{{ asset('uploads/images/') ~ entity.rutaFoto }}" />
+                <legend>Foto</legend>
+                <img id="foto" src="{{ asset('uploads/images/') ~ entity.rutaFoto }}" />
             </fieldset>
         </div>
-        <div class="unit-50">
+        <div class="units-centered unit-50">
             <fieldset>
                 <legend>Alumno</legend>
                 
@@ -55,6 +55,7 @@
                     <p>
                         {{ form_label(edit_form.foto, 'Foto') }}
                         {{ form_widget(edit_form.foto, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_errors(edit_form.foto) }}
                     </p>
 
                     <p>

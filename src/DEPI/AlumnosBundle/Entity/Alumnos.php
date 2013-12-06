@@ -268,7 +268,7 @@ class Alumnos
         return $this->getNoControl().' - '.$this->getNombre().' '.$this->getApellidoPaterno().' '.$this->getApellidoMaterno();
     }
 
-     /**
+    /**
      * Sube la foto de la oferta copiándola en el directorio que se indica y
      * guardando en la entidad la ruta hasta la foto
      *
