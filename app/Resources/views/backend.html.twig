@@ -1,51 +1,49 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>{% block title %}Administración{% endblock %}</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="{{ asset('bundles/backend/css/kube.css') }}">
-        <link rel="stylesheet" href="{{ asset('bundles/backend/css/master.css') }}">
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        <div class="wrapper">
-            <header id="header">
-                <nav class="nav-g">
-                    <ul>
-                        <li><a href="{{ path('noticias') }}">Noticias</a></li>
-                        <li><a href="{{ path('alumnos') }}">Alumnos</a></li>
-                        <li><a href="{{ path('areas') }}">Áreas de inv.</a></li>
-                        <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
-                        <li><a href="{{ path('lineas') }}">Líneas de inv.</a></li>
-                        <li><a href="{{ path('productosacademicos') }}">Prod. académicos</a></li>
-                        <li><a href="{{ path('posgrados') }}">Posgrados</a></li>
-                        <li><a href="{{ path('proyectos') }}">Proyectos</a></li>
-                    </ul>
-                </nav>
-            </header>
+{% extends '::base.html.twig' %}
 
-            <div class="units-row">
-                <nav class="breadcrumbs">
-                    <ul>
-                        {% block mapa %}
+{% block title %}Administración{% endblock %}
+        
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('bundles/backend/css/kube.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/backend/css/master.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="wrapper">
+        <header id="header">
+            <nav class="nav-g">
+                <ul>
+                    <li><a href="{{ path('noticias') }}">Noticias</a></li>
+                    <li><a href="{{ path('alumnos') }}">Alumnos</a></li>
+                    <li><a href="{{ path('areas') }}">Áreas de inv.</a></li>
+                    <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
+                    <li><a href="{{ path('lineas') }}">Líneas de inv.</a></li>
+                    <li><a href="{{ path('productosacademicos') }}">Prod. académicos</a></li>
+                    <li><a href="{{ path('posgrados') }}">Posgrados</a></li>
+                    <li><a href="{{ path('proyectos') }}">Proyectos</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="units-row">
+            <nav class="breadcrumbs">
+                <ul>
+                    {% block mapa %}
                         <li><span>Inicio</span></li>
-                        {% endblock %}
-                    </ul>
-                </nav>                
-            </div>
-
-            <div class="units-row">
-                {% block lateral %}
-                {% endblock %}
-                {% block body %}
-                {% endblock %}
-            </div>
-            <footer id="footer">&copy; Instituto Tecnológico de Mexicali.</footer>
+                    {% endblock %}
+                </ul>
+            </nav>                
         </div>
-        {% block javascripts %}
-            <script type="text/javascript" src="{{ asset('bundles/backend/js/kube.css') }}"></script>
-        {% endblock %}
-    </body>
-</html>
+
+        <div class="units-row">
+            {% block lateral %}
+            {% endblock %}
+            {% block contenido %}
+            {% endblock %}
+        </div>
+        <footer id="footer">&copy; Instituto Tecnológico de Mexicali.</footer>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('bundles/backend/js/kube.css') }}"></script>
+{% endblock %}
