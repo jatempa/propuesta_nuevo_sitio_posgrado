@@ -22,8 +22,7 @@
   </script>
 {% endblock %}
 
-{% block body %}
-  <div class="row">
+{% block header %}
     <!-- Header -->
     <div class="row">    
       <div class="large-7 columns">
@@ -78,12 +77,18 @@
         </nav>
       </div> 
     </div>    
+{% endblock %}
+
+{% block body %}
     <!-- Contenido --> 
     <div class="row">
       <div id="contenido" class="large-12 columns">
         {% block contenido %}{% endblock %}
       </div> 
     </div>   
+{% endblock %}
+
+{% block footer %}
     <!-- Enlaces -->
     <div class="row">
       <div class="large-12 columns">
@@ -118,6 +123,5 @@
           <a class="webicon twitter" href="#">Twitter</a>
         </div> 
       </div>
-    </footer>      
-  </div>
+    </footer>
 {% endblock %}

@@ -7,41 +7,45 @@
     <link rel="stylesheet" href="{{ asset('bundles/backend/css/master.css') }}">
 {% endblock %}
 
+{% block header %}
+    <header id="header">
+        <nav class="nav-g">
+            <ul>
+                <li><a href="{{ path('noticias') }}">Noticias</a></li>
+                <li><a href="{{ path('alumnos') }}">Alumnos</a></li>
+                <li><a href="{{ path('areas') }}">Áreas de inv.</a></li>
+                <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
+                <li><a href="{{ path('lineas') }}">Líneas de inv.</a></li>
+                <li><a href="{{ path('productosacademicos') }}">Prod. académicos</a></li>
+                <li><a href="{{ path('posgrados') }}">Posgrados</a></li>
+                <li><a href="{{ path('proyectos') }}">Proyectos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="units-row">
+        <nav class="breadcrumbs">
+            <ul>
+                {% block mapa %}
+                    <li><span>Inicio</span></li>
+                {% endblock %}
+            </ul>
+        </nav>                
+    </div>
+{% endblock %}
+
 {% block body %}
-    <div class="wrapper">
-        <header id="header">
-            <nav class="nav-g">
-                <ul>
-                    <li><a href="{{ path('noticias') }}">Noticias</a></li>
-                    <li><a href="{{ path('alumnos') }}">Alumnos</a></li>
-                    <li><a href="{{ path('areas') }}">Áreas de inv.</a></li>
-                    <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
-                    <li><a href="{{ path('lineas') }}">Líneas de inv.</a></li>
-                    <li><a href="{{ path('productosacademicos') }}">Prod. académicos</a></li>
-                    <li><a href="{{ path('posgrados') }}">Posgrados</a></li>
-                    <li><a href="{{ path('proyectos') }}">Proyectos</a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <div class="units-row">
-            <nav class="breadcrumbs">
-                <ul>
-                    {% block mapa %}
-                        <li><span>Inicio</span></li>
-                    {% endblock %}
-                </ul>
-            </nav>                
-        </div>
-
+    <div>
         <div class="units-row">
             {% block lateral %}
             {% endblock %}
             {% block contenido %}
             {% endblock %}
         </div>
-        <footer id="footer">&copy; Instituto Tecnológico de Mexicali.</footer>
     </div>
+{% endblock %}
+
+{% block footer %}
+    <footer id="footer">&copy; Instituto Tecnológico de Mexicali.</footer>
 {% endblock %}
 
 {% block javascripts %}
