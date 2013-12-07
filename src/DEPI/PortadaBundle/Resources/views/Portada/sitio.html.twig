@@ -1,5 +1,11 @@
 {% extends '::frontend.html.twig' %}
 
+{% block imagenesBanner %}
+	{% for imagen in banner %}
+		<li><img src="{{ asset('uploads/images/portada/') ~ imagen.imagenBanner }}"/></li>
+	{% endfor %}
+{% endblock %}
+
 {% block contenido %}
 <article class="large-3 columns">
 	<div class="row">
@@ -8,13 +14,13 @@
 		</header>
 		<canvas id="myCanvas"  class="large-12 columns"></canvas>
 	</div>
-	{% for entity in entities %}
+	{% for noticia in noticias %}
 	<section class="row">
 		<div id="now" class="small-2 large-3 columns">
-			{{ entity.fechaPublicacion|date('d M') }}
+			{{ noticia.fechaPublicacion|date('d M') }}
 		</div>
 		<p id="news" class="small-10 large-9 columns">
-			{{ entity.contenido }}
+			{{ noticia.contenido }}
 		</p>
 	</section>
 	{% endfor %}
