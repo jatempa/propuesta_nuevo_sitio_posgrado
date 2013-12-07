@@ -38,7 +38,8 @@ class Portada
     private $fechaPublicacion;
 
     /**
-     * @Assert\Image(maxSize = "500k")
+     *
+     * @Assert\Image(maxSize = "500k", minWidth = 1000, maxWidth = 1000, minHeight = 300, maxHeight = 300)
      */
     protected $foto;
 
