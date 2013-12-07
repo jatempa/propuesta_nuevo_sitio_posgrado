@@ -49,7 +49,7 @@ class InvestigadoresController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity->subirFoto($this->container->getParameter('alumnos.directorio.imagenes'));
+            $entity->subirFoto($this->container->getParameter('investigadores.directorio.imagenes'));
             $em->persist($entity);
             $em->flush();
 
@@ -166,7 +166,7 @@ class InvestigadoresController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
-            $entity->subirFoto($this->container->getParameter('alumnos.directorio.imagenes'));
+            $entity->subirFoto($this->container->getParameter('investigadores.directorio.imagenes'));
             $em->flush();
 
             return $this->redirect($this->generateUrl('investigadores'));

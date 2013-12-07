@@ -3,6 +3,8 @@
 namespace DEPI\PortadaBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * Portada
@@ -35,6 +37,11 @@ class Portada
      */
     private $fechaPublicacion;
 
+    /**
+     * @Assert\Image(maxSize = "500k")
+     */
+    protected $foto;
+
 
     /**
      * Get id
@@ -49,20 +56,17 @@ class Portada
     /**
      * Set imagenBanner
      *
-     * @param string $imagenBanner
-     * @return Portada
+     * @param string $foto
      */
     public function setImagenBanner($imagenBanner)
     {
         $this->imagenBanner = $imagenBanner;
-    
-        return $this;
     }
 
     /**
      * Get imagenBanner
      *
-     * @return string 
+     * @return string
      */
     public function getImagenBanner()
     {
@@ -90,5 +94,44 @@ class Portada
     public function getFechaPublicacion()
     {
         return $this->fechaPublicacion;
+    }
+
+    /**
+     * Set foto.
+     *
+     * @param UploadedFile $foto
+     */
+    public function setFoto(UploadedFile $foto = null)
+    {
+        $this->foto = $foto;
+    }
+
+    /**
+     * Get foto.
+     *
+     * @return UploadedFile
+     */
+    public function getFoto()
+    {
+        return $this->foto;
+    }
+
+    /**
+     * Sube la foto de la oferta copiándola en el directorio que se indica y
+     * guardando en la entidad la ruta hasta la foto
+     *
+     * @param string $directorioDestino Ruta completa del directorio al que se sube la foto
+     */
+    public function subirFoto($directorioDestino)
+    {
+        if (null === $this->getFoto()) {
+            return;
+        }
+
+        $nombreArchivoFoto = $this->getFoto()->getClientOriginalName();
+
+        $this->getFoto()->move($directorioDestino, $nombreArchivoFoto);
+
+        $this->setImagenBanner($nombreArchivoFoto);
     }
 }

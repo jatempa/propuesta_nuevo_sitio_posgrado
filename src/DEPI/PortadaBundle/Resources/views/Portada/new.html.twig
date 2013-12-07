@@ -1,15 +1,35 @@
-{% extends '::base.html.twig' %}
+{% extends '::backend.html.twig' %}
 
-{% block body -%}
-    <h1>Portada creation</h1>
+{% block mapa %}
+    <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
+    <li><a href="{{ path('portada') }}">Portada</a></li>
+    <li><span>Agregar una nueva imagen para el banner</span></li>
+{% endblock %}
 
-    {{ form(form) }}
+{% block contenido %}
+<div class="unit-100">
+    <div class="units-row">
+        <div class="unit-centered unit-50">
+            <fieldset>
+                <legend>Portada</legend>
+                {{ form_start(form, { 'attr': {'class': 'forms forms-columnar'} }) }}                      
+                    <p>
+                        {{ form_label(form.foto, 'Imagen del banner') }}
+                        {{ form_widget(form.foto, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_errors(form.foto) }}
+                    </p>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('portada') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+                    <p>
+                        {{ form_label(form.fechaPublicacion, 'Fecha de publicación') }}
+                        {{ form_widget(form.fechaPublicacion, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+
+                    <p>
+                        {{ form_widget(form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
+                    </p>
+                {{ form_end(form) }}
+            </fieldset>
+        </div>
+    </div>
+</div>
 {% endblock %}

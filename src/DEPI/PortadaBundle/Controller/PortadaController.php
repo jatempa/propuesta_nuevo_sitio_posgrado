@@ -50,10 +50,11 @@ class PortadaController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $entity->subirFoto($this->container->getParameter('portada.directorio.imagenes'));
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('portada_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('portada'));
         }
 
         return array(
@@ -96,31 +97,6 @@ class PortadaController extends Controller
         return array(
             'entity' => $entity,
             'form'   => $form->createView(),
-        );
-    }
-
-    /**
-     * Finds and displays a Portada entity.
-     *
-     * @Route("/{id}", name="portada_show")
-     * @Method("GET")
-     * @Template()
-     */
-    public function showAction($id)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('PortadaBundle:Portada')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Portada entity.');
-        }
-
-        $deleteForm = $this->createDeleteForm($id);
-
-        return array(
-            'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),
         );
     }
 
@@ -191,9 +167,10 @@ class PortadaController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
+            $entity->subirFoto($this->container->getParameter('portada.directorio.imagenes'));
             $em->flush();
 
-            return $this->redirect($this->generateUrl('portada_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('portada'));
         }
 
         return array(
