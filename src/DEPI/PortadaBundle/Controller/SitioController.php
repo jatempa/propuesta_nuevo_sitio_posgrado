@@ -12,7 +12,7 @@ class SitioController extends Controller
 
         $entities = $em->getRepository('NoticiasBundle:Noticias')->findNoticias();
 
-        return $this->render('PortadaBundle:Portada:index.html.twig',  array('entities' => $entities));
+        return $this->render('PortadaBundle:Portada:sitio.html.twig',  array('entities' => $entities));
     }
 
 	public function directorioAction()
