@@ -1,0 +1,29 @@
+{% extends '::frontend.html.twig' %}
+
+{% block contenido %}
+<article class="large-3 columns">
+	<div class="row">
+		<header id="title"  class="large-12 columns">
+			Noticias
+		</header>
+		<canvas id="myCanvas"  class="large-12 columns"></canvas>
+	</div>
+	{% for entity in entities %}
+	<section class="row">
+		<div id="now" class="small-2 large-3 columns">
+			{{ entity.fechaPublicacion|date('d M') }}
+		</div>
+		<p id="news" class="small-10 large-9 columns">
+			{{ entity.contenido }}
+		</p>
+	</section>
+	{% endfor %}
+</article>    
+<div id="depi" class=" large-8 columns">
+<br><br><br>
+    <p>
+		<u><b>La Maestría en Ingeniería Electrónica</b></u>, cuenta con dos líneas de trabajo, <b>Computación Ubicua</b> y <b>Procesamiento digital de señales</b>, estas tiene un gran espectro reticular, permitiendo al alumno y a su asesor mucha flexibilidad en cuanto a la elección de materias, de acuerdo a su perfil de licenciatura y de sus intereses profesionales
+	</p>
+
+</div>	
+{% endblock %}
