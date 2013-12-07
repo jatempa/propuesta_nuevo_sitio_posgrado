@@ -16,7 +16,7 @@ class PortadaType extends AbstractType
     {
         $builder
             ->add('imagenBanner')
-            ->add('fechaPublicacion', 'date', array('widget' => 'single_text'))
+            ->add('fechaPublicacion')
         ;
     }
     
