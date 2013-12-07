@@ -16,6 +16,7 @@
                                  
                     <p>
                         {{ form_label(edit_form.foto, 'Imagen del banner') }}
+                        {{ entity.imagenBanner }}
                         {{ form_widget(edit_form.foto, { 'attr': {'class': 'width-100'} }) }}
                         {{ form_errors(edit_form.foto) }}
                     </p>
