@@ -21,8 +21,9 @@
         <table class="width-100 table-striped">
             <thead>
                 <tr>
-                    <th>Imagen</th>
+                    <th>Nombre y formato de imagen</th>
                     <th>Fecha de publicación</th>
+                    <th>Imagen</th>
                 </tr>
             </thead>
             <tbody>
@@ -38,6 +39,11 @@
                             {% if entity.fechaPublicacion %}
                                 {{ entity.fechaPublicacion|date('Y-m-d') }}
                             {% endif %}
+                        </a>
+                    </td>
+                    <td class="width-20 enlace">
+                        <a href="{{ path('portada_edit', { 'id': entity.id }) }}" >
+                            <img id="forBanner" src="{{ asset('uploads/images/portada/') ~ entity.imagenBanner }}" />
                         </a>
                     </td>
                 </tr>
