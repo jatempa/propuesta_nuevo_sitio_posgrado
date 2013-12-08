@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
  * Portada
  *
  * @ORM\Table(name="portada")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="DEPI\PortadaBundle\Entity\PortadaRepository")
  */
 class Portada
 {
@@ -22,6 +22,13 @@ class Portada
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="titulo", type="string", length=30)
+     */
+    private $titulo;
 
     /**
      * @var string
@@ -52,6 +59,29 @@ class Portada
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set titulo
+     *
+     * @param string $titulo
+     * @return Noticias
+     */
+    public function setTitulo($titulo)
+    {
+        $this->titulo = $titulo;
+    
+        return $this;
+    }
+
+    /**
+     * Get titulo
+     *
+     * @return string 
+     */
+    public function getTitulo()
+    {
+        return $this->titulo;
     }
 
     /**
