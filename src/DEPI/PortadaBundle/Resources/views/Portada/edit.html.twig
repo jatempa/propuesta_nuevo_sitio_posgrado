@@ -13,6 +13,11 @@
             <fieldset>
                 <legend>Portada</legend>
                 {{ form_start(edit_form, { 'attr': {'enctype': 'multipart/form-data', 'class': 'forms forms-columnar'} }) }}
+
+                    <p>
+                        {{ form_label(edit_form.titulo, 'Titulo') }}
+                        {{ form_widget(edit_form.titulo, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
                                  
                     <p>
                         {{ form_label(edit_form.foto, 'Imagen del banner') }}

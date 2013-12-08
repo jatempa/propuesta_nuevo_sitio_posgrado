@@ -21,7 +21,7 @@
         <table class="width-100 table-striped">
             <thead>
                 <tr>
-                    <th>Nombre y formato de imagen</th>
+                    <th>Titulo</th>
                     <th>Fecha de publicación</th>
                     <th>Imagen</th>
                 </tr>
@@ -31,7 +31,7 @@
                 <tr>
                     <td class="width-20 enlace">
                         <a href="{{ path('portada_edit', { 'id': entity.id }) }}" >
-                            {{ entity.imagenBanner }}
+                            {{ entity.titulo }}
                         </a>
                     </td>
                     <td class="width-20 enlace">

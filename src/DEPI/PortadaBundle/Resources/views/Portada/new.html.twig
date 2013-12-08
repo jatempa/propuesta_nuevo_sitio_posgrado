@@ -14,6 +14,11 @@
                 <legend>Portada</legend>
                 {{ form_start(form, { 'attr': {'class': 'forms forms-columnar'} }) }}                      
                     <p>
+                        {{ form_label(form.titulo, 'Titulo') }}
+                        {{ form_widget(form.titulo, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+
+                    <p>
                         {{ form_label(form.foto, 'Imagen del banner') }}
                         {{ form_widget(form.foto, { 'attr': {'class': 'width-100'} }) }}
                         {{ form_errors(form.foto) }}
