@@ -12,10 +12,10 @@ class PortadaRepository extends EntityRepository
 
 		$dql = $em->createQueryBuilder();
  
-		$dql->select('n.contenido, n.fechaPublicacion')
-		    ->from('PortadaBundle:Portada', 'n')
-		    ->orderBy('n.fechaPublicacion', 'DESC')
-		    ->setMaxResults(4);
+		$dql->select('b.imagenBanner, b.fechaPublicacion')
+		    ->from('PortadaBundle:Portada', 'b')
+		    ->orderBy('b.fechaPublicacion', 'DESC')
+		    ->setMaxResults(5);
 
 		return $dql->getQuery()->getResult();
 	}
