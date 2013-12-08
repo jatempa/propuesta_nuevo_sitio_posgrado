@@ -15,6 +15,7 @@ class PortadaType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('titulo', 'text', array('required' => false))
             ->add('foto', 'file', array('required' => false))
             ->add('fechaPublicacion', 'date', array('widget' => 'single_text'))
         ;
