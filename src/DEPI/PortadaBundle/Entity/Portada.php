@@ -26,7 +26,7 @@ class Portada
     /**
      * @var string
      *
-     * @ORM\Column(name="titulo", type="string", length=30)
+     * @ORM\Column(name="titulo", type="string", length=30, nullable=true)
      */
     private $titulo;
 
