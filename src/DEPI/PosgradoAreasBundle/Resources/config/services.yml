@@ -1,0 +1,7 @@
+parameters:
+#    posgrado_areas.example.class: DEPI\PosgradoAreasBundle\Example
+
+services:
+#    posgrado_areas.example:
+#        class: %posgrado_areas.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

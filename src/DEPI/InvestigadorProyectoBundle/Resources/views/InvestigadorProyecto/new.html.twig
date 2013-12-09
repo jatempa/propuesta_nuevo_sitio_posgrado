@@ -7,7 +7,7 @@
     <li><span>Registro de investigador en un proyecto</span></li>
 {% endblock %}
 
-{% block body %}
+{% block contenido %}
 <div class="unit-100">
     <div class="units-row">
         <div class="unit-centered unit-50">
@@ -16,8 +16,8 @@
                 {{ form_start(form, { 'attr': {'class': 'forms forms-columnar'} }) }}
                     
                     <p>
-                        {{ form_label(form.proyectos, 'Proyecto') }}
-                        {{ form_widget(form.proyectos, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_label(form.proyecto, 'Proyecto') }}
+                        {{ form_widget(form.proyecto, { 'attr': {'class': 'width-100'} }) }}
                     </p>
                     
                     <p>

@@ -1,0 +1,7 @@
+parameters:
+#    posgrado_alumnos.example.class: DEPI\PosgradoAlumnosBundle\Example
+
+services:
+#    posgrado_alumnos.example:
+#        class: %posgrado_alumnos.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -6,7 +6,7 @@
     <li><span>Agregar un nuevo proyectos</span></li>
 {% endblock %}
 
-{% block body %}
+{% block contenido %}
 <div class="unit-100">
     <div class="units-row">
         <div class="unit-centered unit-50">
@@ -54,11 +54,6 @@
 	                	{{ form_label(form.fechaTermino, 'Fecha de término') }}
                         {{ form_widget(form.fechaTermino, { 'attr': {'class': 'width-100'} }) }}
 	                </p>
- 
-                    <p>
-                    	{{ form_label(form.status, 'Vígente') }}
-                        {{ form_widget(form.status) }}
-                    </p>
                     
                     <p>
                         {{ form_widget(form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}

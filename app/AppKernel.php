@@ -30,8 +30,13 @@ class AppKernel extends Kernel
             new DEPI\ProyectosProductosBundle\ProyectosProductosBundle(),
             new DEPI\InvestigadorProyectoBundle\InvestigadorProyectoBundle(),
             new DEPI\BackEndBundle\BackEndBundle(),
-            new DEPI\EntidadApoyoBundle\EntidadApoyoBundle(),
-            new DEPI\UsuarioBundle\UsuarioBundle(),
+            new DEPI\NoticiasBundle\NoticiasBundle(),
+            new DEPI\PosgradosBundle\PosgradosBundle(),
+            new DEPI\PosgradoAlumnosBundle\PosgradoAlumnosBundle(),
+            new DEPI\PosgradoAreasBundle\PosgradoAreasBundle(),
+            new DEPI\PosgradoLineasBundle\PosgradoLineasBundle(),
+            new DEPI\PosgradoInvestigadoresBundle\PosgradoInvestigadoresBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

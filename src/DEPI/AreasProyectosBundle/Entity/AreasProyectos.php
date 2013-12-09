@@ -33,7 +33,6 @@ class AreasProyectos
      */
     private $area;
 
-
     /**
      * Get id
      *
@@ -85,4 +84,5 @@ class AreasProyectos
     {
         return $this->area;
     }
+    
 }

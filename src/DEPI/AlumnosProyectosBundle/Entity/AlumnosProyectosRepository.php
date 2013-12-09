@@ -12,28 +12,13 @@ class AlumnosProyectosRepository extends EntityRepository
 
 		$dql = $em->createQueryBuilder();
  
-		$dql->select('ap', 'alumno', 'proyecto')
+		$dql->select('ap.id', 
+			         'alumno.noControl, alumno.nombre, alumno.apellidoPaterno, alumno.apellidoMaterno', 
+			         'proyecto.nombreCorto')
 		    ->from('AlumnosProyectosBundle:AlumnosProyectos', 'ap')
-		    ->Join('ap.idAlumno', 'alumno')
-		    ->Join('ap.idProyecto', 'proyecto');
+		    ->Join('ap.alumno', 'alumno')
+		    ->Join('ap.proyecto', 'proyecto');
 
 		return $dql->getQuery()->getResult();
-	}
-
-	public function findDatosAlumnoProyecto($id)
-	{
-		$em = $this->getEntityManager();
-
-		$dql = $em->createQueryBuilder();
- 
-		$dql->select('ap', 'alumno', 'proyecto')
-		    ->from('AlumnosProyectosBundle:AlumnosProyectos', 'ap')
-		    ->Join('ap.idAlumno', 'alumno')
-		    ->Join('ap.idProyecto', 'proyecto')
-		    ->where('ap.id = :id_alumnoproyecto' );
-		$consulta = $dql->getQuery();
-		$consulta -> setParameter('id_alumnoproyecto', $id);
-
-		return  $consulta->getSingleResult();
 	}
 }

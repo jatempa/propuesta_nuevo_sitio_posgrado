@@ -1,0 +1,27 @@
+posgradoareas:
+    pattern:  /posgradmin/posgradoareas
+    defaults: { _controller: PosgradoAreasBundle:PosgradoAreas:index }
+
+_posgradoareas:
+    pattern: /posgradmin/posgradoareas/
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: posgradoareas}
+
+posgradoareas_new:
+    pattern:  /posgradmin/posgradoareas/new
+    defaults: { _controller: PosgradoAreasBundle:PosgradoAreas:new }
+
+posgradoareas_edit:
+    pattern:  /posgradmin/posgradoareas/edit/{id}
+    defaults: { _controller: PosgradoAreasBundle:PosgradoAreas:edit }
+
+posgradoareas_create:
+    pattern:  /posgradmin/posgradoareas/create
+    defaults: { _controller: PosgradoAreasBundle:PosgradoAreas:create }
+
+posgradoareas_update:
+    pattern:  /posgradmin/posgradoareas/update/{id}
+    defaults: { _controller: PosgradoAreasBundle:PosgradoAreas:update }
+
+posgradoareas_delete:
+    pattern:  /posgradmin/posgradoareas/delete/{id}
+    defaults: { _controller: PosgradoAreasBundle:PosgradoAreas:delete }

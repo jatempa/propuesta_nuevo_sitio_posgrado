@@ -1,82 +1,124 @@
 {% extends '::base.html.twig' %}
 
 {% block stylesheets %}
+  <link rel="stylesheet" href="{{ asset('bundles/portada/css/foundation.css') }}">
+  <link rel="stylesheet" href="{{ asset('bundles/portada/css/master.css') }}">
+  <link rel="stylesheet" href="{{ asset('bundles/portada/css/webicons.css') }}">
+  <link href='http://fonts.googleapis.com/css?family=Droid+Sans|Convergence|Amaranth' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
 {% endblock %}
 
 {% block javascripts %}
+  <!-- JavaScripts -->
+  <script src="{{ asset('bundles/portada/js/vendor/custom.modernizr.js') }}"></script>
+  <script src="{{ asset('bundles/portada/js/vendor/zepto.js') }}"></script>
+  <script src="{{ asset('bundles/portada/js/vendor/jquery.js') }}"></script>
+  <script src="{{ asset('bundles/portada/js/foundation.min.js') }}"></script>
+  <script src="{{ asset('bundles/portada/js/foundation/foundation.topbar.js') }}"></script>
+  <script src="{{ asset('bundles/portada/js/foundation/foundation.orbit.js') }}"></script>
+  <script src="{{ asset('bundles/portada/js/master.js') }}"></script>
+  <script>
+    $(document).foundation();
+  </script>
 {% endblock %}
 
 {% block header %}
+    <!-- Header -->
+    <div class="row">    
       <div class="large-7 columns">
-        <img src="{{ asset('bundles/portada/img/header.png') }}"/>
+          <img src="{{ asset('bundles/portada/img/header.png') }}"/>
       </div>
       <div class="large-5 columns">
-        <div class="titulo">División de estudios de Posgrado e Investigación</div>
-      </div>
-{% endblock %}
-  
-{% block banner %}
-  <ul data-orbit>
-      <li><img src="{{ asset('bundles/portada/img/a.jpg') }}"/></li>
-      <li><img src="{{ asset('bundles/portada/img/b.jpg') }}"/></li>
-      <li><img src="{{ asset('bundles/portada/img/c.jpg') }}"/></li>
-      <li><img src="{{ asset('bundles/portada/img/d.jpg') }}"/></li>
-      <li><img src="{{ asset('bundles/portada/img/e.jpg') }}"/></li>
-  </ul>
-{% endblock %}
-
-{% block menu %}
-  <!-- Nav Wrap -->
-  <nav class="top-bar">
-      <ul class="title-area">
-      <!-- Title Area -->
-          <li class="name"></li>
-          <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-      </ul>
-      <!-- The Section wrap -->
-      <section class="top-bar-section">
-          <!-- Left Nav Section -->
-          <ul class="right">
-              <li><a href="{{ path('portada') }}">Inicio</a></li>
-              <li class="has-dropdown">
-                <a href="#">Investigación</a>
-                  <ul class="dropdown">
-                    <li><a  id="link_contenido" href="{{ path('alumnos_public') }}">Alumnos</a></li>
-                    <li><a href="#">Áreas de investigación</a></li>
-                    <li><a href="{{ path('investigadores_public') }}">Investigadores</a></li>
-                    <li><a href="#">Lineas de investigación</a></li>
-                    <li><a  id="link_contenido" href="{{ path('proyectos_public') }}">Proyectos</a></li>
-                  </ul>
-              </li>
-              <li><a href="#">Programas</a></li>
-              <li><a href="#">Convocatorias</a></li>
-              <li><a href="#">Directorio</a></li>
-          </ul>
-      </section>
-  </nav>
+          <div class="titulo">División de estudios de Posgrado e Investigación</div>
+      </div> 
+    </div> 
+    <!-- Banner -->
+    <div class="row">
+      <div class="large-12 columns">    
+        <ul id="banner" data-orbit>
+          {% block imagenesBanner %}
+          {% endblock %}
+        </ul>
+      </div> 
+    </div>
+    <!-- Menu -->
+    <div class="row">
+      <div class="large-12 columns"> 
+        <!-- Nav Wrap -->
+        <nav class="top-bar">
+            <ul class="title-area">
+            <!-- Title Area -->
+              <li class="name"></li>
+              <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+            </ul>
+            <!-- The Section wrap -->
+            <section class="top-bar-section">
+              <!-- Left Nav Section -->
+              <ul class="right">
+                  <li><a href="{{ path('sitio') }}">Inicio</a></li>
+                    <li class="has-dropdown">
+                      <a href="#">Investigación</a>
+                        <ul class="dropdown">
+                          <li><a  id="link_contenido" href="{{ path('alumnos_public') }}">Alumnos</a></li>
+                          <li><a href="#">Áreas de investigación</a></li>
+                          <li><a href="{{ path('investigadores_public') }}">Investigadores</a></li>
+                          <li><a href="#">Lineas de investigación</a></li>
+                          <li><a  id="link_contenido" href="{{ path('proyectos_public') }}">Proyectos</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Programas</a></li>
+                    <li><a href="#">Convocatorias</a></li>
+                    <li><a href="{{ path('directorio') }}">Directorio</a></li>
+              </ul>
+            </section>
+        </nav>
+      </div> 
+    </div>    
 {% endblock %}
 
 {% block body %}
-
+    <!-- Contenido --> 
+    <div class="row">
+      <div id="contenido" class="large-12 columns">
+        {% block contenido %}{% endblock %}
+      </div> 
+    </div>   
 {% endblock %}
 
-{% block enlaces %}
-<div class="large-4 columns">
-      <a href="http://www.snit.mx/">
-        <center><img src="{{ asset('bundles/portada/img/dgest.png') }}" /></center>
-      </a>
-</div>
-        
-<div class="large-4 columns">
-      <a href="http://www.conacyt.gob.mx/Paginas/InicioNueva.aspx">
-        <center><img src="{{ asset('bundles/portada/img/conacyt.png') }}" /></center>
-      </a>
-</div>
-            
-<div class="large-4 columns">
-    <a href="http://ieeexplore.ieee.org/Xplore/home.jsp">
-      <center><img src="{{ asset('bundles/portada/img/ieee.png') }}" /></center>
-    </a>
-</div>
+{% block footer %}
+    <!-- Enlaces -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="large-4 columns">
+              <a href="http://www.snit.mx/">
+                <center><img src="{{ asset('bundles/portada/img/dgest.png') }}" /></center>
+              </a>
+        </div>
+                
+        <div class="large-4 columns">
+              <a href="http://www.conacyt.gob.mx/Paginas/InicioNueva.aspx">
+                <center><img src="{{ asset('bundles/portada/img/conacyt.png') }}" /></center>
+              </a>
+        </div>
+                    
+        <div class="large-4 columns">
+            <a href="http://ieeexplore.ieee.org/Xplore/home.jsp">
+              <center><img src="{{ asset('bundles/portada/img/ieee.png') }}" /></center>
+            </a>
+        </div>
+      </div>
+    </div>
+    <footer class="row">
+      <div class="large-12 columns">
+        <div id="pie" class="large-10 columns">
+          <img src="{{ asset('bundles/portada/img/footer.svg') }}"/>
+        </div> 
+        <div id="redes" class="large-2 columns">
+          <label>Síguenos en:</label>
+          <a class="webicon facebook" href="#">Facebook</a>
+          <a class="webicon googleplus" href="#">Google+</a>
+          <a class="webicon twitter" href="#">Twitter</a>
+        </div> 
+      </div>
+    </footer>
 {% endblock %}

@@ -6,7 +6,7 @@
     <li><span>Áreas de investigación</span></li>
 {% endblock %}
 
-{% block body %}
+{% block contenido %}
 <aside class="unit-25 unit-padding">
     <h6>Opciones</h6>
     <nav class="nav-v">
@@ -15,18 +15,16 @@
             <li><a href="{{ path('investigadorproyecto') }}">Registro de investigadores</a></li>
             <li><a href="{{ path('proyectosproductos') }}">Registro de productos académicos</a></li>
             <li><span>Registrar área de investigación</span></li>
-            <li><a href="{{ path('entidadapoyo') }}">Registrar una entidad de apoyo</a></li>
         </ul>
     </nav>
 </aside>
-
 <div class="unit-75">
     <div class="table-container">
         <table class="width-100 table-striped">
             <thead>
                 <tr>
-                    <th class="width-50">Áreas de investigación</th>
-                    <th class="width-50">Proyectos</th>
+                    <th class="width-40">Áreas de investigación</th>
+                    <th class="width-30">Proyectos</th>
                 </tr>
             </thead>
             <tbody>
@@ -34,12 +32,12 @@
                 <tr>
                     <td class="enlace">
                         <a href="{{ path('areasproyectos_edit', { 'id': entity.id }) }}">
-                            {{ entity.area.nombre }}
+                            {{ entity.nombre }}
                         </a>
                     </td>
                     <td class="enlace">
                         <a href="{{ path('areasproyectos_edit', { 'id': entity.id }) }}">
-                            {{ entity.proyecto.nombreCorto }}
+                            {{ entity.nombreCorto }}
                         </a>
                     </td>
                 </tr>

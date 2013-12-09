@@ -1,8 +1,5 @@
 /* =Typography
 -----------------------------------------------------------------------------*/
-body {
-
-}
 
 textarea {
 	resize: none;
@@ -10,6 +7,15 @@ textarea {
 
 legend {
 	text-transform: uppercase;
+}
+
+#foto {
+	height: 150px;
+}
+
+#forBanner {
+	width:  250px;
+	height: 75px;
 }
 
 /* =Links
@@ -28,7 +34,7 @@ legend {
 
 /* =Layout
 -----------------------------------------------------------------------------*/
-.wrapper {
+body {
 	margin: auto;
 	max-width: 980px;
 	padding: 36px 10px;
@@ -74,13 +80,13 @@ th {
 /* =Tablet (Portrait)
 -----------------------------------------------------------------------------*/
 @media only screen and (min-width: 768px) and (max-width: 959px) {
-    .wrapper { width: 748px; }
+    body { width: 748px; }
 }
 
 /* =Mobile (Portrait)
 -----------------------------------------------------------------------------*/
 @media only screen and (max-width: 767px) {
-	.wrapper { width: 300px; }
+	body { width: 300px; }
 	#nav, #header h1 { float: none; }
 	#header h1 { margin-bottom: .5em; }
 	#nav ul li { margin: 0; float: none; margin-bottom: 1px; background-color: #f6f6f6; }
@@ -90,5 +96,5 @@ th {
 /* =Mobile (Landscape)
 -----------------------------------------------------------------------------*/
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-	.wrapper { width: 420px; }
+	body { width: 420px; }
 }

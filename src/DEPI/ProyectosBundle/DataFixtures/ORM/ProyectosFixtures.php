@@ -19,8 +19,7 @@ class ProyectosFixtures extends AbstractFixture implements OrderedFixtureInterfa
                   'objetivo_general' => 'Obtener el grado de maestria',
                   'objetivos_especificos' => 'Publicar algun articulo sobre el tema de computacion obicua',
                   'fecha_apertura' => '2013-10-29',
-                  'fecha_termino' => '2014-10-29',
-                  'status' => '1'),
+                  'fecha_termino' => '2014-10-29'),
             array('claveA' => 'Itm04490260mxl',
                   'claveB' => 'Conacyt0440260mxl',
                   'nombre_corto' => 'Proyecto senales digitales',
@@ -28,8 +27,7 @@ class ProyectosFixtures extends AbstractFixture implements OrderedFixtureInterfa
                   'objetivo_general' => 'Obtener el grado de maestria',
                   'objetivos_especificos' => 'Publicar algun articulo sobre el tema de senales digitales',
                   'fecha_apertura' => '2013-10-29',
-                  'fecha_termino' => '2014-10-29',
-                  'status' => '1'),
+                  'fecha_termino' => '2014-10-29'),
             array('claveA' => 'Itm04490261mxl',
                   'claveB' => 'Conacyt0440261mxl',
                   'nombre_corto' => 'Proyecto redes inalambricas',
@@ -37,8 +35,7 @@ class ProyectosFixtures extends AbstractFixture implements OrderedFixtureInterfa
                   'objetivo_general' => 'Obtener el grado de maestria',
                   'objetivos_especificos' => 'Publicar algun articulo sobre el tema de redes inalambricas',
                   'fecha_apertura' => '2013-10-29',
-                  'fecha_termino' => '2014-10-29',
-                  'status' => '0'),
+                  'fecha_termino' => '2014-10-29'),
             array('claveA' => 'Itm04490262mxl',
                   'claveB' => 'Conacyt0440262mxl',
                   'nombre_corto' => 'Proyecto sistemas distribuidos',
@@ -46,8 +43,7 @@ class ProyectosFixtures extends AbstractFixture implements OrderedFixtureInterfa
                   'objetivo_general' => 'Obtener el grado de maestria',
                   'objetivos_especificos' => 'Publicar algun articulo sobre el tema de sistemas distribuidos',
                   'fecha_apertura' => '2013-10-29',
-                  'fecha_termino' => '2014-10-29',
-                  'status' => '1')
+                  'fecha_termino' => '2014-10-29')
         );
 
         foreach ($proyectos as $proyecto) {
@@ -60,7 +56,6 @@ class ProyectosFixtures extends AbstractFixture implements OrderedFixtureInterfa
             $entidad->setObjetivosEspecificos($proyecto['objetivos_especificos']);
             $entidad->setFechaApertura(new \DateTime($proyecto['fecha_apertura']));
             $entidad->setFechaTermino(new \DateTime($proyecto['fecha_termino']));
-            $entidad->setStatus($proyecto['status']);
             $manager->persist($entidad);
         }
         

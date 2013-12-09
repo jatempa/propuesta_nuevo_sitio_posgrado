@@ -6,7 +6,7 @@
     <li><span>Alumnos y Proyectos</span></li>
 {% endblock %}
 
-{% block body %}
+{% block contenido %}
 <aside class="unit-25 unit-padding">
     <h6>Opciones</h6>
     <nav class="nav-v">
@@ -15,7 +15,6 @@
             <li><a href="{{ path('investigadorproyecto') }}">Registro de investigadores</a></li>
             <li><a href="{{ path('proyectosproductos') }}">Registro de productos académicos</a></li>
             <li><a href="{{ path('areasproyectos') }}">Registrar área de investigación</a></li>
-            <li><a href="{{ path('entidadapoyo') }}">Registrar una entidad de apoyo</a></li>
         </ul>
     </nav>
 </aside>
@@ -25,9 +24,9 @@
         <table class="width-100 table-striped">
             <thead>
                 <tr>
-                    <th class="width-20">No Control</th>
-                    <th class="width-40">Alumno</th>
-                    <th class="width-40">Proyecto</th>
+                    <th class="width-10">No Control</th>
+                    <th class="width-30">Alumno</th>
+                    <th class="width-30">Proyecto</th>
                 </tr>
             </thead>
             <tbody>
@@ -36,17 +35,17 @@
                 <tr>
                      <td class="enlace">
                         <a href="{{ path('alumnosproyectos_edit', { 'id': entity.id }) }}">
-                            {{ entity.idAlumno.noControl }}
+                            {{ entity.noControl }}
                         </a>
                     </td>
                     <td class="enlace">
                         <a href="{{ path('alumnosproyectos_edit', { 'id': entity.id }) }}">
-                            {{ entity.idAlumno.nombre ~ " " ~ entity.idAlumno.apellidoPaterno  ~ " " ~ entity.idAlumno.apellidoMaterno }}
+                            {{ entity.nombre ~ " " ~ entity.apellidoPaterno  ~ " " ~ entity.apellidoMaterno }}
                         </a>
                     </td>
                     <td class="enlace">
                         <a href="{{ path('alumnosproyectos_edit', { 'id': entity.id }) }}">
-                            {{ entity.idProyecto.nombreCorto }}
+                            {{ entity.nombreCorto }}
                         </a>
                     </td>
                 </tr>

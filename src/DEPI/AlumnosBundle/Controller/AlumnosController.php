@@ -47,6 +47,7 @@ class AlumnosController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
+            $entity->subirFoto($this->container->getParameter('alumnos.directorio.imagenes'));
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
@@ -164,6 +165,7 @@ class AlumnosController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
+            $entity->subirFoto($this->container->getParameter('alumnos.directorio.imagenes'));
             $em->flush();
 
             return $this->redirect($this->generateUrl('alumnos'));

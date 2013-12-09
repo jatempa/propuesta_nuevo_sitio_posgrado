@@ -1,0 +1,48 @@
+{% extends '::backend.html.twig' %}
+
+{% block mapa %}
+    <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
+    <li><a href="{{ path('portada') }}">Portada</a></li>
+    <li><span>Actualizar una nueva imagen para el banner</span></li>
+{% endblock %}
+
+{% block contenido %}
+<div class="unit-100">
+    <div class="units-row">
+        <div class="unit-centered unit-50">
+            <fieldset>
+                <legend>Portada</legend>
+                {{ form_start(edit_form, { 'attr': {'enctype': 'multipart/form-data', 'class': 'forms forms-columnar'} }) }}
+
+                    <p>
+                        {{ form_label(edit_form.titulo, 'Titulo') }}
+                        {{ form_widget(edit_form.titulo, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                                 
+                    <p>
+                        {{ form_label(edit_form.foto, 'Imagen del banner') }}
+                        {{ entity.imagenBanner }}
+                        {{ form_widget(edit_form.foto, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_errors(edit_form.foto) }}
+                    </p>
+
+                    <p>
+                        {{ form_label(edit_form.fechaPublicacion, 'Fecha de publicación') }}
+                        {{ form_widget(edit_form.fechaPublicacion, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                        
+                    <p>
+                         {{ form_widget(edit_form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
+                    {{ form_end(edit_form) }}
+                    </p>
+
+                    <p>
+                        {{ form_start(delete_form) }}
+                            {{ form_widget(delete_form.submit, { 'attr': {'class': 'btn btn-red'} }) }}
+                        {{ form_end(delete_form) }}
+                    </p>
+            </fieldset>
+        </div>
+    </div>
+</div>
+{% endblock %}

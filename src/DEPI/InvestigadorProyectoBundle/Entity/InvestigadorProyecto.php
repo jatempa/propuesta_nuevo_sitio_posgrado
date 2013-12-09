@@ -27,9 +27,9 @@ class InvestigadorProyecto
     private $investigadores;
 
     /** @ORM\ManyToOne(targetEntity="DEPI\ProyectosBundle\Entity\Proyectos") 
-     *  @ORM\JoinColumn(name="proyectos", referencedColumnName="id")
+     *  @ORM\JoinColumn(name="proyecto", referencedColumnName="id")
      */
-    private $proyectos;
+    private $proyecto;
 
     /**
      * Get id
@@ -68,9 +68,9 @@ class InvestigadorProyecto
      * @param \DEPI\ProyectosBundle\Entity\Proyectos
      * @return InvestigadorProyecto
      */
-    public function setProyectos(\DEPI\ProyectosBundle\Entity\Proyectos $proyectos)
+    public function setProyecto(\DEPI\ProyectosBundle\Entity\Proyectos $proyecto)
     {
-        $this->proyectos = $proyectos;
+        $this->proyecto = $proyecto;
     }
 
     /**
@@ -78,8 +78,8 @@ class InvestigadorProyecto
      *
      * @return \DEPI\ProyectosBundle\Entity\Proyectos
      */
-    public function getProyectos()
+    public function getProyecto()
     {
-        return $this->proyectos;
+        return $this->proyecto;
     }
 }

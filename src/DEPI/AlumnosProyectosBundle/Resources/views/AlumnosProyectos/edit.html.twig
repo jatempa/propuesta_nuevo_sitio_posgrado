@@ -7,7 +7,7 @@
     <li><span>Actualización de datos de alumno en un proyecto</span></li>
 {% endblock %}
 
-{% block body %}
+{% block contenido %}
 <div class="unit-100">
     <div class="units-row">
         <div class="unit-centered unit-50">
@@ -16,15 +16,15 @@
                 {{ form_start(edit_form, { 'attr': {'class': 'forms forms-columnar'} }) }}
                     
                     <p>
-                        {{ form_label(edit_form.idProyecto, 'Proyecto') }}
-                        {{ form_widget(edit_form.idProyecto, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_label(edit_form.proyecto, 'Proyecto') }}
+                        {{ form_widget(edit_form.proyecto, { 'attr': {'class': 'width-100'} }) }}
                     </p>
                     
                     <p>
-                        {{ form_label(edit_form.idAlumno, 'No. de Control') }}
-                        {{ form_widget(edit_form.idAlumno, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_label(edit_form.alumno, 'No. de Control') }}
+                        {{ form_widget(edit_form.alumno, { 'attr': {'class': 'width-100'} }) }}
                     </p>
-                        
+                    
                     <p>
                          {{ form_widget(edit_form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
                     {{ form_end(edit_form) }}

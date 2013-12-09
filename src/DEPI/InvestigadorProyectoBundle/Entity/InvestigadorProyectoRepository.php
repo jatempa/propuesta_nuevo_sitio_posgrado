@@ -12,10 +12,12 @@ class InvestigadorProyectoRepository extends EntityRepository
 
 		$dql = $em->createQueryBuilder();
  
-		$dql->select('invpro', 'investigador', 'proyecto')
+		$dql->select('invpro.id', 
+			         'investigador.nombre, investigador.apellidoPaterno, investigador.apellidoMaterno', 
+			         'proyecto.nombreCompleto')
 		    ->from('InvestigadorProyectoBundle:InvestigadorProyecto', 'invpro')
 		    ->Join('invpro.investigadores', 'investigador')
-		    ->Join('invpro.proyectos', 'proyecto');
+		    ->Join('invpro.proyecto', 'proyecto');
 
 		return $dql->getQuery()->getResult();
 	}

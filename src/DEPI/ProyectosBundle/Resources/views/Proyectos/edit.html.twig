@@ -6,7 +6,7 @@
     <li><span>Actualizar datos del proyecto</span></li>
 {% endblock %}
 
-{% block body %}
+{% block contenido %}
 <div class="unit-100">
     <div class="units-row">
         <div class="unit-centered unit-50">
@@ -55,11 +55,6 @@
                         {{ form_widget(edit_form.fechaTermino, { 'attr': {'class': 'width-100'} }) }}
                     </p>
  
-                    <p>
-                        {{ form_label(edit_form.status, 'Vígente') }}
-                        {{ form_widget(edit_form.status) }}
-                    </p>
-
                     <p>
                         {{ form_widget(edit_form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
 

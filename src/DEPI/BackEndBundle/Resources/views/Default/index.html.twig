@@ -1,1 +1,16 @@
 {% extends '::backend.html.twig' %}
+
+
+{% block contenido %}
+<aside class="unit-25 unit-padding">
+    <h6>Opciones</h6>
+    <nav class="nav-v">
+        <ul>
+            <li><a href="{{ path('noticias') }}">Registro de noticias</a></li>
+            <li><a href="{{ path('portada') }}">Registro de contenido para la portada</a></li>
+        </ul>
+    </nav>
+</aside>
+{% endblock %}
+
+

@@ -6,13 +6,13 @@
     <li><span>Agregar un nuevo investigador</span></li>
 {% endblock %}
 
-{% block body %}
+{% block contenido %}
 <div class="unit-100">
     <div class="units-row">
         <div class="unit-centered unit-50">
             <fieldset>
                 <legend>Investigadores</legend>
-                {{ form_start(form, { 'attr': {'class': 'forms forms-columnar'} }) }}
+                {{ form_start(edit_form, { 'attr': {'enctype': 'multipart/form-data', 'class': 'forms forms-columnar'} }) }}
                     
                     <p>
                         {{ form_label(form.nombre, 'Nombre(s)') }}
@@ -47,6 +47,12 @@
                     <p>
                         {{ form_label(form.sni, 'SNI') }}
                         {{ form_widget(form.sni, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+
+                    <p>
+                        {{ form_label(form.foto, 'Foto') }}
+                        {{ form_widget(form.foto, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_errors(form.foto) }}
                     </p>
 
                     <p>

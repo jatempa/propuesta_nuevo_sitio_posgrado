@@ -24,20 +24,6 @@ class Proyectos
     /**
      * @var string
      *
-     * @ORM\Column(name="claveA", type="string", length=20)
-     */
-    private $claveA;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="claveB", type="string", length=20)
-     */
-    private $claveB;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="nombre_corto", type="string", length=30)
      */
     private $nombreCorto;
@@ -78,12 +64,18 @@ class Proyectos
     private $fechaTermino;
 
     /**
-     * @var boolean
+     * @var string
      *
-     * @ORM\Column(name="status", type="boolean")
+     * @ORM\Column(name="claveA", type="string", length=20)
      */
-    private $status;
+    private $claveA;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="claveB", type="string", length=20, nullable=true)
+     */
+    private $claveB = null;
 
     /**
      * Get id
@@ -93,52 +85,6 @@ class Proyectos
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set claveA
-     *
-     * @param string $claveA
-     * @return Proyectos
-     */
-    public function setClaveA($claveA)
-    {
-        $this->claveA = $claveA;
-    
-        return $this;
-    }
-
-    /**
-     * Get claveA
-     *
-     * @return string 
-     */
-    public function getClaveA()
-    {
-        return $this->claveA;
-    }
-
-    /**
-     * Set claveB
-     *
-     * @param string $claveB
-     * @return Proyectos
-     */
-    public function setClaveB($claveB)
-    {
-        $this->claveB = $claveB;
-    
-        return $this;
-    }
-
-    /**
-     * Get claveB
-     *
-     * @return string 
-     */
-    public function getClaveB()
-    {
-        return $this->claveB;
     }
 
     /**
@@ -280,26 +226,49 @@ class Proyectos
     }
 
     /**
-     * Set status
+     * Set claveA
      *
-     * @param boolean $status
+     * @param string $claveA
      * @return Proyectos
      */
-    public function setStatus($status)
+    public function setClaveA($claveA)
     {
-        $this->status = $status;
+        $this->claveA = $claveA;
     
         return $this;
     }
 
     /**
-     * Get status
+     * Get claveA
      *
-     * @return boolean 
+     * @return string 
      */
-    public function getStatus()
+    public function getClaveA()
     {
-        return $this->status;
+        return $this->claveA;
+    }
+
+    /**
+     * Set claveB
+     *
+     * @param string $claveB
+     * @return Proyectos
+     */
+    public function setClaveB($claveB)
+    {
+        $this->claveB = $claveB;
+    
+        return $this;
+    }
+
+    /**
+     * Get claveB
+     *
+     * @return string 
+     */
+    public function getClaveB()
+    {
+        return $this->claveB;
     }
 
     public function __toString()

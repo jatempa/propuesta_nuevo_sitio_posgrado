@@ -61,7 +61,7 @@ class AlumnosFixtures extends AbstractFixture implements OrderedFixtureInterface
                   'email' => 'smamani@itmexicali.edu.mx',
                   'telefono' => '6861156540'),
 
-            array('no_control' => '09490412', 
+            array('no_control' => '09490413', 
                   'nombre' => 'Monica',
                   'apellido_paterno' => 'Zapata',
                   'apellido_materno' => 'Chang',

@@ -1,0 +1,51 @@
+{% extends '::backend.html.twig' %}
+
+{% block mapa %}
+    <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
+    <li><a href="{{ path('posgrados') }}">Posgrados</a></li>
+    <li><span>Posgrado y Alumnos</span></li>
+{% endblock %}
+
+{% block contenido %}
+<aside class="unit-25 unit-padding">
+    <h6>Opciones</h6>
+    <nav class="nav-v">
+        <ul>
+            <li><span>Registro de alumnos</span></li>
+            <li><a href="{{ path('posgradoareas') }}">Registrar área de investigación</a></li>
+            <li><a href="{{ path('posgradoinvestigadores') }}">Registro de investigadores</a></li>
+            <li><a href="{{ path('posgradolineas') }}">Registro de lineas de investigación</a></li>
+        </ul>
+    </nav>
+</aside>
+
+<div class="unit-75">
+    <div class="table-container">
+        <table class="width-100 table-striped">
+            <thead>
+                <tr>
+                    <th>Posgrados</th>
+                    <th>Alumnos</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td class="width-50 enlace" >
+                        <a href="{{ path('posgradoalumnos_edit', { 'id': entity.id }) }}">
+                            {{ entity.nom_posgrado }}
+                        </a>
+                    </td>
+                    <td class="width-50 enlace" >
+                        <a href="{{ path('posgradoalumnos_edit', { 'id': entity.id }) }}">
+                            {{ entity.nombre ~ " " ~ entity.apellidoPaterno ~ " " ~ entity.apellidoMaterno }}
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<a href="{{ path('posgradoalumnos_new') }}" class="btn btn-blue">Nuevo</a>
+{% endblock %}

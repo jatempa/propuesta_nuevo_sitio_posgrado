@@ -6,7 +6,7 @@
     <li><span>Investigadores y Proyectos</span></li>
 {% endblock %}
 
-{% block body %}
+{% block contenido %}
 <aside class="unit-25 unit-padding">
     <h6>Opciones</h6>
     <nav class="nav-v">
@@ -15,7 +15,6 @@
             <li><span>Registro de investigadores</span></li>
             <li><a href="{{ path('proyectosproductos') }}">Registro de productos académicos</a></li>
             <li><a href="{{ path('areasproyectos') }}">Registrar área de investigación</a></li>
-            <li><a href="{{ path('entidadapoyo') }}">Registrar una entidad de apoyo</a></li>
         </ul>
     </nav>
 </aside>
@@ -32,14 +31,14 @@
             <tbody>
             {% for entity in entities %}
                 <tr>
-                    <td class="enlace width-50">
+                    <td class="enlace width-40">
                         <a href="{{ path('investigadorproyecto_edit', { 'id': entity.id }) }}" >
-                            {{ entity.investigadores.nombre  ~ " " ~  entity.investigadores.apellidoPaterno ~ " " ~  entity.investigadores.apellidoMaterno }}
+                            {{ entity.nombre  ~ " " ~  entity.apellidoPaterno ~ " " ~  entity.apellidoMaterno }}
                         </a>
                     </td>
-                    <td class="enlace width-50">
+                    <td class="enlace width-60">
                         <a href="{{ path('investigadorproyecto_edit', { 'id': entity.id }) }}" >
-                            {{ entity.proyectos.nombreCompleto }}
+                            {{ entity.nombreCompleto }}
                         </a>
                     </td>
                 </tr>

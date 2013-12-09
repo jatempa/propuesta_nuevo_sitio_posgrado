@@ -7,7 +7,7 @@
 {% endblock %}
 
 
-{% block body %}
+{% block contenido %}
 <aside class="unit-25 unit-padding">
     <h6>Opciones</h6>
     <nav class="nav-v">
@@ -32,12 +32,12 @@
                 <tr>
                     <td class="enlace">
                         <a href="{{ path('investigadoreslineas_edit', { 'id': entity.id }) }}">
-                            {{ entity.investigadores.nombre ~ " " ~  entity.investigadores.apellidoPaterno ~ " " ~  entity.investigadores.apellidoMaterno }}
+                            {{ entity.nombre ~ " " ~  entity.apellidoPaterno ~ " " ~  entity.apellidoMaterno }}
                         </a>
                     </td>
                     <td class="enlace">
                         <a href="{{ path('investigadoreslineas_edit', { 'id': entity.id }) }}">
-                            {{ entity.lineasinvestigacion.nombre }}
+                            {{ entity.nom_linea }}
                         </a>
                     </td>
                     <td class="enlace">

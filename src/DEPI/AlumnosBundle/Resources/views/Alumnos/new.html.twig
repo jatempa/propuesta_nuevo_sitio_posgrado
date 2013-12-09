@@ -6,20 +6,19 @@
     <li><span>Agregar un nuevo alumno</span></li>
 {% endblock %}
 
-{% block body %}
+{% block contenido %}
 <div class="unit-100">
     <div class="units-row">
         <div class="unit-centered unit-50">
             <fieldset>
                 <legend>Alumno</legend>
-                {{ form_start(form, { 'attr': {'class': 'forms forms-columnar'} }) }}
-                    
+                {{ form_start(form, { 'attr': {'enctype': 'multipart/form-data', 'class': 'forms forms-columnar'} }) }}
+                  
                     <p>
                         {{ form_label(form.noControl, 'No. de Control') }}
                         {{ form_widget(form.noControl, { 'attr': {'class': 'width-100'} }) }}
                     </p>
                         
-                    
                     <p>
                         {{ form_label(form.nombre, 'Nombre(s)') }}
                         {{ form_widget(form.nombre, { 'attr': {'class': 'width-100'} }) }}
@@ -43,6 +42,12 @@
                     <p>
                         {{ form_label(form.telefono, 'Teléfono') }}
                         {{ form_widget(form.telefono, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+
+                    <p>
+                        {{ form_label(form.foto, 'Foto') }}
+                        {{ form_widget(form.foto, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_errors(form.foto) }}
                     </p>
 
                     <p>

@@ -15,8 +15,8 @@ class AlumnosProyectosType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('idAlumno')
-            ->add('idProyecto')
+            ->add('alumno')
+            ->add('proyecto')
         ;
     }
     

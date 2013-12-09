@@ -1,9 +1,25 @@
-usuario:
-    resource: "@UsuarioBundle/Resources/config/routing.yml"
+posgrado_investigadores:
+    resource: "@PosgradoInvestigadoresBundle/Resources/config/routing.yml"
     prefix:   /
 
-entidad_apoyo:
-    resource: "@EntidadApoyoBundle/Resources/config/routing.yml"
+posgrado_lineas:
+    resource: "@PosgradoLineasBundle/Resources/config/routing.yml"
+    prefix:   /
+
+posgrado_areas:
+    resource: "@PosgradoAreasBundle/Resources/config/routing.yml"
+    prefix:   /
+
+posgrado_alumnos:
+    resource: "@PosgradoAlumnosBundle/Resources/config/routing.yml"
+    prefix:   /
+
+posgrados:
+    resource: "@PosgradosBundle/Resources/config/routing.yml"
+    prefix:   /
+
+noticias:
+    resource: "@NoticiasBundle/Resources/config/routing.yml"
     prefix:   /
 
 back_end:

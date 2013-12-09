@@ -1,0 +1,41 @@
+{% extends '::backend.html.twig' %}
+
+{% block mapa %}
+    <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
+    <li><a href="{{ path('posgrados') }}">Posgrados</a></li>
+    <li><a href="{{ path('posgradoinvestigadores') }}">Posgrado e Investigadores</a></li>
+    <li><span>Actualizar datos de un investigador en un posgrado</span></li>
+{% endblock %}
+
+{% block contenido %}
+<div class="unit-100">
+    <div class="units-row">
+        <div class="unit-centered unit-50">
+            <fieldset>
+                <legend>Posgrado y Áreas de investigación</legend>
+                {{ form_start(edit_form, { 'attr': {'class': 'forms forms-columnar'} }) }}                    
+                    <p>
+                        {{ form_label(edit_form.posgrado, 'Posgrado') }}
+                        {{ form_widget(edit_form.posgrado, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+
+                    <p>
+                        {{ form_label(edit_form.investigadores, 'Investigadores') }}
+                        {{ form_widget(edit_form.investigadores, { 'attr': {'class': 'width-100'} }) }}
+                    </p>                    
+
+                    <p>
+                        {{ form_widget(edit_form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
+                    </p>
+                {{ form_end(edit_form) }}
+
+                    <p>
+                        {{ form_start(delete_form) }}
+                            {{ form_widget(delete_form.submit, { 'attr': {'class': 'btn btn-red'} }) }}
+                        {{ form_end(delete_form) }}
+                    </p>
+            </fieldset>
+        </div>
+    </div>
+</div>
+{% endblock %}

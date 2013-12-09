@@ -1,0 +1,35 @@
+{% extends '::backend.html.twig' %}
+
+{% block mapa %}
+    <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
+    <li><a href="{{ path('posgrados') }}">Posgrados</a></li>
+    <li><a href="{{ path('posgradoinvestigadores') }}">Posgrado e Investigadores</a></li>
+    <li><span>Registro de un investigador en un posgrado</span></li>
+{% endblock %}
+
+{% block contenido %}
+<div class="unit-100">
+    <div class="units-row">
+        <div class="unit-centered unit-50">
+            <fieldset>
+                <legend>Posgrado e Investigadores</legend>
+                {{ form_start(form, { 'attr': {'class': 'forms forms-columnar'} }) }}                    
+                    <p>
+                        {{ form_label(form.posgrado, 'Posgrado') }}
+                        {{ form_widget(form.posgrado, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+
+                    <p>
+                        {{ form_label(form.investigadores, 'Investigadores') }}
+                        {{ form_widget(form.investigadores, { 'attr': {'class': 'width-100'} }) }}
+                    </p>                    
+
+                    <p>
+                        {{ form_widget(form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
+                    </p>
+                {{ form_end(form) }}
+            </fieldset>
+        </div>
+    </div>
+</div>
+{% endblock %}

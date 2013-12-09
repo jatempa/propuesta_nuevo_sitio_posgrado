@@ -6,14 +6,21 @@
     <li><span>Actualizar datos del investigador</span></li>
 {% endblock %}
 
-{% block body %}
+{% block contenido %}
 <div class="unit-100">
     <div class="units-row">
-        <div class="unit-centered unit-50">
+        <div class="unit-30">
+            <fieldset>
+                <legend>Foto</legend>
+                <img id="foto" src="{{ asset('uploads/images/investigadores/') ~ entity.rutaFoto }}" />
+            </fieldset>
+        </div>
+        <div class="units-centered unit-50">
             <fieldset>
                 <legend>Investigador</legend>
 
-                {{ form_start(edit_form, { 'attr': {'class': 'forms forms-columnar'} }) }}
+                {{ form_start(edit_form, { 'attr': {'enctype': 'multipart/form-data', 'class': 'forms forms-columnar'} }) }}
+                    
                     
                     <p>
                         {{ form_label(edit_form.nombre, 'Nombre(s)') }}
@@ -50,6 +57,12 @@
                         {{ form_widget(edit_form.sni, { 'attr': {'class': 'width-100'} }) }}
                     </p>
 
+                    <p>
+                        {{ form_label(edit_form.foto, 'Foto') }}
+                        {{ form_widget(edit_form.foto, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_errors(edit_form.foto) }}
+                    </p>
+                    
                     <p>
                          {{ form_widget(edit_form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
                     {{ form_end(edit_form) }}

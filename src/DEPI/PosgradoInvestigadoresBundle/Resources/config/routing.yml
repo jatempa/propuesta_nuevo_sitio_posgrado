@@ -1,0 +1,27 @@
+posgradoinvestigadores:
+    pattern:  /posgradmin/posgradoinvestigadores
+    defaults: { _controller: PosgradoInvestigadoresBundle:PosgradoInvestigadores:index }
+
+_posgradoinvestigadores:
+    pattern: /posgradmin/posgradoinvestigadores/
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: posgradoinvestigadores}
+
+posgradoinvestigadores_new:
+    pattern:  /posgradmin/posgradoinvestigadores/new
+    defaults: { _controller: PosgradoInvestigadoresBundle:PosgradoInvestigadores:new }
+
+posgradoinvestigadores_edit:
+    pattern:  /posgradmin/posgradoinvestigadores/edit/{id}
+    defaults: { _controller: PosgradoInvestigadoresBundle:PosgradoInvestigadores:edit }
+
+posgradoinvestigadores_create:
+    pattern:  /posgradmin/posgradoinvestigadores/create
+    defaults: { _controller: PosgradoInvestigadoresBundle:PosgradoInvestigadores:create }
+
+posgradoinvestigadores_update:
+    pattern:  /posgradmin/posgradoinvestigadores/update/{id}
+    defaults: { _controller: PosgradoInvestigadoresBundle:PosgradoInvestigadores:update }
+
+posgradoinvestigadores_delete:
+    pattern:  /posgradmin/posgradoinvestigadores/delete/{id}
+    defaults: { _controller: PosgradoInvestigadoresBundle:PosgradoInvestigadores:delete }
