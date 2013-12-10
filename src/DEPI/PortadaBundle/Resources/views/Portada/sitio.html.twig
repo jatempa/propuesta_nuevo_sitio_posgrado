@@ -21,6 +21,11 @@
 		</div>
 		<p id="news" class="small-10 large-9 columns">
 			{{ noticia.contenido }}
+			<br>
+			{% if noticia.rutaDocumento %}
+            	<a href="{{ asset('uploads/documentos/noticias/') ~ noticia.rutaDocumento }}">	Decargar formato
+            	</a>
+            {% endif %}
 		</p>
 	</section>
 	{% endfor %}
