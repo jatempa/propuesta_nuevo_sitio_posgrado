@@ -12,7 +12,7 @@
         <div class="unit-centered unit-50">
             <fieldset>
                 <legend>Noticias</legend>
-                {{ form_start(form, { 'attr': {'class': 'forms forms-columnar'} }) }}
+                {{ form_start(form, { 'attr': {'enctype': 'multipart/form-data', 'class': 'forms forms-columnar'} }) }}
                     
                     <p>
                         {{ form_label(form.titulo, 'Título') }}
@@ -27,6 +27,12 @@
                     <p>
                         {{ form_label(form.fechaPublicacion, 'Fecha de publicación') }}
                         {{ form_widget(form.fechaPublicacion, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+
+                    <p>
+                        {{ form_label(form.documento, 'Documento') }}
+                        {{ form_widget(form.documento, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_errors(edit_form.documento) }}
                     </p>
 
                     <p>
