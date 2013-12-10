@@ -3,6 +3,8 @@
 namespace DEPI\NoticiasBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * Noticias
@@ -41,6 +43,20 @@ class Noticias
      * @ORM\Column(name="fecha_publicacion", type="datetime")
      */
     private $fechaPublicacion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rutaDocumento", type="string", length=255, nullable=true)
+     */
+    private $rutaDocumento;
+
+    /**
+     * @Assert\File(
+     *     maxSize = "2048k"
+     * )
+     */
+    protected $documento;
 
 
     /**
@@ -120,5 +136,64 @@ class Noticias
     public function getFechaPublicacion()
     {
         return $this->fechaPublicacion;
+    }
+
+    /**
+     * Set rutaDocumento
+     *
+     * @param string $documento
+     */
+    public function setRutaDocumento($rutaDocumento)
+    {
+        $this->rutaDocumento = $rutaDocumento;
+    }
+
+    /**
+     * Get rutaDocumento
+     *
+     * @return string
+     */
+    public function getRutaDocumento()
+    {
+        return $this->rutaDocumento;
+    }
+
+    /**
+     * Set documento.
+     *
+     * @param UploadedFile $documento
+     */
+    public function setDocumento(UploadedFile $documento = null)
+    {
+        $this->documento = $documento;
+    }
+
+    /**
+     * Get documento.
+     *
+     * @return UploadedFile
+     */
+    public function getDocumento()
+    {
+        return $this->documento;
+    }
+
+    /**
+     * Sube la documento de la oferta copiándola en el directorio que se indica y
+     * guardando en la entidad la ruta hasta la documento
+     *
+     * @param string $directorioDestino Ruta completa del directorio al que se sube la documento
+     */
+    public function subirDocumento($directorioDestino)
+    {
+        if (null === $this->getDocumento()) {
+            return;
+        }
+
+        $nombreArchivoDocumento = $this->getDocumento()->getClientOriginalName();
+
+        $this->getDocumento()->move($directorioDestino, $nombreArchivoDocumento);
+
+        $this->setRutaDocumento($nombreArchivoDocumento);
     }
 }
