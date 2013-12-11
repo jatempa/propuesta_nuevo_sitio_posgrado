@@ -35,19 +35,19 @@
                             {{ entity.titulo }}
                         </a>
                     </td>
-                    <td class="width-20 enlace">
+                    <td class="width-40 enlace">
                         <a href="{{ path('noticias_edit', { 'id': entity.id }) }}" >
                             {{ entity.contenido }}
                         </a>
                     </td>
-                    <td class="width-20 enlace">
+                    <td class="width-10 enlace">
                         <a href="{{ path('noticias_edit', { 'id': entity.id }) }}" >
                             {% if entity.fechaPublicacion %}
                                 {{ entity.fechaPublicacion|date('Y-m-d') }}
                             {% endif %}
                         </a>
                     </td>
-                    <td class="width-30 enlace">
+                    <td class="width-20 enlace">
                         <a href="{{ path('noticias_edit', { 'id': entity.id }) }}" >
                             {{ entity.rutaDocumento }}
                         </a>
