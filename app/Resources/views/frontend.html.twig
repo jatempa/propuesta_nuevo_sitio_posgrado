@@ -36,8 +36,9 @@
     <div class="row">
       <div class="large-12 columns">    
         <ul id="banner" data-orbit>
-          {% block imagenesBanner %}
-          {% endblock %}
+          {% for imagen in banner %}
+            <li><img src="{{ asset('uploads/images/portada/') ~ imagen.imagenBanner }}"/></li>
+          {% endfor %}
         </ul>
       </div> 
     </div>
@@ -87,7 +88,7 @@
 {% block body %}
     <!-- Contenido --> 
     <div class="row">
-      <div id="contenido" class="large-12 columns">
+      <div class="large-12 columns">
         {% block contenido %}{% endblock %}
       </div> 
     </div>   
