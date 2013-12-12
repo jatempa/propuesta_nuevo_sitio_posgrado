@@ -50,6 +50,7 @@ class NoticiasController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $entity->subirDocumento($this->container->getParameter('portada.directorio.documentos'));
             $em->persist($entity);
             $em->flush();
 
@@ -166,6 +167,7 @@ class NoticiasController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
+            $entity->subirDocumento($this->container->getParameter('portada.directorio.documentos'));
             $em->flush();
 
             return $this->redirect($this->generateUrl('noticias'));

@@ -36,7 +36,6 @@ class AppKernel extends Kernel
             new DEPI\PosgradoAreasBundle\PosgradoAreasBundle(),
             new DEPI\PosgradoLineasBundle\PosgradoLineasBundle(),
             new DEPI\PosgradoInvestigadoresBundle\PosgradoInvestigadoresBundle(),
-            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

@@ -21,15 +21,19 @@
 		</div>
 		<p id="news" class="small-10 large-9 columns">
 			{{ noticia.contenido }}
+			<br>
+			{% if noticia.rutaDocumento %}
+            	<a href="{{ asset('uploads/documentos/noticias/') ~ noticia.rutaDocumento }}">	
+            		Decargar formato
+            	</a>
+            {% endif %}
 		</p>
 	</section>
 	{% endfor %}
 </article>    
-<div id="depi" class=" large-8 columns">
-<br><br><br>
+<div id="depi" class="large-9 columns">
     <p>
 		<u><b>La Maestría en Ingeniería Electrónica</b></u>, cuenta con dos líneas de trabajo, <b>Computación Ubicua</b> y <b>Procesamiento digital de señales</b>, estas tiene un gran espectro reticular, permitiendo al alumno y a su asesor mucha flexibilidad en cuanto a la elección de materias, de acuerdo a su perfil de licenciatura y de sus intereses profesionales
 	</p>
-
 </div>	
 {% endblock %}

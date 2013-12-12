@@ -18,6 +18,7 @@ class NoticiasType extends AbstractType
             ->add('titulo')
             ->add('contenido', 'textarea', array('attr' => array('rows' => '6')))
             ->add('fechaPublicacion', 'date', array('widget' => 'single_text'))
+            ->add('documento', 'file', array('required' => false))
         ;
     }
     

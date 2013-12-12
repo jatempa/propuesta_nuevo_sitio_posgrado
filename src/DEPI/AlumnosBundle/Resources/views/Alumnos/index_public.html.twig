@@ -1,5 +1,10 @@
 {% extends '::frontend.html.twig' %}
 
+{% block mapa %}
+    <li><a href="{{ path('sitio') }}">Inicio</a></li>
+    <li class="unavailable">Alumnos</li>
+{% endblock %}
+
 {% block contenido %}
 <h3> Alumnos pertenecientes al Departamento de Posgrado e Investigación </h3>
 

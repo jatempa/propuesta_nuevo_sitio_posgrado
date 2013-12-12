@@ -69,3 +69,4 @@ parameters:
     alumnos.directorio.imagenes: %kernel.root_dir%/../web/uploads/images/alumnos
     investigadores.directorio.imagenes: %kernel.root_dir%/../web/uploads/images/investigadores
     portada.directorio.imagenes: %kernel.root_dir%/../web/uploads/images/portada
+    portada.directorio.documentos: %kernel.root_dir%/../web/uploads/documentos/noticias
