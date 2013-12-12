@@ -25,3 +25,7 @@ areas_update:
 areas_delete:
     pattern:  /posgradmin/areas/delete/{id}
     defaults: { _controller: AreasBundle:Areas:delete }
+
+areas_public:
+    pattern:  /areas
+    defaults: { _controller: AreasBundle:AreasPublic:index }
