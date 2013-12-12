@@ -1,5 +1,10 @@
 {% extends '::frontend.html.twig' %}
 
+{% block mapa %}
+    <li><a href="{{ path('sitio') }}">Inicio</a></li>
+    <li class="unavailable">Investigadores</li>
+{% endblock %}
+
 {% block contenido %}
 <h3> Investigadores pertenecientes al Departamento de Posgrado e Investigación </h3>
 
@@ -36,19 +41,4 @@
     </li>
 {% endfor %}
 </ul>
-{% for key, entity in entitiesLineas %} 
- <li>{{ key }}: {{ entity.investigadores.nombre|e }}</li>
-{% endfor %}
-
-{% endblock %}
-
-{% block lateral %}
-<aside class="unit-20">
-    <h5>Opciones</h5>
-    <nav class="nav-v nav-stats">
-        <ul>
-            <li><a href="{{ path('investigadoresproyectos') }}">Alumnos-Proyectos</a></li>
-        </ul>
-    </nav>
-</aside>
 {% endblock %}
