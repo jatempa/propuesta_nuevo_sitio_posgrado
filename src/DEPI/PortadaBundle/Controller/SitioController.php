@@ -13,12 +13,16 @@ class SitioController extends Controller
         $noticias = $em->getRepository('NoticiasBundle:Noticias')->findNoticias();
         $banner = $em->getRepository('PortadaBundle:Portada')->findImagenesBanner();
 
-        return $this->render('PortadaBundle:Portada:sitio.html.twig',  array('noticias' => $noticias, 'banner' => $banner));
+        return $this->render('PortadaBundle:Portada:sitio.html.twig', array('noticias' => $noticias, 'banner' => $banner));
     }
 
 	public function directorioAction()
     {
-        return $this->render('PortadaBundle:Portada:directorio.html.twig');
+        $em = $this->getDoctrine()->getManager();
+
+        $banner = $em->getRepository('PortadaBundle:Portada')->findImagenesBanner();
+
+        return $this->render('PortadaBundle:Portada:directorio.html.twig', array('banner' => $banner));
     }
 
 }
