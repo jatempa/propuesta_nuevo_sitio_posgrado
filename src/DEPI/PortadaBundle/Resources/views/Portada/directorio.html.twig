@@ -1,10 +1,10 @@
 {% extends '::frontend.html.twig' %}
 
-{% block imagenesBanner %}
-	{% for imagen in banner %}
-		<li><img src="{{ asset('uploads/images/portada/') ~ imagen.imagenBanner }}"/></li>
-	{% endfor %}
+{% block mapa %}
+    <li><a href="{{ path('sitio') }}">Inicio</a></li>
+    <li class="unavailable">Directorio</li>
 {% endblock %}
+
 
 {% block contenido %}
 <div class="row">

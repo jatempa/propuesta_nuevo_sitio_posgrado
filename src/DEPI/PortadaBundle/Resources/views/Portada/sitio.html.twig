@@ -1,11 +1,5 @@
 {% extends '::frontend.html.twig' %}
 
-{% block imagenesBanner %}
-	{% for imagen in banner %}
-		<li><img src="{{ asset('uploads/images/portada/') ~ imagen.imagenBanner }}"/></li>
-	{% endfor %}
-{% endblock %}
-
 {% block contenido %}
 <article class="large-3 columns">
 	<div class="row">
