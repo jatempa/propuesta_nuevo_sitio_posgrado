@@ -2,6 +2,10 @@ sitio:
     pattern:  /depi
     defaults: { _controller: PortadaBundle:Sitio:index }
 
+_sitio:
+    pattern: /
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: sitio}
+
 directorio:
     pattern:  /directorio
     defaults: { _controller: PortadaBundle:Sitio:directorio }
