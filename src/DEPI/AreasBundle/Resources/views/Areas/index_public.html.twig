@@ -7,27 +7,10 @@
 
 {% block contenido %}
 <div class="row">
-    <div class="large-8 large-centered columns">
-        <table>
-            <thead>
-                <tr>
-                  <th>Nombre</th>
-                  <th>Objetivo</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for entity in entities %}
-                    <tr>
-                        <td width="200">
-                            {{ entity.nombre }}
-                        </td>
-                        <td width="400">
-                            {{ entity.descripcion }}
-                        </td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>  
-    </div>
+    <ul class="large-8 push-2 columns">
+        {% for entity in entities %}
+            <li><a>{{ entity.nombre ~ "."}}</a></li>
+        {% endfor %}
+    </ul>
 </div>
 {% endblock %}
