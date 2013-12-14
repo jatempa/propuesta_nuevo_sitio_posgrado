@@ -19,7 +19,9 @@
   <script src="{{ asset('bundles/portada/js/master.js') }}"></script>
   <script>
     $(document).foundation();
+    function contenido(){$.ajax({url:   '{{ path('directorio') }}', type:  'get', success:function(response) {$("#contenido").html(response);}});}
   </script>
+  {% block funcionesjs %}{% endblock %}
 {% endblock %}
 
 {% block header %}
@@ -66,7 +68,9 @@
                           <li><a href="{{ path('lineas_public') }}">Líneas de investigación</a></li>
                         </ul>
                     </li>
-                    <li><a href="{{ path('directorio') }}">Directorio</a></li>
+                    <li>
+                      <a href="javascript:;" onclick="contenido();return false;">Directorio</a>
+                    </li>
               </ul>
             </section>
         </nav>
@@ -85,7 +89,7 @@
 {% block body %}
     <!-- Contenido --> 
     <div class="row">
-      <div class="large-12 columns">
+      <div id="contenido" class="large-12 columns">
         {% block contenido %}{% endblock %}
       </div> 
     </div>   
