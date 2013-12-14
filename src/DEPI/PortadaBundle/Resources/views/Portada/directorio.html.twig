@@ -1,19 +1,20 @@
 {% extends '::frontend.html.twig' %}
 
-{% block mapa %}
-    <li><a href="{{ path('sitio') }}">Inicio</a></li>
-    <li class="unavailable">Directorio</li>
+{% block imagenesBanner %}
+	{% for imagen in banner %}
+		<li><img src="{{ asset('uploads/images/portada/') ~ imagen.imagenBanner }}"/></li>
+	{% endfor %}
 {% endblock %}
 
 {% block contenido %}
 <div class="row">
 	<section id="directorio" class="small-4 large-8 large-centered columns">
 		<header>
-			<h4>Jefe de la División de Posgrado e Investigación</h4>
+			MC. Juan Francisco Ibáñez Salas
+			<br><br>
+			Jefe de la División de Posgrado e Investigación
 		</header>
-		<body>
-			<h5>MC. Juan Francisco Ibáñez Salas</h5>
-		</body>
+				
 		<footer>
 			<a href="mailto:posgrado@itmexicali.edu">Correo Posgrado</a> - <a href="mailto:pacois20@gmail.com">Correo Responsable</a>
 		</footer>
@@ -21,11 +22,11 @@
 
 	<section id="directorio" class="small-4 large-8 large-centered columns">
 		<header>
-			<h4>Coordinador de la Maestría en Ingeniería Electrónica</h4>
+			Dr. Arnoldo Díaz Ramírez
+			<br><br>
+			Coordinador de la Maestría en Ingeniería Electrónica
 		</header>
-		<body>
-			<h5>Dr. Arnoldo Díaz Ramírez</h5>
-		</body>
+
 		<footer>
 			<a href="mailto:adiaz@itmexicali.edu.mx">Correo</a>
 		</footer>
@@ -33,11 +34,11 @@
 
 	<section id="directorio" class="small-4 large-8 large-centered columns">
 		<header>
-			<h4>Coordinador de Proyectos de Investigación</h4>
+			MC. Heber Samuel Hernandez Tabares
+			<br><br>
+			Coordinador de Proyectos de Investigación
 		</header>
-		<body>
-			<h5>MC. Heber Samuel Hernandez Tabares</h5>
-		</body>
+		
 		<footer>
 			<a href="mailto:heberhdz@hotmail.com">Correo</a>
 		</footer>

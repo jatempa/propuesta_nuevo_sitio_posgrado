@@ -27,15 +27,11 @@ class InvestigadoresPublicController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $em2 = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('InvestigadoresBundle:Investigadores')->findAll();
-        $entitiesLineas = $em2->getRepository('InvestigadoresLineasBundle:InvestigadoresLineas')->findInvestigadoresLineas();
+        $banner = $em->getRepository('PortadaBundle:Portada')->findImagenesBanner();
 
-        return $this->render('InvestigadoresBundle:Investigadores:index_public.html.twig', 
-            array('entities' => $entities,
-                  'entitiesLineas' => $entitiesLineas,
-                ));
+        return $this->render('InvestigadoresBundle:Investigadores:index_public.html.twig', array('entities' => $entities, 'banner' => $banner));
     }
 
     // /**

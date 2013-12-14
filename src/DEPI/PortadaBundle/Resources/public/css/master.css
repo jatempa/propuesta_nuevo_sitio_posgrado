@@ -22,8 +22,19 @@
 }
 
 #directorio {
+	font-family: 'Droid Sans', sans-serif;
 	text-align: center;
 	margin-bottom: 15px;
+}
+
+#directorio header {
+	font-size: 20px;
+	margin-bottom: 8px;
+}
+
+#directorio footer {
+	font-size: 15px;
+	margin-top: 8px;
 }
 
 #depi{
@@ -151,6 +162,21 @@
 		font-family: 'Droid Sans', sans-serif;
         margin-bottom: 15px;
 	}
+
+	#directorio header {
+		font-size: 16px;
+		margin-bottom: 8px;
+	}
+
+	#directorio body {
+		font-size: 12px;
+		margin-bottom: 8px;
+	}
+
+	#directorio footer {
+		font-size: 10px;
+		margin-top: 8px;
+	}
 }
 
 @media only screen and (max-width: 320px) {
@@ -164,5 +190,15 @@
 		font-size: 12px;
 		font-family: 'Droid Sans', sans-serif;
         margin-bottom: 15px;
+	}
+
+	#directorio header {
+		font-size: 12px;
+		margin-bottom: 8px;
+	}
+
+	#directorio footer {
+		font-size: 10px;
+		margin-top: 8px;
 	}
 }
