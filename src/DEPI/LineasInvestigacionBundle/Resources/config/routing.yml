@@ -25,3 +25,7 @@ lineas_update:
 lineas_delete:
     pattern:  /posgradmin/lineas/delete/{id}
     defaults: { _controller: LineasInvestigacionBundle:LineasInvestigacion:delete }
+
+lineas_public:
+    pattern:  /lineas
+    defaults: { _controller: LineasInvestigacionBundle:LineasInvestigacionPublic:index }
