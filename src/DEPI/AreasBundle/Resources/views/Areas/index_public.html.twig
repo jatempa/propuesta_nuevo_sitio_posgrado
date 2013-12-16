@@ -9,8 +9,11 @@
 <div class="row">
     <ul class="large-8 push-2 columns">
         {% for entity in entities %}
-            <li><a>{{ entity.nombre ~ "."}}</a></li>
+            <li><a href="{{ path('areas_info', { 'id': entity.id }) }}">{{ entity.nombre ~ "."}}</a></li>
         {% endfor %}
     </ul>
+    <div id="areas">
+    	
+    </div>
 </div>
 {% endblock %}
