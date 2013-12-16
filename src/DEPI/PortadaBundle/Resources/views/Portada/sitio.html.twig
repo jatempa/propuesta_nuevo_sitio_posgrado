@@ -20,7 +20,8 @@
 			  		<h2>{{ noticia.titulo }}</h2>
 			  	</header>	
 			  	<p>
-			  	{{ noticia.contenido }}	
+			  	{{ noticia.contenido }}
+			  	<br>
 			  	{% if noticia.rutaDocumento %}
             		<a href="{{ asset('uploads/documentos/noticias/') ~ noticia.rutaDocumento }}">	
             			Decargar formato
