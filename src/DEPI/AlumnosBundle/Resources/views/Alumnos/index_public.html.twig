@@ -6,38 +6,51 @@
 {% endblock %}
 
 {% block contenido %}
-<h3> Alumnos pertenecientes al Departamento de Posgrado e Investigación </h3>
 
 <ul class="small-block-grid-3 large-block-grid-7" align="center">
 {% for entity in entities %}   
   
     <li>
     <div>
-        {% if entity.rutaFoto %}
+        <a href="#" data-reveal-id="modal{{ entity.id }}">
+        {% if entity.rutaFoto %}        
             <img src="{{ asset('uploads/images/alumnos/' ~ entity.rutaFoto) }}" alt=""  />      
             {% else %}
-                 <img src="{{ asset('uploads/images/alumnos/unknown-person.gif') }}" alt="" />             
+                <img src="{{ asset('uploads/images/alumnos/unknown-person.gif') }}" alt="" />            
         {% endif %}
+        </a>
 
         
         <p><a href="#" data-reveal-id="modal{{ entity.id }}"> 
             {{ entity.apellidoPaterno ~ " " ~  entity.apellidoMaterno ~ " " ~  entity.nombre }} 
         </a></p>
 
+        {# Comienza la seccion del modal #}
         <div id="modal{{ entity.id }}" class="reveal-modal normal">
             <div class="large-3 columns">
-        {% if entity.rutaFoto %}
-            <img src="{{ asset('uploads/images/alumnos/' ~ entity.rutaFoto) }}" alt=""  />      
-            {% else %}
-                 <img src="{{ asset('uploads/images/alumnos/unknown-person.gif') }}" alt="" />             
-        {% endif %}           
+            {# columna izquierda para la fotografia #}
+            {% if entity.rutaFoto %}
+                <img src="{{ asset('uploads/images/alumnos/' ~ entity.rutaFoto) }}" alt=""  />      
+                {% else %}
+                     <img src="{{ asset('uploads/images/alumnos/unknown-person.gif') }}" alt=""/>
+            {% endif %}           
             </div>
+            {# columna derecha para el contenido #}
             <div class="large-9 columns">
                 <p class="lead">{{ entity.apellidoPaterno ~ " " ~  entity.apellidoMaterno ~ " " ~  entity.nombre }}</p>
-                <a href="mailto:{{ entity.email }}" > {{ entity.email }} </a>
+                <p class="lead">Proyecto de investigación<p/>
+                {% for entity2 in entities2 %}  
+                   {% if entity.id == entity2.idAlumno %}
+                       {{ entity2.nombreCorto }}
+                    {% else %}
+                        Sin proyecto asignado
+                    {% endif %}
+                {% endfor %}
+                <p><a href="mailto:{{ entity.email }}" > {{ entity.email }} </a></p>
             </div>
             <a class="close-reveal-modal">&#215;</a>      
         </div>
+        {# termina la seccion del modal #}
     </li>
 
 {% endfor %}
