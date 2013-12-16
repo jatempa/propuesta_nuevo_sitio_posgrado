@@ -7,13 +7,17 @@
 
 {% block contenido %}
 <div class="row">
-    <ul class="large-8 push-2 columns">
+    <div class="large-8 push-2 columns">
+        <div class="section-container accordion" data-section="accordion">
         {% for entity in entities %}
-            <li><a href="{{ path('areas_info', { 'id': entity.id }) }}">{{ entity.nombre ~ "."}}</a></li>
+        <section>
+            <p class="title" data-section-title><a href="#">{{ entity.nombre }}</a></p>
+            <div class="content" data-section-content>
+                {{ entity.descripcion }}
+            </div>
+        </section>
         {% endfor %}
-    </ul>
-    <div id="areas">
-    	
+        </div>    
     </div>
 </div>
 {% endblock %}
