@@ -30,9 +30,10 @@ class AlumnosPublicController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('AlumnosBundle:Alumnos')->findAll();
+        $entities2 = $em->getRepository('AlumnosProyectosBundle:AlumnosProyectos')->findAlumnosConProyecto();
         $banner = $em->getRepository('PortadaBundle:Portada')->findImagenesBanner();
 
-        return $this->render('AlumnosBundle:Alumnos:index_public.html.twig', array('entities' => $entities, 'banner' => $banner));
+        return $this->render('AlumnosBundle:Alumnos:index_public.html.twig', array('entities' => $entities,'entities2' => $entities2, 'banner' => $banner));
     }
 
     /**
