@@ -14,28 +14,43 @@
 {% for entity in entities %}   
 
     <li>
-        {% if file_exists('bundles/investigadores/img/' ~ entity.id ~ '.png') %}
-                    <img src="{{ asset('bundles/investigadores/img/' ~ entity.id ~ '.png') }}" alt=""  />      
-                    {% else %}
-                        {% if file_exists('bundles/investigadores/img/' ~ entity.id ~ '.jpg') %}
-                        <img src="{{ asset('bundles/investigadores/img/' ~ entity.id ~ '.jpg') }}" alt=""  />      
-                        {% else %}
-                            <img src="{{ asset('bundles/investigadores/img/unknown-person.gif') }}" alt="" />  
-                        {% endif %}                   
+        {% if entity.rutaFoto %}
+            <img src="{{ asset('uploads/images/investigadores/' ~ entity.rutaFoto) }}" alt=""  />      
+            {% else %}
+                 <img src="{{ asset('uploads/images/investigadores/unknown-person.gif') }}" alt="" />             
         {% endif %}
 
-        <p><a href="{{ path('investigadores_show_public', { 'id': entity.id }) }}" data-reveal-id="modal{{ entity.id }}"> 
+        <p><a href="#" data-reveal-id="modal{{ entity.id }}"> 
             {{ entity.apellidoPaterno ~ " " ~  entity.apellidoMaterno ~ " " ~  entity.nombre }} 
         </a></p>
 
-        <p><a href="{{ path('investigadores_show_public', { 'id': entity.id }) }}" data-reveal-id="modal"> 
+        <div id="modal{{ entity.id }}" class="reveal-modal normal">
+            <div class="large-3 columns">
+        {% if entity.rutaFoto %}
+            <img src="{{ asset('uploads/images/investigadores/' ~ entity.rutaFoto) }}" alt=""  />      
+            {% else %}
+                 <img src="{{ asset('uploads/images/investigadores/unknown-person.gif') }}" alt="" />             
+        {% endif %}           
+            </div>
+            <div class="large-9 columns">
+                <p class="lead">{{ entity.apellidoPaterno ~ " " ~  entity.apellidoMaterno ~ " " ~  entity.nombre }}</p>
+                <a href="mailto:{{ entity.email }}" > {{ entity.email }} </a>
+            </div>
+            <a class="close-reveal-modal">&#215;</a>      
+        </div>
+
+        {# <p><a href="{{ path('investigadores_show_public', { 'id': entity.id }) }}" data-reveal-id="modal{{ entity.id }}"> 
+            {{ entity.apellidoPaterno ~ " " ~  entity.apellidoMaterno ~ " " ~  entity.nombre }} 
+        </a></p>
+
+        <p><a href="#" data-reveal-id="modal" data-reveal-ajax="{{ path('investigadores_show_public', { 'id': entity.id }) }}" data-reveal-ajax="true"> 
             Abre modal
         </a></p>
         {% block modal %}
         {#% render "InvestigadoresBundle:Investigadores:show", array('id' => entity.id )    %#}
-        {% include "InvestigadoresBundle:Investigadores:show_public.html.twig" with { entity: entity } %}
+        {#% include "InvestigadoresBundle:Investigadores:show_public.html.twig" with { entity: entity } %}
         {% endblock %}
-        
+         #}
 
 
     </li>
