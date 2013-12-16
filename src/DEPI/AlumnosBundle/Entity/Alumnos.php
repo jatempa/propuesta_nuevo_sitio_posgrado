@@ -71,7 +71,8 @@ class Alumnos
     protected $rutaFoto;
 
     /**
-     * @Assert\Image(maxSize = "500k")
+     *
+     * @Assert\Image(maxSize = "500k", maxWidth = 300, maxHeight = 300)
      */
     protected $foto;
 
