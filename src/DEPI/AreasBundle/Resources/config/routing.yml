@@ -29,3 +29,7 @@ areas_delete:
 areas_public:
     pattern:  /areas
     defaults: { _controller: AreasBundle:AreasPublic:index }
+
+areas_info:
+    pattern:  /areas/{id}
+    defaults: { _controller: AreasBundle:AreasPublic:info }
