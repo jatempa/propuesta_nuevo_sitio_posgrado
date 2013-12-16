@@ -12,7 +12,7 @@ class NoticiasRepository extends EntityRepository
 
 		$dql = $em->createQueryBuilder();
  
-		$dql->select('n.contenido, n.fechaPublicacion, n.rutaDocumento')
+		$dql->select('n.id, n.titulo, n.contenido, n.fechaPublicacion, n.rutaDocumento')
 		    ->from('NoticiasBundle:Noticias', 'n')
 		    ->orderBy('n.fechaPublicacion', 'DESC')
 		    ->setMaxResults(4);

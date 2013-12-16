@@ -13,15 +13,23 @@
 		<div id="now" class="small-2 large-3 columns">
 			{{ noticia.fechaPublicacion|date('d M') }}
 		</div>
-		<p id="news" class="small-10 large-9 columns">
-			{{ noticia.contenido }}
-			<br>
-			{% if noticia.rutaDocumento %}
-            	<a href="{{ asset('uploads/documentos/noticias/') ~ noticia.rutaDocumento }}">	
-            		Decargar formato
-            	</a>
-            {% endif %}
-		</p>
+		<article id="news" class="small-10 large-9 columns">
+			<a class="enlace" href="#" data-reveal-id="{{ noticia.id }}">{{ noticia.titulo }}</a>
+			<section id="{{ noticia.id }}" class="small reveal-modal">
+			  	<header>
+			  		<h2>{{ noticia.titulo }}</h2>
+			  	</header>	
+			  	<p>
+			  	{{ noticia.contenido }}	
+			  	{% if noticia.rutaDocumento %}
+            		<a href="{{ asset('uploads/documentos/noticias/') ~ noticia.rutaDocumento }}">	
+            			Decargar formato
+            		</a>
+            	{% endif %}
+        		</p>
+			 	<a class="close-reveal-modal">&#215;</a>
+			</section>
+		</article>
 	</section>
 	{% endfor %}
 </article>    
