@@ -1,0 +1,19 @@
+{% extends '::frontend.html.twig' %}
+
+{% block mapa %}
+    <li><a href="{{ path('sitio') }}">Inicio</a></li>
+    <li><a href="{{ path('areas_public') }}">Áreas de investigación</a></li>
+{% endblock %}
+
+{% block contenido %}
+<article class="row">
+	<section class="large-8 push-2 columns">
+		<header>
+			<h5>{{ informacion.nombre }}</h5>
+		</header>
+		<body>
+			{{ informacion.descripcion }}
+		</body>
+	</section>
+</article>
+{% endblock %}
