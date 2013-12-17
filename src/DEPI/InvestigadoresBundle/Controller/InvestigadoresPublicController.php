@@ -30,8 +30,9 @@ class InvestigadoresPublicController extends Controller
 
         $entities = $em->getRepository('InvestigadoresBundle:Investigadores')->findAll();
         $banner = $em->getRepository('PortadaBundle:Portada')->findImagenesBanner();
-
-        return $this->render('InvestigadoresBundle:Investigadores:index_public.html.twig', array('entities' => $entities, 'banner' => $banner));
+        $entitiesProyectos = $em->getRepository('InvestigadorProyectoBundle:InvestigadorProyecto')->findInvestigadorProyecto();
+        $entitiesLineas = $em->getRepository('InvestigadoresLineasBundle:InvestigadoresLineas')->findInvestigadoresLineas();
+        return $this->render('InvestigadoresBundle:Investigadores:index_public.html.twig', array('entities' => $entities,'entities2' => $entitiesProyectos,'entitiesLineas' => $entitiesLineas, 'banner' => $banner));
     }
 
     // /**
