@@ -8,6 +8,8 @@ class PortadaRepository extends EntityRepository
 {
 	public function findImagenesBanner()
 	{
+		$fechaPublicacion = new \DateTime('today');
+
 		$em = $this->getEntityManager();
 
 		$dql = $em->createQueryBuilder();
@@ -15,7 +17,10 @@ class PortadaRepository extends EntityRepository
 		$dql->select('b.imagenBanner, b.fechaPublicacion')
 		    ->from('PortadaBundle:Portada', 'b')
 		    ->orderBy('b.fechaPublicacion', 'DESC')
-		    ->setMaxResults(5);
+		    ->where('b.fechaPublicacion <= :fecha')
+		    ->setMaxResults(10);
+
+		$dql->setParameter('fecha', $fechaPublicacion);
 
 		return $dql->getQuery()->getResult();
 	}
