@@ -11,20 +11,22 @@
 {% endblock %}
 
 {% block javascripts %}
-  <!-- JavaScripts -->
-  <script src="{{ asset('bundles/portada/js/vendor/custom.modernizr.js') }}"></script>
-  <script src="{{ asset('bundles/portada/js/vendor/zepto.js') }}"></script>
-  <script src="{{ asset('bundles/portada/js/vendor/jquery.js') }}"></script>
-  <script src="{{ asset('bundles/portada/js/foundation.min.js') }}"></script>
-  <script src="{{ asset('bundles/portada/js/foundation/foundation.topbar.js') }}"></script>
-  <script src="{{ asset('bundles/portada/js/foundation/foundation.orbit.js') }}"></script>
-  <script src="{{ asset('bundles/portada/js/foundation/foundation.section.js') }}"></script>
-  <script src="{{ asset('bundles/portada/js/foundation/foundation.reveal.js') }}"></script>
-  <script src="{{ asset('bundles/portada/js/master.js') }}"></script>
-  <script>
-    $(document).foundation();
-  </script>
-  {% block funcionesjs %}{% endblock %}
+{% javascripts '@PortadaBundle/Resources/public/js/vendor/custom.modernizr.js'
+               '@PortadaBundle/Resources/public/js/vendor/zepto.js'
+               '@PortadaBundle/Resources/public/js/vendor/jquery.js'
+               '@PortadaBundle/Resources/public/js/foundation.min.js'
+               '@PortadaBundle/Resources/public/js/foundation/foundation.topbar.js'
+               '@PortadaBundle/Resources/public/js/foundation/foundation.orbit.js'
+               '@PortadaBundle/Resources/public/js/foundation/foundation.section.js'
+               '@PortadaBundle/Resources/public/js/foundation/foundation.reveal.js'
+               '@PortadaBundle/Resources/public/js/master.js'
+               filter='yui_js' %}
+<script src="{{ asset_url }}" type="text/javascript"></script>
+{% endjavascripts %}
+<script>
+  $(document).foundation();
+</script>
+{% block funcionesjs %}{% endblock %}
 {% endblock %}
 
 {% block header %}
