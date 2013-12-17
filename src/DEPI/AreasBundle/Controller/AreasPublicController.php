@@ -33,14 +33,4 @@ class AreasPublicController extends Controller
 
         return $this->render('AreasBundle:Areas:index_public.html.twig', array('entities' => $entities, 'banner' => $banner));
     }
-
-    public function infoAction($id)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $informacion = $em->getRepository('AreasBundle:Areas')->findInformacionArea($id);
-        $banner = $em->getRepository('PortadaBundle:Portada')->findImagenesBanner();
-
-        return $this->render('AreasBundle:Areas:areas_info.html.twig', array('informacion' => $informacion, 'banner' => $banner));
-    }
 }
