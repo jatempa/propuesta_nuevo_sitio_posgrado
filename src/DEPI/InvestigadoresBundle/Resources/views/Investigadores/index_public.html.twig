@@ -6,54 +6,69 @@
 {% endblock %}
 
 {% block contenido %}
-<h3> Investigadores pertenecientes al Departamento de Posgrado e Investigación </h3>
-
-
 
 <ul class="small-block-grid-3 large-block-grid-7" align="center">
-{% for entity in entities %}   
-
+    {% for entity in entities %}   
+  
     <li>
-        {% if entity.rutaFoto %}
+    <div>
+        <a href="#" data-reveal-id="modal{{ entity.id }}">
+        {% if entity.rutaFoto %}        
             <img src="{{ asset('uploads/images/investigadores/' ~ entity.rutaFoto) }}" alt=""  />      
             {% else %}
-                 <img src="{{ asset('uploads/images/investigadores/unknown-person.gif') }}" alt="" />             
+                <img src="{{ asset('uploads/images/investigadores/unknown-person.gif') }}" alt="" />            
         {% endif %}
-
+        </a>
+        
         <p><a href="#" data-reveal-id="modal{{ entity.id }}"> 
             {{ entity.apellidoPaterno ~ " " ~  entity.apellidoMaterno ~ " " ~  entity.nombre }} 
         </a></p>
 
-        <div id="modal{{ entity.id }}" class="reveal-modal normal">
-            <div class="large-3 columns">
-        {% if entity.rutaFoto %}
-            <img src="{{ asset('uploads/images/investigadores/' ~ entity.rutaFoto) }}" alt=""  />      
-            {% else %}
-                 <img src="{{ asset('uploads/images/investigadores/unknown-person.gif') }}" alt="" />             
-        {% endif %}           
+        {# Comienza la seccion del modal #}
+        <div id="modal{{ entity.id }}" class="reveal-modal medium">
+        <div class="row">
+            <div class="large-4 columns">
+            {# columna izquierda para la fotografia #}
+            {% if entity.rutaFoto %}
+                <img src="{{ asset('uploads/images/investigadores/' ~ entity.rutaFoto) }}" alt=""  />      
+                {% else %}
+                     <img src="{{ asset('uploads/images/investigadores/unknown-person.gif') }}" alt=""/>
+            {% endif %}           
             </div>
-            <div class="large-9 columns">
-                <p class="lead">{{ entity.apellidoPaterno ~ " " ~  entity.apellidoMaterno ~ " " ~  entity.nombre }}</p>
-                <a href="mailto:{{ entity.email }}" > {{ entity.email }} </a>
+            {# columna derecha para el contenido #}
+            <div class="large-8 columns">
+                <p class="lead">
+                    {% if entity.grado %}
+                        {{ entity.grado ~ " " ~ entity.apellidoPaterno ~ " " ~  entity.apellidoMaterno ~ " " ~  entity.nombre }}
+                        {% else %}
+                            {{ entity.apellidoPaterno ~ " " ~  entity.apellidoMaterno ~ " " ~  entity.nombre }}
+                    {% endif %}       
+                </p>
+                
+                <p>
+                    {% if entity.sni %}
+                        <h5>Nivel SNI:</h5>
+                        {{ entity.sni }}
+                    {% endif %}   
+                </p>
+
+                <h5>Proyecto de investigación:</h5>
+                {% for entity2 in entities2 %}  
+                   {% if entity.id == entity2.idInvestigador %}
+                       <p>{{ entity2.nombreCorto }}</p>
+                    {% else %}
+                        <p>Sin proyecto asignado</p>
+                    {% endif %}
+                {% endfor %}
+                <h5>Correo electrónico:</h5>
+                <p><a href="mailto:{{ entity.email }}" > {{ entity.email }} </a></p>
             </div>
+        </div>
             <a class="close-reveal-modal">&#215;</a>      
         </div>
-
-        {# <p><a href="{{ path('investigadores_show_public', { 'id': entity.id }) }}" data-reveal-id="modal{{ entity.id }}"> 
-            {{ entity.apellidoPaterno ~ " " ~  entity.apellidoMaterno ~ " " ~  entity.nombre }} 
-        </a></p>
-
-        <p><a href="#" data-reveal-id="modal" data-reveal-ajax="{{ path('investigadores_show_public', { 'id': entity.id }) }}" data-reveal-ajax="true"> 
-            Abre modal
-        </a></p>
-        {% block modal %}
-        {#% render "InvestigadoresBundle:Investigadores:show", array('id' => entity.id )    %#}
-        {#% include "InvestigadoresBundle:Investigadores:show_public.html.twig" with { entity: entity } %}
-        {% endblock %}
-         #}
-
-
+        {# termina la seccion del modal #}
     </li>
+
 {% endfor %}
 </ul>
 {% endblock %}
