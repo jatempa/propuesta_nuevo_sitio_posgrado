@@ -26,8 +26,9 @@
         </a></p>
 
         {# Comienza la seccion del modal #}
-        <div id="modal{{ entity.id }}" class="reveal-modal normal">
-            <div class="large-3 columns">
+        <div id="modal{{ entity.id }}" class="reveal-modal medium">
+        <div class="row">
+            <div class="large-4 columns">
             {# columna izquierda para la fotografia #}
             {% if entity.rutaFoto %}
                 <img src="{{ asset('uploads/images/alumnos/' ~ entity.rutaFoto) }}" alt=""  />      
@@ -36,18 +37,20 @@
             {% endif %}           
             </div>
             {# columna derecha para el contenido #}
-            <div class="large-9 columns">
+            <div class="large-8 columns">
                 <p class="lead">{{ entity.apellidoPaterno ~ " " ~  entity.apellidoMaterno ~ " " ~  entity.nombre }}</p>
-                <p class="lead">Proyecto de investigación<p/>
+                <h5>Proyecto de investigación:</h5>
                 {% for entity2 in entities2 %}  
                    {% if entity.id == entity2.idAlumno %}
-                       {{ entity2.nombreCorto }}
+                       <p>{{ entity2.nombreCorto }}</p>
                     {% else %}
-                        Sin proyecto asignado
+                        <p>Sin proyecto asignado</p>
                     {% endif %}
                 {% endfor %}
+                <h5>Correo electrónico:</h5>
                 <p><a href="mailto:{{ entity.email }}" > {{ entity.email }} </a></p>
             </div>
+        </div>
             <a class="close-reveal-modal">&#215;</a>      
         </div>
         {# termina la seccion del modal #}
