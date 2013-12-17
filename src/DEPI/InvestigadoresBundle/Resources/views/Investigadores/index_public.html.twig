@@ -44,7 +44,14 @@
                             {{ entity.apellidoPaterno ~ " " ~  entity.apellidoMaterno ~ " " ~  entity.nombre }}
                     {% endif %}       
                 </p>
-                
+
+                {% for entityLinea in entitiesLineas %}  
+                   {% if entity.id == entityLinea.idInvestigador %}
+                        <h5>Línea de investigación:</h5>
+                       <p>{{ entityLinea.nom_linea }}</p>
+                    {% endif %}
+                {% endfor %}
+
                 <p>
                     {% if entity.sni %}
                         <h5>Nivel SNI:</h5>

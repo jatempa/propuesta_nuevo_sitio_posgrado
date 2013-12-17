@@ -20,5 +20,5 @@ class InvestigadorProyectoRepository extends EntityRepository
 		    ->Join('invpro.proyecto', 'proyecto');
 
 		return $dql->getQuery()->getResult();
-	}
+	}	
 }
