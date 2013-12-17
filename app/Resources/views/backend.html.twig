@@ -3,8 +3,11 @@
 {% block title %}Administración{% endblock %}
         
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('bundles/backend/css/kube.css') }}">
-    <link rel="stylesheet" href="{{ asset('bundles/backend/css/master.css') }}">
+{% stylesheets '@BackEndBundle/Resources/public/css/kube.css'
+               '@BackEndBundle/Resources/public/css/master.css'
+               filter='yui_css' %}
+  <link href="{{ asset_url }}" rel="stylesheet" type="text/css" />
+{% endstylesheets %}
 {% endblock %}
 
 {% block header %}
