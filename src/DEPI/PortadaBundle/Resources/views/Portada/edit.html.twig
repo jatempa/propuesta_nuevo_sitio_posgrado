@@ -20,14 +20,14 @@
                     </p>
                                  
                     <p>
-                        {{ form_label(edit_form.foto, 'Imagen del banner') }}
+                        {{ form_label(edit_form.foto, 'Imagen del banner *') }}
                         {{ entity.imagenBanner }}
                         {{ form_widget(edit_form.foto, { 'attr': {'class': 'width-100'} }) }}
                         {{ form_errors(edit_form.foto) }}
                     </p>
 
                     <p>
-                        {{ form_label(edit_form.fechaPublicacion, 'Fecha de publicación') }}
+                        {{ form_label(edit_form.fechaPublicacion, 'Fecha de publicación *') }}
                         {{ form_widget(edit_form.fechaPublicacion, { 'attr': {'class': 'width-100'} }) }}
                     </p>
                         

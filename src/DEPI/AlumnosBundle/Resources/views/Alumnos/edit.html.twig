@@ -22,18 +22,18 @@
                 {{ form_start(edit_form, { 'attr': {'enctype': 'multipart/form-data', 'class': 'forms forms-columnar'} }) }}
                     
                     <p>
-                        {{ form_label(edit_form.noControl, 'No. de Control') }}
+                        {{ form_label(edit_form.noControl, 'No. de Control *') }}
                         {{ form_widget(edit_form.noControl, { 'attr': {'class': 'width-100'} }) }}
                     </p>
                         
                     
                     <p>
-                        {{ form_label(edit_form.nombre, 'Nombre(s)') }}
+                        {{ form_label(edit_form.nombre, 'Nombre(s) *') }}
                         {{ form_widget(edit_form.nombre, { 'attr': {'class': 'width-100'} }) }}
                     </p>
                     
                     <p>
-                        {{ form_label(edit_form.apellidoPaterno, 'Apellido Paterno') }}
+                        {{ form_label(edit_form.apellidoPaterno, 'Apellido Paterno *') }}
                         {{ form_widget(edit_form.apellidoPaterno, { 'attr': {'class': 'width-100'} }) }}
                     </p>
                         
@@ -43,7 +43,7 @@
                     </p>
                         
                     <p>
-                        {{ form_label(edit_form.email, 'Correo electrónico') }}
+                        {{ form_label(edit_form.email, 'Correo electrónico *') }}
                         {{ form_widget(edit_form.email, { 'attr': {'class': 'width-100'} }) }}
                     </p>
                         

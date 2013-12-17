@@ -15,17 +15,17 @@
                 {{ form_start(form, { 'attr': {'enctype': 'multipart/form-data', 'class': 'forms forms-columnar'} }) }}
                     
                     <p>
-                        {{ form_label(form.titulo, 'Título') }}
+                        {{ form_label(form.titulo, 'Título *') }}
                         {{ form_widget(form.titulo, { 'attr': {'class': 'width-100'} }) }}
                     </p>
                         
                     <p>
-                        {{ form_label(form.contenido, 'Contenido') }}
+                        {{ form_label(form.contenido, 'Contenido *') }}
                         {{ form_widget(form.contenido, { 'attr': {'class': 'width-100'} }) }}
                     </p>
 
                     <p>
-                        {{ form_label(form.fechaPublicacion, 'Fecha de publicación') }}
+                        {{ form_label(form.fechaPublicacion, 'Fecha de publicación *') }}
                         {{ form_widget(form.fechaPublicacion, { 'attr': {'class': 'width-100'} }) }}
                     </p>
 

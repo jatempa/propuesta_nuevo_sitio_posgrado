@@ -15,12 +15,12 @@
                 <legend>Posgrado y Áreas de investigación</legend>
                 {{ form_start(edit_form, { 'attr': {'class': 'forms forms-columnar'} }) }}                    
                     <p>
-                        {{ form_label(edit_form.posgrado, 'Posgrado') }}
+                        {{ form_label(edit_form.posgrado, 'Posgrado *') }}
                         {{ form_widget(edit_form.posgrado, { 'attr': {'class': 'width-100'} }) }}
                     </p>
 
                     <p>
-                        {{ form_label(edit_form.investigadores, 'Investigadores') }}
+                        {{ form_label(edit_form.investigadores, 'Investigadores *') }}
                         {{ form_widget(edit_form.investigadores, { 'attr': {'class': 'width-100'} }) }}
                     </p>                    
 
