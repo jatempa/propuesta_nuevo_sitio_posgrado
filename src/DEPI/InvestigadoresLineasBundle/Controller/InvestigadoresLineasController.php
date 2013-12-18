@@ -31,8 +31,11 @@ class InvestigadoresLineasController extends Controller
 
         $entities = $em->getRepository('InvestigadoresLineasBundle:InvestigadoresLineas')->findInvestigadoresLineas();
 
+        $paginator = $this->get('knp_paginator');
+        $pagination = $paginator->paginate($entities, $this->get('request')->query->get('page',1), 5);
+
         return $this->render('InvestigadoresLineasBundle:InvestigadoresLineas:index.html.twig', 
-                              array('entities' => $entities,));
+                              array('entities' => $pagination,));
     }
     /**
      * Creates a new InvestigadoresLineas entity.

@@ -31,8 +31,11 @@ class AreasProyectosController extends Controller
 
         $entities = $em->getRepository('AreasProyectosBundle:AreasProyectos')->findAreasProyectos();
 
+        $paginator = $this->get('knp_paginator');
+        $pagination = $paginator->paginate($entities, $this->get('request')->query->get('page',1), 5);
+
         return $this->render('AreasProyectosBundle:AreasProyectos:index.html.twig', 
-                              array('entities' => $entities,));
+                              array('entities' => $pagination,));
     }
     /**
      * Creates a new AreasProyectos entity.

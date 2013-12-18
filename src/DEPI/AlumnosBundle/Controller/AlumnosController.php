@@ -31,7 +31,10 @@ class AlumnosController extends Controller
 
         $alumnos = $em->getRepository('AlumnosBundle:Alumnos')->findAlumnos();
 
-        return $this->render('AlumnosBundle:Alumnos:index.html.twig', array('alumnos' => $alumnos));
+        $paginator = $this->get('knp_paginator');
+        $pagination = $paginator->paginate($alumnos, $this->get('request')->query->get('page',1), 5);
+
+        return $this->render('AlumnosBundle:Alumnos:index.html.twig', array('alumnos' => $pagination));
     }
     /**
      * Creates a new Alumnos entity.

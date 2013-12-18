@@ -31,9 +31,12 @@ class AlumnosProyectosController extends Controller
 
         $alumnosenproyectos = $em->getRepository('AlumnosProyectosBundle:AlumnosProyectos')
                                  ->findAlumnosConProyecto();
-        
+
+        $paginator = $this->get('knp_paginator');
+        $pagination = $paginator->paginate($alumnosenproyectos, $this->get('request')->query->get('page',1), 5);
+
         return $this->render('AlumnosProyectosBundle:AlumnosProyectos:index.html.twig', 
-                              array('alumnosenproyectos' => $alumnosenproyectos));
+                              array('alumnosenproyectos' => $pagination));
     }
     /**
      * Creates a new AlumnosProyectos entity.

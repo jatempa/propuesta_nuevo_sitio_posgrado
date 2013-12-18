@@ -31,8 +31,11 @@ class ProyectosProductosController extends Controller
 
         $entities = $em->getRepository('ProyectosProductosBundle:ProyectosProductos')->findProyectosProductos();
 
+        $paginator = $this->get('knp_paginator');
+        $pagination = $paginator->paginate($entities, $this->get('request')->query->get('page',1), 5);
+
         return $this->render('ProyectosProductosBundle:ProyectosProductos:index.html.twig', 
-                              array('entities' => $entities,));
+                              array('entities' => $pagination));
     }
     /**
      * Creates a new ProyectosProductos entity.

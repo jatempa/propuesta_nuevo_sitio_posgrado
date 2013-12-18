@@ -31,7 +31,10 @@ class PosgradoAreasController extends Controller
 
         $entities = $em->getRepository('PosgradoAreasBundle:PosgradoAreas')->findPosgradoAreas();
 
-        return $this->render('PosgradoAreasBundle:PosgradoAreas:index.html.twig', array('entities' => $entities));
+        $paginator = $this->get('knp_paginator');
+        $pagination = $paginator->paginate($entities, $this->get('request')->query->get('page',1), 5);
+
+        return $this->render('PosgradoAreasBundle:PosgradoAreas:index.html.twig', array('entities' => $pagination));
     }
     /**
      * Creates a new PosgradoAreas entity.
