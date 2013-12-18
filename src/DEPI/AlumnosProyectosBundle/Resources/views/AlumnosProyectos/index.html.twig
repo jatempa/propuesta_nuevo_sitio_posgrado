@@ -30,7 +30,6 @@
                 </tr>
             </thead>
             <tbody>
-
             {% for entity in alumnosenproyectos %}
                 <tr>
                      <td class="enlace">
@@ -53,6 +52,7 @@
             </tbody>
         </table>
     </div>
+    {{ knp_pagination_render(alumnosenproyectos) }}
 </div>
 <a href="{{ path('alumnosproyectos_new') }}" class="btn btn-blue">Nuevo</a>
 {% endblock %}
