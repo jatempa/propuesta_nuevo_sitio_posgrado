@@ -39,15 +39,16 @@ class AlumnosController extends Controller
     /**
      * Creates a new Alumnos entity.
      *
-     * @Route("/", name="alumnos_create")
+     * @Route("/", name="alumnos_new")
      * @Method("POST")
      * @Template("AlumnosBundle:Alumnos:new.html.twig")
      */
-    public function createAction(Request $request)
+    public function newAction()
     {
         $entity = new Alumnos();
-        $form = $this->createCreateForm($entity);
-        $form->handleRequest($request);
+        $form = $this->createForm(new AlumnosType(), $entity);
+
+        $form->handleRequest($this->getRequest());
 
         if ($form->isValid()) {
             $entity->subirFoto($this->container->getParameter('alumnos.directorio.imagenes'));
@@ -57,43 +58,6 @@ class AlumnosController extends Controller
 
             return $this->redirect($this->generateUrl('alumnos'));
         }
-
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        );
-    }
-
-    /**
-    * Creates a form to create a Alumnos entity.
-    *
-    * @param Alumnos $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createCreateForm(Alumnos $entity)
-    {
-        $form = $this->createForm(new AlumnosType(), $entity, array(
-            'action' => $this->generateUrl('alumnos_create'),
-            'method' => 'POST',
-        ));
-
-        $form->add('submit', 'submit', array('label' => 'Guardar'));
-
-        return $form;
-    }
-
-    /**
-     * Displays a form to create a new Alumnos entity.
-     *
-     * @Route("/new", name="alumnos_new")
-     * @Method("GET")
-     * @Template()
-     */
-    public function newAction()
-    {
-        $entity = new Alumnos();
-        $form   = $this->createCreateForm($entity);
 
         return array(
             'entity' => $entity,
