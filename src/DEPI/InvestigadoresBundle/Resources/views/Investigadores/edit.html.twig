@@ -67,14 +67,9 @@
                          {{ form_widget(edit_form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
                     {{ form_end(edit_form) }}
                     </p>
-
-                    <p>
-                        {{ form_start(delete_form) }}
-                            {{ form_widget(delete_form.submit, { 'attr': {'class': 'btn btn-red'} }) }}
-                        {{ form_end(delete_form) }}
-                    </p>
             </fieldset>
         </div>
     </div>
 </div>
+<button class="btn btn-red">ELIMINAR</button>
 {% endblock %}

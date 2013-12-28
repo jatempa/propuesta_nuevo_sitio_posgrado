@@ -2,7 +2,6 @@
 
 namespace DEPI\AlumnosBundle\Controller;
 
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -32,7 +31,7 @@ class AlumnosController extends Controller
         $alumnos = $em->getRepository('AlumnosBundle:Alumnos')->findAlumnos();
 
         $paginator = $this->get('knp_paginator');
-        $pagination = $paginator->paginate($alumnos, $this->get('request')->query->get('page',1), 5);
+        $pagination = $paginator->paginate($alumnos, $this->getRequest()->query->get('page',1), 5);
 
         return array('alumnos' => $pagination);
     }
@@ -69,7 +68,7 @@ class AlumnosController extends Controller
      * @Method("PUT")
      * @Template()
      */
-    public function editAction(Request $request, $id)
+    public function editAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -84,7 +83,7 @@ class AlumnosController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->handleRequest($request);
+        $form->handleRequest($this->getRequest());
 
         if ($form->isValid()) {
             $entity->subirFoto($this->container->getParameter('alumnos.directorio.imagenes'));
@@ -94,7 +93,7 @@ class AlumnosController extends Controller
         }
 
         return array(
-            'entity'      => $entity,
+            'entity' => $entity,
             'form'   => $form->createView(),
         );
     }
