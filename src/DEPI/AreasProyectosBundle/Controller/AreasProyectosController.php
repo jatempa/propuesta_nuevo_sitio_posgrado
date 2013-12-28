@@ -34,8 +34,7 @@ class AreasProyectosController extends Controller
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate($entities, $this->get('request')->query->get('page',1), 5);
 
-        return $this->render('AreasProyectosBundle:AreasProyectos:index.html.twig', 
-                              array('entities' => $pagination,));
+        return array('entities' => $pagination);
     }
     /**
      * Creates a new AreasProyectos entity.
@@ -119,12 +118,10 @@ class AreasProyectosController extends Controller
         }
 
         $editForm = $this->createEditForm($entity);
-        $deleteForm = $this->createDeleteForm($id);
-
+     
         return array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
         );
     }
 
@@ -163,7 +160,6 @@ class AreasProyectosController extends Controller
             throw $this->createNotFoundException('Unable to find AreasProyectos entity.');
         }
 
-        $deleteForm = $this->createDeleteForm($id);
         $editForm = $this->createEditForm($entity);
         $editForm->handleRequest($request);
 
@@ -176,49 +172,6 @@ class AreasProyectosController extends Controller
         return array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
         );
-    }
-    /**
-     * Deletes a AreasProyectos entity.
-     *
-     * @Route("/{id}", name="areasproyectos_delete")
-     * @Method("DELETE")
-     */
-    public function deleteAction(Request $request, $id)
-    {
-        $form = $this->createDeleteForm($id);
-        $form->handleRequest($request);
-
-        if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('AreasProyectosBundle:AreasProyectos')->find($id);
-
-            if (!$entity) {
-                throw $this->createNotFoundException('Unable to find AreasProyectos entity.');
-            }
-
-            $em->remove($entity);
-            $em->flush();
-        }
-
-        return $this->redirect($this->generateUrl('areasproyectos'));
-    }
-
-    /**
-     * Creates a form to delete a AreasProyectos entity by id.
-     *
-     * @param mixed $id The entity id
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createDeleteForm($id)
-    {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('areasproyectos_delete', array('id' => $id)))
-            ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Eliminar'))
-            ->getForm()
-        ;
     }
 }

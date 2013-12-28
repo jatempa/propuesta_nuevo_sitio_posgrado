@@ -34,7 +34,7 @@ class InvestigadorProyectoController extends Controller
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate($entities, $this->get('request')->query->get('page',1), 5);
 
-        return $this->render('InvestigadorProyectoBundle:InvestigadorProyecto:index.html.twig', array('entities' => $pagination));
+        return array('entities' => $pagination);
     }
     /**
      * Creates a new InvestigadorProyecto entity.
@@ -118,12 +118,10 @@ class InvestigadorProyectoController extends Controller
         }
 
         $editForm = $this->createEditForm($entity);
-        $deleteForm = $this->createDeleteForm($id);
-
+     
         return array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
         );
     }
 
@@ -162,7 +160,6 @@ class InvestigadorProyectoController extends Controller
             throw $this->createNotFoundException('Unable to find InvestigadorProyecto entity.');
         }
 
-        $deleteForm = $this->createDeleteForm($id);
         $editForm = $this->createEditForm($entity);
         $editForm->handleRequest($request);
 
@@ -175,49 +172,6 @@ class InvestigadorProyectoController extends Controller
         return array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
         );
-    }
-    /**
-     * Deletes a InvestigadorProyecto entity.
-     *
-     * @Route("/{id}", name="investigadorproyecto_delete")
-     * @Method("DELETE")
-     */
-    public function deleteAction(Request $request, $id)
-    {
-        $form = $this->createDeleteForm($id);
-        $form->handleRequest($request);
-
-        if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('InvestigadorProyectoBundle:InvestigadorProyecto')->find($id);
-
-            if (!$entity) {
-                throw $this->createNotFoundException('Unable to find InvestigadorProyecto entity.');
-            }
-
-            $em->remove($entity);
-            $em->flush();
-        }
-
-        return $this->redirect($this->generateUrl('investigadorproyecto'));
-    }
-
-    /**
-     * Creates a form to delete a InvestigadorProyecto entity by id.
-     *
-     * @param mixed $id The entity id
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createDeleteForm($id)
-    {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('investigadorproyecto_delete', array('id' => $id)))
-            ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Eliminar'))
-            ->getForm()
-        ;
     }
 }

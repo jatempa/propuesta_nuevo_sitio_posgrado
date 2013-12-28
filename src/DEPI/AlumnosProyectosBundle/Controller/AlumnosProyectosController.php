@@ -35,8 +35,7 @@ class AlumnosProyectosController extends Controller
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate($alumnosenproyectos, $this->get('request')->query->get('page',1), 5);
 
-        return $this->render('AlumnosProyectosBundle:AlumnosProyectos:index.html.twig', 
-                              array('alumnosenproyectos' => $pagination));
+        return array('alumnosenproyectos' => $pagination);
     }
     /**
      * Creates a new AlumnosProyectos entity.
@@ -120,12 +119,10 @@ class AlumnosProyectosController extends Controller
         }
 
         $editForm = $this->createEditForm($entity);
-        $deleteForm = $this->createDeleteForm($id);
-
+     
         return array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
         );
     }
 
@@ -164,7 +161,6 @@ class AlumnosProyectosController extends Controller
             throw $this->createNotFoundException('Unable to find AlumnosProyectos entity.');
         }
 
-        $deleteForm = $this->createDeleteForm($id);
         $editForm = $this->createEditForm($entity);
         $editForm->handleRequest($request);
 
@@ -177,49 +173,6 @@ class AlumnosProyectosController extends Controller
         return array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
         );
-    }
-    /**
-     * Deletes a AlumnosProyectos entity.
-     *
-     * @Route("/{id}", name="alumnosproyectos_delete")
-     * @Method("DELETE")
-     */
-    public function deleteAction(Request $request, $id)
-    {
-        $form = $this->createDeleteForm($id);
-        $form->handleRequest($request);
-
-        if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('AlumnosProyectosBundle:AlumnosProyectos')->find($id);
-
-            if (!$entity) {
-                throw $this->createNotFoundException('Unable to find AlumnosProyectos entity.');
-            }
-
-            $em->remove($entity);
-            $em->flush();
-        }
-
-        return $this->redirect($this->generateUrl('alumnosproyectos'));
-    }
-
-    /**
-     * Creates a form to delete a AlumnosProyectos entity by id.
-     *
-     * @param mixed $id The entity id
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createDeleteForm($id)
-    {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('alumnosproyectos_delete', array('id' => $id)))
-            ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Eliminar'))
-            ->getForm()
-        ;
     }
 }

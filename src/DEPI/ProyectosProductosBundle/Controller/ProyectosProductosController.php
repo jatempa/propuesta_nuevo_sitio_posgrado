@@ -34,8 +34,7 @@ class ProyectosProductosController extends Controller
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate($entities, $this->get('request')->query->get('page',1), 5);
 
-        return $this->render('ProyectosProductosBundle:ProyectosProductos:index.html.twig', 
-                              array('entities' => $pagination));
+        return array('entities' => $pagination);
     }
     /**
      * Creates a new ProyectosProductos entity.
@@ -119,12 +118,10 @@ class ProyectosProductosController extends Controller
         }
 
         $editForm = $this->createEditForm($entity);
-        $deleteForm = $this->createDeleteForm($id);
-
+     
         return array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
         );
     }
 
@@ -163,7 +160,6 @@ class ProyectosProductosController extends Controller
             throw $this->createNotFoundException('Unable to find ProyectosProductos entity.');
         }
 
-        $deleteForm = $this->createDeleteForm($id);
         $editForm = $this->createEditForm($entity);
         $editForm->handleRequest($request);
 
@@ -176,49 +172,6 @@ class ProyectosProductosController extends Controller
         return array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
         );
-    }
-    /**
-     * Deletes a ProyectosProductos entity.
-     *
-     * @Route("/{id}", name="proyectosproductos_delete")
-     * @Method("DELETE")
-     */
-    public function deleteAction(Request $request, $id)
-    {
-        $form = $this->createDeleteForm($id);
-        $form->handleRequest($request);
-
-        if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('ProyectosProductosBundle:ProyectosProductos')->find($id);
-
-            if (!$entity) {
-                throw $this->createNotFoundException('Unable to find ProyectosProductos entity.');
-            }
-
-            $em->remove($entity);
-            $em->flush();
-        }
-
-        return $this->redirect($this->generateUrl('proyectosproductos'));
-    }
-
-    /**
-     * Creates a form to delete a ProyectosProductos entity by id.
-     *
-     * @param mixed $id The entity id
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createDeleteForm($id)
-    {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('proyectosproductos_delete', array('id' => $id)))
-            ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Eliminar'))
-            ->getForm()
-        ;
     }
 }
