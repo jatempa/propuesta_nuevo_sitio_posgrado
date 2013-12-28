@@ -19,54 +19,48 @@
             <fieldset>
                 <legend>Alumno</legend>
                 
-                {{ form_start(edit_form, { 'attr': {'enctype': 'multipart/form-data', 'class': 'forms forms-columnar'} }) }}
+                {{ form_start(form, { 'attr': {'enctype': 'multipart/form-data', 'class': 'forms forms-columnar'} }) }}
                     
                     <p>
-                        {{ form_label(edit_form.noControl, 'No. de Control *') }}
-                        {{ form_widget(edit_form.noControl, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_label(form.noControl, 'No. de Control *') }}
+                        {{ form_widget(form.noControl, { 'attr': {'class': 'width-100'} }) }}
                     </p>
                         
                     
                     <p>
-                        {{ form_label(edit_form.nombre, 'Nombre(s) *') }}
-                        {{ form_widget(edit_form.nombre, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_label(form.nombre, 'Nombre(s) *') }}
+                        {{ form_widget(form.nombre, { 'attr': {'class': 'width-100'} }) }}
                     </p>
                     
                     <p>
-                        {{ form_label(edit_form.apellidoPaterno, 'Apellido Paterno *') }}
-                        {{ form_widget(edit_form.apellidoPaterno, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_label(form.apellidoPaterno, 'Apellido Paterno *') }}
+                        {{ form_widget(form.apellidoPaterno, { 'attr': {'class': 'width-100'} }) }}
                     </p>
                         
                     <p>
-                        {{ form_label(edit_form.apellidoMaterno, 'Apellido Materno') }}
-                        {{ form_widget(edit_form.apellidoMaterno, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_label(form.apellidoMaterno, 'Apellido Materno') }}
+                        {{ form_widget(form.apellidoMaterno, { 'attr': {'class': 'width-100'} }) }}
                     </p>
                         
                     <p>
-                        {{ form_label(edit_form.email, 'Correo electrónico *') }}
-                        {{ form_widget(edit_form.email, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_label(form.email, 'Correo electrónico *') }}
+                        {{ form_widget(form.email, { 'attr': {'class': 'width-100'} }) }}
                     </p>
                         
                     <p>
-                        {{ form_label(edit_form.telefono, 'Teléfono') }}
-                        {{ form_widget(edit_form.telefono, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_label(form.telefono, 'Teléfono') }}
+                        {{ form_widget(form.telefono, { 'attr': {'class': 'width-100'} }) }}
                     </p>    
                     
                     <p>
-                        {{ form_label(edit_form.foto, 'Foto') }}
-                        {{ form_widget(edit_form.foto, { 'attr': {'class': 'width-100'} }) }}
-                        {{ form_errors(edit_form.foto) }}
+                        {{ form_label(form.foto, 'Foto') }}
+                        {{ form_widget(form.foto, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_errors(form.foto) }}
                     </p>
 
                     <p>
-                         {{ form_widget(edit_form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
-                    {{ form_end(edit_form) }}
-                    </p>
-
-                    <p>
-                        {{ form_start(delete_form) }}
-                            {{ form_widget(delete_form.submit, { 'attr': {'class': 'btn btn-red'} }) }}
-                        {{ form_end(delete_form) }}
+                        <input type="submit" value="GUARDAR" >
+                    {{ form_end(form) }}
                     </p>
             </fieldset>
         </div>
