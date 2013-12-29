@@ -13,38 +13,36 @@
         <div class="unit-centered unit-50">
             <fieldset>
                 <legend>Proyectos y Prod. académicos</legend>
-                {{ form_start(edit_form, { 'attr': {'class': 'forms forms-columnar'} }) }}
+                {{ form_start(form, { 'attr': {'class': 'forms forms-columnar'} }) }}
                     
                     <p>
-                        {{ form_label(edit_form.proyecto, 'Proyecto *') }}
-                        {{ form_widget(edit_form.proyecto, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_label(form.proyecto, 'Proyecto *') }}
+                        {{ form_widget(form.proyecto, { 'attr': {'class': 'width-100'} }) }}
                     </p>
 
                     <p>
-                        {{ form_label(edit_form.productoAcademico, 'Producto académico *') }}
-                        {{ form_widget(edit_form.productoAcademico, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_label(form.productoAcademico, 'Producto académico *') }}
+                        {{ form_widget(form.productoAcademico, { 'attr': {'class': 'width-100'} }) }}
                     </p>
 
                     <p>
-                        {{ form_label(edit_form.cantidad, 'Cantidad') }}
-                        {{ form_widget(edit_form.cantidad, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_label(form.cantidad, 'Cantidad') }}
+                        {{ form_widget(form.cantidad, { 'attr': {'class': 'width-100'} }) }}
                     </p>
                         
                     
                     <p>
-                        {{ form_label(edit_form.fechaCumplimiento, 'Fecha de cumplimiento') }}
-                        {{ form_widget(edit_form.fechaCumplimiento, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_label(form.fechaCumplimiento, 'Fecha de cumplimiento') }}
+                        {{ form_widget(form.fechaCumplimiento, { 'attr': {'class': 'width-100'} }) }}
                     </p>
 
                     <p>
-                        {{ form_label(edit_form.observaciones, 'Observaciones') }}
-                        {{ form_widget(edit_form.observaciones, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_label(form.observaciones, 'Observaciones') }}
+                        {{ form_widget(form.observaciones, { 'attr': {'class': 'width-100'} }) }}
                     </p>
 
                     <p>
-                         {{ form_widget(edit_form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
-                    {{ form_end(edit_form) }}
-                    
+                        {{ form_rest(form) }}    
                     </p>
             </fieldset>
         </div>

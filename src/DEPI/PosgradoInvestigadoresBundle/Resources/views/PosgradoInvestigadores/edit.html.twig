@@ -13,21 +13,21 @@
         <div class="unit-centered unit-50">
             <fieldset>
                 <legend>Posgrado y Áreas de investigación</legend>
-                {{ form_start(edit_form, { 'attr': {'class': 'forms forms-columnar'} }) }}                    
+                {{ form_start(form, { 'attr': {'class': 'forms forms-columnar'} }) }}                    
                     <p>
-                        {{ form_label(edit_form.posgrado, 'Posgrado *') }}
-                        {{ form_widget(edit_form.posgrado, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_label(form.posgrado, 'Posgrado *') }}
+                        {{ form_widget(form.posgrado, { 'attr': {'class': 'width-100'} }) }}
                     </p>
 
                     <p>
-                        {{ form_label(edit_form.investigadores, 'Investigadores *') }}
-                        {{ form_widget(edit_form.investigadores, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_label(form.investigadores, 'Investigadores *') }}
+                        {{ form_widget(form.investigadores, { 'attr': {'class': 'width-100'} }) }}
                     </p>                    
 
                     <p>
-                        {{ form_widget(edit_form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
+                        {{ form_rest(form) }}    
                     </p>
-                {{ form_end(edit_form) }}
+                {{ form_end(form) }}
             </fieldset>
         </div>
     </div>

@@ -13,22 +13,22 @@
         <div class="unit-centered unit-50">
             <fieldset>
                 <legend>Áreas de investigación y Proyectos</legend>
-                {{ form_start(edit_form, { 'attr': {'class': 'forms forms-columnar'} }) }}
+                {{ form_start(form, { 'attr': {'class': 'forms forms-columnar'} }) }}
                           
                     <p>
-                        {{ form_label(edit_form.proyecto, 'Proyecto *') }}
-                        {{ form_widget(edit_form.proyecto, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_label(form.proyecto, 'Proyecto *') }}
+                        {{ form_widget(form.proyecto, { 'attr': {'class': 'width-100'} }) }}
                     </p>                    
 
                     <p>
-                        {{ form_label(edit_form.area, 'Área de investigación *') }}
-                        {{ form_widget(edit_form.area, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_label(form.area, 'Área de investigación *') }}
+                        {{ form_widget(form.area, { 'attr': {'class': 'width-100'} }) }}
                     </p>
                     
                     <p>
-                         {{ form_widget(edit_form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
-                    {{ form_end(edit_form) }}
+                        {{ form_rest(form) }}    
                     </p>
+                {{ form_end(form) }}
             </fieldset>
         </div>
     </div>

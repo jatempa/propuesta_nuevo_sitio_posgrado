@@ -12,53 +12,51 @@
         <div class="unit-centered unit-50">
             <fieldset>
                 <legend>Proyecto</legend>
-                {{ form_start(edit_form, { 'attr': {'class': 'forms forms-columnar'} }) }}
+                {{ form_start(form, { 'attr': {'class': 'forms forms-columnar'} }) }}
                         
                     <p>
-                        {{ form_label(edit_form.nombreCorto, 'Nombre corto *') }}
-                        {{ form_widget(edit_form.nombreCorto, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_label(form.nombreCorto, 'Nombre corto *') }}
+                        {{ form_widget(form.nombreCorto, { 'attr': {'class': 'width-100'} }) }}
                     </p>
                         
                     <p>
-                        {{ form_label(edit_form.nombreCompleto, 'Nombre completo *') }}
-                        {{ form_widget(edit_form.nombreCompleto, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_label(form.nombreCompleto, 'Nombre completo *') }}
+                        {{ form_widget(form.nombreCompleto, { 'attr': {'class': 'width-100'} }) }}
                     </p>
                         
                     <p>
-                        {{ form_label(edit_form.objetivoGeneral, 'Objetivo general *') }}
-                        {{ form_widget(edit_form.objetivoGeneral, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_label(form.objetivoGeneral, 'Objetivo general *') }}
+                        {{ form_widget(form.objetivoGeneral, { 'attr': {'class': 'width-100'} }) }}
                     </p>
                         
                     <p>
-                        {{ form_label(edit_form.objetivosEspecificos, 'Objetivos específicos *') }}
-                        {{ form_widget(edit_form.objetivosEspecificos, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_label(form.objetivosEspecificos, 'Objetivos específicos *') }}
+                        {{ form_widget(form.objetivosEspecificos, { 'attr': {'class': 'width-100'} }) }}
                     </p>
                       
                     <p>
-                        {{ form_label(edit_form.claveA, 'Clave A *') }}
-                        {{ form_widget(edit_form.claveA, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_label(form.claveA, 'Clave A *') }}
+                        {{ form_widget(form.claveA, { 'attr': {'class': 'width-100'} }) }}
                     </p>
                         
                     
                     <p>
-                        {{ form_label(edit_form.claveB, 'Clave B') }}
-                        {{ form_widget(edit_form.claveB, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_label(form.claveB, 'Clave B') }}
+                        {{ form_widget(form.claveB, { 'attr': {'class': 'width-100'} }) }}
                     </p>
                 
                     <p>
-                        {{ form_label(edit_form.fechaApertura, 'Fecha de apertura *') }}
-                        {{ form_widget(edit_form.fechaApertura, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_label(form.fechaApertura, 'Fecha de apertura *') }}
+                        {{ form_widget(form.fechaApertura, { 'attr': {'class': 'width-100'} }) }}
                     </p>
                         
                     <p>
-                        {{ form_label(edit_form.fechaTermino, 'Fecha de término *') }}
-                        {{ form_widget(edit_form.fechaTermino, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_label(form.fechaTermino, 'Fecha de término *') }}
+                        {{ form_widget(form.fechaTermino, { 'attr': {'class': 'width-100'} }) }}
                     </p>
  
                     <p>
-                        {{ form_widget(edit_form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
-
-                    {{ form_end(edit_form) }}
+                        {{ form_rest(form) }}    
                     </p>
             </fieldset>
         </div>

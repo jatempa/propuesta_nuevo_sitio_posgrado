@@ -12,29 +12,29 @@
         <div class="unit-centered unit-50">
             <fieldset>
                 <legend>Portada</legend>
-                {{ form_start(edit_form, { 'attr': {'enctype': 'multipart/form-data', 'class': 'forms forms-columnar'} }) }}
+                {{ form_start(form, { 'attr': {'enctype': 'multipart/form-data', 'class': 'forms forms-columnar'} }) }}
 
                     <p>
-                        {{ form_label(edit_form.titulo, 'Titulo') }}
-                        {{ form_widget(edit_form.titulo, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_label(form.titulo, 'Titulo') }}
+                        {{ form_widget(form.titulo, { 'attr': {'class': 'width-100'} }) }}
                     </p>
                                  
                     <p>
-                        {{ form_label(edit_form.foto, 'Imagen del banner *') }}
+                        {{ form_label(form.foto, 'Imagen del banner *') }}
                         {{ entity.imagenBanner }}
-                        {{ form_widget(edit_form.foto, { 'attr': {'class': 'width-100'} }) }}
-                        {{ form_errors(edit_form.foto) }}
+                        {{ form_widget(form.foto, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_errors(form.foto) }}
                     </p>
 
                     <p>
-                        {{ form_label(edit_form.fechaPublicacion, 'Fecha de publicación *') }}
-                        {{ form_widget(edit_form.fechaPublicacion, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_label(form.fechaPublicacion, 'Fecha de publicación *') }}
+                        {{ form_widget(form.fechaPublicacion, { 'attr': {'class': 'width-100'} }) }}
                     </p>
                         
                     <p>
-                         {{ form_widget(edit_form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
-                    {{ form_end(edit_form) }}
+                        {{ form_rest(form) }}    
                     </p>
+                {{ form_end(form) }}
             </fieldset>
         </div>
     </div>
