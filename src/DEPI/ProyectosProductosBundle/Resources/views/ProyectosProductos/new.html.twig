@@ -13,7 +13,7 @@
         <div class="unit-centered unit-50">
             <fieldset>
                 <legend>Proyectos y Prod. académicos</legend>
-                {{ form_start(form, { 'attr': {'class': 'forms forms-columnar'} }) }}
+                {{ form_start(form, { 'action': path('proyectosproductos_new'), 'method': 'POST', 'attr': {'enctype': 'multipart/form-data', 'class': 'forms forms-columnar'} }) }}
                     
                     <p>
                         {{ form_label(form.proyecto, 'Proyecto *') }}
@@ -38,12 +38,12 @@
                     <p>
                         {{ form_label(form.observaciones, 'Observaciones') }}
                         {{ form_widget(form.observaciones, { 'attr': {'class': 'width-100'} }) }}
+                {{ form_end(form) }}
                     </p>
 
                     <p>
-                        {{ form_widget(form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
+                        <input type="submit" value="GUARDAR" class="btn btn-blue">
                     </p>
-                {{ form_end(form) }}
             </fieldset>
         </div>
     </div>

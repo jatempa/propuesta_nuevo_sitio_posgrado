@@ -12,7 +12,7 @@
         <div class="unit-centered unit-50">
             <fieldset>
                 <legend>Noticias</legend>
-                {{ form_start(form, { 'attr': {'enctype': 'multipart/form-data', 'class': 'forms forms-columnar'} }) }}
+                {{ form_start(form, { 'action': path('noticias_new'), 'method': 'POST', 'attr': {'enctype': 'multipart/form-data', 'class': 'forms forms-columnar'} }) }}
                     
                     <p>
                         {{ form_label(form.titulo, 'Título *') }}
@@ -33,12 +33,12 @@
                         {{ form_label(form.documento, 'Documento') }}
                         {{ form_widget(form.documento, { 'attr': {'class': 'width-100'} }) }}
                         {{ form_errors(form.documento) }}
+                {{ form_end(form) }}
                     </p>
 
                     <p>
-                        {{ form_widget(form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
+                         <input type="submit" value="GUARDAR" class="btn btn-blue">
                     </p>
-                {{ form_end(form) }}
             </fieldset>
         </div>
     </div>

@@ -12,7 +12,7 @@
         <div class="unit-centered unit-50">
             <fieldset>
                 <legend>Portada</legend>
-                {{ form_start(form, { 'attr': {'class': 'forms forms-columnar'} }) }}                      
+                {{ form_start(form, { 'action': path('portada_new'), 'method': 'POST', 'attr': {'enctype': 'multipart/form-data', 'class': 'forms forms-columnar'} }) }}                      
                     <p>
                         {{ form_label(form.titulo, 'Titulo') }}
                         {{ form_widget(form.titulo, { 'attr': {'class': 'width-100'} }) }}
@@ -27,12 +27,12 @@
                     <p>
                         {{ form_label(form.fechaPublicacion, 'Fecha de publicación *') }}
                         {{ form_widget(form.fechaPublicacion, { 'attr': {'class': 'width-100'} }) }}
+                {{ form_end(form) }}    
                     </p>
 
                     <p>
-                        {{ form_widget(form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
+                         <input type="submit" value="GUARDAR" class="btn btn-blue">
                     </p>
-                {{ form_end(form) }}
             </fieldset>
         </div>
     </div>

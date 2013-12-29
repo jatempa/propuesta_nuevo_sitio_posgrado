@@ -12,18 +12,17 @@
         <div class="unit-centered unit-50">
             <fieldset>
                 <legend>Producto Académico</legend>
-                {{ form_start(form, { 'attr': {'class': 'forms forms-columnar'} }) }}
+                {{ form_start(form, { 'action': path('productosacademicos_new'), 'method': 'POST', 'attr': {'enctype': 'multipart/form-data', 'class': 'forms forms-columnar'} }) }}
                     
                     <p>
                         {{ form_label(form.meta, 'Meta *') }}
                         {{ form_widget(form.meta, { 'attr': {'class': 'width-100'} }) }}
-                    </p>
-                        
-                    <p>
-                        {{ form_widget(form.submit, { 'attr': {'class': 'btn btn-blue'} }) }}
+                {{ form_end(form) }}
                     </p>
 
-                {{ form_end(form) }}
+                    <p>
+                        <input type="submit" value="GUARDAR" class="btn btn-blue">
+                    </p>
             </fieldset>
         </div>
     </div>
