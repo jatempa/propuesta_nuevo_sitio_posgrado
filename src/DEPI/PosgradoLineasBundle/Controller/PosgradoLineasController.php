@@ -2,7 +2,6 @@
 
 namespace DEPI\PosgradoLineasBundle\Controller;
 
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -61,10 +60,10 @@ class PosgradoLineasController extends Controller
         return array('entity' => $entity, 'form' => $form->createView());
     }
     /**
-     * Displays a form to edit an existing PosgradoLineas entity.
+     * Edits an existing PosgradoLineas entity.
      *
-     * @Route("/{id}/edit", name="posgradolineas_edit")
-     * @Method("GET")
+     * @Route("/{id}", name="posgradolineas_edit")
+     * @Method("PUT")
      * @Template()
      */
     public function editAction($id)
@@ -77,61 +76,22 @@ class PosgradoLineasController extends Controller
             throw $this->createNotFoundException('Unable to find PosgradoLineas entity.');
         }
 
-        $editForm = $this->createEditForm($entity);
-
-        return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-        );
-    }
-
-    /**
-    * Creates a form to edit a PosgradoLineas entity.
-    *
-    * @param PosgradoLineas $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createEditForm(PosgradoLineas $entity)
-    {
         $form = $this->createForm(new PosgradoLineasType(), $entity, array(
-            'action' => $this->generateUrl('posgradolineas_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('posgradolineas_edit', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Actualizar'));
+        $form->handleRequest($this->getRequest());
 
-        return $form;
-    }
-    /**
-     * Edits an existing PosgradoLineas entity.
-     *
-     * @Route("/{id}", name="posgradolineas_update")
-     * @Method("PUT")
-     * @Template("PosgradoLineasBundle:PosgradoLineas:edit.html.twig")
-     */
-    public function updateAction(Request $request, $id)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('PosgradoLineasBundle:PosgradoLineas')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find PosgradoLineas entity.');
-        }
-
-        $editForm = $this->createEditForm($entity);
-        $editForm->handleRequest($request);
-
-        if ($editForm->isValid()) {
+        if ($form->isValid()) {
             $em->flush();
 
             return $this->redirect($this->generateUrl('posgradolineas'));
         }
 
         return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'form'   => $form->createView(),
         );
     }
 }

@@ -2,7 +2,6 @@
 
 namespace DEPI\PosgradoInvestigadoresBundle\Controller;
 
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -61,10 +60,10 @@ class PosgradoInvestigadoresController extends Controller
         return array('entity' => $entity, 'form' => $form->createView());
     }
     /**
-     * Displays a form to edit an existing PosgradoInvestigadores entity.
+     * Edits an existing PosgradoInvestigadores entity.
      *
-     * @Route("/{id}/edit", name="posgradoinvestigadores_edit")
-     * @Method("GET")
+     * @Route("/{id}", name="posgradoinvestigadores_edit")
+     * @Method("PUT")
      * @Template()
      */
     public function editAction($id)
@@ -77,107 +76,22 @@ class PosgradoInvestigadoresController extends Controller
             throw $this->createNotFoundException('Unable to find PosgradoInvestigadores entity.');
         }
 
-        $editForm = $this->createEditForm($entity);
-        $deleteForm = $this->createDeleteForm($id);
-
-        return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-        );
-    }
-
-    /**
-    * Creates a form to edit a PosgradoInvestigadores entity.
-    *
-    * @param PosgradoInvestigadores $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createEditForm(PosgradoInvestigadores $entity)
-    {
         $form = $this->createForm(new PosgradoInvestigadoresType(), $entity, array(
-            'action' => $this->generateUrl('posgradoinvestigadores_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('posgradoinvestigadores_edit', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Actualizar'));
+        $form->handleRequest($this->getRequest());
 
-        return $form;
-    }
-    /**
-     * Edits an existing PosgradoInvestigadores entity.
-     *
-     * @Route("/{id}", name="posgradoinvestigadores_update")
-     * @Method("PUT")
-     * @Template("PosgradoInvestigadoresBundle:PosgradoInvestigadores:edit.html.twig")
-     */
-    public function updateAction(Request $request, $id)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('PosgradoInvestigadoresBundle:PosgradoInvestigadores')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find PosgradoInvestigadores entity.');
-        }
-
-        $deleteForm = $this->createDeleteForm($id);
-        $editForm = $this->createEditForm($entity);
-        $editForm->handleRequest($request);
-
-        if ($editForm->isValid()) {
+        if ($form->isValid()) {
             $em->flush();
 
             return $this->redirect($this->generateUrl('posgradoinvestigadores'));
         }
 
         return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+            'entity' => $entity,
+            'form'   => $form->createView(),
         );
-    }
-    /**
-     * Deletes a PosgradoInvestigadores entity.
-     *
-     * @Route("/{id}", name="posgradoinvestigadores_delete")
-     * @Method("DELETE")
-     */
-    public function deleteAction(Request $request, $id)
-    {
-        $form = $this->createDeleteForm($id);
-        $form->handleRequest($request);
-
-        if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('PosgradoInvestigadoresBundle:PosgradoInvestigadores')->find($id);
-
-            if (!$entity) {
-                throw $this->createNotFoundException('Unable to find PosgradoInvestigadores entity.');
-            }
-
-            $em->remove($entity);
-            $em->flush();
-        }
-
-        return $this->redirect($this->generateUrl('posgradoinvestigadores'));
-    }
-
-    /**
-     * Creates a form to delete a PosgradoInvestigadores entity by id.
-     *
-     * @param mixed $id The entity id
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createDeleteForm($id)
-    {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('posgradoinvestigadores_delete', array('id' => $id)))
-            ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Eliminar'))
-            ->getForm()
-        ;
     }
 }

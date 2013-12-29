@@ -61,10 +61,10 @@ class LineasInvestigacionController extends Controller
         return array('entity' => $entity, 'form' => $form->createView());
     }
     /**
-     * Displays a form to edit an existing LineasInvestigacion entity.
+     * Edits an existing LineasInvestigacion entity.
      *
-     * @Route("/{id}/edit", name="lineas_edit")
-     * @Method("GET")
+     * @Route("/{id}", name="lineas_edit")
+     * @Method("PUT")
      * @Template()
      */
     public function editAction($id)
@@ -77,61 +77,22 @@ class LineasInvestigacionController extends Controller
             throw $this->createNotFoundException('Unable to find LineasInvestigacion entity.');
         }
 
-        $editForm = $this->createEditForm($entity);
-
-        return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-        );
-    }
-
-    /**
-    * Creates a form to edit a LineasInvestigacion entity.
-    *
-    * @param LineasInvestigacion $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createEditForm(LineasInvestigacion $entity)
-    {
         $form = $this->createForm(new LineasInvestigacionType(), $entity, array(
-            'action' => $this->generateUrl('lineas_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('lineas_edit', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Actualizar'));
+        $form->handleRequest($this->getRequest());
 
-        return $form;
-    }
-    /**
-     * Edits an existing LineasInvestigacion entity.
-     *
-     * @Route("/{id}", name="lineas_update")
-     * @Method("PUT")
-     * @Template("LineasInvestigacionBundle:LineasInvestigacion:edit.html.twig")
-     */
-    public function updateAction(Request $request, $id)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('LineasInvestigacionBundle:LineasInvestigacion')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find LineasInvestigacion entity.');
-        }
-
-        $editForm = $this->createEditForm($entity);
-        $editForm->handleRequest($request);
-
-        if ($editForm->isValid()) {
+        if ($form->isValid()) {
             $em->flush();
 
             return $this->redirect($this->generateUrl('lineas'));
         }
 
         return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'form'   => $form->createView(),
         );
     }
 }

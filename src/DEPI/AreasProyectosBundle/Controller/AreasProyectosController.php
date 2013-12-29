@@ -61,10 +61,10 @@ class AreasProyectosController extends Controller
         return array('entity' => $entity, 'form' => $form->createView());
     }
     /**
-     * Displays a form to edit an existing AreasProyectos entity.
+     * Edits an existing AreasProyectos entity.
      *
-     * @Route("/{id}/edit", name="areasproyectos_edit")
-     * @Method("GET")
+     * @Route("/{id}", name="areasproyectos_edit")
+     * @Method("PUT")
      * @Template()
      */
     public function editAction($id)
@@ -77,61 +77,22 @@ class AreasProyectosController extends Controller
             throw $this->createNotFoundException('Unable to find AreasProyectos entity.');
         }
 
-        $editForm = $this->createEditForm($entity);
-     
-        return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-        );
-    }
-
-    /**
-    * Creates a form to edit a AreasProyectos entity.
-    *
-    * @param AreasProyectos $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createEditForm(AreasProyectos $entity)
-    {
         $form = $this->createForm(new AreasProyectosType(), $entity, array(
-            'action' => $this->generateUrl('areasproyectos_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('areasproyectos_edit', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Actualizar'));
+        $form->handleRequest($this->getRequest());
 
-        return $form;
-    }
-    /**
-     * Edits an existing AreasProyectos entity.
-     *
-     * @Route("/{id}", name="areasproyectos_update")
-     * @Method("PUT")
-     * @Template("AreasProyectosBundle:AreasProyectos:edit.html.twig")
-     */
-    public function updateAction(Request $request, $id)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('AreasProyectosBundle:AreasProyectos')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find AreasProyectos entity.');
-        }
-
-        $editForm = $this->createEditForm($entity);
-        $editForm->handleRequest($request);
-
-        if ($editForm->isValid()) {
+        if ($form->isValid()) {
             $em->flush();
 
             return $this->redirect($this->generateUrl('areasproyectos'));
         }
 
         return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'form'   => $form->createView(),
         );
     }
 }

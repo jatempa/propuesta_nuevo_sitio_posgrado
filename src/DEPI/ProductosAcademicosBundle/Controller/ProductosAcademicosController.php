@@ -61,10 +61,10 @@ class ProductosAcademicosController extends Controller
         return array('entity' => $entity, 'form' => $form->createView());
     }
     /**
-     * Displays a form to edit an existing ProductosAcademicos entity.
+     * Edits an existing ProductosAcademicos entity.
      *
-     * @Route("/{id}/edit", name="productosacademicos_edit")
-     * @Method("GET")
+     * @Route("/{id}", name="productosacademicos_edit")
+     * @Method("PUT")
      * @Template()
      */
     public function editAction($id)
@@ -77,61 +77,22 @@ class ProductosAcademicosController extends Controller
             throw $this->createNotFoundException('Unable to find ProductosAcademicos entity.');
         }
 
-        $editForm = $this->createEditForm($entity);
-
-        return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-        );
-    }
-
-    /**
-    * Creates a form to edit a ProductosAcademicos entity.
-    *
-    * @param ProductosAcademicos $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createEditForm(ProductosAcademicos $entity)
-    {
         $form = $this->createForm(new ProductosAcademicosType(), $entity, array(
-            'action' => $this->generateUrl('productosacademicos_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('productosacademicos_edit', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Actualizar'));
+        $form->handleRequest($this->getRequest());
 
-        return $form;
-    }
-    /**
-     * Edits an existing ProductosAcademicos entity.
-     *
-     * @Route("/{id}", name="productosacademicos_update")
-     * @Method("PUT")
-     * @Template("ProductosAcademicosBundle:ProductosAcademicos:edit.html.twig")
-     */
-    public function updateAction(Request $request, $id)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('ProductosAcademicosBundle:ProductosAcademicos')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find ProductosAcademicos entity.');
-        }
-
-        $editForm = $this->createEditForm($entity);
-        $editForm->handleRequest($request);
-
-        if ($editForm->isValid()) {
+        if ($form->isValid()) {
             $em->flush();
 
             return $this->redirect($this->generateUrl('productosacademicos'));
         }
 
         return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'form'   => $form->createView(),
         );
     }
 }

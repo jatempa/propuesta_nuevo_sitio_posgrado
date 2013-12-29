@@ -14,18 +14,6 @@ proyectos_edit:
     pattern:  /posgradmin/proyectos/edit/{id}
     defaults: { _controller: ProyectosBundle:Proyectos:edit }
 
-proyectos_create:
-    pattern:  /posgradmin/proyectos/create
-    defaults: { _controller: ProyectosBundle:Proyectos:create }
-
-proyectos_update:
-    pattern:  /posgradmin/proyectos/update/{id}
-    defaults: { _controller: ProyectosBundle:Proyectos:update }
-
-proyectos_delete:
-    pattern:  /posgradmin/proyectos/delete/{id}
-    defaults: { _controller: ProyectosBundle:Proyectos:delete }
-
 proyectos_public:
     pattern:  /proyectos
     defaults: { _controller: ProyectosBundle:ProyectosPublic:index }

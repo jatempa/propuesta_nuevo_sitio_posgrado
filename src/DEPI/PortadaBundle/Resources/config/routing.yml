@@ -25,15 +25,3 @@ portada_new:
 portada_edit:
     pattern:  /posgradmin/portada/edit/{id}
     defaults: { _controller: PortadaBundle:Portada:edit }
-
-portada_create:
-    pattern:  /posgradmin/portada/create
-    defaults: { _controller: PortadaBundle:Portada:create }
-
-portada_update:
-    pattern:  /posgradmin/portada/update/{id}
-    defaults: { _controller: PortadaBundle:Portada:update }
-
-portada_delete:
-    pattern:  /posgradmin/portada/delete/{id}
-    defaults: { _controller: PortadaBundle:Portada:delete }

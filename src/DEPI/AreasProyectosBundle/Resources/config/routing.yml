@@ -13,15 +13,3 @@ areasproyectos_new:
 areasproyectos_edit:
     pattern:  /posgradmin/areasproyectos/edit/{id}
     defaults: { _controller: AreasProyectosBundle:AreasProyectos:edit }
-
-areasproyectos_create:
-    pattern:  /posgradmin/areasproyectos/create
-    defaults: { _controller: AreasProyectosBundle:AreasProyectos:create }
-
-areasproyectos_update:
-    pattern:  /posgradmin/areasproyectos/update/{id}
-    defaults: { _controller: AreasProyectosBundle:AreasProyectos:update }
-
-areasproyectos_delete:
-    pattern:  /posgradmin/areasproyectos/delete/{id}
-    defaults: { _controller: AreasProyectosBundle:AreasProyectos:delete }

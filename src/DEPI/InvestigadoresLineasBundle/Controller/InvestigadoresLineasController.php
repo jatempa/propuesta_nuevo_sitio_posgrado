@@ -61,10 +61,10 @@ class InvestigadoresLineasController extends Controller
         return array('entity' => $entity, 'form' => $form->createView());
     }
     /**
-     * Displays a form to edit an existing InvestigadoresLineas entity.
+     * Edits an existing InvestigadoresLineas entity.
      *
-     * @Route("/{id}/edit", name="investigadoreslineas_edit")
-     * @Method("GET")
+     * @Route("/{id}", name="investigadoreslineas_edit")
+     * @Method("PUT")
      * @Template()
      */
     public function editAction($id)
@@ -77,62 +77,22 @@ class InvestigadoresLineasController extends Controller
             throw $this->createNotFoundException('Unable to find InvestigadoresLineas entity.');
         }
 
-        $editForm = $this->createEditForm($entity);
-    
-        return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-        );
-    }
-
-    /**
-    * Creates a form to edit a InvestigadoresLineas entity.
-    *
-    * @param InvestigadoresLineas $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createEditForm(InvestigadoresLineas $entity)
-    {
         $form = $this->createForm(new InvestigadoresLineasType(), $entity, array(
-            'action' => $this->generateUrl('investigadoreslineas_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('investigadoreslineas_edit', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Actualizar'));
+        $form->handleRequest($this->getRequest());
 
-        return $form;
-    }
-  
-    /**
-     * Edits an existing InvestigadoresLineas entity.
-     *
-     * @Route("/{id}", name="investigadoreslineas_update")
-     * @Method("PUT")
-     * @Template("InvestigadoresLineasBundle:InvestigadoresLineas:edit.html.twig")
-     */
-    public function updateAction(Request $request, $id)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('InvestigadoresLineasBundle:InvestigadoresLineas')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find InvestigadoresLineas entity.');
-        }
-
-        $editForm = $this->createEditForm($entity);
-        $editForm->handleRequest($request);
-
-        if ($editForm->isValid()) {
+        if ($form->isValid()) {
             $em->flush();
 
             return $this->redirect($this->generateUrl('investigadoreslineas'));
         }
 
         return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'form'   => $form->createView(),
         );
     }
 }

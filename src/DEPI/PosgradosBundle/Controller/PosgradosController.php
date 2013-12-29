@@ -2,7 +2,6 @@
 
 namespace DEPI\PosgradosBundle\Controller;
 
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -61,10 +60,10 @@ class PosgradosController extends Controller
         return array('entity' => $entity, 'form' => $form->createView());
     }
     /**
-     * Displays a form to edit an existing Posgrados entity.
+     * Edits an existing Posgrados entity.
      *
-     * @Route("/{id}/edit", name="posgrados_edit")
-     * @Method("GET")
+     * @Route("/{id}", name="posgrados_edit")
+     * @Method("PUT")
      * @Template()
      */
     public function editAction($id)
@@ -77,61 +76,22 @@ class PosgradosController extends Controller
             throw $this->createNotFoundException('Unable to find Posgrados entity.');
         }
 
-        $editForm = $this->createEditForm($entity);
-
-        return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-        );
-    }
-
-    /**
-    * Creates a form to edit a Posgrados entity.
-    *
-    * @param Posgrados $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createEditForm(Posgrados $entity)
-    {
         $form = $this->createForm(new PosgradosType(), $entity, array(
-            'action' => $this->generateUrl('posgrados_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('posgrados_edit', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Actualizar'));
+        $form->handleRequest($this->getRequest());
 
-        return $form;
-    }
-    /**
-     * Edits an existing Posgrados entity.
-     *
-     * @Route("/{id}", name="posgrados_update")
-     * @Method("PUT")
-     * @Template("PosgradosBundle:Posgrados:edit.html.twig")
-     */
-    public function updateAction(Request $request, $id)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('PosgradosBundle:Posgrados')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Posgrados entity.');
-        }
-
-        $editForm = $this->createEditForm($entity);
-        $editForm->handleRequest($request);
-
-        if ($editForm->isValid()) {
+        if ($form->isValid()) {
             $em->flush();
 
             return $this->redirect($this->generateUrl('posgrados'));
         }
 
         return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'form'   => $form->createView(),
         );
     }
 }

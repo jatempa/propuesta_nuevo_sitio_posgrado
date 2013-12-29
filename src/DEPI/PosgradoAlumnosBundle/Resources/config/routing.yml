@@ -13,15 +13,3 @@ posgradoalumnos_new:
 posgradoalumnos_edit:
     pattern:  /posgradmin/posgradoalumnos/edit/{id}
     defaults: { _controller: PosgradoAlumnosBundle:PosgradoAlumnos:edit }
-
-posgradoalumnos_create:
-    pattern:  /posgradmin/posgradoalumnos/create
-    defaults: { _controller: PosgradoAlumnosBundle:PosgradoAlumnos:create }
-
-posgradoalumnos_update:
-    pattern:  /posgradmin/posgradoalumnos/update/{id}
-    defaults: { _controller: PosgradoAlumnosBundle:PosgradoAlumnos:update }
-
-posgradoalumnos_delete:
-    pattern:  /posgradmin/posgradoalumnos/delete/{id}
-    defaults: { _controller: PosgradoAlumnosBundle:PosgradoAlumnos:delete }

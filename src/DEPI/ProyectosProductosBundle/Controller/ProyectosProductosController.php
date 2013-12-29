@@ -61,10 +61,10 @@ class ProyectosProductosController extends Controller
         return array('entity' => $entity, 'form' => $form->createView());
     }
     /**
-     * Displays a form to edit an existing ProyectosProductos entity.
+     * Edits an existing ProyectosProductos entity.
      *
-     * @Route("/{id}/edit", name="proyectosproductos_edit")
-     * @Method("GET")
+     * @Route("/{id}", name="proyectosproductos_edit")
+     * @Method("PUT")
      * @Template()
      */
     public function editAction($id)
@@ -77,61 +77,22 @@ class ProyectosProductosController extends Controller
             throw $this->createNotFoundException('Unable to find ProyectosProductos entity.');
         }
 
-        $editForm = $this->createEditForm($entity);
-     
-        return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-        );
-    }
-
-    /**
-    * Creates a form to edit a ProyectosProductos entity.
-    *
-    * @param ProyectosProductos $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createEditForm(ProyectosProductos $entity)
-    {
         $form = $this->createForm(new ProyectosProductosType(), $entity, array(
-            'action' => $this->generateUrl('proyectosproductos_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('proyectosproductos_edit', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Actualizar'));
+        $form->handleRequest($this->getRequest());
 
-        return $form;
-    }
-    /**
-     * Edits an existing ProyectosProductos entity.
-     *
-     * @Route("/{id}", name="proyectosproductos_update")
-     * @Method("PUT")
-     * @Template("ProyectosProductosBundle:ProyectosProductos:edit.html.twig")
-     */
-    public function updateAction(Request $request, $id)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('ProyectosProductosBundle:ProyectosProductos')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find ProyectosProductos entity.');
-        }
-
-        $editForm = $this->createEditForm($entity);
-        $editForm->handleRequest($request);
-
-        if ($editForm->isValid()) {
+        if ($form->isValid()) {
             $em->flush();
 
             return $this->redirect($this->generateUrl('proyectosproductos'));
         }
 
         return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'form'   => $form->createView(),
         );
     }
 }

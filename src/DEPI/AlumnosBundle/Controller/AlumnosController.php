@@ -60,7 +60,6 @@ class AlumnosController extends Controller
 
         return array('entity' => $entity, 'form' => $form->createView());
     }
-
     /**
      * Edits an existing Alumnos entity.
      *

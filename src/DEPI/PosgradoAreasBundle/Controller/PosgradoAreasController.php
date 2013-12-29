@@ -61,10 +61,10 @@ class PosgradoAreasController extends Controller
         return array('entity' => $entity, 'form' => $form->createView());
     }
     /**
-     * Displays a form to edit an existing PosgradoAreas entity.
+     * Edits an existing PosgradoAreas entity.
      *
-     * @Route("/{id}/edit", name="posgradoareas_edit")
-     * @Method("GET")
+     * @Route("/{id}", name="posgradoareas_edit")
+     * @Method("PUT")
      * @Template()
      */
     public function editAction($id)
@@ -77,61 +77,22 @@ class PosgradoAreasController extends Controller
             throw $this->createNotFoundException('Unable to find PosgradoAreas entity.');
         }
 
-        $editForm = $this->createEditForm($entity);
-
-        return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-        );
-    }
-
-    /**
-    * Creates a form to edit a PosgradoAreas entity.
-    *
-    * @param PosgradoAreas $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createEditForm(PosgradoAreas $entity)
-    {
         $form = $this->createForm(new PosgradoAreasType(), $entity, array(
-            'action' => $this->generateUrl('posgradoareas_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('posgradoareas_edit', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Actualizar'));
+        $form->handleRequest($this->getRequest());
 
-        return $form;
-    }
-    /**
-     * Edits an existing PosgradoAreas entity.
-     *
-     * @Route("/{id}", name="posgradoareas_update")
-     * @Method("PUT")
-     * @Template("PosgradoAreasBundle:PosgradoAreas:edit.html.twig")
-     */
-    public function updateAction(Request $request, $id)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('PosgradoAreasBundle:PosgradoAreas')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find PosgradoAreas entity.');
-        }
-
-        $editForm = $this->createEditForm($entity);
-        $editForm->handleRequest($request);
-
-        if ($editForm->isValid()) {
+        if ($form->isValid()) {
             $em->flush();
 
             return $this->redirect($this->generateUrl('posgradoareas'));
         }
 
         return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'form'   => $form->createView(),
         );
     }
 }

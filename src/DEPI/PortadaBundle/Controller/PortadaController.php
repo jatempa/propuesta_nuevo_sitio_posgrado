@@ -51,6 +51,7 @@ class PortadaController extends Controller
         $form->handleRequest($this->getRequest());
 
         if ($form->isValid()) {
+            $entity->subirFoto($this->container->getParameter('portada.directorio.imagenes'));
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
@@ -61,10 +62,10 @@ class PortadaController extends Controller
         return array('entity' => $entity, 'form' => $form->createView());
     }
     /**
-     * Displays a form to edit an existing Portada entity.
+     * Edits an existing Portada entity.
      *
-     * @Route("/{id}/edit", name="portada_edit")
-     * @Method("GET")
+     * @Route("/{id}", name="portada_edit")
+     * @Method("PUT")
      * @Template()
      */
     public function editAction($id)
@@ -77,53 +78,14 @@ class PortadaController extends Controller
             throw $this->createNotFoundException('Unable to find Portada entity.');
         }
 
-        $editForm = $this->createEditForm($entity);
-     
-        return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-        );
-    }
-
-    /**
-    * Creates a form to edit a Portada entity.
-    *
-    * @param Portada $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createEditForm(Portada $entity)
-    {
         $form = $this->createForm(new PortadaType(), $entity, array(
-            'action' => $this->generateUrl('portada_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('portada_edit', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Actualizar'));
+        $form->handleRequest($this->getRequest());
 
-        return $form;
-    }
-    /**
-     * Edits an existing Portada entity.
-     *
-     * @Route("/{id}", name="portada_update")
-     * @Method("PUT")
-     * @Template("PortadaBundle:Portada:edit.html.twig")
-     */
-    public function updateAction(Request $request, $id)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('PortadaBundle:Portada')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Portada entity.');
-        }
-
-        $editForm = $this->createEditForm($entity);
-        $editForm->handleRequest($request);
-
-        if ($editForm->isValid()) {
+        if ($form->isValid()) {
             $entity->subirFoto($this->container->getParameter('portada.directorio.imagenes'));
             $em->flush();
 
@@ -131,8 +93,8 @@ class PortadaController extends Controller
         }
 
         return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'form'   => $form->createView(),
         );
     }
 }

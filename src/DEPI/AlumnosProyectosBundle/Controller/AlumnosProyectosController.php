@@ -62,10 +62,10 @@ class AlumnosProyectosController extends Controller
         return array('entity' => $entity, 'form' => $form->createView());
     }
     /**
-     * Displays a form to edit an existing AlumnosProyectos entity.
+     * Edits an existing AlumnosProyectos entity.
      *
-     * @Route("/{id}/edit", name="alumnosproyectos_edit")
-     * @Method("GET")
+     * @Route("/{id}", name="alumnosproyectos_edit")
+     * @Method("PUT")
      * @Template()
      */
     public function editAction($id)
@@ -78,61 +78,22 @@ class AlumnosProyectosController extends Controller
             throw $this->createNotFoundException('Unable to find AlumnosProyectos entity.');
         }
 
-        $editForm = $this->createEditForm($entity);
-     
-        return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-        );
-    }
-
-    /**
-    * Creates a form to edit a AlumnosProyectos entity.
-    *
-    * @param AlumnosProyectos $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createEditForm(AlumnosProyectos $entity)
-    {
         $form = $this->createForm(new AlumnosProyectosType(), $entity, array(
-            'action' => $this->generateUrl('alumnosproyectos_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('alumnosproyectos_edit', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Actualizar'));
+        $form->handleRequest($this->getRequest());
 
-        return $form;
-    }
-    /**
-     * Edits an existing AlumnosProyectos entity.
-     *
-     * @Route("/{id}", name="alumnosproyectos_update")
-     * @Method("PUT")
-     * @Template("AlumnosProyectosBundle:AlumnosProyectos:edit.html.twig")
-     */
-    public function updateAction(Request $request, $id)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('AlumnosProyectosBundle:AlumnosProyectos')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find AlumnosProyectos entity.');
-        }
-
-        $editForm = $this->createEditForm($entity);
-        $editForm->handleRequest($request);
-
-        if ($editForm->isValid()) {
+        if ($form->isValid()) {
             $em->flush();
 
             return $this->redirect($this->generateUrl('alumnosproyectos'));
         }
 
         return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'form'   => $form->createView(),
         );
     }
 }

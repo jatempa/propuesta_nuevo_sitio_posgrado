@@ -13,15 +13,3 @@ posgradolineas_new:
 posgradolineas_edit:
     pattern:  /posgradmin/posgradolineas/edit/{id}
     defaults: { _controller: PosgradoLineasBundle:PosgradoLineas:edit }
-
-posgradolineas_create:
-    pattern:  /posgradmin/posgradolineas/create
-    defaults: { _controller: PosgradoLineasBundle:PosgradoLineas:create }
-
-posgradolineas_update:
-    pattern:  /posgradmin/posgradolineas/update/{id}
-    defaults: { _controller: PosgradoLineasBundle:PosgradoLineas:update }
-
-posgradolineas_delete:
-    pattern:  /posgradmin/posgradolineas/delete/{id}
-    defaults: { _controller: PosgradoLineasBundle:PosgradoLineas:delete }

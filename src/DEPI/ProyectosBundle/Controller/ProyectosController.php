@@ -61,10 +61,10 @@ class ProyectosController extends Controller
         return array('entity' => $entity, 'form' => $form->createView());
     }
     /**
-     * Displays a form to edit an existing Proyectos entity.
+     * Edits an existing Proyectos entity.
      *
-     * @Route("/{id}/edit", name="proyectos_edit")
-     * @Method("GET")
+     * @Route("/{id}", name="proyectos_edit")
+     * @Method("PUT")
      * @Template()
      */
     public function editAction($id)
@@ -77,61 +77,22 @@ class ProyectosController extends Controller
             throw $this->createNotFoundException('Unable to find Proyectos entity.');
         }
 
-        $editForm = $this->createEditForm($entity);
-
-        return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-        );
-    }
-
-    /**
-    * Creates a form to edit a Proyectos entity.
-    *
-    * @param Proyectos $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createEditForm(Proyectos $entity)
-    {
         $form = $this->createForm(new ProyectosType(), $entity, array(
-            'action' => $this->generateUrl('proyectos_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('proyectos_edit', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Actualizar'));
+        $form->handleRequest($this->getRequest());
 
-        return $form;
-    }
-    /**
-     * Edits an existing Proyectos entity.
-     *
-     * @Route("/{id}", name="proyectos_update")
-     * @Method("PUT")
-     * @Template("ProyectosBundle:Proyectos:edit.html.twig")
-     */
-    public function updateAction(Request $request, $id)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('ProyectosBundle:Proyectos')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Proyectos entity.');
-        }
-
-        $editForm = $this->createEditForm($entity);
-        $editForm->handleRequest($request);
-
-        if ($editForm->isValid()) {
+        if ($form->isValid()) {
             $em->flush();
 
             return $this->redirect($this->generateUrl('proyectos'));
         }
 
         return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'form'   => $form->createView(),
         );
     }
 }

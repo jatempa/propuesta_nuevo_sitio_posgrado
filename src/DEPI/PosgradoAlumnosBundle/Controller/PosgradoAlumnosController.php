@@ -61,10 +61,10 @@ class PosgradoAlumnosController extends Controller
         return array('entity' => $entity, 'form' => $form->createView());
     }
     /**
-     * Displays a form to edit an existing PosgradoAlumnos entity.
+     * Edits an existing PosgradoAlumnos entity.
      *
-     * @Route("/{id}/edit", name="posgradoalumnos_edit")
-     * @Method("GET")
+     * @Route("/{id}", name="posgradoalumnos_edit")
+     * @Method("PUT")
      * @Template()
      */
     public function editAction($id)
@@ -77,61 +77,22 @@ class PosgradoAlumnosController extends Controller
             throw $this->createNotFoundException('Unable to find PosgradoAlumnos entity.');
         }
 
-        $editForm = $this->createEditForm($entity);
-
-        return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-        );
-    }
-
-    /**
-    * Creates a form to edit a PosgradoAlumnos entity.
-    *
-    * @param PosgradoAlumnos $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createEditForm(PosgradoAlumnos $entity)
-    {
         $form = $this->createForm(new PosgradoAlumnosType(), $entity, array(
-            'action' => $this->generateUrl('posgradoalumnos_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('posgradoalumnos_edit', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Actualizar'));
+        $form->handleRequest($this->getRequest());
 
-        return $form;
-    }
-    /**
-     * Edits an existing PosgradoAlumnos entity.
-     *
-     * @Route("/{id}", name="posgradoalumnos_update")
-     * @Method("PUT")
-     * @Template("PosgradoAlumnosBundle:PosgradoAlumnos:edit.html.twig")
-     */
-    public function updateAction(Request $request, $id)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('PosgradoAlumnosBundle:PosgradoAlumnos')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find PosgradoAlumnos entity.');
-        }
-
-        $editForm = $this->createEditForm($entity);
-        $editForm->handleRequest($request);
-
-        if ($editForm->isValid()) {
+        if ($form->isValid()) {
             $em->flush();
 
             return $this->redirect($this->generateUrl('posgradoalumnos'));
         }
 
         return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'form'   => $form->createView(),
         );
     }
 }
