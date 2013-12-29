@@ -15,4 +15,15 @@ class AlumnosRepository extends EntityRepository
 
 		return $dql->getQuery()->getResult();
 	}
+
+	public function deleteAlumnos($id)
+	{
+		$em = $this->getEntityManager();
+		$dql = $em->createQueryBuilder();
+		$dql->delete('AlumnosBundle:Alumnos', 'a')
+		    ->where('a.id = :id_alumnos' );
+ 		$dql->setParameter('id_alumnos', $id);
+
+		return $dql->getQuery()->getResult();
+	}
 }

@@ -24,4 +24,15 @@ class NoticiasRepository extends EntityRepository
 
 		return $dql->getQuery()->getResult();
 	}
+
+	public function deleteNoticias($id)
+	{
+		$em = $this->getEntityManager();
+		$dql = $em->createQueryBuilder();
+		$dql->delete('NoticiasBundle:Noticias', 'n')
+		    ->where('n.id = :id_noticias' );
+ 		$dql->setParameter('id_noticias', $id);
+
+		return $dql->getQuery()->getResult();
+	}
 }

@@ -24,4 +24,15 @@ class PortadaRepository extends EntityRepository
 
 		return $dql->getQuery()->getResult();
 	}
+
+	public function deletePortada($id)
+	{
+		$em = $this->getEntityManager();
+		$dql = $em->createQueryBuilder();
+		$dql->delete('PortadaBundle:Portada', 'p')
+		    ->where('p.id = :id_portada' );
+ 		$dql->setParameter('id_portada', $id);
+
+		return $dql->getQuery()->getResult();
+	}
 }

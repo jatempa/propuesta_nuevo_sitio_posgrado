@@ -21,4 +21,15 @@ class AreasProyectosRepository extends EntityRepository
 
 		return $dql->getQuery()->getResult();
 	}
+
+	public function deleteAreasProyectos($id)
+	{
+		$em = $this->getEntityManager();
+		$dql = $em->createQueryBuilder();
+		$dql->delete('AreasProyectosBundle:AreasProyectos', 'ap')
+		    ->where('ap.id = :id_areasproyectos' );
+ 		$dql->setParameter('id_areasproyectos', $id);
+
+		return $dql->getQuery()->getResult();
+	}
 }

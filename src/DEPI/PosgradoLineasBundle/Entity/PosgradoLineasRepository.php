@@ -21,4 +21,15 @@ class PosgradoLineasRepository extends EntityRepository
 
 		return $dql->getQuery()->getResult();
 	}
+
+	public function deletePosgradoLineas($id)
+	{
+		$em = $this->getEntityManager();
+		$dql = $em->createQueryBuilder();
+		$dql->delete('PosgradoLineasBundle:PosgradoLineas', 'pl')
+		    ->where('pl.id = :id_posgradolineas' );
+ 		$dql->setParameter('id_posgradolineas', $id);
+
+		return $dql->getQuery()->getResult();
+	}
 }

@@ -21,4 +21,15 @@ class InvestigadorProyectoRepository extends EntityRepository
 
 		return $dql->getQuery()->getResult();
 	}	
+
+	public function deleteInvestigadorProyecto($id)
+	{
+		$em = $this->getEntityManager();
+		$dql = $em->createQueryBuilder();
+		$dql->delete('InvestigadorProyectoBundle:InvestigadorProyecto', 'ip')
+		    ->where('ip.id = :id_investigadorproyecto' );
+ 		$dql->setParameter('id_investigadorproyecto', $id);
+
+		return $dql->getQuery()->getResult();
+	}
 }

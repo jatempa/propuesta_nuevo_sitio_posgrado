@@ -21,4 +21,15 @@ class AlumnosProyectosRepository extends EntityRepository
 
 		return $dql->getQuery()->getResult();
 	}
+
+	public function deleteAlumnosProyectos($id)
+	{
+		$em = $this->getEntityManager();
+		$dql = $em->createQueryBuilder();
+		$dql->delete('AlumnosProyectosBundle:AlumnosProyectos', 'ap')
+		    ->where('ap.id = :id_alumnosproyectos' );
+ 		$dql->setParameter('id_alumnosproyectos', $id);
+
+		return $dql->getQuery()->getResult();
+	}
 }

@@ -15,4 +15,15 @@ class InvestigadoresRepository extends EntityRepository
 
 		return $dql->getQuery()->getResult();
 	}
+
+	public function deleteInvestigadores($id)
+	{
+		$em = $this->getEntityManager();
+		$dql = $em->createQueryBuilder();
+		$dql->delete('InvestigadoresBundle:Investigadores', 'i')
+		    ->where('i.id = :id_investigadores' );
+ 		$dql->setParameter('id_investigadores', $id);
+
+		return $dql->getQuery()->getResult();
+	}
 }

@@ -21,4 +21,15 @@ class PosgradoAreasRepository extends EntityRepository
 
 		return $dql->getQuery()->getResult();
 	}
+
+	public function deletePosgradoAreas($id)
+	{
+		$em = $this->getEntityManager();
+		$dql = $em->createQueryBuilder();
+		$dql->delete('PosgradoAreasBundle:PosgradoAreas', 'pa')
+		    ->where('pa.id = :id_posgradoareas' );
+ 		$dql->setParameter('id_posgradoareas', $id);
+
+		return $dql->getQuery()->getResult();
+	}
 }

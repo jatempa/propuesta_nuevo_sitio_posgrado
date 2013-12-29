@@ -21,4 +21,15 @@ class InvestigadoresLineasRepository extends EntityRepository
 
 		return $dql->getQuery()->getResult();
 	}
+
+	public function deleteInvestigadoresLineas($id)
+	{
+		$em = $this->getEntityManager();
+		$dql = $em->createQueryBuilder();
+		$dql->delete('InvestigadoresLineasBundle:InvestigadoresLineas', 'il')
+		    ->where('il.id = :id_investigadoreslineas' );
+ 		$dql->setParameter('id_investigadoreslineas', $id);
+
+		return $dql->getQuery()->getResult();
+	}
 }

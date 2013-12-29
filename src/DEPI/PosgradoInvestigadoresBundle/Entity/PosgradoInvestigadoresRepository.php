@@ -21,4 +21,15 @@ class PosgradoInvestigadoresRepository extends EntityRepository
 
 		return $dql->getQuery()->getResult();
 	}
+
+	public function deletePosgradoInvestigadores($id)
+	{
+		$em = $this->getEntityManager();
+		$dql = $em->createQueryBuilder();
+		$dql->delete('PosgradoInvestigadoresBundle:PosgradoInvestigadores', 'pa')
+		    ->where('pa.id = :id_posgradoinvestigadores' );
+ 		$dql->setParameter('id_posgradoinvestigadores', $id);
+
+		return $dql->getQuery()->getResult();
+	}
 }

@@ -21,4 +21,15 @@ class ProyectosProductosRepository extends EntityRepository
 
 		return $dql->getQuery()->getResult();
 	}
+
+	public function deleteProyectosProductos($id)
+	{
+		$em = $this->getEntityManager();
+		$dql = $em->createQueryBuilder();
+		$dql->delete('ProyectosProductosBundle:ProyectosProductos', 'pp')
+		    ->where('pp.id = :id_proyectosproductos' );
+ 		$dql->setParameter('id_proyectosproductos', $id);
+
+		return $dql->getQuery()->getResult();
+	}
 }
