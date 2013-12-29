@@ -17,6 +17,7 @@ class InvestigadorProyectoType extends AbstractType
         $builder
             ->add('investigadores')
             ->add('proyecto')
+            ->add('guardar', 'submit', array('attr' => array('class' => 'btn btn-blue')))
         ;
     }
     

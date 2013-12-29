@@ -22,12 +22,13 @@
                     <p>
                         {{ form_label(form.lineasinvestigacion, 'Líneas de invest. *') }}
                         {{ form_widget(form.lineasinvestigacion, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                    
+                    <p>
+                        {{ form_rest(form) }}
                 {{ form_end(form) }}
                     </p>
-
-                    <p>
-                         <input type="submit" value="GUARDAR" class="btn btn-blue">
-                    </p>
+                    
             </fieldset>
         </div>
     </div>

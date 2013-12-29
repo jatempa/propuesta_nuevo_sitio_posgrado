@@ -17,6 +17,7 @@ class PosgradoAreasType extends AbstractType
         $builder
             ->add('posgrado')
             ->add('area')
+            ->add('guardar', 'submit', array('attr' => array('class' => 'btn btn-blue')))
         ;
     }
     

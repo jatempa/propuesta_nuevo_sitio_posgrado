@@ -51,12 +51,12 @@
                     </p>
 
                     <p>
-                        <h6>{{ form_errors(form.noControl) }}</h6>
-                {{ form_end(form) }}
+                        {{ form_rest(form) }}    
                     </p>
                     
                     <p>
-                         <input type="submit" value="GUARDAR" class="btn btn-blue">
+                        <h6>{{ form_errors(form.noControl) }}</h6>
+                {{ form_end(form) }}
                     </p>
             </fieldset>
         </div>

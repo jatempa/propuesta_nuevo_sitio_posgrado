@@ -23,11 +23,11 @@
                     <p>
                         {{ form_label(form.alumno, 'No. de Control *') }}
                         {{ form_widget(form.alumno, { 'attr': {'class': 'width-100'} }) }}
-                {{ form_end(form) }}
                     </p>
-                    
+                        
                     <p>
-                         <input type="submit" value="GUARDAR" class="btn btn-blue">
+                        {{ form_rest(form) }}
+                {{ form_end(form) }}
                     </p>
             </fieldset>
         </div>

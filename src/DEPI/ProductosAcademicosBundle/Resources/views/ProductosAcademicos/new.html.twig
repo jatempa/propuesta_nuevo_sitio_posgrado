@@ -17,11 +17,11 @@
                     <p>
                         {{ form_label(form.meta, 'Meta *') }}
                         {{ form_widget(form.meta, { 'attr': {'class': 'width-100'} }) }}
-                {{ form_end(form) }}
                     </p>
 
                     <p>
-                        <input type="submit" value="GUARDAR" class="btn btn-blue">
+                        {{ form_rest(form) }}
+                {{ form_end(form) }}
                     </p>
             </fieldset>
         </div>

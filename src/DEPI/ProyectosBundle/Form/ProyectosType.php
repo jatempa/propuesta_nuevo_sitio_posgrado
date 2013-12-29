@@ -23,6 +23,7 @@ class ProyectosType extends AbstractType
             ->add('fechaTermino', 'date', array('widget' => 'single_text'))
             ->add('claveA', 'text')
             ->add('claveB', 'text', array('required' => false))
+            ->add('guardar', 'submit', array('attr' => array('class' => 'btn btn-blue')))
         ;
     }
     

@@ -16,6 +16,7 @@ class ProductosAcademicosType extends AbstractType
     {
         $builder
             ->add('meta')
+            ->add('guardar', 'submit', array('attr' => array('class' => 'btn btn-blue')))
         ;
     }
     

@@ -20,6 +20,7 @@ class ProyectosProductosType extends AbstractType
             ->add('observaciones','textarea', array('required' => false, 'attr' => array('rows' => '6')))
             ->add('proyecto')
             ->add('productoAcademico')
+            ->add('guardar', 'submit', array('attr' => array('class' => 'btn btn-blue')))
         ;
     }
     

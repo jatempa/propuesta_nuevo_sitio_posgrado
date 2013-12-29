@@ -17,6 +17,7 @@ class PosgradoLineasType extends AbstractType
         $builder
             ->add('posgrado')
             ->add('lineasinvestigacion')
+            ->add('guardar', 'submit', array('attr' => array('class' => 'btn btn-blue')))
         ;
     }
     

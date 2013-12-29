@@ -22,6 +22,7 @@ class AlumnosType extends AbstractType
             ->add('email', 'email')
             ->add('telefono', 'text', array('required' => false))
             ->add('foto', 'file', array('required' => false))
+            ->add('guardar', 'submit', array('attr' => array('class' => 'btn btn-blue')))
         ;
     }
     

@@ -18,6 +18,7 @@ class PortadaType extends AbstractType
             ->add('titulo', 'text', array('required' => false))
             ->add('foto', 'file', array('required' => false))
             ->add('fechaPublicacion', 'date', array('widget' => 'single_text'))
+            ->add('guardar', 'submit', array('attr' => array('class' => 'btn btn-blue')))
         ;
     }
     

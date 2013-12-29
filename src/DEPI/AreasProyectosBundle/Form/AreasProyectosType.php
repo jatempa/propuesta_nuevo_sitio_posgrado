@@ -17,6 +17,7 @@ class AreasProyectosType extends AbstractType
         $builder
             ->add('proyecto')
             ->add('area')
+            ->add('guardar', 'submit', array('attr' => array('class' => 'btn btn-blue')))
         ;
     }
     

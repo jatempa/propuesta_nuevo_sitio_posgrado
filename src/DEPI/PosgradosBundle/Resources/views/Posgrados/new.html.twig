@@ -28,11 +28,11 @@
                         {{ form_label(form.clave, 'Clave') }}
                         {{ form_widget(form.clave, { 'attr': {'class': 'width-100'} }) }}
                     <h6>{{ form_errors(form.clave) }}</h6>
-                {{ form_end(form) }}
                     </p>
 
                     <p>
-                         <input type="submit" value="GUARDAR" class="btn btn-blue">
+                        {{ form_rest(form) }}
+                {{ form_end(form) }}
                     </p>
             </fieldset>
         </div>

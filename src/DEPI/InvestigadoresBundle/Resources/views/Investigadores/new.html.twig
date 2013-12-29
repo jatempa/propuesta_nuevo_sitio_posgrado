@@ -53,11 +53,11 @@
                         {{ form_label(form.foto, 'Foto') }}
                         {{ form_widget(form.foto, { 'attr': {'class': 'width-100'} }) }}
                         {{ form_errors(form.foto) }}
-                {{ form_end(form) }}
                     </p>
                     
                     <p>
-                        <input type="submit" value="GUARDAR" class="btn btn-blue">
+                        {{ form_rest(form) }}
+                {{ form_end(form) }}
                     </p>
             </fieldset>
 	    </div>
