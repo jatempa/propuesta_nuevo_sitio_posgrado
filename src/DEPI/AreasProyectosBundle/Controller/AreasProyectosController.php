@@ -39,15 +39,16 @@ class AreasProyectosController extends Controller
     /**
      * Creates a new AreasProyectos entity.
      *
-     * @Route("/", name="areasproyectos_create")
+     * @Route("/", name="areasproyectos_new")
      * @Method("POST")
-     * @Template("AreasProyectosBundle:AreasProyectos:new.html.twig")
+     * @Template()
      */
-    public function createAction(Request $request)
+    public function newAction()
     {
         $entity = new AreasProyectos();
-        $form = $this->createCreateForm($entity);
-        $form->handleRequest($request);
+        $form = $this->createForm(new AreasProyectosType(), $entity);
+
+        $form->handleRequest($this->getRequest());
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
@@ -57,49 +58,8 @@ class AreasProyectosController extends Controller
             return $this->redirect($this->generateUrl('areasproyectos'));
         }
 
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        );
+        return array('entity' => $entity, 'form' => $form->createView());
     }
-
-    /**
-    * Creates a form to create a AreasProyectos entity.
-    *
-    * @param AreasProyectos $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createCreateForm(AreasProyectos $entity)
-    {
-        $form = $this->createForm(new AreasProyectosType(), $entity, array(
-            'action' => $this->generateUrl('areasproyectos_create'),
-            'method' => 'POST',
-        ));
-
-        $form->add('submit', 'submit', array('label' => 'Guardar'));
-
-        return $form;
-    }
-
-    /**
-     * Displays a form to create a new AreasProyectos entity.
-     *
-     * @Route("/new", name="areasproyectos_new")
-     * @Method("GET")
-     * @Template()
-     */
-    public function newAction()
-    {
-        $entity = new AreasProyectos();
-        $form   = $this->createCreateForm($entity);
-
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        );
-    }
-
     /**
      * Displays a form to edit an existing AreasProyectos entity.
      *

@@ -39,15 +39,16 @@ class PosgradosController extends Controller
     /**
      * Creates a new Posgrados entity.
      *
-     * @Route("/", name="posgrados_create")
+     * @Route("/", name="posgrados_new")
      * @Method("POST")
-     * @Template("PosgradosBundle:Posgrados:new.html.twig")
+     * @Template()
      */
-    public function createAction(Request $request)
+    public function newAction()
     {
         $entity = new Posgrados();
-        $form = $this->createCreateForm($entity);
-        $form->handleRequest($request);
+        $form = $this->createForm(new PosgradosType(), $entity);
+
+        $form->handleRequest($this->getRequest());
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
@@ -57,49 +58,8 @@ class PosgradosController extends Controller
             return $this->redirect($this->generateUrl('posgrados'));
         }
 
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        );
+        return array('entity' => $entity, 'form' => $form->createView());
     }
-
-    /**
-    * Creates a form to create a Posgrados entity.
-    *
-    * @param Posgrados $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createCreateForm(Posgrados $entity)
-    {
-        $form = $this->createForm(new PosgradosType(), $entity, array(
-            'action' => $this->generateUrl('posgrados_create'),
-            'method' => 'POST',
-        ));
-
-        $form->add('submit', 'submit', array('label' => 'Guardar'));
-
-        return $form;
-    }
-
-    /**
-     * Displays a form to create a new Posgrados entity.
-     *
-     * @Route("/new", name="posgrados_new")
-     * @Method("GET")
-     * @Template()
-     */
-    public function newAction()
-    {
-        $entity = new Posgrados();
-        $form   = $this->createCreateForm($entity);
-
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        );
-    }
-
     /**
      * Displays a form to edit an existing Posgrados entity.
      *

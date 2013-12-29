@@ -39,15 +39,16 @@ class PosgradoLineasController extends Controller
     /**
      * Creates a new PosgradoLineas entity.
      *
-     * @Route("/", name="posgradolineas_create")
+     * @Route("/", name="posgradolineas_new")
      * @Method("POST")
-     * @Template("PosgradoLineasBundle:PosgradoLineas:new.html.twig")
+     * @Template()
      */
-    public function createAction(Request $request)
+    public function newAction()
     {
         $entity = new PosgradoLineas();
-        $form = $this->createCreateForm($entity);
-        $form->handleRequest($request);
+        $form = $this->createForm(new PosgradoLineasType(), $entity);
+
+        $form->handleRequest($this->getRequest());
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
@@ -57,49 +58,8 @@ class PosgradoLineasController extends Controller
             return $this->redirect($this->generateUrl('posgradolineas'));
         }
 
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        );
+        return array('entity' => $entity, 'form' => $form->createView());
     }
-
-    /**
-    * Creates a form to create a PosgradoLineas entity.
-    *
-    * @param PosgradoLineas $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createCreateForm(PosgradoLineas $entity)
-    {
-        $form = $this->createForm(new PosgradoLineasType(), $entity, array(
-            'action' => $this->generateUrl('posgradolineas_create'),
-            'method' => 'POST',
-        ));
-
-        $form->add('submit', 'submit', array('label' => 'Guardar'));
-
-        return $form;
-    }
-
-    /**
-     * Displays a form to create a new PosgradoLineas entity.
-     *
-     * @Route("/new", name="posgradolineas_new")
-     * @Method("GET")
-     * @Template()
-     */
-    public function newAction()
-    {
-        $entity = new PosgradoLineas();
-        $form   = $this->createCreateForm($entity);
-
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        );
-    }
-
     /**
      * Displays a form to edit an existing PosgradoLineas entity.
      *

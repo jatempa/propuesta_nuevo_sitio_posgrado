@@ -39,68 +39,27 @@ class NoticiasController extends Controller
     /**
      * Creates a new Noticias entity.
      *
-     * @Route("/", name="noticias_create")
+     * @Route("/", name="noticias_new")
      * @Method("POST")
-     * @Template("NoticiasBundle:Noticias:new.html.twig")
+     * @Template()
      */
-    public function createAction(Request $request)
+    public function newAction()
     {
         $entity = new Noticias();
-        $form = $this->createCreateForm($entity);
-        $form->handleRequest($request);
+        $form = $this->createForm(new NoticiasType(), $entity);
+
+        $form->handleRequest($this->getRequest());
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity->subirDocumento($this->container->getParameter('portada.directorio.documentos'));
             $em->persist($entity);
             $em->flush();
 
             return $this->redirect($this->generateUrl('noticias'));
         }
 
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        );
+        return array('entity' => $entity, 'form' => $form->createView());
     }
-
-    /**
-    * Creates a form to create a Noticias entity.
-    *
-    * @param Noticias $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createCreateForm(Noticias $entity)
-    {
-        $form = $this->createForm(new NoticiasType(), $entity, array(
-            'action' => $this->generateUrl('noticias_create'),
-            'method' => 'POST',
-        ));
-
-        $form->add('submit', 'submit', array('label' => 'Guardar'));
-
-        return $form;
-    }
-
-    /**
-     * Displays a form to create a new Noticias entity.
-     *
-     * @Route("/new", name="noticias_new")
-     * @Method("GET")
-     * @Template()
-     */
-    public function newAction()
-    {
-        $entity = new Noticias();
-        $form   = $this->createCreateForm($entity);
-
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        );
-    }
-
     /**
      * Displays a form to edit an existing Noticias entity.
      *

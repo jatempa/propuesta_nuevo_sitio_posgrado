@@ -39,15 +39,16 @@ class PosgradoAreasController extends Controller
     /**
      * Creates a new PosgradoAreas entity.
      *
-     * @Route("/", name="posgradoareas_create")
+     * @Route("/", name="posgradoareas_new")
      * @Method("POST")
-     * @Template("PosgradoAreasBundle:PosgradoAreas:new.html.twig")
+     * @Template()
      */
-    public function createAction(Request $request)
+    public function newAction()
     {
         $entity = new PosgradoAreas();
-        $form = $this->createCreateForm($entity);
-        $form->handleRequest($request);
+        $form = $this->createForm(new PosgradoAreasType(), $entity);
+
+        $form->handleRequest($this->getRequest());
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
@@ -57,49 +58,8 @@ class PosgradoAreasController extends Controller
             return $this->redirect($this->generateUrl('posgradoareas'));
         }
 
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        );
+        return array('entity' => $entity, 'form' => $form->createView());
     }
-
-    /**
-    * Creates a form to create a PosgradoAreas entity.
-    *
-    * @param PosgradoAreas $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createCreateForm(PosgradoAreas $entity)
-    {
-        $form = $this->createForm(new PosgradoAreasType(), $entity, array(
-            'action' => $this->generateUrl('posgradoareas_create'),
-            'method' => 'POST',
-        ));
-
-        $form->add('submit', 'submit', array('label' => 'Guardar'));
-
-        return $form;
-    }
-
-    /**
-     * Displays a form to create a new PosgradoAreas entity.
-     *
-     * @Route("/new", name="posgradoareas_new")
-     * @Method("GET")
-     * @Template()
-     */
-    public function newAction()
-    {
-        $entity = new PosgradoAreas();
-        $form   = $this->createCreateForm($entity);
-
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        );
-    }
-
     /**
      * Displays a form to edit an existing PosgradoAreas entity.
      *

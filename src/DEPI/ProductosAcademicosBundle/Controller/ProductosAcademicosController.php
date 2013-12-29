@@ -39,15 +39,16 @@ class ProductosAcademicosController extends Controller
     /**
      * Creates a new ProductosAcademicos entity.
      *
-     * @Route("/", name="productosacademicos_create")
+     * @Route("/", name="productosacademicos_new")
      * @Method("POST")
-     * @Template("ProductosAcademicosBundle:ProductosAcademicos:new.html.twig")
+     * @Template()
      */
-    public function createAction(Request $request)
+    public function newAction()
     {
         $entity = new ProductosAcademicos();
-        $form = $this->createCreateForm($entity);
-        $form->handleRequest($request);
+        $form = $this->createForm(new ProductosAcademicosType(), $entity);
+
+        $form->handleRequest($this->getRequest());
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
@@ -57,49 +58,8 @@ class ProductosAcademicosController extends Controller
             return $this->redirect($this->generateUrl('productosacademicos'));
         }
 
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        );
+        return array('entity' => $entity, 'form' => $form->createView());
     }
-
-    /**
-    * Creates a form to create a ProductosAcademicos entity.
-    *
-    * @param ProductosAcademicos $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createCreateForm(ProductosAcademicos $entity)
-    {
-        $form = $this->createForm(new ProductosAcademicosType(), $entity, array(
-            'action' => $this->generateUrl('productosacademicos_create'),
-            'method' => 'POST',
-        ));
-
-        $form->add('submit', 'submit', array('label' => 'Guardar'));
-
-        return $form;
-    }
-
-    /**
-     * Displays a form to create a new ProductosAcademicos entity.
-     *
-     * @Route("/new", name="productosacademicos_new")
-     * @Method("GET")
-     * @Template()
-     */
-    public function newAction()
-    {
-        $entity = new ProductosAcademicos();
-        $form   = $this->createCreateForm($entity);
-
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        );
-    }
-
     /**
      * Displays a form to edit an existing ProductosAcademicos entity.
      *

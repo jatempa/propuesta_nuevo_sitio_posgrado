@@ -39,68 +39,27 @@ class PortadaController extends Controller
     /**
      * Creates a new Portada entity.
      *
-     * @Route("/", name="portada_create")
+     * @Route("/", name="portada_new")
      * @Method("POST")
-     * @Template("PortadaBundle:Portada:new.html.twig")
+     * @Template()
      */
-    public function createAction(Request $request)
+    public function newAction()
     {
         $entity = new Portada();
-        $form = $this->createCreateForm($entity);
-        $form->handleRequest($request);
+        $form = $this->createForm(new PortadaType(), $entity);
+
+        $form->handleRequest($this->getRequest());
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity->subirFoto($this->container->getParameter('portada.directorio.imagenes'));
             $em->persist($entity);
             $em->flush();
 
             return $this->redirect($this->generateUrl('portada'));
         }
 
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        );
+        return array('entity' => $entity, 'form' => $form->createView());
     }
-
-    /**
-    * Creates a form to create a Portada entity.
-    *
-    * @param Portada $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createCreateForm(Portada $entity)
-    {
-        $form = $this->createForm(new PortadaType(), $entity, array(
-            'action' => $this->generateUrl('portada_create'),
-            'method' => 'POST',
-        ));
-
-        $form->add('submit', 'submit', array('label' => 'Guardar'));
-
-        return $form;
-    }
-
-    /**
-     * Displays a form to create a new Portada entity.
-     *
-     * @Route("/new", name="portada_new")
-     * @Method("GET")
-     * @Template()
-     */
-    public function newAction()
-    {
-        $entity = new Portada();
-        $form   = $this->createCreateForm($entity);
-
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        );
-    }
-
     /**
      * Displays a form to edit an existing Portada entity.
      *

@@ -39,15 +39,16 @@ class ProyectosProductosController extends Controller
     /**
      * Creates a new ProyectosProductos entity.
      *
-     * @Route("/", name="proyectosproductos_create")
+     * @Route("/", name="proyectosproductos_new")
      * @Method("POST")
-     * @Template("ProyectosProductosBundle:ProyectosProductos:new.html.twig")
+     * @Template()
      */
-    public function createAction(Request $request)
+    public function newAction()
     {
         $entity = new ProyectosProductos();
-        $form = $this->createCreateForm($entity);
-        $form->handleRequest($request);
+        $form = $this->createForm(new ProyectosProductosType(), $entity);
+
+        $form->handleRequest($this->getRequest());
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
@@ -57,49 +58,8 @@ class ProyectosProductosController extends Controller
             return $this->redirect($this->generateUrl('proyectosproductos'));
         }
 
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        );
+        return array('entity' => $entity, 'form' => $form->createView());
     }
-
-    /**
-    * Creates a form to create a ProyectosProductos entity.
-    *
-    * @param ProyectosProductos $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createCreateForm(ProyectosProductos $entity)
-    {
-        $form = $this->createForm(new ProyectosProductosType(), $entity, array(
-            'action' => $this->generateUrl('proyectosproductos_create'),
-            'method' => 'POST',
-        ));
-
-        $form->add('submit', 'submit', array('label' => 'Guardar'));
-
-        return $form;
-    }
-
-    /**
-     * Displays a form to create a new ProyectosProductos entity.
-     *
-     * @Route("/new", name="proyectosproductos_new")
-     * @Method("GET")
-     * @Template()
-     */
-    public function newAction()
-    {
-        $entity = new ProyectosProductos();
-        $form   = $this->createCreateForm($entity);
-
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        );
-    }
-
     /**
      * Displays a form to edit an existing ProyectosProductos entity.
      *

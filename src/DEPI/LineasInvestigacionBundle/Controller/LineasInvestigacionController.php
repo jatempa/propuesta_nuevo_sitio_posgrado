@@ -39,15 +39,16 @@ class LineasInvestigacionController extends Controller
     /**
      * Creates a new LineasInvestigacion entity.
      *
-     * @Route("/", name="lineas_create")
+     * @Route("/", name="lineas_new")
      * @Method("POST")
-     * @Template("LineasInvestigacionBundle:LineasInvestigacion:new.html.twig")
+     * @Template()
      */
-    public function createAction(Request $request)
+    public function newAction()
     {
         $entity = new LineasInvestigacion();
-        $form = $this->createCreateForm($entity);
-        $form->handleRequest($request);
+        $form = $this->createForm(new LineasInvestigacionType(), $entity);
+
+        $form->handleRequest($this->getRequest());
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
@@ -57,49 +58,8 @@ class LineasInvestigacionController extends Controller
             return $this->redirect($this->generateUrl('lineas'));
         }
 
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        );
+        return array('entity' => $entity, 'form' => $form->createView());
     }
-
-    /**
-    * Creates a form to create a LineasInvestigacion entity.
-    *
-    * @param LineasInvestigacion $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createCreateForm(LineasInvestigacion $entity)
-    {
-        $form = $this->createForm(new LineasInvestigacionType(), $entity, array(
-            'action' => $this->generateUrl('lineas_create'),
-            'method' => 'POST',
-        ));
-
-        $form->add('submit', 'submit', array('label' => 'Guardar'));
-
-        return $form;
-    }
-
-    /**
-     * Displays a form to create a new LineasInvestigacion entity.
-     *
-     * @Route("/new", name="lineas_new")
-     * @Method("GET")
-     * @Template()
-     */
-    public function newAction()
-    {
-        $entity = new LineasInvestigacion();
-        $form   = $this->createCreateForm($entity);
-
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        );
-    }
-
     /**
      * Displays a form to edit an existing LineasInvestigacion entity.
      *

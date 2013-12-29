@@ -38,68 +38,27 @@ class InvestigadoresController extends Controller
     /**
      * Creates a new Investigadores entity.
      *
-     * @Route("/", name="investigadores_create")
+     * @Route("/", name="investigadores_new")
      * @Method("POST")
-     * @Template("InvestigadoresBundle:Investigadores:new.html.twig")
+     * @Template()
      */
-    public function createAction(Request $request)
+    public function newAction()
     {
         $entity = new Investigadores();
-        $form = $this->createCreateForm($entity);
-        $form->handleRequest($request);
+        $form = $this->createForm(new InvestigadoresType(), $entity);
+
+        $form->handleRequest($this->getRequest());
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity->subirFoto($this->container->getParameter('investigadores.directorio.imagenes'));
             $em->persist($entity);
             $em->flush();
 
             return $this->redirect($this->generateUrl('investigadores'));
         }
 
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        );
+        return array('entity' => $entity, 'form' => $form->createView());
     }
-
-    /**
-    * Creates a form to create a Investigadores entity.
-    *
-    * @param Investigadores $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createCreateForm(Investigadores $entity)
-    {
-        $form = $this->createForm(new InvestigadoresType(), $entity, array(
-            'action' => $this->generateUrl('investigadores_create'),
-            'method' => 'POST',
-        ));
-
-        $form->add('submit', 'submit', array('label' => 'Guardar'));
-
-        return $form;
-    }
-
-    /**
-     * Displays a form to create a new Investigadores entity.
-     *
-     * @Route("/new", name="investigadores_new")
-     * @Method("GET")
-     * @Template()
-     */
-    public function newAction()
-    {
-        $entity = new Investigadores();
-        $form   = $this->createCreateForm($entity);
-
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        );
-    }
-
     /**
      * Displays a form to edit an existing Investigadores entity.
      *

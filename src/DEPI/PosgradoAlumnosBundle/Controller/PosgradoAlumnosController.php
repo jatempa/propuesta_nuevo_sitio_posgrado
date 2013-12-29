@@ -39,15 +39,16 @@ class PosgradoAlumnosController extends Controller
     /**
      * Creates a new PosgradoAlumnos entity.
      *
-     * @Route("/", name="posgradoalumnos_create")
+     * @Route("/", name="posgradoalumnos_new")
      * @Method("POST")
-     * @Template("PosgradoAlumnosBundle:PosgradoAlumnos:new.html.twig")
+     * @Template()
      */
-    public function createAction(Request $request)
+    public function newAction()
     {
         $entity = new PosgradoAlumnos();
-        $form = $this->createCreateForm($entity);
-        $form->handleRequest($request);
+        $form = $this->createForm(new PosgradoAlumnosType(), $entity);
+
+        $form->handleRequest($this->getRequest());
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
@@ -57,49 +58,8 @@ class PosgradoAlumnosController extends Controller
             return $this->redirect($this->generateUrl('posgradoalumnos'));
         }
 
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        );
+        return array('entity' => $entity, 'form' => $form->createView());
     }
-
-    /**
-    * Creates a form to create a PosgradoAlumnos entity.
-    *
-    * @param PosgradoAlumnos $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createCreateForm(PosgradoAlumnos $entity)
-    {
-        $form = $this->createForm(new PosgradoAlumnosType(), $entity, array(
-            'action' => $this->generateUrl('posgradoalumnos_create'),
-            'method' => 'POST',
-        ));
-
-        $form->add('submit', 'submit', array('label' => 'Guardar'));
-
-        return $form;
-    }
-
-    /**
-     * Displays a form to create a new PosgradoAlumnos entity.
-     *
-     * @Route("/new", name="posgradoalumnos_new")
-     * @Method("GET")
-     * @Template()
-     */
-    public function newAction()
-    {
-        $entity = new PosgradoAlumnos();
-        $form   = $this->createCreateForm($entity);
-
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        );
-    }
-
     /**
      * Displays a form to edit an existing PosgradoAlumnos entity.
      *

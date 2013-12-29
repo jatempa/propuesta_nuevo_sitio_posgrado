@@ -39,15 +39,16 @@ class InvestigadorProyectoController extends Controller
     /**
      * Creates a new InvestigadorProyecto entity.
      *
-     * @Route("/", name="investigadorproyecto_create")
+     * @Route("/", name="investigadorproyecto_new")
      * @Method("POST")
-     * @Template("InvestigadorProyectoBundle:InvestigadorProyecto:new.html.twig")
+     * @Template()
      */
-    public function createAction(Request $request)
+    public function newAction()
     {
         $entity = new InvestigadorProyecto();
-        $form = $this->createCreateForm($entity);
-        $form->handleRequest($request);
+        $form = $this->createForm(new InvestigadorProyectoType(), $entity);
+
+        $form->handleRequest($this->getRequest());
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
@@ -57,49 +58,8 @@ class InvestigadorProyectoController extends Controller
             return $this->redirect($this->generateUrl('investigadorproyecto'));
         }
 
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        );
+        return array('entity' => $entity, 'form' => $form->createView());
     }
-
-    /**
-    * Creates a form to create a InvestigadorProyecto entity.
-    *
-    * @param InvestigadorProyecto $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createCreateForm(InvestigadorProyecto $entity)
-    {
-        $form = $this->createForm(new InvestigadorProyectoType(), $entity, array(
-            'action' => $this->generateUrl('investigadorproyecto_create'),
-            'method' => 'POST',
-        ));
-
-        $form->add('submit', 'submit', array('label' => 'Guardar'));
-
-        return $form;
-    }
-
-    /**
-     * Displays a form to create a new InvestigadorProyecto entity.
-     *
-     * @Route("/new", name="investigadorproyecto_new")
-     * @Method("GET")
-     * @Template()
-     */
-    public function newAction()
-    {
-        $entity = new InvestigadorProyecto();
-        $form   = $this->createCreateForm($entity);
-
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        );
-    }
-
     /**
      * Displays a form to edit an existing InvestigadorProyecto entity.
      *

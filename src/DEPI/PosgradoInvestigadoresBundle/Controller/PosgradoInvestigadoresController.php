@@ -39,15 +39,16 @@ class PosgradoInvestigadoresController extends Controller
     /**
      * Creates a new PosgradoInvestigadores entity.
      *
-     * @Route("/", name="posgradoinvestigadores_create")
+     * @Route("/", name="posgradoinvestigadores_new")
      * @Method("POST")
-     * @Template("PosgradoInvestigadoresBundle:PosgradoInvestigadores:new.html.twig")
+     * @Template()
      */
-    public function createAction(Request $request)
+    public function newAction()
     {
         $entity = new PosgradoInvestigadores();
-        $form = $this->createCreateForm($entity);
-        $form->handleRequest($request);
+        $form = $this->createForm(new PosgradoInvestigadoresType(), $entity);
+
+        $form->handleRequest($this->getRequest());
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
@@ -57,49 +58,8 @@ class PosgradoInvestigadoresController extends Controller
             return $this->redirect($this->generateUrl('posgradoinvestigadores'));
         }
 
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        );
+        return array('entity' => $entity, 'form' => $form->createView());
     }
-
-    /**
-    * Creates a form to create a PosgradoInvestigadores entity.
-    *
-    * @param PosgradoInvestigadores $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createCreateForm(PosgradoInvestigadores $entity)
-    {
-        $form = $this->createForm(new PosgradoInvestigadoresType(), $entity, array(
-            'action' => $this->generateUrl('posgradoinvestigadores_create'),
-            'method' => 'POST',
-        ));
-
-        $form->add('submit', 'submit', array('label' => 'Guardar'));
-
-        return $form;
-    }
-
-    /**
-     * Displays a form to create a new PosgradoInvestigadores entity.
-     *
-     * @Route("/new", name="posgradoinvestigadores_new")
-     * @Method("GET")
-     * @Template()
-     */
-    public function newAction()
-    {
-        $entity = new PosgradoInvestigadores();
-        $form   = $this->createCreateForm($entity);
-
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        );
-    }
-
     /**
      * Displays a form to edit an existing PosgradoInvestigadores entity.
      *
