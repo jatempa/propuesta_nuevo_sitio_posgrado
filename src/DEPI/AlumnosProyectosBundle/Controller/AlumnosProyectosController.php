@@ -40,15 +40,16 @@ class AlumnosProyectosController extends Controller
     /**
      * Creates a new AlumnosProyectos entity.
      *
-     * @Route("/", name="alumnosproyectos_create")
+     * @Route("/", name="alumnosproyectos_new")
      * @Method("POST")
-     * @Template("AlumnosProyectosBundle:AlumnosProyectos:new.html.twig")
+     * @Template()
      */
-    public function createAction(Request $request)
+    public function newAction()
     {
         $entity = new AlumnosProyectos();
-        $form = $this->createCreateForm($entity);
-        $form->handleRequest($request);
+        $form = $this->createForm(new AlumnosProyectosType(), $entity);
+
+        $form->handleRequest($this->getRequest());
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
@@ -58,49 +59,8 @@ class AlumnosProyectosController extends Controller
             return $this->redirect($this->generateUrl('alumnosproyectos'));
         }
 
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        );
+        return array('entity' => $entity, 'form' => $form->createView());
     }
-
-    /**
-    * Creates a form to create a AlumnosProyectos entity.
-    *
-    * @param AlumnosProyectos $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createCreateForm(AlumnosProyectos $entity)
-    {
-        $form = $this->createForm(new AlumnosProyectosType(), $entity, array(
-            'action' => $this->generateUrl('alumnosproyectos_create'),
-            'method' => 'POST',
-        ));
-
-        $form->add('submit', 'submit', array('label' => 'Guardar'));
-
-        return $form;
-    }
-
-    /**
-     * Displays a form to create a new AlumnosProyectos entity.
-     *
-     * @Route("/new", name="alumnosproyectos_new")
-     * @Method("GET")
-     * @Template()
-     */
-    public function newAction()
-    {
-        $entity = new AlumnosProyectos();
-        $form   = $this->createCreateForm($entity);
-
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        );
-    }
-
     /**
      * Displays a form to edit an existing AlumnosProyectos entity.
      *
