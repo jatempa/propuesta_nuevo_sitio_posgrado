@@ -35,19 +35,20 @@ class AreasController extends Controller
         $pagination = $paginator->paginate($entities, $this->get('request')->query->get('page',1), 5);
 
         return array('entities' => $pagination);
-    }
+    }   
     /**
      * Creates a new Areas entity.
      *
-     * @Route("/", name="areas_create")
+     * @Route("/", name="areas_new")
      * @Method("POST")
-     * @Template("AreasBundle:Areas:new.html.twig")
+     * @Template()
      */
-    public function createAction(Request $request)
+    public function newAction()
     {
         $entity = new Areas();
-        $form = $this->createCreateForm($entity);
-        $form->handleRequest($request);
+        $form = $this->createForm(new AreasType(), $entity);
+
+        $form->handleRequest($this->getRequest());
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
@@ -57,49 +58,8 @@ class AreasController extends Controller
             return $this->redirect($this->generateUrl('areas'));
         }
 
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        );
+        return array('entity' => $entity, 'form' => $form->createView());
     }
-
-    /**
-    * Creates a form to create a Areas entity.
-    *
-    * @param Areas $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createCreateForm(Areas $entity)
-    {
-        $form = $this->createForm(new AreasType(), $entity, array(
-            'action' => $this->generateUrl('areas_create'),
-            'method' => 'POST',
-        ));
-
-        $form->add('submit', 'submit', array('label' => 'Guardar'));
-
-        return $form;
-    }
-
-    /**
-     * Displays a form to create a new Areas entity.
-     *
-     * @Route("/new", name="areas_new")
-     * @Method("GET")
-     * @Template()
-     */
-    public function newAction()
-    {
-        $entity = new Areas();
-        $form   = $this->createCreateForm($entity);
-
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        );
-    }
-
     /**
      * Displays a form to edit an existing Areas entity.
      *
