@@ -14,10 +14,6 @@ areas_edit:
     pattern:  /posgradmin/areas/edit/{id}
     defaults: { _controller: AreasBundle:Areas:edit }
 
-areas_create:
-    pattern:  /posgradmin/areas/create
-    defaults: { _controller: AreasBundle:Areas:create }
-
 areas_update:
     pattern:  /posgradmin/areas/update/{id}
     defaults: { _controller: AreasBundle:Areas:update }
