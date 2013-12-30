@@ -22,13 +22,13 @@ class PosgradoAlumnosRepository extends EntityRepository
 		return $dql->getQuery()->getResult();
 	}
 
-	public function deletePosgrado($id)
+	public function deletePosgradoAlumnos($id)
 	{
 		$em = $this->getEntityManager();
 		$dql = $em->createQueryBuilder();
-		$dql->delete('PosgradoBundle:Posgrado', 'p')
-		    ->where('p.id = :id_posgrado' );
- 		$dql->setParameter('id_posgrado', $id);
+		$dql->delete('PosgradoAlumnosBundle:PosgradoAlumnos', 'pa')
+		    ->where('pa.id = :id_posgradoalumnos' );
+ 		$dql->setParameter('id_posgradoalumnos', $id);
 
 		return $dql->getQuery()->getResult();
 	}

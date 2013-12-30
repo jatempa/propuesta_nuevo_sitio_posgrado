@@ -1,6 +1,6 @@
 <?php
 
-namespace DEPI\AlumnosBundle\Entity;
+namespace DEPI\InvestigadoresBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
 
