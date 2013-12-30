@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
  * Investigadores
  *
  * @ORM\Table(name="investigadores")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="DEPI\InvestigadoresBundle\Entity\InvestigadoresRepository")
  */
 class Investigadores
 {

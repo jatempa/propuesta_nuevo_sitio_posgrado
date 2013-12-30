@@ -27,5 +27,5 @@
         </div>
     </div>
 </div>
-<button class="btn btn-red">ELIMINAR</button>
+<a class="btn btn-red" href="{{ path('productosacademicos_delete', { 'id': entity.id }) }}">Eliminar</a>
 {% endblock %}
