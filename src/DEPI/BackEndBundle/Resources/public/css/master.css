@@ -68,6 +68,11 @@ th {
 	font-weight: bold; /*Formato de letra en negrita*/
 }
 
+a img,  #action{
+	width: 25px;
+	height: 25px;
+}
+
 /* =Footer
 -----------------------------------------------------------------------------*/
 #footer {
