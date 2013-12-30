@@ -29,9 +29,19 @@
                             {{ entity.nombre }}
                         </a>
                     </td>
-                    <td class="width-60 enlace">
+                    <td class="width-40 enlace">
                         <a href="{{ path('lineas_edit', { 'id': entity.id }) }}" >
                             {{ entity.descripcion }}
+                        </a>
+                    </td>
+                    <td class="width-10"> 
+                        <a href="{{ path('lineas_edit', { 'id': entity.id }) }}" >
+                            <img id="action" src="{{ asset('bundles/backend/img/editar.svg') }}" alt="Editar">
+                        </a>
+                    </td>
+                    <td class="width-10">
+                        <a href="{{ path('lineas_delete', { 'id': entity.id }) }}" >
+                            <img id="action" src="{{ asset('bundles/backend/img/eliminar.svg') }}" alt="Eliminar">
                         </a>
                     </td>
                 </tr>

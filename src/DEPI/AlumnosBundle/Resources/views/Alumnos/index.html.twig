@@ -13,8 +13,7 @@
                 <tr>
                     <th>No. de control</th>
                     <th>Nombre(s)</th>
-                    <th>Apellido paterno</th>
-                    <th>Apellido materno</th>
+                    <th>Apellidos</th>
                     <th>Correo electrónico</th>
                     <th>Teléfono</th>
                 </tr>
@@ -22,7 +21,7 @@
             <tbody>
             {% for alumno in alumnos %}
                 <tr>
-                    <td class="width-20 enlace">
+                    <td class="width-10 enlace">
                         <a href="{{ path('alumnos_edit', { 'id': alumno.id }) }}" >
                             {{ alumno.noControl }}
                         </a>
@@ -34,12 +33,7 @@
                     </td>
                     <td class="width-20 enlace">
                         <a href="{{ path('alumnos_edit', { 'id': alumno.id }) }}" >
-                            {{ alumno.apellidoPaterno }}
-                        </a>
-                    </td>
-                    <td class="width-20 enlace">
-                        <a href="{{ path('alumnos_edit', { 'id': alumno.id }) }}" >
-                            {{ alumno.apellidoMaterno }}
+                            {{ alumno.apellidoPaterno ~ " " ~ alumno.apellidoMaterno }}
                         </a>
                     </td>
                     <td class="width-10 enlace">
@@ -50,6 +44,16 @@
                     <td class="width-10 enlace">
                         <a href="{{ path('alumnos_edit', { 'id': alumno.id }) }}" >
                             {{ alumno.telefono }}
+                        </a>
+                    </td>
+                    <td class="width-10"> 
+                        <a href="{{ path('alumnos_edit', { 'id': alumno.id }) }}" >
+                            <img id="action" src="{{ asset('bundles/backend/img/editar.svg') }}" alt="Editar">
+                        </a>
+                    </td>
+                    <td class="width-10">
+                        <a href="{{ path('alumnos_delete', { 'id': alumno.id }) }}" >
+                            <img id="action" src="{{ asset('bundles/backend/img/eliminar.svg') }}" alt="Eliminar">
                         </a>
                     </td>
                 </tr>

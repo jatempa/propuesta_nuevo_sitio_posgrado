@@ -24,27 +24,37 @@
         <table class="width-100 table-striped">
             <thead>
                 <tr>
-                    <th class="width-10">No Control</th>
-                    <th class="width-30">Alumno</th>
-                    <th class="width-30">Proyecto</th>
+                    <th>No Control</th>
+                    <th>Alumno</th>
+                    <th>Proyecto</th>
                 </tr>
             </thead>
             <tbody>
             {% for entity in alumnosenproyectos %}
                 <tr>
-                     <td class="enlace">
+                     <td class="width-10 enlace">
                         <a href="{{ path('alumnosproyectos_edit', { 'id': entity.id }) }}">
                             {{ entity.noControl }}
                         </a>
                     </td>
-                    <td class="enlace">
+                    <td class="width-40 enlace">
                         <a href="{{ path('alumnosproyectos_edit', { 'id': entity.id }) }}">
                             {{ entity.nombre ~ " " ~ entity.apellidoPaterno  ~ " " ~ entity.apellidoMaterno }}
                         </a>
                     </td>
-                    <td class="enlace">
+                    <td class="width-30 enlace">
                         <a href="{{ path('alumnosproyectos_edit', { 'id': entity.id }) }}">
                             {{ entity.nombreCorto }}
+                        </a>
+                    </td>
+                    <td class="width-10"> 
+                        <a href="{{ path('alumnosproyectos_edit', { 'id': entity.id }) }}" >
+                            <img id="action" src="{{ asset('bundles/backend/img/editar.svg') }}" alt="Editar">
+                        </a>
+                    </td>
+                    <td class="width-10">
+                        <a href="{{ path('alumnosproyectos_delete', { 'id': entity.id }) }}" >
+                            <img id="action" src="{{ asset('bundles/backend/img/eliminar.svg') }}" alt="Eliminar">
                         </a>
                     </td>
                 </tr>

@@ -32,7 +32,7 @@
             <tbody>
             {% for entity in entities %}
                 <tr>
-                    <td class="width-40 enlace">
+                    <td class="width-30 enlace">
                         <a href="{{ path('proyectos_edit', { 'id': entity.id }) }}">
                             {{ entity.nombreCompleto }}
                         </a>
@@ -50,6 +50,16 @@
                     <td class="width-10 enlace">
                         <a href="{{ path('proyectos_edit', { 'id': entity.id }) }}">
                             {% if entity.fechaTermino %}{{ entity.fechaTermino|date('Y-m-d') }}{% endif %}
+                        </a>
+                    </td>
+                    <td class="width-10"> 
+                        <a href="{{ path('proyectos_edit', { 'id': entity.id }) }}" >
+                            <img id="action" src="{{ asset('bundles/backend/img/editar.svg') }}" alt="Editar">
+                        </a>
+                    </td>
+                    <td class="width-10">
+                        <a href="{{ path('proyectos_delete', { 'id': entity.id }) }}" >
+                            <img id="action" src="{{ asset('bundles/backend/img/eliminar.svg') }}" alt="Eliminar">
                         </a>
                     </td>
                 </tr>

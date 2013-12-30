@@ -31,14 +31,24 @@
             <tbody>
             {% for entity in entities %}
                 <tr>
-                    <td class="width-50 enlace" >
+                    <td class="width-40 enlace" >
                         <a href="{{ path('posgradolineas_edit', { 'id': entity.id }) }}">
                             {{ entity.nom_posgrado }}
                         </a>
                     </td>
-                    <td class="width-50 enlace" >
+                    <td class="width-40 enlace" >
                         <a href="{{ path('posgradolineas_edit', { 'id': entity.id }) }}">
                             {{ entity.nom_linea }}
+                        </a>
+                    </td>
+                    <td class="width-10"> 
+                        <a href="{{ path('posgradolineas_edit', { 'id': entity.id }) }}" >
+                            <img id="action" src="{{ asset('bundles/backend/img/editar.svg') }}" alt="Editar">
+                        </a>
+                    </td>
+                    <td class="width-10">
+                        <a href="{{ path('posgradolineas_delete', { 'id': entity.id }) }}" >
+                            <img id="action" src="{{ asset('bundles/backend/img/eliminar.svg') }}" alt="Eliminar">
                         </a>
                     </td>
                 </tr>

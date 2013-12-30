@@ -21,32 +21,36 @@
             <thead>
                 <tr>
                     <th>Nombre</th>
-                    <th>Apellido paterno</th>
-                    <th>Apellido materno</th>
+                    <th>Apellidos</th>
                     <th>Correo electrónico</th>
                 </tr>
             </thead>
             <tbody>
             {% for entity in entities %}
                 <tr>
-                    <td class="width-20 enlace">
+                    <td class="width-30 enlace">
                         <a href="{{ path('investigadores_edit', { 'id': entity.id }) }}" >
                             {{ entity.nombre }}
                         </a>
                     </td>
-                    <td class="width-20 enlace">
+                    <td class="width-30 enlace">
                         <a href="{{ path('investigadores_edit', { 'id': entity.id }) }}" >
-                            {{ entity.apellidoPaterno }}
-                        </a>
-                    </td>
-                    <td class="width-20 enlace">
-                        <a href="{{ path('investigadores_edit', { 'id': entity.id }) }}" >
-                            {{ entity.apellidoMaterno }}
+                            {{ entity.apellidoPaterno ~ " " ~ entity.apellidoMaterno }}
                         </a>
                     </td>
                     <td class="width-20 enlace">
                         <a href="{{ path('investigadores_edit', { 'id': entity.id }) }}" >
                             {{ entity.email }}
+                        </a>
+                    </td>
+                    <td class="width-10"> 
+                        <a href="{{ path('investigadores_edit', { 'id': entity.id }) }}" >
+                            <img id="action" src="{{ asset('bundles/backend/img/editar.svg') }}" alt="Editar">
+                        </a>
+                    </td>
+                    <td class="width-10">
+                        <a href="{{ path('investigadores_delete', { 'id': entity.id }) }}" >
+                            <img id="action" src="{{ asset('bundles/backend/img/eliminar.svg') }}" alt="Eliminar">
                         </a>
                     </td>
                 </tr>

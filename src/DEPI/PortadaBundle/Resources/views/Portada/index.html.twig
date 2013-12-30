@@ -46,6 +46,16 @@
                             <img id="forBanner" src="{{ asset('uploads/images/portada/') ~ entity.imagenBanner }}" />
                         </a>
                     </td>
+                    <td class="width-10"> 
+                        <a href="{{ path('portada_edit', { 'id': entity.id }) }}" >
+                            <img id="action" src="{{ asset('bundles/backend/img/editar.svg') }}" alt="Editar">
+                        </a>
+                    </td>
+                    <td class="width-10">
+                        <a href="{{ path('portada_delete', { 'id': entity.id }) }}" >
+                            <img id="action" src="{{ asset('bundles/backend/img/eliminar.svg') }}" alt="Eliminar">
+                        </a>
+                    </td>
                 </tr>
             {% endfor %}
             </tbody>

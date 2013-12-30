@@ -27,18 +27,17 @@
                     <th>Proyecto</th>
                     <th>Producto</th>
                     <th>Cantidad</th>
-                    <th>Observaciones</th>
                 </tr>
             </thead>
             <tbody>
             {% for entity in entities %}
                 <tr>
-                    <td class="width-30 enlace" >
+                    <td class="width-40 enlace" >
                         <a href="{{ path('proyectosproductos_edit', { 'id': entity.id }) }}">
                             {{ entity.nombreCorto }}
                         </a>
                     </td>
-                    <td class="width-20 enlace" >
+                    <td class="width-30 enlace" >
                         <a href="{{ path('proyectosproductos_edit', { 'id': entity.id }) }}">
                             {{ entity.meta }}
                         </a>
@@ -48,9 +47,14 @@
                             {{ entity.cantidad }}
                         </a>
                     </td>
-                    <td class="width-40 enlace" >
-                        <a href="{{ path('proyectosproductos_edit', { 'id': entity.id }) }}">
-                            {{ entity.observaciones }}
+                    <td class="width-10"> 
+                        <a href="{{ path('proyectosproductos_edit', { 'id': entity.id }) }}" >
+                            <img id="action" src="{{ asset('bundles/backend/img/editar.svg') }}" alt="Editar">
+                        </a>
+                    </td>
+                    <td class="width-10">
+                        <a href="{{ path('proyectosproductos_delete', { 'id': entity.id }) }}" >
+                            <img id="action" src="{{ asset('bundles/backend/img/eliminar.svg') }}" alt="Eliminar">
                         </a>
                     </td>
                 </tr>

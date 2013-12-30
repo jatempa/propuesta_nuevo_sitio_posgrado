@@ -36,9 +36,19 @@
                             {{ entity.nombre  ~ " " ~  entity.apellidoPaterno ~ " " ~  entity.apellidoMaterno }}
                         </a>
                     </td>
-                    <td class="enlace width-60">
+                    <td class="enlace width-40">
                         <a href="{{ path('investigadorproyecto_edit', { 'id': entity.id }) }}" >
                             {{ entity.nombreCorto }}
+                        </a>
+                    </td>
+                    <td class="width-10"> 
+                        <a href="{{ path('investigadorproyecto_edit', { 'id': entity.id }) }}" >
+                            <img id="action" src="{{ asset('bundles/backend/img/editar.svg') }}" alt="Editar">
+                        </a>
+                    </td>
+                    <td class="width-10">
+                        <a href="{{ path('investigadorproyecto_delete', { 'id': entity.id }) }}" >
+                            <img id="action" src="{{ asset('bundles/backend/img/eliminar.svg') }}" alt="Eliminar">
                         </a>
                     </td>
                 </tr>
