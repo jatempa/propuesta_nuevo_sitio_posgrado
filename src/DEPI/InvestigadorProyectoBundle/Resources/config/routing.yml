@@ -13,3 +13,7 @@ investigadorproyecto_new:
 investigadorproyecto_edit:
     pattern:  /posgradmin/investigadorproyecto/edit/{id}
     defaults: { _controller: InvestigadorProyectoBundle:InvestigadorProyecto:edit }
+
+investigadorproyecto_delete:
+    pattern:  /posgradmin/investigadorproyecto/delete/{id}
+    defaults: { _controller: InvestigadorProyectoBundle:InvestigadorProyecto:delete }

@@ -13,3 +13,7 @@ alumnosproyectos_new:
 alumnosproyectos_edit:
     pattern:  /posgradmin/alumnosproyectos/edit/{id}
     defaults: { _controller: AlumnosProyectosBundle:AlumnosProyectos:edit }
+
+alumnosproyectos_delete:
+    pattern:  /posgradmin/alumnosproyectos/delete/{id}
+    defaults: { _controller: AlumnosProyectosBundle:AlumnosProyectos:delete }

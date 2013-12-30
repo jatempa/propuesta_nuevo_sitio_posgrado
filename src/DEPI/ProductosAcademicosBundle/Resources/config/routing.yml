@@ -13,3 +13,7 @@ productosacademicos_new:
 productosacademicos_edit:
     pattern:  /posgradmin/productosacademicos/edit/{id}
     defaults: { _controller: ProductosAcademicosBundle:ProductosAcademicos:edit }
+
+productosacademicos_delete:
+    pattern:  /posgradmin/productosacademicos/delete/{id}
+    defaults: { _controller: ProductosAcademicosBundle:ProductosAcademicos:delete }

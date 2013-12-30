@@ -14,6 +14,10 @@ investigadores_edit:
     pattern:  /posgradmin/investigadores/edit/{id}
     defaults: { _controller: InvestigadoresBundle:Investigadores:edit }
 
+investigadores_delete:
+    pattern:  /posgradmin/investigadores/delete/{id}
+    defaults: { _controller: InvestigadoresBundle:Investigadores:delete }
+
 investigadores_public:
     pattern:  /investigadores
     defaults: { _controller: InvestigadoresBundle:InvestigadoresPublic:index }

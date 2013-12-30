@@ -13,3 +13,7 @@ noticias_new:
 noticias_edit:
     pattern:  /posgradmin/noticias/edit/{id}
     defaults: { _controller: NoticiasBundle:Noticias:edit }
+
+noticias_delete:
+    pattern:  /posgradmin/noticias/delete/{id}
+    defaults: { _controller: NoticiasBundle:Noticias:delete }

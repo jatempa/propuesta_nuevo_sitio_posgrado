@@ -14,14 +14,6 @@ posgrados_edit:
     pattern:  /posgradmin/posgrados/edit/{id}
     defaults: { _controller: PosgradosBundle:Posgrados:edit }
 
-posgrados_create:
-    pattern:  /posgradmin/posgrados/create
-    defaults: { _controller: PosgradosBundle:Posgrados:create }
-
-posgrados_update:
-    pattern:  /posgradmin/posgrados/update/{id}
-    defaults: { _controller: PosgradosBundle:Posgrados:update }
-
 posgrados_delete:
     pattern:  /posgradmin/posgrados/delete/{id}
     defaults: { _controller: PosgradosBundle:Posgrados:delete }

@@ -14,6 +14,10 @@ proyectos_edit:
     pattern:  /posgradmin/proyectos/edit/{id}
     defaults: { _controller: ProyectosBundle:Proyectos:edit }
 
+proyectos_delete:
+    pattern:  /posgradmin/proyectos/delete/{id}
+    defaults: { _controller: ProyectosBundle:Proyectos:delete }
+
 proyectos_public:
     pattern:  /proyectos
     defaults: { _controller: ProyectosBundle:ProyectosPublic:index }

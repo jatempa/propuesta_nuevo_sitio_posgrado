@@ -13,3 +13,7 @@ investigadoreslineas_new:
 investigadoreslineas_edit:
     pattern:  /posgradmin/investigadoreslineas/edit/{id}
     defaults: { _controller: InvestigadoresLineasBundle:InvestigadoresLineas:edit }
+
+investigadoreslineas_delete:
+    pattern:  /posgradmin/investigadoreslineas/delete/{id}
+    defaults: { _controller: InvestigadoresLineasBundle:InvestigadoresLineas:delete }

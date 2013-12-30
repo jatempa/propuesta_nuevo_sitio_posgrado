@@ -13,3 +13,7 @@ posgradoinvestigadores_new:
 posgradoinvestigadores_edit:
     pattern:  /posgradmin/posgradoinvestigadores/edit/{id}
     defaults: { _controller: PosgradoInvestigadoresBundle:PosgradoInvestigadores:edit }
+
+posgradoinvestigadores_delete:
+    pattern:  /posgradmin/posgradoinvestigadores/delete/{id}
+    defaults: { _controller: PosgradoInvestigadoresBundle:PosgradoInvestigadores:delete }

@@ -13,3 +13,7 @@ posgradoareas_new:
 posgradoareas_edit:
     pattern:  /posgradmin/posgradoareas/edit/{id}
     defaults: { _controller: PosgradoAreasBundle:PosgradoAreas:edit }
+
+posgradoareas_delete:
+    pattern:  /posgradmin/posgradoareas/delete/{id}
+    defaults: { _controller: PosgradoAreasBundle:PosgradoAreas:delete }

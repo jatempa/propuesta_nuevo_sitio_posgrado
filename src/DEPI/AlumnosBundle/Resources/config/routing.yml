@@ -14,6 +14,10 @@ alumnos_edit:
     pattern:  /posgradmin/alumnos/edit/{id}
     defaults: { _controller: AlumnosBundle:Alumnos:edit }
 
+alumnos_delete:
+    pattern:  /posgradmin/alumnos/delete/{id}
+    defaults: { _controller: AlumnosBundle:Alumnos:delete }
+
 alumnos_public:
     pattern:  /alumnos
     defaults: { _controller: AlumnosBundle:AlumnosPublic:index }

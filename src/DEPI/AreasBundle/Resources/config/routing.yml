@@ -14,6 +14,10 @@ areas_edit:
     pattern:  /posgradmin/areas/edit/{id}
     defaults: { _controller: AreasBundle:Areas:edit }
 
+areas_delete:
+    pattern:  /posgradmin/areas/delete/{id}
+    defaults: { _controller: AreasBundle:Areas:delete }
+
 areas_public:
     pattern:  /areas
     defaults: { _controller: AreasBundle:AreasPublic:index }
