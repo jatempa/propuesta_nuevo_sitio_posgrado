@@ -6,16 +6,7 @@
 {% endblock %}
 
 {% block contenido %}
-<aside class="unit-25 unit-padding">
-    <h6>Opciones</h6>
-    <nav class="nav-v">
-        <ul>
-            <li><a href="{{ path('investigadoreslineas') }}">Registrar en una línea de investigación</a></li>
-        </ul>
-    </nav>
-</aside>
-
-<div class="unit-75">
+<div class="unit-centered unit-80">
     <div class="table-container">
         <table class="width-100 table-striped">
             <thead>
@@ -59,6 +50,6 @@
         </table>
     </div>
     {{ knp_pagination_render(entities) }}
+    <a href="{{ path('investigadores_new') }}" class="btn btn-blue">Nuevo</a>
 </div>
-<a href="{{ path('investigadores_new') }}" class="btn btn-blue">Nuevo</a>
 {% endblock %}

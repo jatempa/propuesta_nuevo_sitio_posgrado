@@ -6,19 +6,7 @@
 {% endblock %}
 
 {% block contenido %}
-<aside class="unit-25 unit-padding">
-    <h6>Opciones</h6>
-    <nav class="nav-v">
-        <ul>
-            <li><a href="{{ path('alumnosproyectos') }}">Registro de alumnos</a></li>
-            <li><a href="{{ path('investigadorproyecto') }}">Registro de investigadores</a></li>
-            <li><a href="{{ path('proyectosproductos') }}">Registro de productos académicos</a></li>
-            <li><a href="{{ path('areasproyectos') }}">Registrar área de investigación</a></li>
-        </ul>
-    </nav>
-</aside>
-
-<div class="unit-75">
+<div class="unit-centered unit-80">
     <div class="table-container">
         <table class="width-100 table-striped">
             <thead>
@@ -26,7 +14,6 @@
                     <th>Proyecto</th>
                     <th>Objetivo general</th>
                     <th>Fecha de apertura</th>
-                    <th>Fecha de término</th>
                 </tr>
             </thead>
             <tbody>
@@ -34,7 +21,7 @@
                 <tr>
                     <td class="width-30 enlace">
                         <a href="{{ path('proyectos_edit', { 'id': entity.id }) }}">
-                            {{ entity.nombreCompleto }}
+                            {{ entity.nombreCorto }}
                         </a>
                     </td>
                     <td class="width-30 enlace">
@@ -45,11 +32,6 @@
                     <td class="width-10 enlace">
                         <a href="{{ path('proyectos_edit', { 'id': entity.id }) }}">
                             {% if entity.fechaApertura %}{{ entity.fechaApertura|date('Y-m-d') }}{% endif %}
-                        </a>
-                    </td>
-                    <td class="width-10 enlace">
-                        <a href="{{ path('proyectos_edit', { 'id': entity.id }) }}">
-                            {% if entity.fechaTermino %}{{ entity.fechaTermino|date('Y-m-d') }}{% endif %}
                         </a>
                     </td>
                     <td class="width-10"> 
@@ -68,6 +50,6 @@
         </table>
     </div>
     {{ knp_pagination_render(entities) }}
+    <a href="{{ path('proyectos_new') }}" class="btn btn-blue">Nuevo</a>
 </div>
-<a href="{{ path('proyectos_new') }}" class="btn btn-blue">Nuevo</a>
 {% endblock %}

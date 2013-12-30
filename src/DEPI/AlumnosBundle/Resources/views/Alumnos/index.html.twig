@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block contenido %}
-<div class="unit-100">
+<div class="unit-centered unit-80">
     <div class="table-container">
         <table class="width-100 table-striped">
             <thead>
@@ -15,7 +15,6 @@
                     <th>Nombre(s)</th>
                     <th>Apellidos</th>
                     <th>Correo electrónico</th>
-                    <th>Teléfono</th>
                 </tr>
             </thead>
             <tbody>
@@ -41,11 +40,6 @@
                             {{ alumno.email }}
                         </a>
                     </td>
-                    <td class="width-10 enlace">
-                        <a href="{{ path('alumnos_edit', { 'id': alumno.id }) }}" >
-                            {{ alumno.telefono }}
-                        </a>
-                    </td>
                     <td class="width-10"> 
                         <a href="{{ path('alumnos_edit', { 'id': alumno.id }) }}" >
                             <img id="action" src="{{ asset('bundles/backend/img/editar.svg') }}" alt="Editar">
@@ -62,6 +56,6 @@
         </table>
     </div>
     {{ knp_pagination_render(alumnos) }}
+    <a href="{{ path('alumnos_new') }}" class="btn btn-blue">Nuevo</a>
 </div>
-<a href="{{ path('alumnos_new') }}" class="btn btn-blue">Nuevo</a>
 {% endblock %}

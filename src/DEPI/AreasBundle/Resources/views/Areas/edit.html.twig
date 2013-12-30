@@ -2,13 +2,23 @@
 
 {% block mapa %}
     <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
-    <li><a href="{{ path('areas') }}">Áreas</a></li>
+    <li><a href="{{ path('areas') }}">Áreas de investigación</a></li>
     <li><span>Actualizar datos del área de investigación</span></li>
 {% endblock %}
 
 {% block contenido %}
 <div class="unit-100">
     <div class="units-row">
+        <div class="unit-30">
+            <aside class="unit-80">
+                <nav class="nav-v">
+                    <ul>
+                        <li><a href="{{ path('areasproyectos_new') }}">Registrar un proyecto</a></li>
+                        <li><a href="{{ path('posgradoareas_new') }}">Registrar en un posgrado</a></li>
+                    </ul>
+                </nav>
+            </aside>
+        </div>
         <div class="unit-centered unit-50">
             <fieldset>
                 <legend>Áreas</legend>

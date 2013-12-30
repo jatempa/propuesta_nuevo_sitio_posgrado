@@ -14,6 +14,14 @@
                 <legend>Foto</legend>
                 <img id="foto" src="{{ asset('uploads/images/alumnos/') ~ entity.rutaFoto }}" />
             </fieldset>
+            <aside class="unit-80">
+                <nav class="nav-v">
+                    <ul>
+                        <li><a href="{{ path('alumnosproyectos_new') }}">Registrar en un proyecto</a></li>
+                        <li><a href="{{ path('posgradoalumnos_new') }}">Registrar en un posgrado</a></li>
+                    </ul>
+                </nav>
+            </aside>
         </div>
         <div class="units-centered unit-50">
             <fieldset>

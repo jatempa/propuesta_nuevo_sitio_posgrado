@@ -6,17 +6,7 @@
 {% endblock %}
 
 {% block contenido %}
-<aside class="unit-25 unit-padding">
-    <h6>Opciones</h6>
-    <nav class="nav-v">
-        <ul>
-            <li><a href="{{ path('noticias') }}">Registro de noticias</a></li>
-            <li><span>Registro de contenido para la portada</span></li>
-        </ul>
-    </nav>
-</aside>
-
-<div class="unit-75">
+<div class="unit-centered unit-80">
     <div class="table-container">
         <table class="width-100 table-striped">
             <thead>
@@ -24,6 +14,8 @@
                     <th>Titulo</th>
                     <th>Fecha de publicación</th>
                     <th>Imagen</th>
+                    <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -62,6 +54,6 @@
         </table>
     </div>
     {{ knp_pagination_render(entities) }}
+    <a href="{{ path('portada_new') }}" class="btn btn-blue">Nuevo</a>
 </div>
-<a href="{{ path('portada_new') }}" class="btn btn-blue">Nuevo</a>
 {% endblock %}

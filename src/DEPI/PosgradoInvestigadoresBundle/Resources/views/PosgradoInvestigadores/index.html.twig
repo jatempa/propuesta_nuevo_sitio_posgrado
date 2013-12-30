@@ -7,19 +7,7 @@
 {% endblock %}
 
 {% block contenido %}
-<aside class="unit-25 unit-padding">
-    <h6>Opciones</h6>
-    <nav class="nav-v">
-        <ul>
-            <li><a href="{{ path('posgradoalumnos') }}">Registro de alumnos</a></li>
-            <li><a href="{{ path('posgradoareas') }}">Registrar área de investigación</a></li>
-            <li><span>Registro de investigadores</span></li>
-            <li><a href="{{ path('posgradolineas') }}">Registro de lineas de investigación</a></li>
-        </ul>
-    </nav>
-</aside>
-
-<div class="unit-75">
+<div class="unit-centered unit-80">
     <div class="table-container">
         <table class="width-100 table-striped">
             <thead>
@@ -57,6 +45,6 @@
         </table>
     </div>
     {{ knp_pagination_render(entities) }}
+    <a href="{{ path('posgradoinvestigadores_new') }}" class="btn btn-blue">Nuevo</a>
 </div>
-<a href="{{ path('posgradoinvestigadores_new') }}" class="btn btn-blue">Nuevo</a>
 {% endblock %}

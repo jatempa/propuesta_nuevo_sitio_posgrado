@@ -6,17 +6,7 @@
 {% endblock %}
 
 {% block contenido %}
-<aside class="unit-25 unit-padding">
-    <h6>Opciones</h6>
-    <nav class="nav-v">
-        <ul>
-            <li><span>Registro de noticias</span></li>
-            <li><a href="{{ path('portada') }}">Registro de contenido para la portada</a></li>
-        </ul>
-    </nav>
-</aside>
-
-<div class="unit-75">
+<div class="unit-centered unit-80">
     <div class="table-container">
         <table class="width-100 table-striped">
             <thead>
@@ -35,7 +25,7 @@
                             {{ entity.titulo }}
                         </a>
                     </td>
-                    <td class="width-30 enlace">
+                    <td class="width-20 enlace">
                         <a href="{{ path('noticias_edit', { 'id': entity.id }) }}" >
                             {{ entity.contenido }}
                         </a>
@@ -47,9 +37,13 @@
                             {% endif %}
                         </a>
                     </td>
-                    <td class="width-20 enlace">
+                    <td class="width-10 enlace">
                         <a href="{{ path('noticias_edit', { 'id': entity.id }) }}" >
-                            {{ entity.rutaDocumento }}
+                            {% if entity.rutaDocumento %}
+                                {{ entity.rutaDocumento }}
+                            {% else %}
+                                Sin documento
+                            {% endif %}
                         </a>
                     </td>
                     <td class="width-10"> 
@@ -68,6 +62,6 @@
         </table>
     </div>
     {{ knp_pagination_render(entities) }}
+    <a href="{{ path('noticias_new') }}" class="btn btn-blue">Nuevo</a>
 </div>
-<a href="{{ path('noticias_new') }}" class="btn btn-blue">Nuevo</a>
 {% endblock %}

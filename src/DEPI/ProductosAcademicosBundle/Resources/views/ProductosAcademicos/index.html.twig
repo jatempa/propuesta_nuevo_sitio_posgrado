@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block contenido %}
-<div class="unit-100">
+<div class="unit-centered unit-80">
     <div class="table-container">
         <table class="width-100 table-striped">
             <thead>
@@ -38,6 +38,6 @@
         </table>
     </div>
     {{ knp_pagination_render(entities) }}
+    <a href="{{ path('productosacademicos_new') }}" class="btn btn-blue">Nuevo</a>
 </div>
-<a href="{{ path('productosacademicos_new') }}" class="btn btn-blue">Nuevo</a>
 {% endblock %}
