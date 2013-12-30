@@ -2,7 +2,6 @@
 
 namespace DEPI\NoticiasBundle\Controller;
 
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -94,5 +93,18 @@ class NoticiasController extends Controller
             'entity' => $entity,
             'form'   => $form->createView(),
         );
+    }
+
+    public function deleteAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('NoticiasBundle:Noticias')->deletenoticias($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Noticias entity.');
+        }
+
+        return $this->redirect($this->generateUrl('noticias'));
     }
 }

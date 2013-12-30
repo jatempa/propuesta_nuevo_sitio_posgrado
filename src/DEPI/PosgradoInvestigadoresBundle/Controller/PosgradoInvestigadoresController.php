@@ -94,4 +94,17 @@ class PosgradoInvestigadoresController extends Controller
             'form'   => $form->createView(),
         );
     }
+
+    public function deleteAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('PosgradoInvestigadoresBundle:PosgradoInvestigadores')->deletePosgradoInvestigadores($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find PosgradoInvestigadores entity.');
+        }
+
+        return $this->redirect($this->generateUrl('posgradoinvestigadores'));
+    }
 }

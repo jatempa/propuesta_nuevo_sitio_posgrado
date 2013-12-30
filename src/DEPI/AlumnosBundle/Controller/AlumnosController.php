@@ -96,4 +96,17 @@ class AlumnosController extends Controller
             'form'   => $form->createView(),
         );
     }
+
+    public function deleteAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('AlumnosBundle:Alumnos')->deleteAlumnos($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Alumnos entity.');
+        }
+
+        return $this->redirect($this->generateUrl('alumnos'));
+    }
 }

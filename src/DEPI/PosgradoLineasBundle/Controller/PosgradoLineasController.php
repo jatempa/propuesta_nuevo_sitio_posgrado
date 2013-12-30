@@ -94,4 +94,17 @@ class PosgradoLineasController extends Controller
             'form'   => $form->createView(),
         );
     }
+
+    public function deleteAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('PosgradoLineasBundle:PosgradoLineas')->deletePosgradoLineas($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find PosgradoLineas entity.');
+        }
+
+        return $this->redirect($this->generateUrl('posgradolineas'));
+    }
 }

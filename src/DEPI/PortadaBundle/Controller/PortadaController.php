@@ -2,7 +2,6 @@
 
 namespace DEPI\PortadaBundle\Controller;
 
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -96,5 +95,18 @@ class PortadaController extends Controller
             'entity' => $entity,
             'form'   => $form->createView(),
         );
+    }
+
+    public function deleteAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('PortadaBundle:Portada')->deletePortada($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Portada entity.');
+        }
+
+        return $this->redirect($this->generateUrl('portada'));
     }
 }

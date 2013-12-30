@@ -94,4 +94,17 @@ class PosgradosController extends Controller
             'form'   => $form->createView(),
         );
     }
+
+    public function deleteAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('PosgradosBundle:Posgrados')->deletePosgrados($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Posgrados entity.');
+        }
+
+        return $this->redirect($this->generateUrl('posgrados'));
+    }
 }

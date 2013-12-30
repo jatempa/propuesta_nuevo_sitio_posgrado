@@ -2,7 +2,6 @@
 
 namespace DEPI\AreasBundle\Controller;
 
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -94,5 +93,18 @@ class AreasController extends Controller
             'entity' => $entity,
             'form'   => $form->createView(),
         );
+    }
+
+    public function deleteAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('AreasBundle:Areas')->deleteAreas($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Areas entity.');
+        }
+
+        return $this->redirect($this->generateUrl('areas'));
     }
 }

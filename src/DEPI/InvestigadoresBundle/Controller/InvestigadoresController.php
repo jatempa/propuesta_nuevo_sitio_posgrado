@@ -2,7 +2,6 @@
 
 namespace DEPI\InvestigadoresBundle\Controller;
 
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -95,5 +94,18 @@ class InvestigadoresController extends Controller
             'entity' => $entity,
             'form'   => $form->createView(),
         );
+    }
+
+    public function deleteAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('InvestigadoresBundle:Investigadores')->deleteInvestigadores($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Investigadores entity.');
+        }
+
+        return $this->redirect($this->generateUrl('investigadores'));
     }
 }
