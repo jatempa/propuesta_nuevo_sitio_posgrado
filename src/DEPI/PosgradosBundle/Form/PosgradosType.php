@@ -16,7 +16,7 @@ class PosgradosType extends AbstractType
     {
         $builder
             ->add('nombre', 'text')
-            ->add('objetivoGeneral', 'text', array('required' => false))
+            ->add('objetivoGeneral', 'textarea', array('required' => false, 'attr' => array('rows' => '6')))
             ->add('clave', 'text', array('required' => false))
             ->add('guardar', 'submit', array('attr' => array('class' => 'btn btn-blue')))
         ;
