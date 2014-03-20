@@ -49,8 +49,8 @@ investigadores_lineas:
 alumnos_proyectos:
     resource: "@AlumnosProyectosBundle/Resources/config/routing.yml"
 
-investigador_proyecto:
-    resource: "@InvestigadorProyectoBundle/Resources/config/routing.yml"
+investigadores_proyectos:
+    resource: "@InvestigadoresProyectosBundle/Resources/config/routing.yml"
     prefix:   /
 
 lineas_investigacion:
