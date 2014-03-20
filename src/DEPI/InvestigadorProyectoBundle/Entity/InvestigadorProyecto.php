@@ -1,16 +1,16 @@
 <?php
 
-namespace DEPI\InvestigadorProyectoBundle\Entity;
+namespace DEPI\InvestigadoresProyectoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * InvestigadorProyecto
+ * InvestigadoresProyecto
  *
- * @ORM\Table(name="investigadorProyecto")
- * @ORM\Entity(repositoryClass="DEPI\InvestigadorProyectoBundle\Entity\InvestigadorProyectoRepository")
+ * @ORM\Table(name="investigadoresProyecto")
+ * @ORM\Entity(repositoryClass="DEPI\InvestigadoresProyectoBundle\Entity\InvestigadoresProyectoRepository")
  */
-class InvestigadorProyecto
+class InvestigadoresProyecto
 {
     /**
      * @var integer
@@ -24,7 +24,7 @@ class InvestigadorProyecto
 	/** @ORM\ManyToOne(targetEntity="DEPI\InvestigadoresBundle\Entity\Investigadores") 
      *  @ORM\JoinColumn(name="investigadores", referencedColumnName="id")
      */
-    private $investigadores;
+    private $investigador;
 
     /** @ORM\ManyToOne(targetEntity="DEPI\ProyectosBundle\Entity\Proyectos") 
      *  @ORM\JoinColumn(name="proyecto", referencedColumnName="id")
@@ -42,14 +42,14 @@ class InvestigadorProyecto
     }
 
     /**
-     * Set investigadores
+     * Set Investigadores
      *
      * @param \DEPI\InvestigadoresBundle\Entity\Investigadores
-     * @return InvestigadorProyecto
+     * @return InvestigadoresProyecto
      */
-    public function setInvestigadores(\DEPI\InvestigadoresBundle\Entity\Investigadores $investigadores)
+    public function setInvestigadores(\DEPI\InvestigadoresBundle\Entity\Investigadores $investigador)
     {
-        $this->investigadores = $investigadores;
+        $this->investigadores = $investigador;
     }
 
     /**
@@ -66,7 +66,7 @@ class InvestigadorProyecto
      * Set Proyectos
      *
      * @param \DEPI\ProyectosBundle\Entity\Proyectos
-     * @return InvestigadorProyecto
+     * @return InvestigadoresProyecto
      */
     public function setProyecto(\DEPI\ProyectosBundle\Entity\Proyectos $proyecto)
     {
@@ -74,7 +74,7 @@ class InvestigadorProyecto
     }
 
     /**
-     * Get Investigadores
+     * Get Proyectos
      *
      * @return \DEPI\ProyectosBundle\Entity\Proyectos
      */
