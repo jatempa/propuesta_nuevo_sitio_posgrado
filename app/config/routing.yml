@@ -1,3 +1,7 @@
+usuario:
+    resource: "@UsuarioBundle/Resources/config/routing.yml"
+    prefix:   /
+
 posgrado_investigadores:
     resource: "@PosgradoInvestigadoresBundle/Resources/config/routing.yml"
     prefix:   /
