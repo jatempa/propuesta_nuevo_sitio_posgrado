@@ -41,7 +41,7 @@
       <div class="large-12 columns">    
         <ul id="banner" data-orbit>
           {% for imagen in banner %}
-            <li><img src="{{ asset('uploads/images/portada/') ~ imagen.imagenBanner }}"/></li>
+            <li><img src="{{ asset( directorio_imagenes_banner ~ imagen.imagenBanner }}"/></li>
           {% endfor %}
         </ul>
       </div> 

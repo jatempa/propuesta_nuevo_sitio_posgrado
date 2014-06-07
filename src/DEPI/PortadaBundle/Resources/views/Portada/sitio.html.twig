@@ -23,7 +23,7 @@
 			  	{{ noticia.contenido }}
 			  	<br>
 			  	{% if noticia.rutaDocumento %}
-            		<a href="{{ asset('uploads/documentos/noticias/') ~ noticia.rutaDocumento }}">	
+            		<a href="{{ asset( directorio_documentos ~ noticia.rutaDocumento ) }}">	
             			Decargar formato
             		</a>
             	{% endif %}
