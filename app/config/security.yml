@@ -1,28 +1,30 @@
 security:
     firewalls:
-        frontend:
+        # Firewall global utilizado en la parte pública o frontend
+        backend:
             pattern:   ^/posgradmin
             provider: administradores
             anonymous: ~
             form_login:
-                login_path: login
-                check_path: login_check
+                login_path: posgradmin_login
+                check_path: posgradmin_login_check
 
             logout:
-                path: /logout
+                path: posgradmin_logout
+
 
     access_control:
-        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/posgradmin/, roles: ROLE_ADMIN }
+        - { path: /depi, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: /login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/posgradmin/*, roles: ROLE_ADMIN }
 
     providers:
         administradores:
             memory:
                 users:
-                    jatempa: { password: 1234, roles: 'ROLE_USER' }
                     admin: { password: sistemasitm, roles: 'ROLE_ADMIN' }
     encoders:
         Symfony\Component\Security\Core\User\User: plaintext
 
     role_hierarchy:
-        ROLE_ADMIN:       ROLE_ADMIN
+        ROLE_ADMIN: [ROLE_ADMIN]

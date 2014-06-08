@@ -78,11 +78,11 @@ portada:
     prefix:   /
 
 posgradmin_login:
-    path:     /login
-    defaults: { _controller: AlumnosBundle:Security:login }
+    path:     /posgradmin/login
+    defaults: { _controller: BackEndBundle:Security:login }
 
 posgradmin_login_check:
-    path: /login_check
+    path: /posgradmin/login_check
 
 posgradmin_logout:
-    pattern: /logout
+    pattern: /posgradmin/logout
