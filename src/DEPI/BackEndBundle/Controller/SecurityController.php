@@ -4,7 +4,7 @@ namespace DEPI\BackEndBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Security\Core\SecurityContextInterface;
+use Symfony\Component\Security\Core\SecurityContext;
 
 
 class SecurityController extends Controller
@@ -14,32 +14,23 @@ class SecurityController extends Controller
         return $this->render('BackEndBundle:Default:index.html.twig');
     }
 
-    public function loginAction(Request $request)
+    public function loginAction(Request $peticion)
     {
-        $session = $request->getSession();
+        $sesion = $peticion->getSession();
 
-        // get the login error if there is one
-        if ($request->attributes->has(SecurityContextInterface::AUTHENTICATION_ERROR)) {
-            $error = $request->attributes->get(
-                SecurityContextInterface::AUTHENTICATION_ERROR
-            );
-        } elseif (null !== $session && $session->has(SecurityContextInterface::AUTHENTICATION_ERROR)) {
-            $error = $session->get(SecurityContextInterface::AUTHENTICATION_ERROR);
-            $session->remove(SecurityContextInterface::AUTHENTICATION_ERROR);
-        } else {
-            $error = '';
-        }
-
-        // last username entered by the user
-        $lastUsername = (null === $session) ? '' : $session->get(SecurityContextInterface::LAST_USERNAME);
+        $error = $peticion->attributes->get(
+            SecurityContext::AUTHENTICATION_ERROR,
+            $sesion->get(SecurityContext::AUTHENTICATION_ERROR)
+        );
 
         return $this->render(
             'BackEndBundle:Default:login.html.twig',
             array(
-                // last username entered by the user
-                'last_username' => $lastUsername,
-                'error'         => $error,
+                'last_username' => $sesion->get(SecurityContext::LAST_USERNAME),
+                'error'         => $error
             )
         );
     }
+
+
 }

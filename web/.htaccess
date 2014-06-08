@@ -1,744 +1,488 @@
-# Use the front controller as index file. It serves as a fallback solution when
-# every other rewrite/redirect fails (e.g. in an aliased environment without
-# mod_rewrite). Additionally, this reduces the matching process for the
-# start page (path "/") because otherwise Apache will apply the rewriting rules
-# to each configured DirectoryIndex file (e.g. index.php, index.html, index.pl).
-DirectoryIndex app.php
-
 <IfModule mod_rewrite.c>
-    RewriteEngine On
-    # skip "real" requests
-    RewriteCond %{REQUEST_FILENAME} -f
-    RewriteRule .* - [QSA,L]
-
-    # _assetic_5fbd114
-    RewriteCond %{REQUEST_URI} ^/css/5fbd114\.css$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_assetic_5fbd114,E=_ROUTING_default__controller:assetic.controller\:render,E=_ROUTING_default_name:5fbd114,E=_ROUTING_default_pos:,E=_ROUTING_default__format:css]
-
-    # _assetic_5fbd114_0
-    RewriteCond %{REQUEST_URI} ^/css/5fbd114_kube_1\.css$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_assetic_5fbd114_0,E=_ROUTING_default__controller:assetic.controller\:render,E=_ROUTING_default_name:5fbd114,E=_ROUTING_default_pos:0,E=_ROUTING_default__format:css]
-
-    # _assetic_5fbd114_1
-    RewriteCond %{REQUEST_URI} ^/css/5fbd114_master_2\.css$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_assetic_5fbd114_1,E=_ROUTING_default__controller:assetic.controller\:render,E=_ROUTING_default_name:5fbd114,E=_ROUTING_default_pos:1,E=_ROUTING_default__format:css]
-
-    # _assetic_836fe75
-    RewriteCond %{REQUEST_URI} ^/css/836fe75\.css$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_assetic_836fe75,E=_ROUTING_default__controller:assetic.controller\:render,E=_ROUTING_default_name:836fe75,E=_ROUTING_default_pos:,E=_ROUTING_default__format:css]
-
-    # _assetic_836fe75_0
-    RewriteCond %{REQUEST_URI} ^/css/836fe75_foundation_1\.css$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_assetic_836fe75_0,E=_ROUTING_default__controller:assetic.controller\:render,E=_ROUTING_default_name:836fe75,E=_ROUTING_default_pos:0,E=_ROUTING_default__format:css]
-
-    # _assetic_836fe75_1
-    RewriteCond %{REQUEST_URI} ^/css/836fe75_master_2\.css$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_assetic_836fe75_1,E=_ROUTING_default__controller:assetic.controller\:render,E=_ROUTING_default_name:836fe75,E=_ROUTING_default_pos:1,E=_ROUTING_default__format:css]
-
-    # _assetic_0926b35
-    RewriteCond %{REQUEST_URI} ^/js/0926b35\.js$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_assetic_0926b35,E=_ROUTING_default__controller:assetic.controller\:render,E=_ROUTING_default_name:0926b35,E=_ROUTING_default_pos:,E=_ROUTING_default__format:js]
-
-    # _assetic_0926b35_0
-    RewriteCond %{REQUEST_URI} ^/js/0926b35_custom\.modernizr_1\.js$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_assetic_0926b35_0,E=_ROUTING_default__controller:assetic.controller\:render,E=_ROUTING_default_name:0926b35,E=_ROUTING_default_pos:0,E=_ROUTING_default__format:js]
-
-    # _assetic_0926b35_1
-    RewriteCond %{REQUEST_URI} ^/js/0926b35_zepto_2\.js$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_assetic_0926b35_1,E=_ROUTING_default__controller:assetic.controller\:render,E=_ROUTING_default_name:0926b35,E=_ROUTING_default_pos:1,E=_ROUTING_default__format:js]
-
-    # _assetic_0926b35_2
-    RewriteCond %{REQUEST_URI} ^/js/0926b35_jquery_3\.js$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_assetic_0926b35_2,E=_ROUTING_default__controller:assetic.controller\:render,E=_ROUTING_default_name:0926b35,E=_ROUTING_default_pos:2,E=_ROUTING_default__format:js]
-
-    # _assetic_0926b35_3
-    RewriteCond %{REQUEST_URI} ^/js/0926b35_foundation\.min_4\.js$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_assetic_0926b35_3,E=_ROUTING_default__controller:assetic.controller\:render,E=_ROUTING_default_name:0926b35,E=_ROUTING_default_pos:3,E=_ROUTING_default__format:js]
-
-    # _assetic_0926b35_4
-    RewriteCond %{REQUEST_URI} ^/js/0926b35_foundation\.topbar_5\.js$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_assetic_0926b35_4,E=_ROUTING_default__controller:assetic.controller\:render,E=_ROUTING_default_name:0926b35,E=_ROUTING_default_pos:4,E=_ROUTING_default__format:js]
-
-    # _assetic_0926b35_5
-    RewriteCond %{REQUEST_URI} ^/js/0926b35_foundation\.orbit_6\.js$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_assetic_0926b35_5,E=_ROUTING_default__controller:assetic.controller\:render,E=_ROUTING_default_name:0926b35,E=_ROUTING_default_pos:5,E=_ROUTING_default__format:js]
-
-    # _assetic_0926b35_6
-    RewriteCond %{REQUEST_URI} ^/js/0926b35_foundation\.section_7\.js$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_assetic_0926b35_6,E=_ROUTING_default__controller:assetic.controller\:render,E=_ROUTING_default_name:0926b35,E=_ROUTING_default_pos:6,E=_ROUTING_default__format:js]
-
-    # _assetic_0926b35_7
-    RewriteCond %{REQUEST_URI} ^/js/0926b35_foundation\.reveal_8\.js$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_assetic_0926b35_7,E=_ROUTING_default__controller:assetic.controller\:render,E=_ROUTING_default_name:0926b35,E=_ROUTING_default_pos:7,E=_ROUTING_default__format:js]
-
-    # _assetic_0926b35_8
-    RewriteCond %{REQUEST_URI} ^/js/0926b35_master_9\.js$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_assetic_0926b35_8,E=_ROUTING_default__controller:assetic.controller\:render,E=_ROUTING_default_name:0926b35,E=_ROUTING_default_pos:8,E=_ROUTING_default__format:js]
-
-    # _wdt
-    RewriteCond %{REQUEST_URI} ^/_wdt/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_wdt,E=_ROUTING_param_token:%1,E=_ROUTING_default__controller:web_profiler.controller.profiler\:toolbarAction]
-
-    # _profiler_home
-    RewriteCond %{REQUEST_URI} ^/_profiler$
-    RewriteRule .* $0/ [QSA,L,R=301]
-    RewriteCond %{REQUEST_URI} ^/_profiler/$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_profiler_home,E=_ROUTING_default__controller:web_profiler.controller.profiler\:homeAction]
-
-    # _profiler_search
-    RewriteCond %{REQUEST_URI} ^/_profiler/search$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_profiler_search,E=_ROUTING_default__controller:web_profiler.controller.profiler\:searchAction]
-
-    # _profiler_search_bar
-    RewriteCond %{REQUEST_URI} ^/_profiler/search_bar$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_profiler_search_bar,E=_ROUTING_default__controller:web_profiler.controller.profiler\:searchBarAction]
-
-    # _profiler_purge
-    RewriteCond %{REQUEST_URI} ^/_profiler/purge$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_profiler_purge,E=_ROUTING_default__controller:web_profiler.controller.profiler\:purgeAction]
-
-    # _profiler_info
-    RewriteCond %{REQUEST_URI} ^/_profiler/info/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_profiler_info,E=_ROUTING_param_about:%1,E=_ROUTING_default__controller:web_profiler.controller.profiler\:infoAction]
-
-    # _profiler_import
-    RewriteCond %{REQUEST_URI} ^/_profiler/import$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_profiler_import,E=_ROUTING_default__controller:web_profiler.controller.profiler\:importAction]
-
-    # _profiler_export
-    RewriteCond %{REQUEST_URI} ^/_profiler/export/([^/\.]++)\.txt$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_profiler_export,E=_ROUTING_param_token:%1,E=_ROUTING_default__controller:web_profiler.controller.profiler\:exportAction]
-
-    # _profiler_phpinfo
-    RewriteCond %{REQUEST_URI} ^/_profiler/phpinfo$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_profiler_phpinfo,E=_ROUTING_default__controller:web_profiler.controller.profiler\:phpinfoAction]
-
-    # _profiler_search_results
-    RewriteCond %{REQUEST_URI} ^/_profiler/([^/]++)/search/results$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_profiler_search_results,E=_ROUTING_param_token:%1,E=_ROUTING_default__controller:web_profiler.controller.profiler\:searchResultsAction]
-
-    # _profiler
-    RewriteCond %{REQUEST_URI} ^/_profiler/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_profiler,E=_ROUTING_param_token:%1,E=_ROUTING_default__controller:web_profiler.controller.profiler\:panelAction]
-
-    # _profiler_router
-    RewriteCond %{REQUEST_URI} ^/_profiler/([^/]++)/router$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_profiler_router,E=_ROUTING_param_token:%1,E=_ROUTING_default__controller:web_profiler.controller.router\:panelAction]
-
-    # _profiler_exception
-    RewriteCond %{REQUEST_URI} ^/_profiler/([^/]++)/exception$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_profiler_exception,E=_ROUTING_param_token:%1,E=_ROUTING_default__controller:web_profiler.controller.exception\:showAction]
-
-    # _profiler_exception_css
-    RewriteCond %{REQUEST_URI} ^/_profiler/([^/]++)/exception\.css$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_profiler_exception_css,E=_ROUTING_param_token:%1,E=_ROUTING_default__controller:web_profiler.controller.exception\:cssAction]
-
-    # _configurator_home
-    RewriteCond %{REQUEST_URI} ^/_configurator$
-    RewriteRule .* $0/ [QSA,L,R=301]
-    RewriteCond %{REQUEST_URI} ^/_configurator/$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_configurator_home,E=_ROUTING_default__controller:Sensio\\Bundle\\DistributionBundle\\Controller\\ConfiguratorController\:\:checkAction]
-
-    # _configurator_step
-    RewriteCond %{REQUEST_URI} ^/_configurator/step/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_configurator_step,E=_ROUTING_param_index:%1,E=_ROUTING_default__controller:Sensio\\Bundle\\DistributionBundle\\Controller\\ConfiguratorController\:\:stepAction]
-
-    # _configurator_final
-    RewriteCond %{REQUEST_URI} ^/_configurator/final$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_configurator_final,E=_ROUTING_default__controller:Sensio\\Bundle\\DistributionBundle\\Controller\\ConfiguratorController\:\:finalAction]
-
-    # posgradoinvestigadores
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoinvestigadores$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradoinvestigadores,E=_ROUTING_default__controller:DEPI\\PosgradoInvestigadoresBundle\\Controller\\PosgradoInvestigadoresController\:\:indexAction]
-
-    # _posgradoinvestigadores
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoinvestigadores$
-    RewriteRule .* $0/ [QSA,L,R=301]
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoinvestigadores/$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_posgradoinvestigadores,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:posgradoinvestigadores]
-
-    # posgradoinvestigadores_new
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoinvestigadores/new$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradoinvestigadores_new,E=_ROUTING_default__controller:DEPI\\PosgradoInvestigadoresBundle\\Controller\\PosgradoInvestigadoresController\:\:newAction]
-
-    # posgradoinvestigadores_edit
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoinvestigadores/edit/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradoinvestigadores_edit,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\PosgradoInvestigadoresBundle\\Controller\\PosgradoInvestigadoresController\:\:editAction]
-
-    # posgradoinvestigadores_create
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoinvestigadores/create$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradoinvestigadores_create,E=_ROUTING_default__controller:DEPI\\PosgradoInvestigadoresBundle\\Controller\\PosgradoInvestigadoresController\:\:createAction]
-
-    # posgradoinvestigadores_update
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoinvestigadores/update/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradoinvestigadores_update,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\PosgradoInvestigadoresBundle\\Controller\\PosgradoInvestigadoresController\:\:updateAction]
-
-    # posgradoinvestigadores_delete
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoinvestigadores/delete/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradoinvestigadores_delete,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\PosgradoInvestigadoresBundle\\Controller\\PosgradoInvestigadoresController\:\:deleteAction]
-
-    # posgradolineas
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgradolineas$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradolineas,E=_ROUTING_default__controller:DEPI\\PosgradoLineasBundle\\Controller\\PosgradoLineasController\:\:indexAction]
-
-    # _posgradolineas
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgradolineas$
-    RewriteRule .* $0/ [QSA,L,R=301]
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgradolineas/$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_posgradolineas,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:posgradolineas]
-
-    # posgradolineas_new
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgradolineas/new$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradolineas_new,E=_ROUTING_default__controller:DEPI\\PosgradoLineasBundle\\Controller\\PosgradoLineasController\:\:newAction]
-
-    # posgradolineas_edit
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgradolineas/edit/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradolineas_edit,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\PosgradoLineasBundle\\Controller\\PosgradoLineasController\:\:editAction]
-
-    # posgradolineas_create
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgradolineas/create$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradolineas_create,E=_ROUTING_default__controller:DEPI\\PosgradoLineasBundle\\Controller\\PosgradoLineasController\:\:createAction]
-
-    # posgradolineas_update
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgradolineas/update/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradolineas_update,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\PosgradoLineasBundle\\Controller\\PosgradoLineasController\:\:updateAction]
-
-    # posgradolineas_delete
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgradolineas/delete/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradolineas_delete,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\PosgradoLineasBundle\\Controller\\PosgradoLineasController\:\:deleteAction]
-
-    # posgradoareas
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoareas$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradoareas,E=_ROUTING_default__controller:DEPI\\PosgradoAreasBundle\\Controller\\PosgradoAreasController\:\:indexAction]
-
-    # _posgradoareas
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoareas$
-    RewriteRule .* $0/ [QSA,L,R=301]
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoareas/$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_posgradoareas,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:posgradoareas]
-
-    # posgradoareas_new
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoareas/new$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradoareas_new,E=_ROUTING_default__controller:DEPI\\PosgradoAreasBundle\\Controller\\PosgradoAreasController\:\:newAction]
-
-    # posgradoareas_edit
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoareas/edit/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradoareas_edit,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\PosgradoAreasBundle\\Controller\\PosgradoAreasController\:\:editAction]
-
-    # posgradoareas_create
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoareas/create$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradoareas_create,E=_ROUTING_default__controller:DEPI\\PosgradoAreasBundle\\Controller\\PosgradoAreasController\:\:createAction]
-
-    # posgradoareas_update
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoareas/update/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradoareas_update,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\PosgradoAreasBundle\\Controller\\PosgradoAreasController\:\:updateAction]
-
-    # posgradoareas_delete
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoareas/delete/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradoareas_delete,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\PosgradoAreasBundle\\Controller\\PosgradoAreasController\:\:deleteAction]
-
-    # posgradoalumnos
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoalumnos$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradoalumnos,E=_ROUTING_default__controller:DEPI\\PosgradoAlumnosBundle\\Controller\\PosgradoAlumnosController\:\:indexAction]
-
-    # _posgradoalumnos
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoalumnos$
-    RewriteRule .* $0/ [QSA,L,R=301]
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoalumnos/$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_posgradoalumnos,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:posgradoalumnos]
-
-    # posgradoalumnos_new
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoalumnos/new$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradoalumnos_new,E=_ROUTING_default__controller:DEPI\\PosgradoAlumnosBundle\\Controller\\PosgradoAlumnosController\:\:newAction]
-
-    # posgradoalumnos_edit
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoalumnos/edit/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradoalumnos_edit,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\PosgradoAlumnosBundle\\Controller\\PosgradoAlumnosController\:\:editAction]
-
-    # posgradoalumnos_create
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoalumnos/create$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradoalumnos_create,E=_ROUTING_default__controller:DEPI\\PosgradoAlumnosBundle\\Controller\\PosgradoAlumnosController\:\:createAction]
-
-    # posgradoalumnos_update
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoalumnos/update/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradoalumnos_update,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\PosgradoAlumnosBundle\\Controller\\PosgradoAlumnosController\:\:updateAction]
-
-    # posgradoalumnos_delete
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoalumnos/delete/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradoalumnos_delete,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\PosgradoAlumnosBundle\\Controller\\PosgradoAlumnosController\:\:deleteAction]
-
-    # posgrados
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgrados$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgrados,E=_ROUTING_default__controller:DEPI\\PosgradosBundle\\Controller\\PosgradosController\:\:indexAction]
-
-    # _posgrados
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgrados$
-    RewriteRule .* $0/ [QSA,L,R=301]
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgrados/$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_posgrados,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:posgrados]
-
-    # posgrados_new
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgrados/new$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgrados_new,E=_ROUTING_default__controller:DEPI\\PosgradosBundle\\Controller\\PosgradosController\:\:newAction]
-
-    # posgrados_edit
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgrados/edit/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgrados_edit,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\PosgradosBundle\\Controller\\PosgradosController\:\:editAction]
-
-    # posgrados_create
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgrados/create$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgrados_create,E=_ROUTING_default__controller:DEPI\\PosgradosBundle\\Controller\\PosgradosController\:\:createAction]
-
-    # posgrados_update
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgrados/update/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgrados_update,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\PosgradosBundle\\Controller\\PosgradosController\:\:updateAction]
-
-    # posgrados_delete
-    RewriteCond %{REQUEST_URI} ^/posgradmin/posgrados/delete/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgrados_delete,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\PosgradosBundle\\Controller\\PosgradosController\:\:deleteAction]
-
-    # noticias
-    RewriteCond %{REQUEST_URI} ^/posgradmin/noticias$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:noticias,E=_ROUTING_default__controller:DEPI\\NoticiasBundle\\Controller\\NoticiasController\:\:indexAction]
-
-    # _noticias
-    RewriteCond %{REQUEST_URI} ^/posgradmin/noticias$
-    RewriteRule .* $0/ [QSA,L,R=301]
-    RewriteCond %{REQUEST_URI} ^/posgradmin/noticias/$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_noticias,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:noticias]
-
-    # noticias_new
-    RewriteCond %{REQUEST_URI} ^/posgradmin/noticias/new$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:noticias_new,E=_ROUTING_default__controller:DEPI\\NoticiasBundle\\Controller\\NoticiasController\:\:newAction]
-
-    # noticias_edit
-    RewriteCond %{REQUEST_URI} ^/posgradmin/noticias/edit/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:noticias_edit,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\NoticiasBundle\\Controller\\NoticiasController\:\:editAction]
-
-    # noticias_create
-    RewriteCond %{REQUEST_URI} ^/posgradmin/noticias/create$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:noticias_create,E=_ROUTING_default__controller:DEPI\\NoticiasBundle\\Controller\\NoticiasController\:\:createAction]
-
-    # noticias_update
-    RewriteCond %{REQUEST_URI} ^/posgradmin/noticias/update/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:noticias_update,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\NoticiasBundle\\Controller\\NoticiasController\:\:updateAction]
-
-    # noticias_delete
-    RewriteCond %{REQUEST_URI} ^/posgradmin/noticias/delete/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:noticias_delete,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\NoticiasBundle\\Controller\\NoticiasController\:\:deleteAction]
-
-    # posgradmin
-    RewriteCond %{REQUEST_URI} ^/posgradmin$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradmin,E=_ROUTING_default__controller:DEPI\\BackEndBundle\\Controller\\DefaultController\:\:indexAction]
-
-    # _posgradmin
-    RewriteCond %{REQUEST_URI} ^/posgradmin$
-    RewriteRule .* $0/ [QSA,L,R=301]
-    RewriteCond %{REQUEST_URI} ^/posgradmin/$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_posgradmin,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:posgradmin]
-
-    # proyectosproductos
-    RewriteCond %{REQUEST_URI} ^/posgradmin/proyectosproductos$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:proyectosproductos,E=_ROUTING_default__controller:DEPI\\ProyectosProductosBundle\\Controller\\ProyectosProductosController\:\:indexAction]
-
-    # _proyectosproductos
-    RewriteCond %{REQUEST_URI} ^/posgradmin/proyectosproductos$
-    RewriteRule .* $0/ [QSA,L,R=301]
-    RewriteCond %{REQUEST_URI} ^/posgradmin/proyectosproductos/$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_proyectosproductos,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:proyectosproductos]
-
-    # proyectosproductos_new
-    RewriteCond %{REQUEST_URI} ^/posgradmin/proyectosproductos/new$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:proyectosproductos_new,E=_ROUTING_default__controller:DEPI\\ProyectosProductosBundle\\Controller\\ProyectosProductosController\:\:newAction]
-
-    # proyectosproductos_edit
-    RewriteCond %{REQUEST_URI} ^/posgradmin/proyectosproductos/edit/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:proyectosproductos_edit,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\ProyectosProductosBundle\\Controller\\ProyectosProductosController\:\:editAction]
-
-    # proyectosproductos_create
-    RewriteCond %{REQUEST_URI} ^/posgradmin/proyectosproductos/create$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:proyectosproductos_create,E=_ROUTING_default__controller:DEPI\\ProyectosProductosBundle\\Controller\\ProyectosProductosController\:\:createAction]
-
-    # proyectosproductos_update
-    RewriteCond %{REQUEST_URI} ^/posgradmin/proyectosproductos/update/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:proyectosproductos_update,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\ProyectosProductosBundle\\Controller\\ProyectosProductosController\:\:updateAction]
-
-    # proyectosproductos_delete
-    RewriteCond %{REQUEST_URI} ^/posgradmin/proyectosproductos/delete/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:proyectosproductos_delete,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\ProyectosProductosBundle\\Controller\\ProyectosProductosController\:\:deleteAction]
-
-    # productosacademicos
-    RewriteCond %{REQUEST_URI} ^/posgradmin/productosacademicos$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:productosacademicos,E=_ROUTING_default__controller:DEPI\\ProductosAcademicosBundle\\Controller\\ProductosAcademicosController\:\:indexAction]
-
-    # _productosacademicos
-    RewriteCond %{REQUEST_URI} ^/posgradmin/productosacademicos$
-    RewriteRule .* $0/ [QSA,L,R=301]
-    RewriteCond %{REQUEST_URI} ^/posgradmin/productosacademicos/$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_productosacademicos,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:productosacademicos]
-
-    # productosacademicos_new
-    RewriteCond %{REQUEST_URI} ^/posgradmin/productosacademicos/new$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:productosacademicos_new,E=_ROUTING_default__controller:DEPI\\ProductosAcademicosBundle\\Controller\\ProductosAcademicosController\:\:newAction]
-
-    # productosacademicos_edit
-    RewriteCond %{REQUEST_URI} ^/posgradmin/productosacademicos/edit/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:productosacademicos_edit,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\ProductosAcademicosBundle\\Controller\\ProductosAcademicosController\:\:editAction]
-
-    # productosacademicos_create
-    RewriteCond %{REQUEST_URI} ^/posgradmin/productosacademicos/create$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:productosacademicos_create,E=_ROUTING_default__controller:DEPI\\ProductosAcademicosBundle\\Controller\\ProductosAcademicosController\:\:createAction]
-
-    # productosacademicos_update
-    RewriteCond %{REQUEST_URI} ^/posgradmin/productosacademicos/update/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:productosacademicos_update,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\ProductosAcademicosBundle\\Controller\\ProductosAcademicosController\:\:updateAction]
-
-    # productosacademicos_delete
-    RewriteCond %{REQUEST_URI} ^/posgradmin/productosacademicos/delete/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:productosacademicos_delete,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\ProductosAcademicosBundle\\Controller\\ProductosAcademicosController\:\:deleteAction]
-
-    # areasproyectos
-    RewriteCond %{REQUEST_URI} ^/posgradmin/areasproyectos$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:areasproyectos,E=_ROUTING_default__controller:DEPI\\AreasProyectosBundle\\Controller\\AreasProyectosController\:\:indexAction]
-
-    # _areasproyectos
-    RewriteCond %{REQUEST_URI} ^/posgradmin/areasproyectos$
-    RewriteRule .* $0/ [QSA,L,R=301]
-    RewriteCond %{REQUEST_URI} ^/posgradmin/areasproyectos/$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_areasproyectos,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:areasproyectos]
-
-    # areasproyectos_new
-    RewriteCond %{REQUEST_URI} ^/posgradmin/areasproyectos/new$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:areasproyectos_new,E=_ROUTING_default__controller:DEPI\\AreasProyectosBundle\\Controller\\AreasProyectosController\:\:newAction]
-
-    # areasproyectos_edit
-    RewriteCond %{REQUEST_URI} ^/posgradmin/areasproyectos/edit/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:areasproyectos_edit,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\AreasProyectosBundle\\Controller\\AreasProyectosController\:\:editAction]
-
-    # areasproyectos_create
-    RewriteCond %{REQUEST_URI} ^/posgradmin/areasproyectos/create$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:areasproyectos_create,E=_ROUTING_default__controller:DEPI\\AreasProyectosBundle\\Controller\\AreasProyectosController\:\:createAction]
-
-    # areasproyectos_update
-    RewriteCond %{REQUEST_URI} ^/posgradmin/areasproyectos/update/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:areasproyectos_update,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\AreasProyectosBundle\\Controller\\AreasProyectosController\:\:updateAction]
-
-    # areasproyectos_delete
-    RewriteCond %{REQUEST_URI} ^/posgradmin/areasproyectos/delete/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:areasproyectos_delete,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\AreasProyectosBundle\\Controller\\AreasProyectosController\:\:deleteAction]
-
-    # areas
-    RewriteCond %{REQUEST_URI} ^/posgradmin/areas$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:areas,E=_ROUTING_default__controller:DEPI\\AreasBundle\\Controller\\AreasController\:\:indexAction]
-
-    # _areas
-    RewriteCond %{REQUEST_URI} ^/posgradmin/areas$
-    RewriteRule .* $0/ [QSA,L,R=301]
-    RewriteCond %{REQUEST_URI} ^/posgradmin/areas/$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_areas,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:areas]
-
-    # areas_new
-    RewriteCond %{REQUEST_URI} ^/posgradmin/areas/new$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:areas_new,E=_ROUTING_default__controller:DEPI\\AreasBundle\\Controller\\AreasController\:\:newAction]
-
-    # areas_edit
-    RewriteCond %{REQUEST_URI} ^/posgradmin/areas/edit/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:areas_edit,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\AreasBundle\\Controller\\AreasController\:\:editAction]
-
-    # areas_create
-    RewriteCond %{REQUEST_URI} ^/posgradmin/areas/create$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:areas_create,E=_ROUTING_default__controller:DEPI\\AreasBundle\\Controller\\AreasController\:\:createAction]
-
-    # areas_update
-    RewriteCond %{REQUEST_URI} ^/posgradmin/areas/update/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:areas_update,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\AreasBundle\\Controller\\AreasController\:\:updateAction]
-
-    # areas_delete
-    RewriteCond %{REQUEST_URI} ^/posgradmin/areas/delete/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:areas_delete,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\AreasBundle\\Controller\\AreasController\:\:deleteAction]
-
-    # areas_public
-    RewriteCond %{REQUEST_URI} ^/areas$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:areas_public,E=_ROUTING_default__controller:DEPI\\AreasBundle\\Controller\\AreasPublicController\:\:indexAction]
-
-    # areas_info
-    RewriteCond %{REQUEST_URI} ^/areas/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:areas_info,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\AreasBundle\\Controller\\AreasPublicController\:\:infoAction]
-
-    # investigadoreslineas
-    RewriteCond %{REQUEST_URI} ^/posgradmin/investigadoreslineas$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:investigadoreslineas,E=_ROUTING_default__controller:DEPI\\InvestigadoresLineasBundle\\Controller\\InvestigadoresLineasController\:\:indexAction]
-
-    # _investigadoreslineas
-    RewriteCond %{REQUEST_URI} ^/posgradmin/investigadoreslineas$
-    RewriteRule .* $0/ [QSA,L,R=301]
-    RewriteCond %{REQUEST_URI} ^/posgradmin/investigadoreslineas/$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_investigadoreslineas,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:investigadoreslineas]
-
-    # investigadoreslineas_new
-    RewriteCond %{REQUEST_URI} ^/posgradmin/investigadoreslineas/new$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:investigadoreslineas_new,E=_ROUTING_default__controller:DEPI\\InvestigadoresLineasBundle\\Controller\\InvestigadoresLineasController\:\:newAction]
-
-    # investigadoreslineas_edit
-    RewriteCond %{REQUEST_URI} ^/posgradmin/investigadoreslineas/edit/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:investigadoreslineas_edit,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\InvestigadoresLineasBundle\\Controller\\InvestigadoresLineasController\:\:editAction]
-
-    # investigadoreslineas_create
-    RewriteCond %{REQUEST_URI} ^/posgradmin/investigadoreslineas/create$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:investigadoreslineas_create,E=_ROUTING_default__controller:DEPI\\InvestigadoresLineasBundle\\Controller\\InvestigadoresLineasController\:\:createAction]
-
-    # investigadoreslineas_update
-    RewriteCond %{REQUEST_URI} ^/posgradmin/investigadoreslineas/update/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:investigadoreslineas_update,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\InvestigadoresLineasBundle\\Controller\\InvestigadoresLineasController\:\:updateAction]
-
-    # investigadoreslineas_delete
-    RewriteCond %{REQUEST_URI} ^/posgradmin/investigadoreslineas/delete/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:investigadoreslineas_delete,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\InvestigadoresLineasBundle\\Controller\\InvestigadoresLineasController\:\:deleteAction]
-
-    # alumnosproyectos
-    RewriteCond %{REQUEST_URI} ^/posgradmin/alumnosproyectos$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:alumnosproyectos,E=_ROUTING_default__controller:DEPI\\AlumnosProyectosBundle\\Controller\\AlumnosProyectosController\:\:indexAction]
-
-    # _alumnosproyectos
-    RewriteCond %{REQUEST_URI} ^/posgradmin/alumnosproyectos$
-    RewriteRule .* $0/ [QSA,L,R=301]
-    RewriteCond %{REQUEST_URI} ^/posgradmin/alumnosproyectos/$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_alumnosproyectos,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:alumnosproyectos]
-
-    # alumnosproyectos_new
-    RewriteCond %{REQUEST_URI} ^/posgradmin/alumnosproyectos/new$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:alumnosproyectos_new,E=_ROUTING_default__controller:DEPI\\AlumnosProyectosBundle\\Controller\\AlumnosProyectosController\:\:newAction]
-
-    # alumnosproyectos_edit
-    RewriteCond %{REQUEST_URI} ^/posgradmin/alumnosproyectos/edit/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:alumnosproyectos_edit,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\AlumnosProyectosBundle\\Controller\\AlumnosProyectosController\:\:editAction]
-
-    # alumnosproyectos_create
-    RewriteCond %{REQUEST_URI} ^/posgradmin/alumnosproyectos/create$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:alumnosproyectos_create,E=_ROUTING_default__controller:DEPI\\AlumnosProyectosBundle\\Controller\\AlumnosProyectosController\:\:createAction]
-
-    # alumnosproyectos_update
-    RewriteCond %{REQUEST_URI} ^/posgradmin/alumnosproyectos/update/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:alumnosproyectos_update,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\AlumnosProyectosBundle\\Controller\\AlumnosProyectosController\:\:updateAction]
-
-    # alumnosproyectos_delete
-    RewriteCond %{REQUEST_URI} ^/posgradmin/alumnosproyectos/delete/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:alumnosproyectos_delete,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\AlumnosProyectosBundle\\Controller\\AlumnosProyectosController\:\:deleteAction]
-
-    # investigadorproyecto
-    RewriteCond %{REQUEST_URI} ^/posgradmin/investigadorproyecto$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:investigadorproyecto,E=_ROUTING_default__controller:DEPI\\InvestigadorProyectoBundle\\Controller\\InvestigadorProyectoController\:\:indexAction]
-
-    # _investigadorproyecto
-    RewriteCond %{REQUEST_URI} ^/posgradmin/investigadorproyecto$
-    RewriteRule .* $0/ [QSA,L,R=301]
-    RewriteCond %{REQUEST_URI} ^/posgradmin/investigadorproyecto/$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_investigadorproyecto,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:investigadorproyecto]
-
-    # investigadorproyecto_new
-    RewriteCond %{REQUEST_URI} ^/posgradmin/investigadorproyecto/new$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:investigadorproyecto_new,E=_ROUTING_default__controller:DEPI\\InvestigadorProyectoBundle\\Controller\\InvestigadorProyectoController\:\:newAction]
-
-    # investigadorproyecto_edit
-    RewriteCond %{REQUEST_URI} ^/posgradmin/investigadorproyecto/edit/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:investigadorproyecto_edit,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\InvestigadorProyectoBundle\\Controller\\InvestigadorProyectoController\:\:editAction]
-
-    # investigadorproyecto_create
-    RewriteCond %{REQUEST_URI} ^/posgradmin/investigadorproyecto/create$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:investigadorproyecto_create,E=_ROUTING_default__controller:DEPI\\InvestigadorProyectoBundle\\Controller\\InvestigadorProyectoController\:\:createAction]
-
-    # investigadorproyecto_update
-    RewriteCond %{REQUEST_URI} ^/posgradmin/investigadorproyecto/update/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:investigadorproyecto_update,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\InvestigadorProyectoBundle\\Controller\\InvestigadorProyectoController\:\:updateAction]
-
-    # investigadorproyecto_delete
-    RewriteCond %{REQUEST_URI} ^/posgradmin/investigadorproyecto/delete/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:investigadorproyecto_delete,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\InvestigadorProyectoBundle\\Controller\\InvestigadorProyectoController\:\:deleteAction]
-
-    # lineas
-    RewriteCond %{REQUEST_URI} ^/posgradmin/lineas$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:lineas,E=_ROUTING_default__controller:DEPI\\LineasInvestigacionBundle\\Controller\\LineasInvestigacionController\:\:indexAction]
-
-    # _lineas
-    RewriteCond %{REQUEST_URI} ^/posgradmin/lineas$
-    RewriteRule .* $0/ [QSA,L,R=301]
-    RewriteCond %{REQUEST_URI} ^/posgradmin/lineas/$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_lineas,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:lineas]
-
-    # lineas_new
-    RewriteCond %{REQUEST_URI} ^/posgradmin/lineas/new$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:lineas_new,E=_ROUTING_default__controller:DEPI\\LineasInvestigacionBundle\\Controller\\LineasInvestigacionController\:\:newAction]
-
-    # lineas_edit
-    RewriteCond %{REQUEST_URI} ^/posgradmin/lineas/edit/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:lineas_edit,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\LineasInvestigacionBundle\\Controller\\LineasInvestigacionController\:\:editAction]
-
-    # lineas_create
-    RewriteCond %{REQUEST_URI} ^/posgradmin/lineas/create$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:lineas_create,E=_ROUTING_default__controller:DEPI\\LineasInvestigacionBundle\\Controller\\LineasInvestigacionController\:\:createAction]
-
-    # lineas_update
-    RewriteCond %{REQUEST_URI} ^/posgradmin/lineas/update/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:lineas_update,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\LineasInvestigacionBundle\\Controller\\LineasInvestigacionController\:\:updateAction]
-
-    # lineas_delete
-    RewriteCond %{REQUEST_URI} ^/posgradmin/lineas/delete/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:lineas_delete,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\LineasInvestigacionBundle\\Controller\\LineasInvestigacionController\:\:deleteAction]
-
-    # lineas_public
-    RewriteCond %{REQUEST_URI} ^/lineas$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:lineas_public,E=_ROUTING_default__controller:DEPI\\LineasInvestigacionBundle\\Controller\\LineasInvestigacionPublicController\:\:indexAction]
-
-    # proyectos
-    RewriteCond %{REQUEST_URI} ^/posgradmin/proyectos$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:proyectos,E=_ROUTING_default__controller:DEPI\\ProyectosBundle\\Controller\\ProyectosController\:\:indexAction]
-
-    # _proyectos
-    RewriteCond %{REQUEST_URI} ^/posgradmin/proyectos$
-    RewriteRule .* $0/ [QSA,L,R=301]
-    RewriteCond %{REQUEST_URI} ^/posgradmin/proyectos/$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_proyectos,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:proyectos]
-
-    # proyectos_new
-    RewriteCond %{REQUEST_URI} ^/posgradmin/proyectos/new$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:proyectos_new,E=_ROUTING_default__controller:DEPI\\ProyectosBundle\\Controller\\ProyectosController\:\:newAction]
-
-    # proyectos_edit
-    RewriteCond %{REQUEST_URI} ^/posgradmin/proyectos/edit/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:proyectos_edit,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\ProyectosBundle\\Controller\\ProyectosController\:\:editAction]
-
-    # proyectos_create
-    RewriteCond %{REQUEST_URI} ^/posgradmin/proyectos/create$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:proyectos_create,E=_ROUTING_default__controller:DEPI\\ProyectosBundle\\Controller\\ProyectosController\:\:createAction]
-
-    # proyectos_update
-    RewriteCond %{REQUEST_URI} ^/posgradmin/proyectos/update/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:proyectos_update,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\ProyectosBundle\\Controller\\ProyectosController\:\:updateAction]
-
-    # proyectos_delete
-    RewriteCond %{REQUEST_URI} ^/posgradmin/proyectos/delete/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:proyectos_delete,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\ProyectosBundle\\Controller\\ProyectosController\:\:deleteAction]
-
-    # proyectos_public
-    RewriteCond %{REQUEST_URI} ^/proyectos$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:proyectos_public,E=_ROUTING_default__controller:DEPI\\ProyectosBundle\\Controller\\ProyectosPublicController\:\:indexAction]
-
-    # alumnos
-    RewriteCond %{REQUEST_URI} ^/posgradmin/alumnos$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:alumnos,E=_ROUTING_default__controller:DEPI\\AlumnosBundle\\Controller\\AlumnosController\:\:indexAction]
-
-    # _alumnos
-    RewriteCond %{REQUEST_URI} ^/posgradmin/alumnos$
-    RewriteRule .* $0/ [QSA,L,R=301]
-    RewriteCond %{REQUEST_URI} ^/posgradmin/alumnos/$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_alumnos,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:alumnos]
-
-    # alumnos_new
-    RewriteCond %{REQUEST_URI} ^/posgradmin/alumnos/new$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:alumnos_new,E=_ROUTING_default__controller:DEPI\\AlumnosBundle\\Controller\\AlumnosController\:\:newAction]
-
-    # alumnos_edit
-    RewriteCond %{REQUEST_URI} ^/posgradmin/alumnos/edit/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:alumnos_edit,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\AlumnosBundle\\Controller\\AlumnosController\:\:editAction]
-
-    # alumnos_create
-    RewriteCond %{REQUEST_URI} ^/posgradmin/alumnos/create$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:alumnos_create,E=_ROUTING_default__controller:DEPI\\AlumnosBundle\\Controller\\AlumnosController\:\:createAction]
-
-    # alumnos_update
-    RewriteCond %{REQUEST_URI} ^/posgradmin/alumnos/update/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:alumnos_update,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\AlumnosBundle\\Controller\\AlumnosController\:\:updateAction]
-
-    # alumnos_delete
-    RewriteCond %{REQUEST_URI} ^/posgradmin/alumnos/delete/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:alumnos_delete,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\AlumnosBundle\\Controller\\AlumnosController\:\:deleteAction]
-
-    # alumnos_public
-    RewriteCond %{REQUEST_URI} ^/alumnos$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:alumnos_public,E=_ROUTING_default__controller:DEPI\\AlumnosBundle\\Controller\\AlumnosPublicController\:\:indexAction]
-
-    # alumnos_show_public
-    RewriteCond %{REQUEST_URI} ^/alumnos/show/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:alumnos_show_public,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\AlumnosBundle\\Controller\\AlumnosPublicController\:\:showAction]
-
-    # investigadores
-    RewriteCond %{REQUEST_URI} ^/posgradmin/investigadores$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:investigadores,E=_ROUTING_default__controller:DEPI\\InvestigadoresBundle\\Controller\\InvestigadoresController\:\:indexAction]
-
-    # _investigadores
-    RewriteCond %{REQUEST_URI} ^/posgradmin/investigadores$
-    RewriteRule .* $0/ [QSA,L,R=301]
-    RewriteCond %{REQUEST_URI} ^/posgradmin/investigadores/$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_investigadores,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:investigadores]
-
-    # investigadores_new
-    RewriteCond %{REQUEST_URI} ^/posgradmin/investigadores/new$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:investigadores_new,E=_ROUTING_default__controller:DEPI\\InvestigadoresBundle\\Controller\\InvestigadoresController\:\:newAction]
-
-    # investigadores_edit
-    RewriteCond %{REQUEST_URI} ^/posgradmin/investigadores/edit/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:investigadores_edit,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\InvestigadoresBundle\\Controller\\InvestigadoresController\:\:editAction]
-
-    # investigadores_create
-    RewriteCond %{REQUEST_URI} ^/posgradmin/investigadores/create$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:investigadores_create,E=_ROUTING_default__controller:DEPI\\InvestigadoresBundle\\Controller\\InvestigadoresController\:\:createAction]
-
-    # investigadores_update
-    RewriteCond %{REQUEST_URI} ^/posgradmin/investigadores/update/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:investigadores_update,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\InvestigadoresBundle\\Controller\\InvestigadoresController\:\:updateAction]
-
-    # investigadores_delete
-    RewriteCond %{REQUEST_URI} ^/posgradmin/investigadores/delete/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:investigadores_delete,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\InvestigadoresBundle\\Controller\\InvestigadoresController\:\:deleteAction]
-
-    # investigadores_public
-    RewriteCond %{REQUEST_URI} ^/investigadores$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:investigadores_public,E=_ROUTING_default__controller:DEPI\\InvestigadoresBundle\\Controller\\InvestigadoresPublicController\:\:indexAction]
-
-    # investigadores_show_public
-    RewriteCond %{REQUEST_URI} ^/investigadores/show/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:investigadores_show_public,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\InvestigadoresBundle\\Controller\\InvestigadoresPublicController\:\:showAction]
-
-    # sitio
-    RewriteCond %{REQUEST_URI} ^/depi$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:sitio,E=_ROUTING_default__controller:DEPI\\PortadaBundle\\Controller\\SitioController\:\:indexAction]
-
-    # _sitio
-    RewriteCond %{REQUEST_URI} ^/$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_sitio,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:sitio]
-
-    # directorio
-    RewriteCond %{REQUEST_URI} ^/directorio$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:directorio,E=_ROUTING_default__controller:DEPI\\PortadaBundle\\Controller\\SitioController\:\:directorioAction]
-
-    # portada
-    RewriteCond %{REQUEST_URI} ^/posgradmin/portada$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:portada,E=_ROUTING_default__controller:DEPI\\PortadaBundle\\Controller\\PortadaController\:\:indexAction]
-
-    # _portada
-    RewriteCond %{REQUEST_URI} ^/posgradmin/portada$
-    RewriteRule .* $0/ [QSA,L,R=301]
-    RewriteCond %{REQUEST_URI} ^/posgradmin/portada/$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_portada,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:portada]
-
-    # portada_new
-    RewriteCond %{REQUEST_URI} ^/posgradmin/portada/new$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:portada_new,E=_ROUTING_default__controller:DEPI\\PortadaBundle\\Controller\\PortadaController\:\:newAction]
-
-    # portada_edit
-    RewriteCond %{REQUEST_URI} ^/posgradmin/portada/edit/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:portada_edit,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\PortadaBundle\\Controller\\PortadaController\:\:editAction]
-    # portada_create
-    RewriteCond %{REQUEST_URI} ^/posgradmin/portada/create$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:portada_create,E=_ROUTING_default__controller:DEPI\\PortadaBundle\\Controller\\PortadaController\:\:createAction]
-
-    # portada_update
-    RewriteCond %{REQUEST_URI} ^/posgradmin/portada/update/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:portada_update,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\PortadaBundle\\Controller\\PortadaController\:\:updateAction]
-
-    # portada_delete
-    RewriteCond %{REQUEST_URI} ^/posgradmin/portada/delete/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:portada_delete,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\PortadaBundle\\Controller\\PortadaController\:\:deleteAction]    
+	    RewriteEngine On
+		# skip "real" requests
+		RewriteCond %{REQUEST_FILENAME} -f
+		RewriteRule .* - [QSA,L]		
+
+		# usuario
+		RewriteCond %{REQUEST_URI} ^/posgradmin/usuario$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:usuario,E=_ROUTING_default__controller:DEPI\\UsuarioBundle\\Controller\\UsuarioController\:\:indexAction]		
+
+		# _usuario
+		RewriteCond %{REQUEST_URI} ^/posgradmin/usuario$
+		RewriteRule .* $0/ [QSA,L,R=301]
+		RewriteCond %{REQUEST_URI} ^/posgradmin/usuario/$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_usuario,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:usuario]		
+
+		# usuario_new
+		RewriteCond %{REQUEST_URI} ^/posgradmin/usuario/new$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:usuario_new,E=_ROUTING_default__controller:DEPI\\UsuarioBundle\\Controller\\UsuarioController\:\:newAction]		
+
+		# usuario_edit
+		RewriteCond %{REQUEST_URI} ^/posgradmin/usuario/edit/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:usuario_edit,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\UsuarioBundle\\Controller\\UsuarioController\:\:editAction]		
+
+		# usuario_delete
+		RewriteCond %{REQUEST_URI} ^/posgradmin/usuario/delete/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:usuario_delete,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\UsuarioBundle\\Controller\\UsuarioController\:\:deleteAction]		
+
+		# posgradoinvestigadores
+		RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoinvestigadores$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradoinvestigadores,E=_ROUTING_default__controller:DEPI\\PosgradoInvestigadoresBundle\\Controller\\PosgradoInvestigadoresController\:\:indexAction]		
+
+		# _posgradoinvestigadores
+		RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoinvestigadores$
+		RewriteRule .* $0/ [QSA,L,R=301]
+		RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoinvestigadores/$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_posgradoinvestigadores,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:posgradoinvestigadores]		
+
+		# posgradoinvestigadores_new
+		RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoinvestigadores/new$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradoinvestigadores_new,E=_ROUTING_default__controller:DEPI\\PosgradoInvestigadoresBundle\\Controller\\PosgradoInvestigadoresController\:\:newAction]		
+
+		# posgradoinvestigadores_edit
+		RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoinvestigadores/edit/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradoinvestigadores_edit,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\PosgradoInvestigadoresBundle\\Controller\\PosgradoInvestigadoresController\:\:editAction]		
+
+		# posgradoinvestigadores_delete
+		RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoinvestigadores/delete/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradoinvestigadores_delete,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\PosgradoInvestigadoresBundle\\Controller\\PosgradoInvestigadoresController\:\:deleteAction]		
+
+		# posgradolineas
+		RewriteCond %{REQUEST_URI} ^/posgradmin/posgradolineas$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradolineas,E=_ROUTING_default__controller:DEPI\\PosgradoLineasBundle\\Controller\\PosgradoLineasController\:\:indexAction]		
+
+		# _posgradolineas
+		RewriteCond %{REQUEST_URI} ^/posgradmin/posgradolineas$
+		RewriteRule .* $0/ [QSA,L,R=301]
+		RewriteCond %{REQUEST_URI} ^/posgradmin/posgradolineas/$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_posgradolineas,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:posgradolineas]		
+
+		# posgradolineas_new
+		RewriteCond %{REQUEST_URI} ^/posgradmin/posgradolineas/new$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradolineas_new,E=_ROUTING_default__controller:DEPI\\PosgradoLineasBundle\\Controller\\PosgradoLineasController\:\:newAction]		
+
+		# posgradolineas_edit
+		RewriteCond %{REQUEST_URI} ^/posgradmin/posgradolineas/edit/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradolineas_edit,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\PosgradoLineasBundle\\Controller\\PosgradoLineasController\:\:editAction]		
+
+		# posgradolineas_delete
+		RewriteCond %{REQUEST_URI} ^/posgradmin/posgradolineas/delete/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradolineas_delete,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\PosgradoLineasBundle\\Controller\\PosgradoLineasController\:\:deleteAction]		
+
+		# posgradoareas
+		RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoareas$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradoareas,E=_ROUTING_default__controller:DEPI\\PosgradoAreasBundle\\Controller\\PosgradoAreasController\:\:indexAction]		
+
+		# _posgradoareas
+		RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoareas$
+		RewriteRule .* $0/ [QSA,L,R=301]
+		RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoareas/$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_posgradoareas,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:posgradoareas]		
+
+		# posgradoareas_new
+		RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoareas/new$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradoareas_new,E=_ROUTING_default__controller:DEPI\\PosgradoAreasBundle\\Controller\\PosgradoAreasController\:\:newAction]		
+
+		# posgradoareas_edit
+		RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoareas/edit/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradoareas_edit,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\PosgradoAreasBundle\\Controller\\PosgradoAreasController\:\:editAction]		
+
+		# posgradoareas_delete
+		RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoareas/delete/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradoareas_delete,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\PosgradoAreasBundle\\Controller\\PosgradoAreasController\:\:deleteAction]		
+
+		# posgradoalumnos
+		RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoalumnos$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradoalumnos,E=_ROUTING_default__controller:DEPI\\PosgradoAlumnosBundle\\Controller\\PosgradoAlumnosController\:\:indexAction]		
+
+		# _posgradoalumnos
+		RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoalumnos$
+		RewriteRule .* $0/ [QSA,L,R=301]
+		RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoalumnos/$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_posgradoalumnos,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:posgradoalumnos]		
+
+		# posgradoalumnos_new
+		RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoalumnos/new$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradoalumnos_new,E=_ROUTING_default__controller:DEPI\\PosgradoAlumnosBundle\\Controller\\PosgradoAlumnosController\:\:newAction]		
+
+		# posgradoalumnos_edit
+		RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoalumnos/edit/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradoalumnos_edit,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\PosgradoAlumnosBundle\\Controller\\PosgradoAlumnosController\:\:editAction]		
+
+		# posgradoalumnos_delete
+		RewriteCond %{REQUEST_URI} ^/posgradmin/posgradoalumnos/delete/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradoalumnos_delete,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\PosgradoAlumnosBundle\\Controller\\PosgradoAlumnosController\:\:deleteAction]		
+
+		# posgrados
+		RewriteCond %{REQUEST_URI} ^/posgradmin/posgrados$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgrados,E=_ROUTING_default__controller:DEPI\\PosgradosBundle\\Controller\\PosgradosController\:\:indexAction]		
+
+		# _posgrados
+		RewriteCond %{REQUEST_URI} ^/posgradmin/posgrados$
+		RewriteRule .* $0/ [QSA,L,R=301]
+		RewriteCond %{REQUEST_URI} ^/posgradmin/posgrados/$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_posgrados,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:posgrados]		
+
+		# posgrados_new
+		RewriteCond %{REQUEST_URI} ^/posgradmin/posgrados/new$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgrados_new,E=_ROUTING_default__controller:DEPI\\PosgradosBundle\\Controller\\PosgradosController\:\:newAction]		
+
+		# posgrados_edit
+		RewriteCond %{REQUEST_URI} ^/posgradmin/posgrados/edit/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgrados_edit,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\PosgradosBundle\\Controller\\PosgradosController\:\:editAction]		
+
+		# posgrados_delete
+		RewriteCond %{REQUEST_URI} ^/posgradmin/posgrados/delete/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgrados_delete,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\PosgradosBundle\\Controller\\PosgradosController\:\:deleteAction]		
+
+		# noticias
+		RewriteCond %{REQUEST_URI} ^/posgradmin/noticias$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:noticias,E=_ROUTING_default__controller:DEPI\\NoticiasBundle\\Controller\\NoticiasController\:\:indexAction]		
+
+		# _noticias
+		RewriteCond %{REQUEST_URI} ^/posgradmin/noticias$
+		RewriteRule .* $0/ [QSA,L,R=301]
+		RewriteCond %{REQUEST_URI} ^/posgradmin/noticias/$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_noticias,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:noticias]		
+
+		# noticias_new
+		RewriteCond %{REQUEST_URI} ^/posgradmin/noticias/new$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:noticias_new,E=_ROUTING_default__controller:DEPI\\NoticiasBundle\\Controller\\NoticiasController\:\:newAction]		
+
+		# noticias_edit
+		RewriteCond %{REQUEST_URI} ^/posgradmin/noticias/edit/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:noticias_edit,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\NoticiasBundle\\Controller\\NoticiasController\:\:editAction]		
+
+		# noticias_delete
+		RewriteCond %{REQUEST_URI} ^/posgradmin/noticias/delete/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:noticias_delete,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\NoticiasBundle\\Controller\\NoticiasController\:\:deleteAction]		
+
+		# posgradmin
+		RewriteCond %{REQUEST_URI} ^/posgradmin$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradmin,E=_ROUTING_default__controller:DEPI\\BackEndBundle\\Controller\\SecurityController\:\:indexAction]		
+
+		# _posgradmin
+		RewriteCond %{REQUEST_URI} ^/posgradmin$
+		RewriteRule .* $0/ [QSA,L,R=301]
+		RewriteCond %{REQUEST_URI} ^/posgradmin/$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_posgradmin,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:posgradmin]		
+
+		# proyectosproductos
+		RewriteCond %{REQUEST_URI} ^/posgradmin/proyectosproductos$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:proyectosproductos,E=_ROUTING_default__controller:DEPI\\ProyectosProductosBundle\\Controller\\ProyectosProductosController\:\:indexAction]		
+
+		# _proyectosproductos
+		RewriteCond %{REQUEST_URI} ^/posgradmin/proyectosproductos$
+		RewriteRule .* $0/ [QSA,L,R=301]
+		RewriteCond %{REQUEST_URI} ^/posgradmin/proyectosproductos/$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_proyectosproductos,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:proyectosproductos]		
+
+		# proyectosproductos_new
+		RewriteCond %{REQUEST_URI} ^/posgradmin/proyectosproductos/new$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:proyectosproductos_new,E=_ROUTING_default__controller:DEPI\\ProyectosProductosBundle\\Controller\\ProyectosProductosController\:\:newAction]		
+
+		# proyectosproductos_edit
+		RewriteCond %{REQUEST_URI} ^/posgradmin/proyectosproductos/edit/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:proyectosproductos_edit,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\ProyectosProductosBundle\\Controller\\ProyectosProductosController\:\:editAction]		
+
+		# proyectosproductos_delete
+		RewriteCond %{REQUEST_URI} ^/posgradmin/proyectosproductos/delete/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:proyectosproductos_delete,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\ProyectosProductosBundle\\Controller\\ProyectosProductosController\:\:deleteAction]		
+
+		# productosacademicos
+		RewriteCond %{REQUEST_URI} ^/posgradmin/productosacademicos$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:productosacademicos,E=_ROUTING_default__controller:DEPI\\ProductosAcademicosBundle\\Controller\\ProductosAcademicosController\:\:indexAction]		
+
+		# _productosacademicos
+		RewriteCond %{REQUEST_URI} ^/posgradmin/productosacademicos$
+		RewriteRule .* $0/ [QSA,L,R=301]
+		RewriteCond %{REQUEST_URI} ^/posgradmin/productosacademicos/$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_productosacademicos,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:productosacademicos]		
+
+		# productosacademicos_new
+		RewriteCond %{REQUEST_URI} ^/posgradmin/productosacademicos/new$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:productosacademicos_new,E=_ROUTING_default__controller:DEPI\\ProductosAcademicosBundle\\Controller\\ProductosAcademicosController\:\:newAction]		
+
+		# productosacademicos_edit
+		RewriteCond %{REQUEST_URI} ^/posgradmin/productosacademicos/edit/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:productosacademicos_edit,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\ProductosAcademicosBundle\\Controller\\ProductosAcademicosController\:\:editAction]		
+
+		# productosacademicos_delete
+		RewriteCond %{REQUEST_URI} ^/posgradmin/productosacademicos/delete/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:productosacademicos_delete,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\ProductosAcademicosBundle\\Controller\\ProductosAcademicosController\:\:deleteAction]		
+
+		# areasproyectos
+		RewriteCond %{REQUEST_URI} ^/posgradmin/areasproyectos$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:areasproyectos,E=_ROUTING_default__controller:DEPI\\AreasProyectosBundle\\Controller\\AreasProyectosController\:\:indexAction]		
+
+		# _areasproyectos
+		RewriteCond %{REQUEST_URI} ^/posgradmin/areasproyectos$
+		RewriteRule .* $0/ [QSA,L,R=301]
+		RewriteCond %{REQUEST_URI} ^/posgradmin/areasproyectos/$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_areasproyectos,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:areasproyectos]		
+
+		# areasproyectos_new
+		RewriteCond %{REQUEST_URI} ^/posgradmin/areasproyectos/new$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:areasproyectos_new,E=_ROUTING_default__controller:DEPI\\AreasProyectosBundle\\Controller\\AreasProyectosController\:\:newAction]		
+
+		# areasproyectos_edit
+		RewriteCond %{REQUEST_URI} ^/posgradmin/areasproyectos/edit/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:areasproyectos_edit,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\AreasProyectosBundle\\Controller\\AreasProyectosController\:\:editAction]		
+
+		# areasproyectos_delete
+		RewriteCond %{REQUEST_URI} ^/posgradmin/areasproyectos/delete/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:areasproyectos_delete,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\AreasProyectosBundle\\Controller\\AreasProyectosController\:\:deleteAction]		
+
+		# areas
+		RewriteCond %{REQUEST_URI} ^/posgradmin/areas$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:areas,E=_ROUTING_default__controller:DEPI\\AreasBundle\\Controller\\AreasController\:\:indexAction]		
+
+		# _areas
+		RewriteCond %{REQUEST_URI} ^/posgradmin/areas$
+		RewriteRule .* $0/ [QSA,L,R=301]
+		RewriteCond %{REQUEST_URI} ^/posgradmin/areas/$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_areas,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:areas]		
+
+		# areas_new
+		RewriteCond %{REQUEST_URI} ^/posgradmin/areas/new$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:areas_new,E=_ROUTING_default__controller:DEPI\\AreasBundle\\Controller\\AreasController\:\:newAction]		
+
+		# areas_edit
+		RewriteCond %{REQUEST_URI} ^/posgradmin/areas/edit/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:areas_edit,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\AreasBundle\\Controller\\AreasController\:\:editAction]		
+
+		# areas_delete
+		RewriteCond %{REQUEST_URI} ^/posgradmin/areas/delete/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:areas_delete,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\AreasBundle\\Controller\\AreasController\:\:deleteAction]		
+
+		# areas_public
+		RewriteCond %{REQUEST_URI} ^/areas$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:areas_public,E=_ROUTING_default__controller:DEPI\\AreasBundle\\Controller\\AreasPublicController\:\:indexAction]		
+
+		# investigadoreslineas
+		RewriteCond %{REQUEST_URI} ^/posgradmin/investigadoreslineas$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:investigadoreslineas,E=_ROUTING_default__controller:DEPI\\InvestigadoresLineasBundle\\Controller\\InvestigadoresLineasController\:\:indexAction]		
+
+		# _investigadoreslineas
+		RewriteCond %{REQUEST_URI} ^/posgradmin/investigadoreslineas$
+		RewriteRule .* $0/ [QSA,L,R=301]
+		RewriteCond %{REQUEST_URI} ^/posgradmin/investigadoreslineas/$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_investigadoreslineas,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:investigadoreslineas]		
+
+		# investigadoreslineas_new
+		RewriteCond %{REQUEST_URI} ^/posgradmin/investigadoreslineas/new$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:investigadoreslineas_new,E=_ROUTING_default__controller:DEPI\\InvestigadoresLineasBundle\\Controller\\InvestigadoresLineasController\:\:newAction]		
+
+		# investigadoreslineas_edit
+		RewriteCond %{REQUEST_URI} ^/posgradmin/investigadoreslineas/edit/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:investigadoreslineas_edit,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\InvestigadoresLineasBundle\\Controller\\InvestigadoresLineasController\:\:editAction]		
+
+		# investigadoreslineas_delete
+		RewriteCond %{REQUEST_URI} ^/posgradmin/investigadoreslineas/delete/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:investigadoreslineas_delete,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\InvestigadoresLineasBundle\\Controller\\InvestigadoresLineasController\:\:deleteAction]		
+
+		# alumnosproyectos
+		RewriteCond %{REQUEST_URI} ^/posgradmin/alumnosproyectos$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:alumnosproyectos,E=_ROUTING_default__controller:DEPI\\AlumnosProyectosBundle\\Controller\\AlumnosProyectosController\:\:indexAction]		
+
+		# _alumnosproyectos
+		RewriteCond %{REQUEST_URI} ^/posgradmin/alumnosproyectos$
+		RewriteRule .* $0/ [QSA,L,R=301]
+		RewriteCond %{REQUEST_URI} ^/posgradmin/alumnosproyectos/$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_alumnosproyectos,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:alumnosproyectos]		
+
+		# alumnosproyectos_new
+		RewriteCond %{REQUEST_URI} ^/posgradmin/alumnosproyectos/new$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:alumnosproyectos_new,E=_ROUTING_default__controller:DEPI\\AlumnosProyectosBundle\\Controller\\AlumnosProyectosController\:\:newAction]		
+
+		# alumnosproyectos_edit
+		RewriteCond %{REQUEST_URI} ^/posgradmin/alumnosproyectos/edit/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:alumnosproyectos_edit,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\AlumnosProyectosBundle\\Controller\\AlumnosProyectosController\:\:editAction]		
+
+		# alumnosproyectos_delete
+		RewriteCond %{REQUEST_URI} ^/posgradmin/alumnosproyectos/delete/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:alumnosproyectos_delete,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\AlumnosProyectosBundle\\Controller\\AlumnosProyectosController\:\:deleteAction]		
+
+		# investigadoresproyectos
+		RewriteCond %{REQUEST_URI} ^/posgradmin/investigadoresproyectos$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:investigadoresproyectos,E=_ROUTING_default__controller:DEPI\\InvestigadoresProyectosBundle\\Controller\\InvestigadoresProyectosController\:\:indexAction]		
+
+		# _investigadoresproyectos
+		RewriteCond %{REQUEST_URI} ^/posgradmin/investigadoresproyectos$
+		RewriteRule .* $0/ [QSA,L,R=301]
+		RewriteCond %{REQUEST_URI} ^/posgradmin/investigadoresproyectos/$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_investigadoresproyectos,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:investigadoresproyectos]		
+
+		# investigadoresproyectos_new
+		RewriteCond %{REQUEST_URI} ^/posgradmin/investigadoresproyectos/new$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:investigadoresproyectos_new,E=_ROUTING_default__controller:DEPI\\InvestigadoresProyectosBundle\\Controller\\InvestigadoresProyectosController\:\:newAction]		
+
+		# investigadoresproyectos_edit
+		RewriteCond %{REQUEST_URI} ^/posgradmin/investigadoresproyectos/edit/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:investigadoresproyectos_edit,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\InvestigadoresProyectosBundle\\Controller\\InvestigadoresProyectosController\:\:editAction]		
+
+		# investigadoresproyectos_delete
+		RewriteCond %{REQUEST_URI} ^/posgradmin/investigadoresproyectos/delete/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:investigadoresproyectos_delete,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\InvestigadoresProyectosBundle\\Controller\\InvestigadoresProyectosController\:\:deleteAction]		
+
+		# lineas
+		RewriteCond %{REQUEST_URI} ^/posgradmin/lineas$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:lineas,E=_ROUTING_default__controller:DEPI\\LineasInvestigacionBundle\\Controller\\LineasInvestigacionController\:\:indexAction]		
+
+		# _lineas
+		RewriteCond %{REQUEST_URI} ^/posgradmin/lineas$
+		RewriteRule .* $0/ [QSA,L,R=301]
+		RewriteCond %{REQUEST_URI} ^/posgradmin/lineas/$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_lineas,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:lineas]		
+
+		# lineas_new
+		RewriteCond %{REQUEST_URI} ^/posgradmin/lineas/new$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:lineas_new,E=_ROUTING_default__controller:DEPI\\LineasInvestigacionBundle\\Controller\\LineasInvestigacionController\:\:newAction]		
+
+		# lineas_edit
+		RewriteCond %{REQUEST_URI} ^/posgradmin/lineas/edit/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:lineas_edit,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\LineasInvestigacionBundle\\Controller\\LineasInvestigacionController\:\:editAction]		
+
+		# lineas_delete
+		RewriteCond %{REQUEST_URI} ^/posgradmin/lineas/delete/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:lineas_delete,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\LineasInvestigacionBundle\\Controller\\LineasInvestigacionController\:\:deleteAction]		
+
+		# lineas_public
+		RewriteCond %{REQUEST_URI} ^/lineas$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:lineas_public,E=_ROUTING_default__controller:DEPI\\LineasInvestigacionBundle\\Controller\\LineasInvestigacionPublicController\:\:indexAction]		
+
+		# proyectos
+		RewriteCond %{REQUEST_URI} ^/posgradmin/proyectos$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:proyectos,E=_ROUTING_default__controller:DEPI\\ProyectosBundle\\Controller\\ProyectosController\:\:indexAction]		
+
+		# _proyectos
+		RewriteCond %{REQUEST_URI} ^/posgradmin/proyectos$
+		RewriteRule .* $0/ [QSA,L,R=301]
+		RewriteCond %{REQUEST_URI} ^/posgradmin/proyectos/$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_proyectos,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:proyectos]		
+
+		# proyectos_new
+		RewriteCond %{REQUEST_URI} ^/posgradmin/proyectos/new$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:proyectos_new,E=_ROUTING_default__controller:DEPI\\ProyectosBundle\\Controller\\ProyectosController\:\:newAction]		
+
+		# proyectos_edit
+		RewriteCond %{REQUEST_URI} ^/posgradmin/proyectos/edit/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:proyectos_edit,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\ProyectosBundle\\Controller\\ProyectosController\:\:editAction]		
+
+		# proyectos_delete
+		RewriteCond %{REQUEST_URI} ^/posgradmin/proyectos/delete/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:proyectos_delete,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\ProyectosBundle\\Controller\\ProyectosController\:\:deleteAction]		
+
+		# proyectos_public
+		RewriteCond %{REQUEST_URI} ^/proyectos$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:proyectos_public,E=_ROUTING_default__controller:DEPI\\ProyectosBundle\\Controller\\ProyectosPublicController\:\:indexAction]		
+
+		# alumnos
+		RewriteCond %{REQUEST_URI} ^/posgradmin/alumnos$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:alumnos,E=_ROUTING_default__controller:DEPI\\AlumnosBundle\\Controller\\AlumnosController\:\:indexAction]		
+
+		# _alumnos
+		RewriteCond %{REQUEST_URI} ^/posgradmin/alumnos$
+		RewriteRule .* $0/ [QSA,L,R=301]
+		RewriteCond %{REQUEST_URI} ^/posgradmin/alumnos/$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_alumnos,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:alumnos]		
+
+		# alumnos_new
+		RewriteCond %{REQUEST_URI} ^/posgradmin/alumnos/new$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:alumnos_new,E=_ROUTING_default__controller:DEPI\\AlumnosBundle\\Controller\\AlumnosController\:\:newAction]		
+
+		# alumnos_edit
+		RewriteCond %{REQUEST_URI} ^/posgradmin/alumnos/edit/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:alumnos_edit,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\AlumnosBundle\\Controller\\AlumnosController\:\:editAction]		
+
+		# alumnos_delete
+		RewriteCond %{REQUEST_URI} ^/posgradmin/alumnos/delete/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:alumnos_delete,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\AlumnosBundle\\Controller\\AlumnosController\:\:deleteAction]		
+
+		# alumnos_public
+		RewriteCond %{REQUEST_URI} ^/alumnos$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:alumnos_public,E=_ROUTING_default__controller:DEPI\\AlumnosBundle\\Controller\\AlumnosPublicController\:\:indexAction]		
+
+		# alumnos_show_public
+		RewriteCond %{REQUEST_URI} ^/alumnos/show/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:alumnos_show_public,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\AlumnosBundle\\Controller\\AlumnosPublicController\:\:showAction]		
+
+		# investigadores
+		RewriteCond %{REQUEST_URI} ^/posgradmin/investigadores$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:investigadores,E=_ROUTING_default__controller:DEPI\\InvestigadoresBundle\\Controller\\InvestigadoresController\:\:indexAction]		
+
+		# _investigadores
+		RewriteCond %{REQUEST_URI} ^/posgradmin/investigadores$
+		RewriteRule .* $0/ [QSA,L,R=301]
+		RewriteCond %{REQUEST_URI} ^/posgradmin/investigadores/$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_investigadores,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:investigadores]		
+
+		# investigadores_new
+		RewriteCond %{REQUEST_URI} ^/posgradmin/investigadores/new$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:investigadores_new,E=_ROUTING_default__controller:DEPI\\InvestigadoresBundle\\Controller\\InvestigadoresController\:\:newAction]		
+
+		# investigadores_edit
+		RewriteCond %{REQUEST_URI} ^/posgradmin/investigadores/edit/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:investigadores_edit,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\InvestigadoresBundle\\Controller\\InvestigadoresController\:\:editAction]		
+
+		# investigadores_delete
+		RewriteCond %{REQUEST_URI} ^/posgradmin/investigadores/delete/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:investigadores_delete,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\InvestigadoresBundle\\Controller\\InvestigadoresController\:\:deleteAction]		
+
+		# investigadores_public
+		RewriteCond %{REQUEST_URI} ^/investigadores$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:investigadores_public,E=_ROUTING_default__controller:DEPI\\InvestigadoresBundle\\Controller\\InvestigadoresPublicController\:\:indexAction]		
+
+		# investigadores_show_public
+		RewriteCond %{REQUEST_URI} ^/investigadores/show/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:investigadores_show_public,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\InvestigadoresBundle\\Controller\\InvestigadoresPublicController\:\:showAction]		
+
+		# sitio
+		RewriteCond %{REQUEST_URI} ^/depi$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:sitio,E=_ROUTING_default__controller:DEPI\\PortadaBundle\\Controller\\SitioController\:\:indexAction]		
+
+		# _sitio
+		RewriteCond %{REQUEST_URI} ^/$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_sitio,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:sitio]		
+
+		# directorio
+		RewriteCond %{REQUEST_URI} ^/directorio$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:directorio,E=_ROUTING_default__controller:DEPI\\PortadaBundle\\Controller\\SitioController\:\:directorioAction]		
+
+		# portada
+		RewriteCond %{REQUEST_URI} ^/posgradmin/portada$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:portada,E=_ROUTING_default__controller:DEPI\\PortadaBundle\\Controller\\PortadaController\:\:indexAction]		
+
+		# _portada
+		RewriteCond %{REQUEST_URI} ^/posgradmin/portada$
+		RewriteRule .* $0/ [QSA,L,R=301]
+		RewriteCond %{REQUEST_URI} ^/posgradmin/portada/$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:_portada,E=_ROUTING_default__controller:Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController\:\:redirectAction,E=_ROUTING_default_route:portada]		
+
+		# portada_new
+		RewriteCond %{REQUEST_URI} ^/posgradmin/portada/new$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:portada_new,E=_ROUTING_default__controller:DEPI\\PortadaBundle\\Controller\\PortadaController\:\:newAction]		
+
+		# portada_edit
+		RewriteCond %{REQUEST_URI} ^/posgradmin/portada/edit/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:portada_edit,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\PortadaBundle\\Controller\\PortadaController\:\:editAction]		
+
+		# portada_delete
+		RewriteCond %{REQUEST_URI} ^/posgradmin/portada/delete/([^/]++)$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:portada_delete,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\PortadaBundle\\Controller\\PortadaController\:\:deleteAction]		
+
+		# posgradmin_login
+		RewriteCond %{REQUEST_URI} ^/posgradmin/login$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradmin_login,E=_ROUTING_default__controller:DEPI\\BackEndBundle\\Controller\\SecurityController\:\:loginAction]		
+
+		# posgradmin_login_check
+		RewriteCond %{REQUEST_URI} ^/posgradmin/login_check$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradmin_login_check]		
+
+		# posgradmin_logout
+		RewriteCond %{REQUEST_URI} ^/posgradmin/logout$
+		RewriteRule .* app.php [QSA,L,E=_ROUTING_route:posgradmin_logout]		
 </IfModule>
 
 <IfModule !mod_rewrite.c>
@@ -750,3 +494,4 @@ DirectoryIndex app.php
         # RedirectTemp cannot be used instead
     </IfModule>
 </IfModule>
+
