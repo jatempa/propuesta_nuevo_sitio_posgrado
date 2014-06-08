@@ -1,5 +1,18 @@
 /* =Typography
 -----------------------------------------------------------------------------*/
+.titulo{
+		font-family: 'Droid Sans', sans-serif;
+		font-size: 38px;
+		text-align: right;
+		margin-top: 24px;
+}
+
+.subtitulo{
+		font-family: 'Droid Sans', sans-serif;
+		font-size: 38px;
+		text-align: right;
+		margin-top: 18px;
+}
 
 textarea {
 	resize: none;
