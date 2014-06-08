@@ -52,6 +52,15 @@ class UsuarioController extends Controller
         $form->handleRequest($this->getRequest());
 
         if ($form->isValid()) {
+            $entity->setSalt(md5(time()));
+
+            $encoder = $this->get('security.encoder_factory')->getEncoder($entity);
+            $passwordCodificado = $encoder->encodePassword(
+                $entity->getPassword(),
+                $entity->getSalt()
+            );
+            $entity->setPassword($passwordCodificado);
+            
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
