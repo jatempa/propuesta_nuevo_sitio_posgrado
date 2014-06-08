@@ -4,6 +4,7 @@ namespace DEPI\UsuarioBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+
 /**
  * Usuario
  *

@@ -1,47 +1,74 @@
-{% extends '::base.html.twig' %}
+{% extends '::backend.html.twig' %}
 
-{% block body -%}
-    <h1>Usuario list</h1>
+{% block menu %}
+    <li><a href="{{ path('noticias') }}">Noticias</a></li>
+    <li><a href="{{ path('portada') }}">Portada</a></li>
+    <li><a href="{{ path('alumnos') }}">Alumnos</a></li>
+    <li><a href="{{ path('areas') }}">Áreas de inv.</a></li>
+    <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
+    <li><a href="{{ path('lineas') }}">Líneas de inv.</a></li>
+    <li><a href="{{ path('productosacademicos') }}">Prod. académicos</a></li>
+    <li><a href="{{ path('posgrados') }}">Posgrados</a></li>
+    <li><a href="{{ path('proyectos') }}">Proyectos</a></li>
+{% endblock %}
 
-    <table class="records_list">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nombre</th>
-                <th>Password</th>
-                <th>Email</th>
-                <th>Permiteemail</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for entity in entities %}
-            <tr>
-                <td><a href="{{ path('usuario_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.nombre }}</td>
-                <td>{{ entity.password }}</td>
-                <td>{{ entity.email }}</td>
-                <td>{{ entity.permiteEmail }}</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('usuario_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('usuario_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+{% block mapa %}
+    <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
+    <li><span>Usuario</span></li>
+{% endblock %}
 
-        <ul>
-        <li>
-            <a href="{{ path('usuario_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
-    {% endblock %}
+{% block contenido %}
+<div class="unit-centered unit-80">
+    <div class="table-container">
+        <table class="width-100 table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre(s)</th>
+                    <th>Apellidos</th>
+                    <th>Correo electrónico</th>
+                    <th>Password</th>
+                    <th>Salt</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for usuario in usuarios %}
+                <tr>
+                    <td class="width-20 enlace">
+                        <a href="{{ path('usuario_edit', { 'id': usuario.id }) }}" >
+                            {{ usuario.nombre }}
+                        </a>
+                    </td>
+                    <td class="width-20 enlace">
+                        <a href="{{ path('usuario_edit', { 'id': usuario.id }) }}" >
+                            {{ usuario.apellidos }}
+                        </a>
+                    </td>
+                    <td class="width-10 enlace">
+                        <a href="{{ path('usuario_edit', { 'id': usuario.id }) }}" >
+                            {{ usuario.email }}
+                        </a>
+                    </td>
+                    <td class="width-10 enlace">
+                        <a href="{{ path('usuario_edit', { 'id': usuario.id }) }}" >
+                            {{ usuario.salt }}
+                        </a>
+                    </td>
+                    <td class="width-10"> 
+                        <a href="{{ path('usuario_edit', { 'id': usuario.id }) }}" >
+                            <img id="action" src="{{ asset('bundles/backend/img/editar.svg') }}" alt="Editar">
+                        </a>
+                    </td>
+                    <td class="width-10">
+                        <a href="{{ path('usuario_delete', { 'id': usuario.id }) }}" >
+                            <img id="action" src="{{ asset('bundles/backend/img/eliminar.svg') }}" alt="Eliminar">
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {{ knp_pagination_render(usuarios) }}
+    <a href="{{ path('usuario_new') }}" class="btn btn-blue">Nuevo</a>
+</div>
+{% endblock %}

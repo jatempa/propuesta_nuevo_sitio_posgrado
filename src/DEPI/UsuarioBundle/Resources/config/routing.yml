@@ -1,3 +1,19 @@
-usuario_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: UsuarioBundle:Default:index }
+usuario:
+    pattern:  /posgradmin/usuario
+    defaults: { _controller: UsuarioBundle:Usuario:index }
+
+_usuario:
+    pattern: /posgradmin/usuario/
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: usuario}
+
+usuario_new:
+    pattern:  /posgradmin/usuario/new
+    defaults: { _controller: UsuarioBundle:Usuario:new }
+
+usuario_edit:
+    pattern:  /posgradmin/usuario/edit/{id}
+    defaults: { _controller: UsuarioBundle:Usuario:edit }
+
+usuario_delete:
+    pattern:  /posgradmin/usuario/delete/{id}
+    defaults: { _controller: UsuarioBundle:Usuario:delete }
