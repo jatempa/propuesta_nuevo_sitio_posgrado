@@ -1,5 +1,17 @@
 {% extends '::backend.html.twig' %}
 
+{% block menu %}
+    <li><a href="{{ path('noticias') }}">Noticias</a></li>
+    <li><a href="{{ path('portada') }}">Portada</a></li>
+    <li><a href="{{ path('alumnos') }}">Alumnos</a></li>
+    <li><a href="{{ path('areas') }}">Áreas de inv.</a></li>
+    <li><span>Investigadores</span></li>
+    <li><a href="{{ path('lineas') }}">Líneas de inv.</a></li>
+    <li><a href="{{ path('productosacademicos') }}">Prod. académicos</a></li>
+    <li><a href="{{ path('posgrados') }}">Posgrados</a></li>
+    <li><a href="{{ path('proyectos') }}">Proyectos</a></li>
+{% endblock %}
+
 {% block mapa %}
     <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
     <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
@@ -12,13 +24,13 @@
         <div class="unit-30">
             <fieldset>
                 <legend>Foto</legend>
-                <img id="foto" src="{{ asset('uploads/images/investigadores/') ~ entity.rutaFoto }}" />
+                <img id="foto" src="{{ asset(directorio_investigadores ~ entity.rutaFoto) }}" />
             </fieldset>
             <aside class="unit-80">
                 <nav class="nav-v">
                     <ul>
                         <li><a href="{{ path('investigadoreslineas_new') }}">Registrar en una línea de investigación</a></li>
-                        <li><a href="{{ path('investigadorproyecto_new') }}">Registrar en un proyecto</a></li>
+                        <li><a href="{{ path('investigadoresproyectos_new') }}">Registrar en un proyecto</a></li>
                         <li><a href="{{ path('posgradoinvestigadores_new') }}">Registrar en un posgrado</a></li>
                     </ul>
                 </nav>

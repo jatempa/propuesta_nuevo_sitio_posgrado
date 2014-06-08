@@ -14,16 +14,16 @@ class LineasInvestigacionFixtures extends AbstractFixture implements OrderedFixt
         $lineas = array(
             array('clave' => 'MM155ADAA', 
                   'nombre' => 'Computacion Ubicua',
-                  'descripcion' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat metus non libero egestas, ac gravida libero ultricies. Nullam congue.'),
+                  'descripcion' => 'Lorem ipsum dolor sit amet.'),
             array('clave' => 'KOJ1664AS', 
                   'nombre' => 'Procesamiento digital de seniales',
-                  'descripcion' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat metus non libero egestas, ac gravida libero ultricies. Nullam congue.'),
+                  'descripcion' => 'Lorem ipsum dolor sit amet.'),
             array('clave' => '09809ASAS', 
                   'nombre' => 'Morfologia Matematica',
-                  'descripcion' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat metus non libero egestas, ac gravida libero ultricies. Nullam congue.'),
+                  'descripcion' => 'Lorem ipsum dolor sit amet.'),
             array('clave' => 'POKK16489', 
                   'nombre' => 'Sistemas Biomedicos',
-                  'descripcion' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat metus non libero egestas, ac gravida libero ultricies. Nullam congue.')
+                  'descripcion' => 'Lorem ipsum dolor sit amet.')
         );
 
         foreach ($lineas as $linea) {

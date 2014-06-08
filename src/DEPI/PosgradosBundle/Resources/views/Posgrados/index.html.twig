@@ -1,5 +1,17 @@
 {% extends '::backend.html.twig' %}
 
+{% block menu %}
+    <li><a href="{{ path('noticias') }}">Noticias</a></li>
+    <li><a href="{{ path('portada') }}">Portada</a></li>
+    <li><a href="{{ path('alumnos') }}">Alumnos</a></li>
+    <li><a href="{{ path('areas') }}">Áreas de inv.</a></li>
+    <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
+    <li><a href="{{ path('lineas') }}">Líneas de inv.</a></li>
+    <li><a href="{{ path('productosacademicos') }}">Prod. académicos</a></li>
+    <li><span>Posgrados</span></li>
+    <li><a href="{{ path('proyectos') }}">Proyectos</a></li>
+{% endblock %}
+
 {% block mapa %}
     <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
     <li><span>Posgrados</span></li>
@@ -13,13 +25,12 @@
                 <tr>
                     <th>Nombre</th>
                     <th>Objetivo general</th>
-                    <th>Clave</th>
                 </tr>
             </thead>
             <tbody>
             {% for entity in entities %}
                 <tr>
-                    <td class="width-30 enlace">
+                    <td class="width-40 enlace">
                         <a href="{{ path('posgrados_edit', { 'id': entity.id }) }}" >
                             {{ entity.nombre }}
                         </a>
@@ -27,11 +38,6 @@
                     <td class="width-40 enlace">
                         <a href="{{ path('posgrados_edit', { 'id': entity.id }) }}" >
                             {{ entity.objetivoGeneral }}
-                        </a>
-                    </td>
-                    <td class="width-10 enlace">
-                        <a href="{{ path('posgrados_edit', { 'id': entity.id }) }}" >
-                            {{ entity.clave }}
                         </a>
                     </td>
                     <td class="width-10"> 

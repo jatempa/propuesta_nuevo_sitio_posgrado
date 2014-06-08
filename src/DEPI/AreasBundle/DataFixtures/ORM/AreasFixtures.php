@@ -12,20 +12,20 @@ class AreasFixtures extends AbstractFixture implements OrderedFixtureInterface
     public function load(ObjectManager $manager)
     {
         $areas = array(
-            array('nombre' => 'Ingeniería Química, Polímeros, Ingeniería Ambiental, Química', 
-                  'descripcion' => 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.'),
+            array('nombre' => 'Ingeniería Química', 
+                  'descripcion' => 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.'),
             array('nombre' => 'Ciencias de la Computación', 
-                  'descripcion' => 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.'),
-            array('nombre' => 'Ingeniería Bioquímica, Ciencias de los Alimentos', 
-                  'descripcion' => 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.'),
-            array('nombre' => 'Ciencias Agropecuarias, Ciencias del Mar', 
-                  'descripcion' => 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.'),
-            array('nombre' => 'Ingeniería Eléctrica, Ingeniería Electrónica', 
-                  'descripcion' => 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.'),
-            array('nombre' => 'Administración, Planificación, Desarrollo Regional, Ingeniería Administrativa, Ingeniería Industrial', 
-                  'descripcion' => 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.'),
-            array('nombre' => 'Ingeniería Mecánica, Ingeniería Mecatrónica, Metalurgia, Materiales', 
-                  'descripcion' => 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.')
+                  'descripcion' => 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.'),
+            array('nombre' => 'Ingeniería Bioquímica', 
+                  'descripcion' => 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.'),
+            array('nombre' => 'Ciencias Agropecuarias', 
+                  'descripcion' => 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.'),
+            array('nombre' => 'Ingeniería Eléctrica', 
+                  'descripcion' => 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.'),
+            array('nombre' => 'Administración, Planificación', 
+                  'descripcion' => 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.'),
+            array('nombre' => 'Ingeniería Mecánica', 
+                  'descripcion' => 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.')
         );
 
         foreach ($areas as $area) {

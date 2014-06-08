@@ -28,8 +28,8 @@ class AppKernel extends Kernel
             new DEPI\AreasProyectosBundle\AreasProyectosBundle(),
             new DEPI\ProductosAcademicosBundle\ProductosAcademicosBundle(),
             new DEPI\ProyectosProductosBundle\ProyectosProductosBundle(),
-            new DEPI\InvestigadorProyectoBundle\InvestigadorProyectoBundle(),
             new DEPI\BackEndBundle\BackEndBundle(),
+            new DEPI\InvestigadoresProyectosBundle\InvestigadoresProyectosBundle(),
             new DEPI\NoticiasBundle\NoticiasBundle(),
             new DEPI\PosgradosBundle\PosgradosBundle(),
             new DEPI\PosgradoAlumnosBundle\PosgradoAlumnosBundle(),
@@ -38,6 +38,7 @@ class AppKernel extends Kernel
             new DEPI\PosgradoInvestigadoresBundle\PosgradoInvestigadoresBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
+            new DEPI\UsuarioBundle\UsuarioBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

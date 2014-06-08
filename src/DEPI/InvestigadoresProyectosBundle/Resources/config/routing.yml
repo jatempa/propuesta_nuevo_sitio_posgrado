@@ -1,0 +1,19 @@
+investigadoresproyectos:
+    pattern:  /posgradmin/investigadoresproyectos
+    defaults: { _controller: InvestigadoresProyectosBundle:InvestigadoresProyectos:index }
+
+_investigadoresproyectos:
+    pattern:  /posgradmin/investigadoresproyectos/
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: investigadoresproyectos}
+
+investigadoresproyectos_new:
+    pattern:  /posgradmin/investigadoresproyectos/new
+    defaults: { _controller: InvestigadoresProyectosBundle:InvestigadoresProyectos:new }
+
+investigadoresproyectos_edit:
+    pattern:  /posgradmin/investigadoresproyectos/edit/{id}
+    defaults: { _controller: InvestigadoresProyectosBundle:InvestigadoresProyectos:edit }
+
+investigadoresproyectos_delete:
+    pattern:  /posgradmin/investigadoresproyectos/delete/{id}
+    defaults: { _controller: InvestigadoresProyectosBundle:InvestigadoresProyectos:delete }

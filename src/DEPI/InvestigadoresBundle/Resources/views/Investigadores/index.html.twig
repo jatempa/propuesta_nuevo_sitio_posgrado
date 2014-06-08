@@ -1,5 +1,17 @@
 {% extends '::backend.html.twig' %}
 
+{% block menu %}
+    <li><a href="{{ path('noticias') }}">Noticias</a></li>
+    <li><a href="{{ path('portada') }}">Portada</a></li>
+    <li><a href="{{ path('alumnos') }}">Alumnos</a></li>
+    <li><a href="{{ path('areas') }}">Áreas de inv.</a></li>
+    <li><span>Investigadores</span></li>
+    <li><a href="{{ path('lineas') }}">Líneas de inv.</a></li>
+    <li><a href="{{ path('productosacademicos') }}">Prod. académicos</a></li>
+    <li><a href="{{ path('posgrados') }}">Posgrados</a></li>
+    <li><a href="{{ path('proyectos') }}">Proyectos</a></li>
+{% endblock %}
+
 {% block mapa %}
     <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
     <li><span>Investigadores</span></li>
@@ -19,7 +31,7 @@
             <tbody>
             {% for entity in entities %}
                 <tr>
-                    <td class="width-30 enlace">
+                    <td class="width-20 enlace">
                         <a href="{{ path('investigadores_edit', { 'id': entity.id }) }}" >
                             {{ entity.nombre }}
                         </a>
@@ -29,7 +41,7 @@
                             {{ entity.apellidoPaterno ~ " " ~ entity.apellidoMaterno }}
                         </a>
                     </td>
-                    <td class="width-20 enlace">
+                    <td class="width-30 enlace">
                         <a href="{{ path('investigadores_edit', { 'id': entity.id }) }}" >
                             {{ entity.email }}
                         </a>

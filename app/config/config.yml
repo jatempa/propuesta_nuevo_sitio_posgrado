@@ -25,6 +25,11 @@ framework:
 twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
+    globals:
+        directorio_alumnos: 'uploads/images/alumnos/'
+        directorio_investigadores: 'uploads/images/investigadores/'
+        directorio_imagenes_banner: 'uploads/images/portada/'
+        directorio_documentos: 'uploads/documentos/noticias/'
 
 # Assetic Configuration
 assetic:

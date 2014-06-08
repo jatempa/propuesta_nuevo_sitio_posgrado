@@ -1,3 +1,7 @@
+usuario:
+    resource: "@UsuarioBundle/Resources/config/routing.yml"
+    prefix:   /
+
 posgrado_investigadores:
     resource: "@PosgradoInvestigadoresBundle/Resources/config/routing.yml"
     prefix:   /
@@ -49,8 +53,8 @@ investigadores_lineas:
 alumnos_proyectos:
     resource: "@AlumnosProyectosBundle/Resources/config/routing.yml"
 
-investigador_proyecto:
-    resource: "@InvestigadorProyectoBundle/Resources/config/routing.yml"
+investigadores_proyectos:
+    resource: "@InvestigadoresProyectosBundle/Resources/config/routing.yml"
     prefix:   /
 
 lineas_investigacion:
@@ -72,3 +76,13 @@ investigadores:
 portada:
     resource: "@PortadaBundle/Resources/config/routing.yml"
     prefix:   /
+
+posgradmin_login:
+    path:     /posgradmin/login
+    defaults: { _controller: BackEndBundle:Security:login }
+
+posgradmin_login_check:
+    path: /posgradmin/login_check
+
+posgradmin_logout:
+    pattern: /posgradmin/logout

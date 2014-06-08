@@ -1,0 +1,48 @@
+{% extends '::backend.html.twig' %}
+
+{% block menu %}
+    <li><a href="{{ path('noticias') }}">Noticias</a></li>
+    <li><a href="{{ path('portada') }}">Portada</a></li>
+    <li><a href="{{ path('alumnos') }}">Alumnos</a></li>
+    <li><a href="{{ path('areas') }}">Áreas de inv.</a></li>
+    <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
+    <li><a href="{{ path('lineas') }}">Líneas de inv.</a></li>
+    <li><a href="{{ path('productosacademicos') }}">Prod. académicos</a></li>
+    <li><a href="{{ path('posgrados') }}">Posgrados</a></li>
+    <li><span>Proyectos</span></li>
+{% endblock %}
+
+{% block mapa %}
+    <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
+    <li><a href="{{ path('proyectos') }}">Proyectos</a></li>
+    <li><a href="{{ path('investigadoresproyectos') }}">Investigadores y Proyectos</a></li>
+    <li><span>Registro de investigador en un proyecto</span></li>
+{% endblock %}
+
+{% block contenido %}
+<div class="unit-100">
+    <div class="units-row">
+        <div class="unit-centered unit-50">
+            <fieldset>
+                <legend>Proyectos e Investigadores</legend>
+                {{ form_start(form, { 'action': path('investigadoresproyectos_new'), 'method': 'POST', 'attr': {'enctype': 'multipart/form-data', 'class': 'forms forms-columnar'} }) }}
+                    
+                    <p>
+                        {{ form_label(form.proyecto, 'Proyecto *') }}
+                        {{ form_widget(form.proyecto, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+                    
+                    <p>
+                        {{ form_label(form.investigador, 'Investigador *') }}
+                        {{ form_widget(form.investigador, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
+
+                    <p>
+                        {{ form_rest(form) }}
+                {{ form_end(form) }}
+                    </p>
+            </fieldset>
+        </div>
+    </div>
+</div>
+{% endblock %}

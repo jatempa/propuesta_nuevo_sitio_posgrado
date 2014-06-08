@@ -8,7 +8,7 @@ use DEPI\ProyectosBundle\Entity\Proyectos;
 
 class ProyectosFixtures extends AbstractFixture implements OrderedFixtureInterface
 {
-     public function load(ObjectManager $manager)
+  public function load(ObjectManager $manager)
   {
 
         $proyectos = array(
