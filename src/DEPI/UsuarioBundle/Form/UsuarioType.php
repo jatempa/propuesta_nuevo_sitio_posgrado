@@ -17,7 +17,7 @@ class UsuarioType extends AbstractType
         $builder
             ->add('nombre','text')
             ->add('apellidos','text')
-            ->add('email','text')
+            ->add('email','email')
             ->add('password','password')
             ->add('guardar', 'submit', array('attr' => array('class' => 'btn btn-blue')))
         ;
