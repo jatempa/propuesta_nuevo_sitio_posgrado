@@ -3,7 +3,7 @@
 namespace DEPI\UsuarioBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * Usuario
@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="usuarios")
  * @ORM\Entity(repositoryClass="DEPI\UsuarioBundle\Entity\UsuarioRepository")
  */
-class Usuario
+class Usuario implements UserInterface
 {
     /**
      * @var integer
@@ -57,6 +57,17 @@ class Usuario
      */
     private $salt;
 
+    function eraseCredentials() {}
+
+    function getRoles()
+    {
+        return array('ROLE_ADMIN');
+    }
+
+    function getUsername()
+    {
+        return $this->getEmail();
+    }
 
     /**
      * Get id
