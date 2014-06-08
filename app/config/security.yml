@@ -18,13 +18,14 @@ security:
         - { path: ^/posgradmin/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/posgradmin/*, roles: ROLE_ADMIN }
 
+
     providers:
         administradores:
-            memory:
-                users:
-                    admin: { password: sistemasitm, roles: 'ROLE_ADMIN' }
+            entity: { class: DEPI\UsuarioBundle\Entity\Usuario, property: email }
+
     encoders:
-        Symfony\Component\Security\Core\User\User: plaintext
+        DEPI\UsuarioBundle\Entity\Usuario: { algorithm: sha512, iterations: 10 }
+        Symfony\Component\Security\Core\User\User: sha512
 
     role_hierarchy:
         ROLE_ADMIN: [ROLE_ADMIN]
