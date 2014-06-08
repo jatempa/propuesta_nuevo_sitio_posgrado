@@ -7,8 +7,8 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Usuario
  *
- * @ORM\Table()
- * @ORM\Entity
+ * @ORM\Table(name="usuarios")
+ * @ORM\Entity(repositoryClass="DEPI\UsuarioBundle\Entity\UsuarioRepository")
  */
 class Usuario
 {
@@ -24,30 +24,37 @@ class Usuario
     /**
      * @var string
      *
-     * @ORM\Column(name="nombre", type="string", length=50)
+     * @ORM\Column(name="nombre", type="string", length=80)
      */
     private $nombre;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="password", type="string", length=50)
+     * @ORM\Column(name="apellidos", type="string", length=100)
+     */
+    private $apellidos;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=100)
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=100)
      */
     private $password;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=80)
+     * @ORM\Column(name="salt", type="string", length=255)
      */
-    private $email;
-
-    /**
-     * @var boolean
-     *
-     * @ORM\Column(name="permite_email", type="boolean")
-     */
-    private $permiteEmail;
+    private $salt;
 
 
     /**
@@ -84,26 +91,26 @@ class Usuario
     }
 
     /**
-     * Set password
+     * Set apellidos
      *
-     * @param string $password
+     * @param string $apellidos
      * @return Usuario
      */
-    public function setPassword($password)
+    public function setApellidos($apellidos)
     {
-        $this->password = $password;
+        $this->apellidos = $apellidos;
     
         return $this;
     }
 
     /**
-     * Get password
+     * Get apellidos
      *
      * @return string 
      */
-    public function getPassword()
+    public function getApellidos()
     {
-        return $this->password;
+        return $this->apellidos;
     }
 
     /**
@@ -130,25 +137,48 @@ class Usuario
     }
 
     /**
-     * Set permiteEmail
+     * Set password
      *
-     * @param boolean $permiteEmail
+     * @param string $password
      * @return Usuario
      */
-    public function setPermiteEmail($permiteEmail)
+    public function setPassword($password)
     {
-        $this->permiteEmail = $permiteEmail;
+        $this->password = $password;
     
         return $this;
     }
 
     /**
-     * Get permiteEmail
+     * Get password
      *
-     * @return boolean 
+     * @return string 
      */
-    public function getPermiteEmail()
+    public function getPassword()
     {
-        return $this->permiteEmail;
+        return $this->password;
+    }
+
+    /**
+     * Set salt
+     *
+     * @param string $salt
+     * @return Usuario
+     */
+    public function setSalt($salt)
+    {
+        $this->salt = $salt;
+    
+        return $this;
+    }
+
+    /**
+     * Get salt
+     *
+     * @return string 
+     */
+    public function getSalt()
+    {
+        return $this->salt;
     }
 }
