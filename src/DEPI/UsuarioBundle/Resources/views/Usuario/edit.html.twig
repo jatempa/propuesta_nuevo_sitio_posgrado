@@ -2,7 +2,8 @@
 
 {% block mapa %}
     <li><a href="{{ path('posgradmin') }}">Inicio</a></li>
-    <li><span>Usuario</span></li>
+    <li><a href="{{ path('usuario') }}">Usuario</a></li>
+    <li><span>Actualizar datos del usuario</span></li>
 {% endblock %}
 
 {% block contenido %}
@@ -31,6 +32,7 @@
                     <p>
                         {{ form_label(form.password, 'Password *') }}
                         {{ form_widget(form.password, { 'attr': {'class': 'width-100'} }) }}
+                        {{ form_errors(form.password) }}
                     </p>
                         
                     <p>
