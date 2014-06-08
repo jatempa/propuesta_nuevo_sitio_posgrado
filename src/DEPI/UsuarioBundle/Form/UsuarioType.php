@@ -18,8 +18,7 @@ class UsuarioType extends AbstractType
             ->add('nombre','text')
             ->add('apellidos','text')
             ->add('email','text')
-            ->add('password','text')
-            ->add('salt','text')
+            ->add('password','password')
             ->add('guardar', 'submit', array('attr' => array('class' => 'btn btn-blue')))
         ;
     }
