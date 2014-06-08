@@ -11,11 +11,11 @@ security:
 
             logout:
                 path: posgradmin_logout
-
+                target: /depi
 
     access_control:
-        - { path: /depi, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: /login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/depi, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/posgradmin/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/posgradmin/*, roles: ROLE_ADMIN }
 
     providers:
