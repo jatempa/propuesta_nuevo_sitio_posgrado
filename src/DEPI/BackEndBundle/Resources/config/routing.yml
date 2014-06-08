@@ -1,6 +1,6 @@
 posgradmin:
     pattern:  /posgradmin
-    defaults: { _controller: BackEndBundle:Default:index }
+    defaults: { _controller: BackEndBundle:Security:index }
 
 _posgradmin:
     pattern: /posgradmin/
