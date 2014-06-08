@@ -76,3 +76,13 @@ investigadores:
 portada:
     resource: "@PortadaBundle/Resources/config/routing.yml"
     prefix:   /
+
+posgradmin_login:
+    path:     /login
+    defaults: { _controller: AlumnosBundle:Security:login }
+
+posgradmin_login_check:
+    path: /login_check
+
+posgradmin_logout:
+    pattern: /logout

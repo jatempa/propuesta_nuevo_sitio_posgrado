@@ -1,22 +1,28 @@
 security:
-    encoders:
-        Symfony\Component\Security\Core\User\User: plaintext
+    firewalls:
+        frontend:
+            pattern:   ^/posgradmin
+            provider: administradores
+            anonymous: ~
+            form_login:
+                login_path: login
+                check_path: login_check
 
-    role_hierarchy:
-        ROLE_ADMIN:       ROLE_ADMIN
+            logout:
+                path: /logout
+
+    access_control:
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/posgradmin/, roles: ROLE_ADMIN }
 
     providers:
         administradores:
             memory:
                 users:
-                    sa: { password: 1234, roles: ROLE_ADMIN }
+                    jatempa: { password: 1234, roles: 'ROLE_USER' }
+                    admin: { password: sistemasitm, roles: 'ROLE_ADMIN' }
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
 
-    firewalls:
-        backend:
-            pattern: ^/posgradmin
-            provider: administradores
-            http_basic: ~
-
-    access_control:
-        - { path: ^/posgradmin/*, roles: ROLE_ADMIN }
-        #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
+    role_hierarchy:
+        ROLE_ADMIN:       ROLE_ADMIN
