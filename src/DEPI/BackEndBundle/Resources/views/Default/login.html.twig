@@ -1,15 +1,44 @@
-{% if error %}
-    <div>{{ error.message }}</div>
-{% endif %}
+{% extends '::base.html.twig' %}
 
-<form action="{{ path('posgradmin_login_check') }}" method="post">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="_username" value="{{ last_username }}" />
+{% block title %}Administración{% endblock %}
+        
+{% block stylesheets %}
+  <link href="{{ asset('bundles/backend/css/kube.css') }}" rel="stylesheet" type="text/css" />
+  <link href="{{ asset('bundles/backend/css/master.css') }}" rel="stylesheet" type="text/css" />
+{% endblock %}
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="_password" />
+{% block body %}
+<div class="unit-100">
+    <div class="units-row">
+        <div class="unit-centered unit-50">
+            <fieldset>
+                    <form action="{{ path('posgradmin_login_check') }}" method="post" class="forms forms-columnar">
+                        <p>
+                            <label for="username">Username:</label>
+                            <input type="text" id="username" name="_username" value="{{ last_username }}" />
+                        </p>
+                        
+                        <p>
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="_password" /> 
+                        </p>
+    
+                        <p>
+                            <input type="hidden" name="_target_path" value="/posgradmin" />
+                            <button type="submit" class="btn btn-orange">Entrar</button>
+                        </p>
+                    </form>
+                    <p>
+                        {% if error %}
+                            <div>{{ error.message }}</div>
+                        {% endif %}
+                    </p>
+                </fieldset>
+        </div>
+    </div>
+</div>
+{% endblock %}
 
-    <input type="hidden" name="_target_path" value="/posgradmin" />
-
-    <button type="submit">login</button>
-</form>
+{% block footer %}
+    <footer id="footer">&copy; Instituto Tecnológico de Mexicali.</footer>
+{% endblock %}
