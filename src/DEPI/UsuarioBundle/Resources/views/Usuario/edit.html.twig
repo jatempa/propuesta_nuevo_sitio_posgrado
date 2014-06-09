@@ -34,6 +34,11 @@
                         {{ form_widget(form.password, { 'attr': {'class': 'width-100'} }) }}
                         {{ form_errors(form.password) }}
                     </p>
+
+                    <p>
+                        {{ form_label(form.roles, 'Rol *') }}
+                        {{ form_widget(form.roles, { 'attr': {'class': 'width-100'} }) }}
+                    </p>
                         
                     <p>
                         {{ form_rest(form) }}    
