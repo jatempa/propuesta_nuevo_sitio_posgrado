@@ -1,31 +1,35 @@
 /* =Typography
 -----------------------------------------------------------------------------*/
-.titulo{
-		font-family: 'Droid Sans', sans-serif;
-		font-size: 38px;
-		text-align: right;
-		margin-top: 24px;
+.tituloAlogin{
+	font-family: 'Droid Sans', sans-serif;
+	font-size: 38px;
+	text-align: right;
+	margin-top: 24px;
 }
 
-.subtitulo{
-		font-family: 'Droid Sans', sans-serif;
-		font-size: 38px;
-		text-align: right;
-		margin-top: 18px;
+.tituloBlogin{
+	font-family: 'Droid Sans', sans-serif;
+	font-size: 38px;
+	text-align: right;
+	margin-top: 18px;
 }
 
+/* Para mantener un area de texto sin redimensionar */
 textarea {
 	resize: none;
 }
 
+/* Para cambiar a mayúsculas el titulo en un fieldset legend */
 legend {
 	text-transform: uppercase;
 }
 
+/* Dimension para la fotografia personal */
 #foto {
 	height: 150px;
 }
 
+/* Dimension para la imagen de banner vista previa */
 #forBanner {
 	width:  250px;
 	height: 75px;
@@ -80,7 +84,7 @@ th {
 	font-weight: bold; /*Formato de letra en negrita*/
 }
 
-a img,  #action{
+#action{
 	width: 25px;
 	height: 25px;
 }
@@ -98,6 +102,20 @@ a img,  #action{
 -----------------------------------------------------------------------------*/
 @media only screen and (min-width: 768px) and (max-width: 959px) {
     body { width: 748px; }
+
+    .tituloAlogin{
+		font-family: 'Droid Sans', sans-serif;
+		font-size: 30px;
+		text-align: right;
+		margin-top: 15px;
+	}
+
+	.tituloBlogin{
+		font-family: 'Droid Sans', sans-serif;
+		font-size: 30px;
+		text-align: right;
+		margin-top: 12px;
+	}
 }
 
 /* =Mobile (Portrait)
@@ -108,6 +126,20 @@ a img,  #action{
 	#header h1 { margin-bottom: .5em; }
 	#nav ul li { margin: 0; float: none; margin-bottom: 1px; background-color: #f6f6f6; }
 	#nav ul li a, #nav ul li span { display: block; padding: 2px 5px; }
+
+    .tituloAlogin{
+		font-family: 'Droid Sans', sans-serif;
+		font-size: 24px;
+		text-align: center;
+		margin-top: 15px;
+	}
+
+	.tituloBlogin{
+		font-family: 'Droid Sans', sans-serif;
+		font-size: 24px;
+		text-align: center;
+		margin-top: 12px;
+	}
 }
 
 /* =Mobile (Landscape)
