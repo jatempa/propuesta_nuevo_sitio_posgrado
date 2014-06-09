@@ -3,16 +3,26 @@
 {% block title %}Administración{% endblock %}
         
 {% block stylesheets %}
-  <link href="{{ asset('bundles/backend/css/kube.css') }}" rel="stylesheet" type="text/css" />
-  <link href="{{ asset('bundles/backend/css/master.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('bundles/backend/css/kube.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('bundles/backend/css/master.css') }}" rel="stylesheet" type="text/css" />
 {% endblock %}
 
 {% block header %}
     <header id="header">
-        <nav class="nav-tabs">
+        <nav class="nav-g">
             <ul>
             {% block menu %}
-            {% include('::menu.html.twig') %}
+                <li><a href="{{ path('usuario') }}">Usuarios</a></li>
+                <li><a href="{{ path('noticias') }}">Noticias</a></li>
+                <li><a href="{{ path('portada') }}">Portada</a></li>
+                <li><a href="{{ path('alumnos') }}">Alumnos</a></li>
+                <li><a href="{{ path('areas') }}">Áreas de inv.</a></li>
+                <li><a href="{{ path('investigadores') }}">Investigadores</a></li>
+                <li><a href="{{ path('lineas') }}">Líneas de inv.</a></li>
+                <li><a href="{{ path('productosacademicos') }}">Prod. académicos</a></li>
+                <li><a href="{{ path('posgrados') }}">Posgrados</a></li>
+                <li><a href="{{ path('proyectos') }}">Proyectos</a></li>
+                <li><a href="{{ path('posgradmin_logout') }}">Salir</a></li>
             {% endblock %}
             </ul>
         </nav>
