@@ -16,8 +16,8 @@
             <img src="{{ asset('bundles/portada/img/header.png') }}"/>
         </div>
         <div class="units unit-50">
-          <div class="titulo">División de estudios de</div>
-          <div class="subtitulo">Posgrado e Investigación</div>
+          <div class="tituloAlogin">División de estudios de</div>
+          <div class="tituloBlogin">Posgrado e Investigación</div>
       </div>
     </div>
     <div class="units-row">
@@ -26,12 +26,12 @@
                     <form action="{{ path('posgradmin_login_check') }}" method="post" class="forms forms-columnar">
                         <p>
                             <label for="username">Usuario:</label>
-                            <input type="text" id="username" name="_username" value="{{ last_username }}" />
+                            <input type="text" id="username" name="_username" value="{{ last_username }}" class="width-100" />
                         </p>
                         
                         <p>
                             <label for="password">Contraseña:</label>
-                            <input type="password" id="password" name="_password" /> 
+                            <input type="password" id="password" name="_password" class="width-100" /> 
                             <input type="hidden" name="_target_path" value="/posgradmin" />
                         </p>
     
@@ -41,7 +41,7 @@
                     </form>
                     <p>
                         {% if error %}
-                            <div>{{ error.message }}</div>
+                            <div class="error">{{ error.message|trans({},'messages') }}</div>
                         {% endif %}
                     </p>
             </fieldset>
