@@ -12,7 +12,9 @@
         <nav class="nav-g">
             <ul>
             {% block menu %}
-                <li><a href="{{ path('usuario') }}">Usuarios</a></li>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <li><a href="{{ path('usuario') }}">Usuarios</a></li>
+                {% endif %}
                 <li><a href="{{ path('noticias') }}">Noticias</a></li>
                 <li><a href="{{ path('portada') }}">Portada</a></li>
                 <li><a href="{{ path('alumnos') }}">Alumnos</a></li>

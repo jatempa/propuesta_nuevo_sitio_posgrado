@@ -57,18 +57,33 @@ class Usuario implements UserInterface
      */
     private $salt;
 
-    function eraseCredentials() {}
+    /**
+     * @ORM\ManyToMany(targetEntity="Rol")
+     * @ORM\JoinTable(
+     *  name="usuario_rol",
+     *  joinColumns={@ORM\JoinColumn(name="usuario_id", referencedColumnName="id")},
+     *  inverseJoinColumns={@ORM\JoinColumn(name="rol_id", referencedColumnName="id")}
+     * )
+     */
+    protected $roles;
 
-    function getRoles()
+
+    
+    /**
+     * Constructor
+     */
+    public function __construct()
     {
-        return array('ROLE_ADMIN');
+        $this->roles = new \Doctrine\Common\Collections\ArrayCollection();
     }
+
+    function eraseCredentials() {}
 
     function getUsername()
     {
         return $this->getEmail();
     }
-
+    
     /**
      * Get id
      *
@@ -192,5 +207,42 @@ class Usuario implements UserInterface
     public function getSalt()
     {
         return $this->salt;
+    }
+
+    /**
+     * Add roles
+     *
+     * @param \DEPI\UsuarioBundle\Entity\Rol $roles
+     * @return Usuario
+     */
+    public function addRole(\DEPI\UsuarioBundle\Entity\Rol $roles)
+    {
+        $this->roles[] = $roles;
+    
+        return $this;
+    }
+
+    /**
+     * Remove roles
+     *
+     * @param \DEPI\UsuarioBundle\Entity\Rol $roles
+     */
+    public function removeRole(\DEPI\UsuarioBundle\Entity\Rol $roles)
+    {
+        $this->roles->removeElement($roles);
+    }
+
+    /**
+     * Get roles
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getRoles()
+    {
+        return $this->roles->toArray();
+    }
+
+    public function setRoles($roles) {
+        $this->user_roles = $roles;
     }
 }
