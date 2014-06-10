@@ -3,6 +3,7 @@
 namespace DEPI\UsuarioBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -34,7 +35,13 @@ class UsuarioController extends Controller
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate($usuarios, $this->getRequest()->query->get('page',1), 5);
 
-        return array('usuarios' => $pagination);
+        $respuesta = $this->render('UsuarioBundle:Usuario:index.html.twig', 
+            array('usuarios' => $pagination)
+        );
+        
+        $respuesta->setMaxAge(15 * 60);
+
+        return $respuesta;
     }
 
     /**
@@ -110,10 +117,7 @@ class UsuarioController extends Controller
             return $this->redirect($this->generateUrl('usuario'));
         }
 
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        );
+        return array('entity' => $entity, 'form' => $form->createView());
     }
 
     public function deleteAction($id)

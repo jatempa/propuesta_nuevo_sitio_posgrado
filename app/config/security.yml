@@ -11,7 +11,7 @@ security:
 
             logout:
                 path: posgradmin_logout
-                target: /posgradmin/login
+                target: posgradmin_login
 
     access_control:
         - { path: ^/depi, roles: IS_AUTHENTICATED_ANONYMOUSLY }

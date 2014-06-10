@@ -3,6 +3,7 @@
 namespace DEPI\PortadaBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -33,7 +34,12 @@ class PortadaController extends Controller
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate($entities, $this->get('request')->query->get('page',1), 5);
 
-        return array('entities' => $pagination);
+        $respuesta = $this->render('PortadaBundle:Portada:index.html.twig',
+            array('entities' => $pagination)
+        );
+        $respuesta->setMaxAge(15 * 60);
+
+        return $respuesta;   
     }
     /**
      * Creates a new Portada entity.
@@ -91,10 +97,7 @@ class PortadaController extends Controller
             return $this->redirect($this->generateUrl('portada'));
         }
 
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        );
+        return array('entity' => $entity, 'form' => $form->createView());
     }
 
     public function deleteAction($id)

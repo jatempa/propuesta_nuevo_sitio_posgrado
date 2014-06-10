@@ -3,6 +3,7 @@
 namespace DEPI\AlumnosBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -33,7 +34,12 @@ class AlumnosController extends Controller
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate($alumnos, $this->getRequest()->query->get('page',1), 5);
 
-        return array('alumnos' => $pagination);
+        $respuesta = $this->render('AlumnosBundle:Alumnos:index.html.twig',
+        array('alumnos' => $pagination)
+        );
+        $respuesta->setMaxAge(15 * 60);
+
+        return $respuesta;
     }
     /**
      * Creates a new Alumnos entity.
@@ -54,10 +60,10 @@ class AlumnosController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
-
+        
             return $this->redirect($this->generateUrl('alumnos'));
         }
-
+        
         return array('entity' => $entity, 'form' => $form->createView());
     }
     /**
@@ -88,9 +94,9 @@ class AlumnosController extends Controller
             $entity->subirFoto($this->container->getParameter('alumnos.directorio.imagenes'));
             $em->flush();
 
-            return $this->redirect($this->generateUrl('alumnos'));
+            return  $this->redirect($this->generateUrl('alumnos'));
         }
-
+    
         return array(
             'entity' => $entity,
             'form'   => $form->createView(),
@@ -106,7 +112,7 @@ class AlumnosController extends Controller
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Alumnos entity.');
         }
-
+        
         return $this->redirect($this->generateUrl('alumnos'));
     }
 }
