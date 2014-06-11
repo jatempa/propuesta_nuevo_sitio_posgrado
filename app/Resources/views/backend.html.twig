@@ -1,11 +1,4 @@
-{% extends '::base.html.twig' %}
-
-{% block title %}Administración{% endblock %}
-        
-{% block stylesheets %}
-    <link href="{{ asset('bundles/backend/css/kube.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('bundles/backend/css/master.css') }}" rel="stylesheet" type="text/css" />
-{% endblock %}
+{% extends '::backendlayout.html.twig' %}
 
 {% block header %}
     <header id="header">
@@ -41,16 +34,12 @@
 {% endblock %}
 
 {% block body %}
-    <div>
-        <div id="contenido" class="units-row">
-            {% block lateral %}
-            {% endblock %}
-            {% block contenido %}
-            {% endblock %}
-        </div>
+    <div id="contenido" class="units-row">
+        {% block lateral %}
+        {% endblock %}
+        {% block contenido %}
+        {% endblock %}
     </div>
 {% endblock %}
 
-{% block footer %}
-    <footer id="footer">&copy; Instituto Tecnológico de Mexicali.</footer>
-{% endblock %}
+
