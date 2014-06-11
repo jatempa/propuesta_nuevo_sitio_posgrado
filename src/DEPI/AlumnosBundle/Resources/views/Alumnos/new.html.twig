@@ -9,55 +9,56 @@
 {% block contenido %}
 <div class="unit-100">
     <div class="units-row">
-        <div class="unit-centered unit-50">
+        <div class="unit-centered unit-70">
             <fieldset>
                 <legend>Alumno</legend>
-                {{ form_start(form, { 'action': path('alumnos_new'), 'method': 'POST', 'attr': {'enctype': 'multipart/form-data', 'class': 'forms forms-columnar'} }) }}
-                  
-                    <p>
-                        {{ form_label(form.noControl, 'No. de Control *') }}
-                        {{ form_widget(form.noControl, { 'attr': {'class': 'width-100'} }) }}
-                    </p>
-                        
-                    <p>
+                {{ form_start(form, { 'action': path('alumnos_new'), 'method': 'POST', 'attr': {'enctype': 'multipart/form-data', 'class': 'forms forms-inline'} }) }}
+                <div class="units-row">
+                    <div class="unit-33">
+                            {{ form_label(form.noControl, 'No. de Control *') }}
+                            {{ form_widget(form.noControl, { 'attr': {'class': 'width-100'} }) }}
+                    </div>
+                </div>
+
+                <div class="units-row">
+                    <div class="unit-33">
                         {{ form_label(form.nombre, 'Nombre(s) *') }}
                         {{ form_widget(form.nombre, { 'attr': {'class': 'width-100'} }) }}
-                    </p>
-                    
-                    <p>
+                    </div>
+                    <div class="unit-33">
                         {{ form_label(form.apellidoPaterno, 'Apellido Paterno *') }}
                         {{ form_widget(form.apellidoPaterno, { 'attr': {'class': 'width-100'} }) }}
-                    </p>
-                        
-                    <p>
+                    </div>
+                    <div class="unit-33">
                         {{ form_label(form.apellidoMaterno, 'Apellido Materno') }}
                         {{ form_widget(form.apellidoMaterno, { 'attr': {'class': 'width-100'} }) }}
-                    </p>
-                        
-                    <p>
+                    </div>
+                </div>
+
+                <div class="units-row">
+                    <div class="unit-33">
                         {{ form_label(form.email, 'Correo electrónico *') }}
                         {{ form_widget(form.email, { 'attr': {'class': 'width-100'} }) }}
-                    </p>
-                        
-                    <p>
+                    </div>
+                    <div class="unit-33">
                         {{ form_label(form.telefono, 'Teléfono') }}
                         {{ form_widget(form.telefono, { 'attr': {'class': 'width-100'} }) }}
-                    </p>
-
-                    <p>
+                    </div>
+                    <div class="unit-33">
                         {{ form_label(form.foto, 'Foto') }}
                         {{ form_widget(form.foto, { 'attr': {'class': 'width-100'} }) }}
                         {{ form_errors(form.foto) }}
-                    </p>
-
-                    <p>
-                        {{ form_rest(form) }}    
-                    </p>
+                    </div>
+                </div>
+                
+                <p>
+                    {{ form_rest(form) }}  
+                </p>  
                     
-                    <p>
-                        <h6>{{ form_errors(form.noControl) }}</h6>
+                <p>
+                    <h6>{{ form_errors(form.noControl) }}</h6>
                 {{ form_end(form) }}
-                    </p>
+                </p>
             </fieldset>
         </div>
     </div>
