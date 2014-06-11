@@ -12,7 +12,11 @@
         <div class="unit-30">
             <fieldset>
                 <legend>Foto</legend>
-                <img id="foto" src="{{ asset( directorio_alumnos ~ entity.rutaFoto ) }}" />
+                {% if entity.rutaFoto %}        
+                    <img id="foto" src="{{ asset( directorio_alumnos ~ entity.rutaFoto ) }}" />      
+                {% else %}
+                    <img id="foto" src="{{ asset( directorio_alumnos ~ 'unknown-person.gif' ) }}" />
+                {% endif %}
             </fieldset>
             <aside class="unit-80">
                 <nav class="nav-v">
