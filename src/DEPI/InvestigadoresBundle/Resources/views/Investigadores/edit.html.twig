@@ -12,7 +12,11 @@
         <div class="unit-30">
             <fieldset>
                 <legend>Foto</legend>
-                <img id="foto" src="{{ asset(directorio_investigadores ~ entity.rutaFoto) }}" />
+                {% if entity.rutaFoto %}        
+                    <img id="foto" src="{{ asset( directorio_investigadores ~ entity.rutaFoto ) }}" />      
+                {% else %}
+                    <img id="foto" src="{{ asset( directorio_investigadores ~ 'unknown-person.gif' ) }}" />
+                {% endif %}
             </fieldset>
             <aside class="unit-80">
                 <nav class="nav-v">
@@ -24,53 +28,54 @@
                 </nav>
             </aside>
         </div>
-        <div class="units-centered unit-50">
+        <div class="units-centered unit-70">
             <fieldset>
                 <legend>Investigador</legend>
 
-                {{ form_start(form, { 'attr': {'enctype': 'multipart/form-data', 'class': 'forms forms-columnar'} }) }}
+                {{ form_start(form, { 'attr': {'enctype': 'multipart/form-data', 'class': 'forms forms-inline'} }) }}
                     
+                    <div class="units-row">
+                        <div class="unit-33">
+                            {{ form_label(form.nombre, 'Nombre(s) *') }}
+                            {{ form_widget(form.nombre, { 'attr': {'class': 'width-100'} }) }}
+                        </div>
+                        <div class="unit-33">
+                            {{ form_label(form.apellidoPaterno, 'Apellido Paterno *') }}
+                            {{ form_widget(form.apellidoPaterno, { 'attr': {'class': 'width-100'} }) }}
+                        </div>
+                        <div class="unit-33">
+                            {{ form_label(form.apellidoMaterno, 'Apellido Materno') }}
+                            {{ form_widget(form.apellidoMaterno, { 'attr': {'class': 'width-100'} }) }}
+                        </div>
+                    </div>
+
+                    <div class="units-row">
+                        <div class="unit-33">
+                            {{ form_label(form.email, 'Correo electrónico *') }}
+                            {{ form_widget(form.email, { 'attr': {'class': 'width-100'} }) }}
+                        </div>
+                        <div class="unit-33">
+                            {{ form_label(form.telefono, 'Teléfono') }}
+                            {{ form_widget(form.telefono, { 'attr': {'class': 'width-100'} }) }}
+                        </div>
+                        <div class="unit-33">
+                            {{ form_label(form.foto, 'Foto') }}
+                            {{ form_widget(form.foto, { 'attr': {'class': 'width-100'} }) }}
+                            {{ form_errors(form.foto) }}
+                        </div>
+                    </div>
+
+                    <div class="units-row">
+                        <div class="unit-33">
+                            {{ form_label(form.grado, 'Grado') }}
+                            {{ form_widget(form.grado, { 'attr': {'class': 'width-100'} }) }}
+                        </div>
+                        <div class="unit-33">
+                            {{ form_label(form.sni, 'SNI') }}
+                            {{ form_widget(form.sni, { 'attr': {'class': 'width-100'} }) }}
+                        </div>
+                    </div>                    
                     
-                    <p>
-                        {{ form_label(form.nombre, 'Nombre(s) *') }}
-                        {{ form_widget(form.nombre, { 'attr': {'class': 'width-100'} }) }}
-                    </p>
-                    
-                    <p>
-                        {{ form_label(form.apellidoPaterno, 'Apellido Paterno *') }}
-                        {{ form_widget(form.apellidoPaterno, { 'attr': {'class': 'width-100'} }) }}
-                    </p>
-                        
-                    <p>
-                        {{ form_label(form.apellidoMaterno, 'Apellido Materno') }}
-                        {{ form_widget(form.apellidoMaterno, { 'attr': {'class': 'width-100'} }) }}
-                    </p>
-                        
-                    <p>
-                        {{ form_label(form.email, 'Correo electrónico *') }}
-                        {{ form_widget(form.email, { 'attr': {'class': 'width-100'} }) }}
-                    </p>
-                        
-                    <p>
-                        {{ form_label(form.telefono, 'Teléfono') }}
-                        {{ form_widget(form.telefono, { 'attr': {'class': 'width-100'} }) }}
-                    </p>    
-
-                    <p>
-                        {{ form_label(form.grado, 'Grado') }}
-                        {{ form_widget(form.grado, { 'attr': {'class': 'width-100'} }) }}
-                    </p>
-
-                    <p>
-                        {{ form_label(form.sni, 'SNI') }}
-                        {{ form_widget(form.sni, { 'attr': {'class': 'width-100'} }) }}
-                    </p>
-
-                    <p>
-                        {{ form_label(form.foto, 'Foto') }}
-                        {{ form_widget(form.foto, { 'attr': {'class': 'width-100'} }) }}
-                        {{ form_errors(form.foto) }}
-                    </p>
                     
                     <p>
                         {{ form_rest(form) }}    
