@@ -11,10 +11,7 @@ class SecurityController extends Controller
 {
     public function indexAction()
     {
-        $respuesta = $this->render('BackEndBundle:Default:index.html.twig');
-        $respuesta->setMaxAge(15 * 60);
-
-        return $respuesta;
+        return $this->render('BackEndBundle:Default:index.html.twig');
     }
 
     public function loginAction(Request $peticion)
@@ -26,16 +23,25 @@ class SecurityController extends Controller
             $sesion->get(SecurityContext::AUTHENTICATION_ERROR)
         );
 
-        $respuesta = $this->render(
+        return $this->render(
             'BackEndBundle:Default:login.html.twig',
             array(
                 'last_username' => $sesion->get(SecurityContext::LAST_USERNAME),
                 'error'         => $error
             )
         );
+    }
 
-        $respuesta->setMaxAge(15 * 60);
+    public function logoutAction()
+    {
+        // Set the token to null and invalidate the session
+        $this->getSecurityContext()->setToken(null);
+        $this->getSession()->invalidate();
 
-        return $respuesta;
+        // Redirect url and seconds (window.location)
+        $seconds  = 5;
+        $redirect = $this->redirect($this->generateUrl('posgradmin_login'));
+
+        return array('seconds' => $seconds, 'redirect' => $redirect);
     }
 }

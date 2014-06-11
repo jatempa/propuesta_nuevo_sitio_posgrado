@@ -85,4 +85,5 @@ posgradmin_login_check:
     path: /posgradmin/login_check
 
 posgradmin_logout:
-    pattern: /posgradmin/logout
+    path:     /posgradmin/logout
+    defaults: { _controller: BackEndBundle:Security:logout }
