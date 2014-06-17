@@ -16,52 +16,54 @@
 
                     <div class="units-row">
                         <div class="unit-50">
-                            {{ form_label(form.nombreCorto, 'Nombre corto *') }}
-                            {{ form_widget(form.nombreCorto, { 'attr': {'class': 'width-100'} }) }}
-                        </div>
-                        <div class="unit-50">
                             {{ form_label(form.nombreCompleto, 'Nombre completo *') }}
                             {{ form_widget(form.nombreCompleto, { 'attr': {'class': 'width-100'} }) }}
+                        </div>
+                        <div class="unit-50">
+                            {{ form_label(form.nombreCorto, 'Nombre corto *') }}
+                            {{ form_widget(form.nombreCorto, { 'attr': {'class': 'width-100'} }) }}
                         </div>
                     </div>
 				    
                     <div class="units-row">
-                        <div class="unit-33">
+                        <div class="unit-50">
                             {{ form_label(form.objetivoGeneral, 'Objetivo general *') }}
                             {{ form_widget(form.objetivoGeneral, { 'attr': {'class': 'width-100'} }) }}
                         </div>
-                        <div class="unit-33">
-                            {{ form_label(form.objetivosEspecificos, 'Objetivos específicos *') }}
-                            {{ form_widget(form.objetivosEspecificos, { 'attr': {'class': 'width-100'} }) }}
+                        <div class="unit-25">
+                            {{ form_label(form.claveA, 'Clave A *') }}
+                            {{ form_widget(form.claveA, { 'attr': {'class': 'width-100'} }) }}
+                        </div>
+                        <div class="unit-25">                  
+                            {{ form_label(form.claveB, 'Clave B') }}
+                            {{ form_widget(form.claveB, { 'attr': {'class': 'width-100'} }) }}
                         </div>
                     </div>
                         
-                    
-                    <p>
-                    	{{ form_label(form.claveA, 'Clave A *') }}
-                        {{ form_widget(form.claveA, { 'attr': {'class': 'width-100'} }) }}
-                    </p>
-                        
-                    
-                    <p>
-                    	{{ form_label(form.claveB, 'Clave B') }}
-                        {{ form_widget(form.claveB, { 'attr': {'class': 'width-100'} }) }}
-                    </p>
-                          
-	                <p>
-	                	{{ form_label(form.fechaApertura, 'Fecha de apertura *') }}
-	                    {{ form_widget(form.fechaApertura, { 'attr': {'class': 'width-100'} }) }}
-	                </p>
-	                    
-	                <p>
-	                	{{ form_label(form.fechaTermino, 'Fecha de término *') }}
-                        {{ form_widget(form.fechaTermino, { 'attr': {'class': 'width-100'} }) }}
-                    </p>
-
-                    <p>
-                        {{ form_rest(form) }}
-                {{ form_end(form) }}
-                    </p>
+                    <div class="units-row">
+                        <div class="unit-50">
+                            {{ form_label(form.objetivosEspecificos, 'Objetivos específicos *') }}
+                            {{ form_widget(form.objetivosEspecificos, { 'attr': {'class': 'width-100'} }) }}
+                        </div>
+                        <div class="unit-50">
+                            <div class="units-row">
+                                <div class="unit-50">
+                                    {{ form_label(form.fechaApertura, 'Fecha de apertura *') }}
+                                    {{ form_widget(form.fechaApertura, { 'attr': {'class': 'width-100'} }) }}
+                                </div>
+                                <div class="unit-50">                                   
+                                    {{ form_label(form.fechaTermino, 'Fecha de término *') }}
+                                    {{ form_widget(form.fechaTermino, { 'attr': {'class': 'width-100'} }) }}
+                                </div>
+                            </div>
+                            <div class="units-row">
+                                <div class="unit-100">
+                                    {{ form_rest(form) }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            {{ form_end(form) }}
             </fieldset>
         </div>
     </div>
