@@ -3,7 +3,6 @@
 namespace DEPI\NoticiasBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -34,12 +33,7 @@ class NoticiasController extends Controller
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate($entities, $this->get('request')->query->get('page',1), 5);
 
-        $respuesta = $this->render('NoticiasBundle:Noticias:index.html.twig',
-            array('entities' => $pagination)
-        );
-        $respuesta->setMaxAge(15 * 60);
-
-        return $respuesta;
+        return array('entities' => $pagination);
     }
     /**
      * Creates a new Noticias entity.

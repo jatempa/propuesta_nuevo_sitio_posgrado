@@ -18,7 +18,7 @@ class SitioController extends Controller
             array('noticias' => $noticias, 'banner' => $banner)
         );
 
-        $respuesta->setMaxAge(15 * 60);
+        $respuesta->setMaxAge(5 * 60);
 
         return $respuesta;
     }
@@ -33,7 +33,7 @@ class SitioController extends Controller
             array('banner' => $banner)
         );
         
-        $respuesta->setMaxAge(15 * 60);
+        $respuesta->setMaxAge(5 * 60);
 
         return $respuesta;
     }

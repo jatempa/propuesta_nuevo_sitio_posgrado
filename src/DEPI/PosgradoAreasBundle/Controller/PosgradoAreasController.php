@@ -3,7 +3,6 @@
 namespace DEPI\PosgradoAreasBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -35,13 +34,7 @@ class PosgradoAreasController extends Controller
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate($entities, $this->get('request')->query->get('page',1), 5);
 
-        $respuesta = $this->render('PosgradoAreasBundle:PosgradoAreas:index.html.twig', 
-            array('entities' => $pagination)
-        );
-        
-        $respuesta->setMaxAge(15 * 60);
-
-        return $respuesta;
+        return array('entities' => $pagination);
     }
     /**
      * Creates a new PosgradoAreas entity.

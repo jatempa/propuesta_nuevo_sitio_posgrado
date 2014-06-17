@@ -3,7 +3,6 @@
 namespace DEPI\AlumnosBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -34,12 +33,7 @@ class AlumnosController extends Controller
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate($alumnos, $this->getRequest()->query->get('page',1), 5);
 
-        $respuesta = $this->render('AlumnosBundle:Alumnos:index.html.twig',
-        array('alumnos' => $pagination)
-        );
-        $respuesta->setMaxAge(15 * 60);
-
-        return $respuesta;
+        return  array('alumnos' => $pagination);
     }
     /**
      * Creates a new Alumnos entity.
