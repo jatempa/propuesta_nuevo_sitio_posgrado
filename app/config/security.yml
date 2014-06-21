@@ -1,32 +1,34 @@
 security:
-    firewalls:
-        # Firewall global utilizado en la parte pública o frontend
-        backend:
-            pattern:   ^/posgradmin
-            provider: administradores
-            anonymous: ~
-            form_login:
-                login_path: posgradmin_login
-                check_path: posgradmin_login_check
+    encoders:
+        FOS\UserBundle\Model\UserInterface: sha512
 
+    role_hierarchy:
+        ROLE_ADMIN:       ROLE_USER
+
+    providers:
+        fos_userbundle:
+            id: fos_user.user_provider.username
+
+    firewalls:
+        dev:
+            pattern:  ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        main:
+            pattern: ^/
+            form_login:
+                provider: fos_userbundle
+                csrf_provider: form.csrf_provider
+                login_path: fos_user_security_login
+                use_forward:    false
+                check_path: fos_user_security_check
+                failure_path: null
             logout:
-                path: posgradmin_logout
-                target: posgradmin_login
+                path: fos_user_security_logout
+                target: fos_user_security_login
+            anonymous: true
 
     access_control:
         - { path: ^/depi, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/posgradmin/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/posgradmin/usuario/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/posgradmin/*, roles: ROLE_USER }
-        - { path: ^/posgradmin/*, roles: ROLE_ADMIN }
-
-
-    providers:
-        administradores:
-            entity: { class: DEPI\UsuarioBundle\Entity\Usuario, property: email }
-
-    encoders:
-        DEPI\UsuarioBundle\Entity\Usuario: { algorithm: sha512, iterations: 10 }
-        Symfony\Component\Security\Core\User\User: sha512
-
-    role_hierarchy:
-        ROLE_ADMIN: [ROLE_ADMIN, ROLE_USER]
