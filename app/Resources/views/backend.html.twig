@@ -5,9 +5,6 @@
         <nav class="nav-g">
             <ul>
             {% block menu %}
-                {% if is_granted('ROLE_ADMIN') %}
-                    <li><a href="{{ path('usuario') }}">Usuarios</a></li>
-                {% endif %}
                 <li><a href="{{ path('noticias') }}">Noticias</a></li>
                 <li><a href="{{ path('portada') }}">Portada</a></li>
                 <li><a href="{{ path('alumnos') }}">Alumnos</a></li>
@@ -17,7 +14,7 @@
                 <li><a href="{{ path('productosacademicos') }}">Prod. académicos</a></li>
                 <li><a href="{{ path('posgrados') }}">Posgrados</a></li>
                 <li><a href="{{ path('proyectos') }}">Proyectos</a></li>
-                <li><a href="{{ path('posgradmin_logout') }}">Salir</a></li>
+                <li><a href="{{ path('fos_user_security_logout') }}">Salir</a></li>
             {% endblock %}
             </ul>
         </nav>
