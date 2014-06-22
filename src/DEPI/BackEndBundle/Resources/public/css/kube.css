@@ -1040,7 +1040,7 @@ a.label-yellow:hover {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ef6465', endColorstr='#d71618', GradientType=0);
 }
 .btn-orange {
-  float: center;
+  float: right;
   text-transform: uppercase;
   border-color: #cd640b;
   border-bottom-color: #9c4c08;
