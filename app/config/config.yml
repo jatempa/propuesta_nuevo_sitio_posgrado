@@ -102,3 +102,13 @@ fos_user:
     registration:
         form:
             type: back_end_registration
+        confirmation:
+            enabled:    true
+    from_email:
+        address:        noreply@depisite.com
+        sender_name:    Administracion DEPI
+    service:
+        mailer: fos_user.mailer.twig_swift
+    resetting:
+        email:
+            template: BackEndBundle:Usuario:resetting.email.html.twig
