@@ -2,6 +2,8 @@ parameters:
 #    back_end.example.class: DEPI\BackEndBundle\Example
 
 services:
-#    back_end.example:
-#        class: %back_end.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    back_end.registration.form.type:   
+        class: DEPI\BackEndBundle\Form\RegistrationFormType     
+        arguments: [%fos_user.model.user.class%, %security.role_hierarchy.roles%]
+        tags:
+            - { name: form.type, alias: back_end_registration }

@@ -99,3 +99,6 @@ fos_user:
     db_driver: orm
     firewall_name: main
     user_class: DEPI\BackEndBundle\Entity\Usuario
+    registration:
+        form:
+            type: back_end_registration

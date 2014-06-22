@@ -26,4 +26,13 @@ class Usuario extends BaseUser
 	{
 		parent::__construct();
 	}
+
+	public function addRole($rol)
+	{
+		if($rol == 1) {
+			array_push($this->roles, 'ROLE_ADMIN');
+		} else if($rol == 2) {
+			array_push($this->roles, 'ROLE_USER');
+		}
+	}
 }
