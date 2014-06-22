@@ -11,7 +11,7 @@ security:
 
     firewalls:
         main:
-            pattern: ^/posgradmin
+            pattern: ^/
             form_login:
                 provider: fos_userbundle
                 csrf_provider: form.csrf_provider
