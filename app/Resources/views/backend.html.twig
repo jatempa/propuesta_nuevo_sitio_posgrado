@@ -5,6 +5,7 @@
         <nav class="nav-g">
             <ul>
             {% block menu %}
+                <li><a href="{{ path('fos_user_registration_register') }}">Usuarios</a></li>
                 <li><a href="{{ path('noticias') }}">Noticias</a></li>
                 <li><a href="{{ path('portada') }}">Portada</a></li>
                 <li><a href="{{ path('alumnos') }}">Alumnos</a></li>
