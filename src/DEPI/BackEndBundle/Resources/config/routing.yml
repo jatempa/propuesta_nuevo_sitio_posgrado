@@ -27,7 +27,7 @@ fos_user_registration_check_email:
     defaults: { _controller: BackEndBundle:Registration:checkEmail }
 
 fos_user_registration_confirm:
-    pattern: /posgradmin/confirmar
+    pattern: /posgradmin/confirmar/{token}
     defaults: { _controller: BackEndBundle:Registration:confirm }
 
 fos_user_registration_confirmed:

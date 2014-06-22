@@ -29,5 +29,5 @@ assetic:
 
 swiftmailer:
     transport: gmail
-    username:  xd
-    password:  xd
+    username:  jatempa@itmexicali.edu.mx
+    password:  t3rm1nu5

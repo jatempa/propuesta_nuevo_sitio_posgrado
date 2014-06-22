@@ -6,8 +6,7 @@
 DirectoryIndex app.php
 
 <IfModule mod_rewrite.c> 
-    RewriteEngine On    
-
+    RewriteEngine On        
     # skip "real" requests
     RewriteCond %{REQUEST_FILENAME} -f
     RewriteRule .* - [QSA,L]    
@@ -175,8 +174,8 @@ DirectoryIndex app.php
     RewriteRule .* app.php [QSA,L,E=_ROUTING_route:fos_user_registration_check_email,E=_ROUTING_default__controller:DEPI\\BackEndBundle\\Controller\\RegistrationController\:\:checkEmailAction]    
 
     # fos_user_registration_confirm
-    RewriteCond %{REQUEST_URI} ^/posgradmin/confirmar$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:fos_user_registration_confirm,E=_ROUTING_default__controller:DEPI\\BackEndBundle\\Controller\\RegistrationController\:\:confirmAction]   
+    RewriteCond %{REQUEST_URI} ^/posgradmin/confirmar/([^/]++)$
+    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:fos_user_registration_confirm,E=_ROUTING_param_token:%1,E=_ROUTING_default__controller:DEPI\\BackEndBundle\\Controller\\RegistrationController\:\:confirmAction] 
 
     # fos_user_registration_confirmed
     RewriteCond %{REQUEST_URI} ^/posgradmin/confirmado$
@@ -534,7 +533,7 @@ DirectoryIndex app.php
     RewriteCond %{ENV:_ROUTING__allow_GET} =1 [OR]
     RewriteCond %{ENV:_ROUTING__allow_POST} =1 [OR]
     RewriteCond %{ENV:_ROUTING__allow_HEAD} =1
-    RewriteRule .* app.php [QSA,L]
+    RewriteRule .* app.php [QSA,L]  
 </IfModule>
 
 <IfModule !mod_rewrite.c>
@@ -546,5 +545,3 @@ DirectoryIndex app.php
         # RedirectTemp cannot be used instead
     </IfModule>
 </IfModule>
-
-
