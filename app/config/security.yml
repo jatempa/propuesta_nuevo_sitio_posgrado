@@ -17,13 +17,12 @@ security:
                 provider: fos_userbundle
                 csrf_provider: form.csrf_provider
                 login_path: fos_user_security_login
-                use_forward:    true
+                use_forward: false
                 check_path: fos_user_security_check
-                failure_path: null
                 default_target_path: /posgradmin
                 always_use_default_target_path: true
                 target_path_parameter: _target_path
-                failure_path: /
+                failure_path: fos_user_security_login
             logout:
                 path: fos_user_security_logout
                 target: fos_user_security_login
