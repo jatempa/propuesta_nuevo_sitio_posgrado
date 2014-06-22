@@ -27,7 +27,4 @@ monolog:
 assetic:
     use_controller: true
 
-swiftmailer:
-    transport: gmail
-    username:  jatempa@itmexicali.edu.mx
-    password:  t3rm1nu5
+#swiftmailer:
