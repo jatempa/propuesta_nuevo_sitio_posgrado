@@ -37,4 +37,5 @@ security:
     access_control:
         - { path: ^/depi, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/posgradmin/usuario/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/posgradmin/register, roles: ROLE_USER }
         - { path: ^/posgradmin/*, roles: ROLE_USER }
