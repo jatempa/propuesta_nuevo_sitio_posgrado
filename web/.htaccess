@@ -5,7 +5,9 @@
 # to each configured DirectoryIndex file (e.g. index.php, index.html, index.pl).
 DirectoryIndex app.php
 
-<IfModule mod_rewrite.c>    
+<IfModule mod_rewrite.c> 
+    RewriteEngine On    
+
     # skip "real" requests
     RewriteCond %{REQUEST_FILENAME} -f
     RewriteRule .* - [QSA,L]    
@@ -227,35 +229,6 @@ DirectoryIndex app.php
     RewriteRule .* - [S=1,E=_ROUTING_allow_GET:1,E=_ROUTING_allow_POST:1,E=_ROUTING_allow_HEAD:1]
     RewriteCond %{REQUEST_URI} ^/profile/change\-password$
     RewriteRule .* app.php [QSA,L,E=_ROUTING_route:fos_user_change_password,E=_ROUTING_default__controller:FOS\\UserBundle\\Controller\\ChangePasswordController\:\:changePasswordAction]   
-
-    # fos_user_group_list
-    RewriteCond %{REQUEST_URI} ^/group/list$
-    RewriteCond %{REQUEST_METHOD} !^(GET|HEAD)$ [NC]
-    RewriteRule .* - [S=1,E=_ROUTING_allow_GET:1,E=_ROUTING_allow_HEAD:1]
-    RewriteCond %{REQUEST_URI} ^/group/list$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:fos_user_group_list,E=_ROUTING_default__controller:FOS\\UserBundle\\Controller\\GroupController\:\:listAction]   
-
-    # fos_user_group_new
-    RewriteCond %{REQUEST_URI} ^/group/new$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:fos_user_group_new,E=_ROUTING_default__controller:FOS\\UserBundle\\Controller\\GroupController\:\:newAction] 
-
-    # fos_user_group_show
-    RewriteCond %{REQUEST_URI} ^/group/([^/]++)$
-    RewriteCond %{REQUEST_METHOD} !^(GET|HEAD)$ [NC]
-    RewriteRule .* - [S=1,E=_ROUTING_allow_GET:1,E=_ROUTING_allow_HEAD:1]
-    RewriteCond %{REQUEST_URI} ^/group/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:fos_user_group_show,E=_ROUTING_param_groupName:%1,E=_ROUTING_default__controller:FOS\\UserBundle\\Controller\\GroupController\:\:showAction] 
-
-    # fos_user_group_edit
-    RewriteCond %{REQUEST_URI} ^/group/([^/]++)/edit$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:fos_user_group_edit,E=_ROUTING_param_groupName:%1,E=_ROUTING_default__controller:FOS\\UserBundle\\Controller\\GroupController\:\:editAction] 
-
-    # fos_user_group_delete
-    RewriteCond %{REQUEST_URI} ^/group/([^/]++)/delete$
-    RewriteCond %{REQUEST_METHOD} !^(GET|HEAD)$ [NC]
-    RewriteRule .* - [S=1,E=_ROUTING_allow_GET:1,E=_ROUTING_allow_HEAD:1]
-    RewriteCond %{REQUEST_URI} ^/group/([^/]++)/delete$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:fos_user_group_delete,E=_ROUTING_param_groupName:%1,E=_ROUTING_default__controller:FOS\\UserBundle\\Controller\\GroupController\:\:deleteAction] 
 
     # proyectosproductos
     RewriteCond %{REQUEST_URI} ^/posgradmin/proyectosproductos$
@@ -561,7 +534,7 @@ DirectoryIndex app.php
     RewriteCond %{ENV:_ROUTING__allow_GET} =1 [OR]
     RewriteCond %{ENV:_ROUTING__allow_POST} =1 [OR]
     RewriteCond %{ENV:_ROUTING__allow_HEAD} =1
-    RewriteRule .* app.php [QSA,L]  
+    RewriteRule .* app.php [QSA,L]
 </IfModule>
 
 <IfModule !mod_rewrite.c>
@@ -573,3 +546,5 @@ DirectoryIndex app.php
         # RedirectTemp cannot be used instead
     </IfModule>
 </IfModule>
+
+
