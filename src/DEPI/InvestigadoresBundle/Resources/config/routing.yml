@@ -21,7 +21,3 @@ investigadores_delete:
 investigadores_public:
     pattern:  /investigadores
     defaults: { _controller: InvestigadoresBundle:InvestigadoresPublic:index }
-
-investigadores_show_public:
-    pattern:  /investigadores/show/{id}
-    defaults: { _controller: InvestigadoresBundle:InvestigadoresPublic:show }

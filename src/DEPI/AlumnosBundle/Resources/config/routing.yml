@@ -21,7 +21,3 @@ alumnos_delete:
 alumnos_public:
     pattern:  /alumnos
     defaults: { _controller: AlumnosBundle:AlumnosPublic:index }
-
-alumnos_show_public:
-    pattern:  /alumnos/show/{id}
-    defaults: { _controller: AlumnosBundle:AlumnosPublic:show }
