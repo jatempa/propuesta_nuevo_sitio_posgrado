@@ -6,7 +6,7 @@
 DirectoryIndex app.php
 
 <IfModule mod_rewrite.c> 
-    RewriteEngine On        
+    RewriteEngine On  
     # skip "real" requests
     RewriteCond %{REQUEST_FILENAME} -f
     RewriteRule .* - [QSA,L]    
@@ -465,10 +465,6 @@ DirectoryIndex app.php
     RewriteCond %{REQUEST_URI} ^/alumnos$
     RewriteRule .* app.php [QSA,L,E=_ROUTING_route:alumnos_public,E=_ROUTING_default__controller:DEPI\\AlumnosBundle\\Controller\\AlumnosPublicController\:\:indexAction]   
 
-    # alumnos_show_public
-    RewriteCond %{REQUEST_URI} ^/alumnos/show/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:alumnos_show_public,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\AlumnosBundle\\Controller\\AlumnosPublicController\:\:showAction]    
-
     # investigadores
     RewriteCond %{REQUEST_URI} ^/posgradmin/investigadores$
     RewriteRule .* app.php [QSA,L,E=_ROUTING_route:investigadores,E=_ROUTING_default__controller:DEPI\\InvestigadoresBundle\\Controller\\InvestigadoresController\:\:indexAction]   
@@ -494,10 +490,6 @@ DirectoryIndex app.php
     # investigadores_public
     RewriteCond %{REQUEST_URI} ^/investigadores$
     RewriteRule .* app.php [QSA,L,E=_ROUTING_route:investigadores_public,E=_ROUTING_default__controller:DEPI\\InvestigadoresBundle\\Controller\\InvestigadoresPublicController\:\:indexAction]  
-
-    # investigadores_show_public
-    RewriteCond %{REQUEST_URI} ^/investigadores/show/([^/]++)$
-    RewriteRule .* app.php [QSA,L,E=_ROUTING_route:investigadores_show_public,E=_ROUTING_param_id:%1,E=_ROUTING_default__controller:DEPI\\InvestigadoresBundle\\Controller\\InvestigadoresPublicController\:\:showAction]   
 
     # sitio
     RewriteCond %{REQUEST_URI} ^/$
