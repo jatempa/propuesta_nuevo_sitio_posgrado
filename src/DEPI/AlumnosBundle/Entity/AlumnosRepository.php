@@ -10,7 +10,7 @@ class AlumnosRepository extends EntityRepository
 	{
 		$em = $this->getEntityManager();
 		$dql = $em->createQueryBuilder();
-		$dql->select('a')
+		$dql->select('a.id, a.noControl, a.nombre, a.apellidoPaterno, a.apellidoMaterno, a.email, a.rutaFoto')
 		    ->from('AlumnosBundle:Alumnos', 'a');
 
 		return $dql->getQuery()->getResult();
