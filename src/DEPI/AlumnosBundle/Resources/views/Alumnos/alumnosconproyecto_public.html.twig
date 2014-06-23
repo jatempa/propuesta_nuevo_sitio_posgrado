@@ -1,0 +1,35 @@
+<p>
+    <a href="#" data-reveal-id="modal{{ alumno.id }}"> 
+        {{ alumno.apellidoPaterno ~ " " ~  alumno.apellidoMaterno ~ " " ~  alumno.nombre }} 
+    </a>
+</p>
+
+{# Comienza la seccion del modal #}
+<div id="modal{{ alumno.id }}" class="reveal-modal medium">
+    <div class="row">
+        <div class="large-4 columns">
+            {# columna izquierda para la fotografia #}
+            {% if alumno.rutaFoto %}        
+                <img id="foto" src="{{ asset( directorio_alumnos ~ alumno.rutaFoto ) }}" />      
+            {% else %}
+                <img id="foto" src="{{ asset( directorio_alumnos ~ 'unknown-person.gif' ) }}" />
+            {% endif %}         
+        </div>
+        <div class="large-8 columns">
+            {# columna derecha para el contenido #}
+            <p class="lead">
+                {{ alumno.apellidoPaterno ~ " " ~ alumno.apellidoMaterno ~ " " ~ alumno.nombre }}
+            </p>
+            <h5>Proyecto de investigación:</h5>
+            {% for alumnoconproyecto in alumnosconproyecto if (alumno.id == alumnoconproyecto.idAlumno) %}
+                <p>{{ alumnoconproyecto.nombreCorto }}</p>
+            {% else %}
+                <p>Sin proyecto asignado</p>
+            {% endfor %}
+            <h5>Correo electrónico:</h5>
+            <p><a href="mailto:{{ alumno.email }}" > {{ alumno.email }} </a></p>
+        </div>
+    </div>
+    <a class="close-reveal-modal">&#215;</a>      
+</div>
+{# termina la seccion del modal #}
