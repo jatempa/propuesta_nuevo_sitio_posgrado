@@ -13,10 +13,10 @@ class InvestigadoresPublicController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('InvestigadoresBundle:Investigadores')->findAll();
-        $banner = $em->getRepository('PortadaBundle:Portada')->findImagenesBanner();
-        $entitiesProyectos = $em->getRepository('InvestigadorProyectoBundle:InvestigadorProyecto')->findInvestigadorProyecto();
+        $entities = $em->getRepository('InvestigadoresBundle:Investigadores')->findInvestigadores();
+        $entitiesProyectos = $em->getRepository('InvestigadoresProyectosBundle:InvestigadoresProyectos')->findInvestigadoresProyectos();
         $entitiesLineas = $em->getRepository('InvestigadoresLineasBundle:InvestigadoresLineas')->findInvestigadoresLineas();
+        $banner = $em->getRepository('PortadaBundle:Portada')->findImagenesBanner();
         
         $respuesta = $this->render(
             'InvestigadoresBundle:Investigadores:index_public.html.twig', 
