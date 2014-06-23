@@ -14,7 +14,8 @@ class SitioController extends Controller
         $noticias = $em->getRepository('NoticiasBundle:Noticias')->findNoticias();
         $banner = $em->getRepository('PortadaBundle:Portada')->findImagenesBanner();
 
-        $respuesta = $this->render('PortadaBundle:Portada:sitio.html.twig', 
+        $respuesta = $this->render(
+            'PortadaBundle:Portada:sitio.html.twig', 
             array('noticias' => $noticias, 'banner' => $banner)
         );
 
