@@ -11,9 +11,9 @@
     <li>
         <a href="#" data-reveal-id="modal{{ entity.id }}">
             {% if entity.rutaFoto %}        
-                <img src="{{ asset('uploads/images/investigadores/' ~ entity.rutaFoto) }}" alt=""  />      
+                <img id="foto" src="{{ asset( directorio_investigadores ~ entity.rutaFoto ) }}" />      
             {% else %}
-                <img src="{{ asset('uploads/images/investigadores/unknown-person.gif') }}" alt="" />            
+                <img id="foto" src="{{ asset( directorio_investigadores ~ 'unknown-person.gif' ) }}" />
             {% endif %}
         </a>
         {% include 'InvestigadoresBundle:Investigadores:investigadoresdatos_public.html.twig' %}

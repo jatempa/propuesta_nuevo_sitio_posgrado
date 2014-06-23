@@ -8,11 +8,11 @@
     <div class="row">
         <div class="large-4 columns">
             {# columna izquierda para la fotografia #}
-            {% if entity.rutaFoto %}
-                <img src="{{ asset('uploads/images/investigadores/' ~ entity.rutaFoto) }}" alt=""  />      
+            {% if entity.rutaFoto %}        
+                <img id="foto" src="{{ asset( directorio_investigadores ~ entity.rutaFoto ) }}" />      
             {% else %}
-                <img src="{{ asset('uploads/images/investigadores/unknown-person.gif') }}" alt=""/>
-            {% endif %}           
+                <img id="foto" src="{{ asset( directorio_investigadores ~ 'unknown-person.gif' ) }}" />
+            {% endif %}         
         </div>
         <div class="large-8 columns">
             {# columna derecha para el contenido #}
