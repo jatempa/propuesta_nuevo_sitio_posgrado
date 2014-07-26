@@ -27,4 +27,4 @@ monolog:
 assetic:
     use_controller: true
 
-#swiftmailer:
+#swiftmailer: ~

@@ -7,9 +7,9 @@
 
 {% block contenido %}
 <ul class="small-block-grid-3 large-block-grid-7" align="center">
-    {% for alumno in alumnos %}
-    <li>
-        <a href="#" data-reveal-id="modal{{ alumno.id }}">
+	 {% for alumno in alumnos %}
+	 <li>
+	 	<a href="#" data-reveal-id="modal{{ alumno.id }}">
             {% if alumno.rutaFoto %}        
                 <img id="foto" src="{{ asset( directorio_alumnos ~ alumno.rutaFoto ) }}" />      
             {% else %}
@@ -17,7 +17,7 @@
             {% endif %}
         </a>
         {% include 'AlumnosBundle:Alumnos:alumnosconproyecto_public.html.twig' %}
-    </li>
-    {% endfor %}
+	 </li>
+	 {% endfor %}
 </ul>
 {% endblock %}

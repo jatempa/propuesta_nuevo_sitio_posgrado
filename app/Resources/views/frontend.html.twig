@@ -1,32 +1,21 @@
 {% extends '::base.html.twig' %}
 
+{% block title %}Posgrado e Investigación{% endblock %}
+
 {% block stylesheets %}
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Droid+Sans|Convergence|Amaranth' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
-{% stylesheets '@PortadaBundle/Resources/public/css/foundation.css'
-               '@PortadaBundle/Resources/public/css/master.css'
+{% stylesheets '@PortadaBundle/Resources/public/css/app.css'
                filter='yui_css' %}
   <link href="{{ asset_url }}" rel="stylesheet" type="text/css" />
 {% endstylesheets %}
 {% endblock %}
 
 {% block javascripts %}
-{% javascripts '@PortadaBundle/Resources/public/js/vendor/custom.modernizr.js'
-               '@PortadaBundle/Resources/public/js/vendor/zepto.js'
-               '@PortadaBundle/Resources/public/js/vendor/jquery.js'
-               '@PortadaBundle/Resources/public/js/foundation.min.js'
-               '@PortadaBundle/Resources/public/js/foundation/foundation.topbar.js'
-               '@PortadaBundle/Resources/public/js/foundation/foundation.orbit.js'
-               '@PortadaBundle/Resources/public/js/foundation/foundation.section.js'
-               '@PortadaBundle/Resources/public/js/foundation/foundation.reveal.js'
-               '@PortadaBundle/Resources/public/js/master.js'
-               filter='yui_js' %}
-<script src="{{ asset_url }}" type="text/javascript"></script>
-{% endjavascripts %}
-<script>
-  $(document).foundation();
-</script>
-{% block funcionesjs %}{% endblock %}
+<script src="{{ asset('bundles/portada/bower_components/foundation/js/vendor/jquery.js') }}" ></script>
+<script src="{{ asset('bundles/portada/bower_components/foundation/js/foundation.js') }}" ></script>
+<script src="{{ asset('bundles/portada/js/app.js') }}" ></script>
 {% endblock %}
 
 {% block header %}
@@ -36,7 +25,9 @@
           <img src="{{ asset('bundles/portada/img/header.png') }}"/>
       </div>
       <div class="large-5 columns">
-          <div class="titulo">División de estudios de Posgrado e Investigación</div>
+          <div class="tituloEncabezado">
+            División de estudios de Posgrado e Investigación
+          </div>
       </div> 
     </div> 
     <!-- Banner -->
@@ -52,79 +43,77 @@
     <!-- Menu -->
     <div class="row">
       <div class="large-12 columns"> 
-        <!-- Nav Wrap -->
-        <nav class="top-bar">
-            <ul class="title-area">
-            <!-- Title Area -->
-              <li class="name"></li>
-              <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        <nav class="top-bar" data-topbar>
+          <ul class="title-area">
+            <li class="toggle-topbar menu-icon"><a href="#">
+              <span>Menu</span></a>
+            </li>
+          </ul>
+          <section class="top-bar-section">
+            <ul class="right">
+              <li><a href="{{ path('sitio') }}">Inicio</a></li>
+              <li class="has-dropdown">
+                <a href="#">Investigación</a>
+                <ul class="dropdown">
+                  <li><a href="{{ path('alumnos_public') }}">Alumnos</a></li>
+                  <li><a href="{{ path('areas_public') }}">Áreas de investigación</a></li>
+                  <li><a href="{{ path('investigadores_public') }}">Investigadores</a></li>
+                  <li><a href="{{ path('lineas_public') }}">Líneas de investigación</a></li>
+                </ul>
+              </li>
+              <li><a href="{{ path('directorio') }}">Directorio</a></li>
             </ul>
-            <!-- The Section wrap -->
-            <section class="top-bar-section">
-              <!-- Left Nav Section -->
-              <ul class="right">
-                  <li><a href="{{ path('sitio') }}">Inicio</a></li>
-                    <li class="has-dropdown">
-                      <a href="#">Investigación</a>
-                        <ul class="dropdown">
-                          <li><a href="{{ path('alumnos_public') }}">Alumnos</a></li>
-                          <li><a href="{{ path('areas_public') }}">Áreas de investigación</a></li>
-                          <li><a href="{{ path('investigadores_public') }}">Investigadores</a></li>
-                          <li><a href="{{ path('lineas_public') }}">Líneas de investigación</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                      <a href="{{ path('directorio') }}">Directorio</a>
-                    </li>
-              </ul>
-            </section>
+          </section>
         </nav>
       </div> 
     </div>
-    <!-- Menu -->
+    <!-- Mapa del sitio -->
     <div class="row">
-      <ul class="breadcrumbs large-12 columns">
-        {% block mapa %}
-          <li class="unavailable">Inicio</li>
-        {% endblock %}
-      </ul>
+      <div class="large-12 columns">
+        <ul class="breadcrumbs">
+          {% block mapa %}
+            <li class="unavailable">Inicio</li>
+          {% endblock %}
+        </ul>
+      </div>
     </div>   
 {% endblock %}
 
 {% block body %}
-    <!-- Contenido --> 
-    <div class="row">
-      <div id="contenido" class="large-12 columns">
-        {% block contenido %}{% endblock %}
-      </div> 
-    </div>   
+<!-- Contenido --> 
+<div class="row">
+  <div id="contenido" class="large-12 columns">
+    {% block contenido %}{% endblock %}
+  </div> 
+</div>   
 {% endblock %}
 
 {% block footer %}
-<!-- Enlaces -->
 <footer class="row">
   <div class="large-12 columns">
-    <div class="small-4 large-4 columns">
-      <a href="http://www.snit.mx/">
-        <center><img src="{{ asset('bundles/portada/img/dgest.png') }}" /></center>
-      </a>
-    </div>
-                
-    <div class="small-4 large-4 columns">
-      <a href="http://www.conacyt.gob.mx/Paginas/InicioNueva.aspx">
-        <center><img src="{{ asset('bundles/portada/img/conacyt.png') }}" /></center>
-      </a>
-    </div>
-                    
-    <div class="small-4 large-4 columns">
-      <a href="http://ieeexplore.ieee.org/Xplore/home.jsp">
-        <center><img src="{{ asset('bundles/portada/img/ieee.png') }}" /></center>
-      </a>
-    </div>
+      <div class="row">
+        <div class="large-4 medium-4 columns">
+          <a href="http://www.snit.mx/">
+            <center><img src="{{ asset('bundles/portada/img/dgest.png') }}" /></center>
+          </a>
+        </div>            
+        <div class="large-4 medium-4 columns">
+          <a href="http://www.conacyt.mx">
+            <center><img src="{{ asset('bundles/portada/img/conacyt.png') }}" /></center>
+          </a>         
+        </div>
+        <div class="large-4 medium-4 columns">
+          <a href="http://ieeexplore.ieee.org/Xplore/home.jsp">
+            <center><img src="{{ asset('bundles/portada/img/ieee.png') }}" /></center>
+          </a>
+        </div>
+      </div>
   </div>
-    
-  <div id="pie" class="small-12 large-12 columns">
-    <img src="{{ asset('bundles/portada/img/footer.svg') }}"/>
+
+  <div class="large-12 columns">
+    <div id="pie">
+      <img src="{{ asset('bundles/portada/img/footer.svg') }}"/>
+    </div>
   </div>
 </footer>
 {% endblock %}

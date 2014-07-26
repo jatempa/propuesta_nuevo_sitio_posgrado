@@ -35,9 +35,9 @@ security:
                 domain: depisite.com
 
     access_control:
-        - { path: ^/depi, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/posgradmin/usuario/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/posgradmin/confirmar, roles:  IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/posgradmin/registro, roles:  ROLE_ADMIN }
-        - { path: ^/posgradmin/*, roles: ROLE_USER}
-        - { path: ^/posgradmin/*, roles: ROLE_ADMIN}
+        - { path: ^/posgradmin/registro, roles:  IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/posgradmin/*, roles: ROLE_USER }
+        - { path: ^/posgradmin/*, roles: ROLE_ADMIN }
